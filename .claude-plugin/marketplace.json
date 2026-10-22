@@ -1,0 +1,13 @@
+{
+  "name": "lockstep",
+  "owner": { "name": "Chris Axelson" },
+  "description": "Lockstep: build Figma pages faithfully from your organization's own design library, then score and fix them.",
+  "plugins": [
+    {
+      "name": "lockstep",
+      "source": "./plugin",
+      "description": "Four commands (init, build, score, fix) for faithful Figma builds from your design library, with a write guard for protected library files.",
+      "category": "design"
+    }
+  ]
+}

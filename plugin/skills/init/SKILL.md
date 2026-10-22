@@ -26,6 +26,33 @@ call (`use_figma`, `generate_figma_design`, `upload_assets`, ...), check that th
 `use_figma` work, including reading the library, happens in a draft. Importing by key works
 there even when the library isn't added to the file.
 
+## 0. Check you're ready
+
+Check these first and stop at the first one that fails. Tell the user what's missing and the
+exact fix in plain words: they may not be technical.
+
+1. **Figma is connected.** Load `mcp__figma__whoami` with ToolSearch and call it.
+   - **No Figma tools?** The user needs Figma's plugin for Claude Code. In a terminal they run
+     `claude plugin install figma@claude-plugins-official`, restart Claude Code, then type
+     `/plugin`, open the Installed tab, select `figma` and sign in. If their organization blocks
+     plugins, the manual route is `claude mcp add --scope user --transport http figma
+     https://mcp.figma.com/mcp`, then `/mcp`, select figma, then Authenticate.
+     Source: https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/
+   - **Tools present but not signed in?** They type `/mcp` (or `/plugin`), select figma and
+     sign in.
+2. **They can create files.** In `whoami`, look for a plan where their seat is **Full**.
+   Creating draft files and writing to the canvas needs one. If they only have View, Collab or
+   Dev seats, they ask their Figma admin for a Full seat. Lockstep can still score existing
+   designs (lockstep:score) without one.
+3. **`python3` works.** Run `python3 --version`. If it's missing on a Mac, they run
+   `xcode-select --install` and accept the prompt. Elsewhere, they install Python 3 from
+   https://www.python.org/downloads/.
+4. **The Figma skills are available.** If `/figma-use` isn't listed as a skill, read the MCP
+   resources `skill://figma/figma-use/SKILL.md` and `skill://figma/figma-generate-design/SKILL.md`
+   instead. Figma's plugin installs them as skills.
+
+When everything passes, say so in one line and carry on.
+
 ## Shell commands
 
 Run each shell command as one simple command with literal paths: no `cd … &&` chains, no shell

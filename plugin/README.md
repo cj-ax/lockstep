@@ -8,28 +8,78 @@ scores the result, fixes what fails, and shows you before and after.
 It works with any organization's published Figma library. It has been tested on Business@Slalom
 and on Figma's Simple Design System.
 
-## What you need
+## Start here
 
-- Claude Code (CLI, desktop app or IDE extension) with the official **Figma MCP server**
-  connected and signed in, on a Figma seat that can create files.
-- `python3` on your path. The scripts and the write guard use it.
-- Your library's **file key**: the part after `/design/` in its URL.
+Three steps, about five minutes. You need a Figma seat that can edit files (a **Full** seat).
 
-## Install
-
-From a clone of this repository:
+**1. Connect Figma to Claude Code (once).** In a terminal:
 
 ```bash
-claude --plugin-dir ./plugin
+claude plugin install figma@claude-plugins-official
 ```
 
-Or add it through your team's plugin marketplace once it's published there.
+Restart Claude Code, type `/plugin`, open the **Installed** tab, select **figma** and sign in.
+Figma's guide: https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/
 
-## Protect your library (do this first)
+**2. Install Lockstep (once).** In a terminal:
 
-Lockstep only writes to draft files. List the files it must never write to, usually your
-published library, in `.claude/lockstep.json` in your project. Use `~/.claude/lockstep.json`
-to cover every project.
+```bash
+claude plugin marketplace add <org>/lockstep
+```
+
+```bash
+claude plugin install lockstep@lockstep
+```
+
+Or, inside Claude Code: `/plugin install lockstep --marketplace <org>/lockstep`. In the Claude
+desktop app, once the marketplace is added, Lockstep also appears under **+**, then **Add
+plugins**, in the Code tab.
+
+**3. Point it at your library.** In Claude Code, paste a link to your design library's Figma
+file:
+
+> Set up Lockstep for our design library: https://www.figma.com/design/…
+
+Lockstep checks that everything is connected and explains any fix in plain words. It then
+protects the library file, so nothing writes to it, and reads its components and tokens. After
+that, just ask:
+
+> Build our team members page in Figma with our design system.
+
+## Updating
+
+```bash
+claude plugin marketplace update lockstep
+```
+
+```bash
+claude plugin update lockstep@lockstep
+```
+
+## For a whole team
+
+To have Lockstep switch on for everyone working in a repository, commit this to that
+repository's `.claude/settings.json`. Each person is asked to trust the folder once.
+
+```json
+{
+  "extraKnownMarketplaces": {
+    "lockstep": { "source": { "source": "github", "repo": "<org>/lockstep" } }
+  },
+  "enabledPlugins": { "lockstep@lockstep": true }
+}
+```
+
+## Working on Lockstep itself
+
+From a clone of this repository, `claude --plugin-dir ./plugin` loads your local copy instead
+of the installed one.
+
+## How the library is protected
+
+Step 3 does this for you. Lockstep only writes to draft files, and keeps a list of files it
+must never write to (usually your published library) in `.claude/lockstep.json` in your
+project, or in `~/.claude/lockstep.json` to cover every project.
 
 ```json
 { "protectedFileKeys": { "LMgKpbsEmxRpiHBKd9YGlw": "Official [Business@Slalom] Design System" } }

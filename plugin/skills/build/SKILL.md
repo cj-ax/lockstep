@@ -22,6 +22,8 @@ rendered scripts check too; don't rely on them. Build in the user's draft or a n
 
 ## 0. Prerequisites
 
+- If the Figma tools aren't available, or `whoami` fails, follow **lockstep:init**'s "Check
+  you're ready" section and stop until it passes.
 - `lockstep/<library-slug>/` must hold `keys.json`, the inventory files and `LIBRARY.md`. If
   it's missing, run **lockstep:init** first. If `inventory.structure.json` is missing, run
   that inventory part before writing the build: it shows where each component's text, icons

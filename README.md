@@ -11,12 +11,9 @@ Lockstep ships as a Claude Code plugin in [`plugin/`](plugin/README.md) with fou
 `lockstep:score` (measure any frame, read-only) and `lockstep:fix` (bind raw values to tokens).
 It also has a write guard for protected library files.
 
-```bash
-claude --plugin-dir ./plugin
-```
-
-Set your protected library keys before the first build. [plugin/README.md](plugin/README.md)
-covers setup.
+To try it, follow **Start here** in [plugin/README.md](plugin/README.md): connect Figma, install
+the plugin, then tell Claude "Set up Lockstep for our design library" with a link. To work on
+Lockstep itself, `claude --plugin-dir ./plugin` loads your local copy.
 
 ## Layout
 
