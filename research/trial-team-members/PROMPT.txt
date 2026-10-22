@@ -1,0 +1,5 @@
+Build a Team members admin page in Figma using our design library, "Official [Business@Slalom] Design System". Put it in a new draft file.
+
+The page: the app header; the page title "Team members" with a short description; a toolbar with a search field, a role filter and an "Invite member" button; a list of 6 members, each with an avatar, name, email, role (Admin, Editor or Viewer), status (Active or Invited) and a remove action. Then a second frame showing the "Invite member" dialog: an email field, a role selector, and Cancel / Send invite actions. Desktop width.
+
+You're running unattended, so you can't ask me anything: make reasonable decisions and list them at the end. When you're done, give me the draft link, how faithfully it uses our library, and anything that isn't finished.

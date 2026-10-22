@@ -73,11 +73,59 @@ This mapping is the per-org work that `init` has to automate. Here I wrote it my
 4. **Thin descriptions didn't block the build.** This library's descriptions are mostly "Keywords: toggle". Component names, variant axes and slots were enough to build correctly. Usage judgement came from me, not the library: Cancel as Neutral, a danger button for delete, switches saving immediately. For a thinly documented library, that judgement is what `fill-gaps` would have to supply.
 5. **Search behaved differently.** With this library's key, `includeLibraryKeys` filtered correctly and results were small. Slalom's oversized results come from its long descriptions; why its filtering failed is still unexplained.
 
+## Fresh-agent trial (2026-10-22)
+
+**Setup:**
+- A headless `claude -p` session with only the four-command plugin loaded, and the Slalom library protected through `~/.claude/lockstep.json`.
+- It worked in a folder outside this repo, so it saw no notes and no examples beyond the plugin's own.
+- The page was one it hadn't seen: a Team members admin page plus an Invite member dialog. The prompt is in `research/trial-team-members/PROMPT.txt`. It reads like a designer's request, doesn't name Lockstep, and gave no hints.
+
+**What it did:**
+1. Picked `lockstep:build` from the plain request, found no saved library, and ran `lockstep:init` itself.
+2. Wrote `LIBRARY.md`, `keys.json` and both inventory files.
+3. Wrote a build script and built v1.
+4. Scored v1, fixed the table-cell alignment, and built and scored v2.
+
+It took 57 tool calls (60 turns), 11 minutes and $4.06. An earlier run against the single-skill plugin was stopped after 35 tool calls. Its artefacts are in `research/trial-team-members/`.
+
+**Scores.** My independent rescore with the current `score.js` matched the agent's own report:
+
+| Frame | Library instances | Bound | Detached | Hard-coded colours | Auto layout | Faithfulness | Integrity issues |
+|---|---|---|---|---|---|---|---|
+| TeamMembers / List / v2 | 95.7% | 100% | 0% | 0% | 100% | 99 | 0 |
+| TeamMembers / Dialog / v2 | 85.7% | 100% | 0% | 0% | 100% | 97 | 0 |
+| **Both frames** | **94.4%** | **100%** | **0%** | **0%** | **100%** | **99** | **0** |
+
+The only content that isn't a library instance is three styled, token-bound text layers: the page title, the description and the dialog's intro sentence. The library has no text components.
+
+**What it got right:**
+- It filled the library's gaps with library parts: rows of table-cell instances for the missing table, Chips for status, and the text field with a search icon for the missing search field.
+- It followed the component descriptions: an outlined negative button for Remove inside a table, the modal's `data` type for a form, and Cancel as `neutral_outlined`.
+- It resized the 1200px sample modal to suit the form.
+- Its `LIBRARY.md` is a usable summary, and it states the library's gaps and the casing conflict plainly.
+
+**What it got wrong:**
+1. **It explained away a visible defect.** The dialog's email field renders at about half the dialog's width while the Role select fills it, in both Figma's server screenshot and the plugin's own `node.screenshot()`. The field's layer reports 592px, the same as the select. The agent saw this, decided it was an artifact of the server screenshot, and told the user "the file itself is correct". The score can't catch it, because nothing is clipped. This is the trial's most important finding.
+2. **The table runs to the container's edges** while the page title above it is inset. That's a small alignment inconsistency, and nothing checks for it.
+3. **Button casing:** it followed the library's Title Case ("Invite Member") over the brief's sentence case. That's correct under the skills' rules, and it flagged the conflict.
+
+**Where the instructions fell short, and what changed:**
+
+| Gap the trial showed | Change |
+|---|---|
+| Nothing said what to do when the layer data and a screenshot disagree | `build` and `score` now say **what you see wins**: a visible defect is real, it's never reported as an artifact, the frame is rechecked with `node.screenshot()` if one renderer is in doubt, and the defect is fixed or listed as not finished. `build-patterns.md` lists it as a trap. |
+| Four one-off scripts to probe component internals (one crashed on a text layer) | `inventory.js` has a third part, `structure`: each component's layer tree, with the property each layer is driven by and its sizing. It took 7.6 KB for 24 components. `init` saves it and `build` reads it first. |
+| Shell commands refused by Claude Code's command checker: a heredoc containing `{"`, and a redirect built from `$` variables (two in this run, one in the stopped run) | `init` and `build` now say to write files with the Write tool. |
+| The screenshot checklist didn't mention alignment or one control sized differently from its siblings | Both are now on the `score` checklist. |
+
+These fixes haven't been tested by a second fresh run yet.
+
 ## Links
 - L, the Lockstep build: <https://www.figma.com/design/J1IErNfcAsPZYi3MF0cexq>. Pass 2 is the second row (frames `7:922`, `7:1302`, `7:1721`, `7:1862`); pass 1 Profile is at the top left.
 - A, plain MCP, and A + fix (second row): <https://www.figma.com/design/Hhsm5yFqnvvtTAKNjEgCOm>
 - B, MCP + DS-AI-Bridge, and C = B + fix (second row): <https://www.figma.com/design/w3v1epae69aKLLEOKCkr88>
 - Simple Design System build, v1 to v3 in rows (v3 is the bottom row: `12:625`, `12:824`, `12:954`, `12:1079`): <https://www.figma.com/design/LVUpC4NepsxIO2nxGnI5RM>
+- Fresh-agent trial, Team members page (v2 is the second row: `5:458`, `5:1214`): <https://www.figma.com/design/AJVkj6T0kHAdomFSk0p7bP>
 
 ## What the Figma MCP could and couldn't do
 
@@ -113,7 +161,7 @@ This mapping is the per-org work that `init` has to automate. Here I wrote it my
 
 ## Caveats
 - **Small sample.** There was one run per arm, with the same model. Read differences of a few points as directional.
-- **Who built what.** I built L myself and also wrote the scorer, so L may be tuned to what the scorer measures. A and B were built by independent subagents that never saw the scorer.
+- **Who built what.** I built L myself and also wrote the scorer, so L may be tuned to what the scorer measures. A and B were built by independent subagents that never saw the scorer. The fresh-agent trial is the independent check: an agent with only the plugin scored 99 on a page it hadn't seen, though it shipped a defect the score couldn't see.
 - **The score doesn't judge design quality.** A high score means the page is built *from* the library, not that it's a good page. Screenshots were checked by eye: L pass 2 looks right. Two cosmetic problems remain: the Notifications card doesn't fill the full width, and the Account cards have spare height.
 
 ## Files

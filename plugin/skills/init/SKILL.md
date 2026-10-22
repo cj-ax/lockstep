@@ -12,6 +12,7 @@ Leaves a `lockstep/<library-slug>/` folder in the user's project, which `lockste
 | `keys.json` | `{label: key}` for every component (set) and icon the pages will need |
 | `inventory.components.json` | Variant axes, boolean, text, instance-swap and slot properties, default sizes and descriptions |
 | `inventory.variables.json` | Every token collection components bind, with names, keys and first-mode values; text and effect styles |
+| `inventory.structure.json` | Each component's layer tree: which layer each property drives, slots, sizing (fix, hug, fill) |
 | `LIBRARY.md` | The short summary build works from (template below) |
 
 Shared scripts live in the plugin's `scripts/` folder, two levels up from this skill's base
@@ -59,18 +60,22 @@ as skills, read them as MCP resources (`skill://figma/figma-use/SKILL.md`,
   `.py` file and run `python3 that-file.py`; a heredoc full of `{"` can be refused by the shell
   checker. Keep only the org's library and record name, asset type, key and a short
   description for each result.
-- Write `keys.json`. Labels are short camelCase roles (`button`, `destructiveButton`,
-  `textField`, `iconSearch`).
+- Write `keys.json` with the Write tool, not a shell heredoc or a redirect built from `$`
+  variables: Claude Code's command checker refuses both, and both trial runs lost turns to
+  it. Labels are short camelCase roles (`button`, `destructiveButton`, `textField`,
+  `iconSearch`).
 
 ## 4. Inventory
 
 ```bash
 python3 "$LOCKSTEP/scripts/render.py" inventory --keys lockstep/<slug>/keys.json --part components
 python3 "$LOCKSTEP/scripts/render.py" inventory --keys lockstep/<slug>/keys.json --part variables
+python3 "$LOCKSTEP/scripts/render.py" inventory --keys lockstep/<slug>/keys.json --part structure
 ```
 
-Run each through `use_figma` in the draft, and save each result to its file. These are two
-calls because `use_figma` returns at most 48 KB. If a part still overflows, split
+Run each through `use_figma` in the draft, and save each result to its file with the Write
+tool. These are three calls because `use_figma` returns at most 48 KB. Build reads the
+structure file instead of probing component internals with one-off scripts. If a part still overflows, split
 `keys.json` into halves and merge the results.
 
 ## 5. Write LIBRARY.md

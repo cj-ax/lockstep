@@ -25,10 +25,19 @@ them into a draft first.
 3. Take a screenshot of every frame (`get_screenshot`, `maxDimension` around 1000) and look for
    what the score can't judge:
    - wrong components or variants for the context;
+   - a control narrower or shorter than its siblings, such as one field in a form drawn at half
+     width;
+   - edges that don't line up, such as a table running to the container's edge while the title
+     above it is inset;
    - overlap;
    - odd spacing;
    - placeholder icons;
    - anything that looks broken.
+
+   **What you see wins.** A defect visible in a screenshot is a defect, even when the layer
+   sizes look right. Don't explain it away as a rendering artifact. If you doubt
+   `get_screenshot`, also render the frame with `node.screenshot()` in `use_figma`. Report the
+   defect if either render shows it.
 
 ## What the numbers mean
 

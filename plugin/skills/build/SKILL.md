@@ -22,8 +22,10 @@ rendered scripts check too; don't rely on them. Build in the user's draft or a n
 
 ## 0. Prerequisites
 
-- `lockstep/<library-slug>/` must hold `keys.json`, both inventory files and `LIBRARY.md`. If
-  it's missing, run **lockstep:init** first.
+- `lockstep/<library-slug>/` must hold `keys.json`, the inventory files and `LIBRARY.md`. If
+  it's missing, run **lockstep:init** first. If `inventory.structure.json` is missing, run
+  that inventory part before writing the build: it shows where each component's text, icons
+  and slots live.
 - Load Figma's skills: `/figma-use` and `/figma-generate-design`, or the MCP resources
   `skill://figma/figma-use/SKILL.md` and `skill://figma/figma-generate-design/SKILL.md`.
 - Call `create_session` on the target file and pass the `sessionId` on every call.
@@ -43,7 +45,8 @@ the library component and its exact variant values; a short table is enough. The
 
 ## 2. Write the build script
 
-Write it in the project as `lockstep/build-<page>.js`. Start from the closer example in
+Write it in the project as `lockstep/build-<page>.js`, with the Write tool. Shell heredocs and
+redirects built from `$` variables get refused by Claude Code's command checker. Start from the closer example in
 `$BUILD/references/examples/`:
 - `build-settings-slalom.js`: slot-based cards, no text components;
 - `build-settings-sds.js`: text components, a Button Group, a full-screen Dialog.
@@ -68,6 +71,13 @@ Pass the output as `use_figma`'s `code`. Never hand-edit placeholders.
 
 Follow **lockstep:score** on the frame IDs the build returned: score, then screenshot every
 frame and look at each one. A frame can score 100 and still be broken.
+
+**What you see wins.** If a screenshot shows a defect, the defect is real, even when the layer
+data says otherwise: a field whose layer is full width but renders at half width is broken.
+Never report a visible defect as "a screenshot artifact". If you doubt `get_screenshot`, also
+render the frame with `node.screenshot()` inside `use_figma`. If either render shows the
+problem, fix it (for example swap to another variant of the component). If you can't fix it,
+list it as not finished.
 
 ## 4. Fix and repeat
 

@@ -2,7 +2,7 @@
 
   render.py score --roots 7:922,7:1302
   render.py fix --roots 8:517,8:559
-  render.py inventory --keys keys.json --part components
+  render.py inventory --keys keys.json --part components   (or variables, structure)
   render.py path/to/build.js --which Profile,Account --version 2
 
 score, fix and inventory are the scripts next to this file; anything else is a path to a build
@@ -29,7 +29,7 @@ def main():
     ap.add_argument("script", help="score | fix | inventory | path to a build script")
     ap.add_argument("--roots", help="comma-separated frame node IDs (score, fix)")
     ap.add_argument("--keys", help="JSON file of {label: component or component set key} (inventory)")
-    ap.add_argument("--part", choices=["components", "variables"], help="inventory part")
+    ap.add_argument("--part", choices=["components", "variables", "structure"], help="inventory part")
     ap.add_argument("--which", help="comma-separated frame names (build scripts)")
     ap.add_argument("--version", type=int, help="canvas row for this pass (build scripts)")
     args = ap.parse_args()

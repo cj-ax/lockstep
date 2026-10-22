@@ -46,6 +46,8 @@ const slotOf = (inst) => inst.findAll(n => n.type === 'SLOT').find(s => { let p 
 | Two text layers with the same name (both "Title") | The subtitle repeats the title | Pick by role: sort by font size, or by parent |
 | A variant combination you assume exists | `no variant` error (for example a field that is enabled, has a value and has the label on) | Read the variant list from the inventory and use what exists |
 | The default variant | It may be Disabled (one library's Tabs) | Always set every variant property explicitly |
+| Layer size and render disagree | A field's layer is full width but it renders at half width (seen on an empty text-field variant) | Trust the render. Try another variant of the component, and recheck with both `get_screenshot` and `node.screenshot()` |
+| Probing component internals with one-off scripts | Slow, and a probe that touches an unexpected node type throws | Read `inventory.structure.json` from init first |
 | `layoutSizingHorizontal = 'FILL'` before appending | Throws | Append to the auto-layout parent first |
 | Big returns | `use_figma` rejects returns over 48 KB | Return IDs, names and sizes only |
 | Big scripts | The code limit is 50,000 characters | Build 3–4 frames per call; `render.py` checks the size |

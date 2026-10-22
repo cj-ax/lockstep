@@ -1,11 +1,12 @@
 // Lockstep inventory: run through use_figma in a DRAFT file (never the library).
-// Imports each library component (set) by key and reports one of two parts, because the
+// Imports each library component (set) by key and reports one part per call, because the
 // whole inventory overflows use_figma's 48 KB return limit:
 // - PART 'components': variant, boolean, text, instance-swap and slot properties, default
 //   variant and size, and the description.
 // - PART 'variables': every variable in every collection those components bind, with its
 //   first-mode value and the properties components bind it to; plus the text and effect
 //   styles the components use.
+// - PART 'structure': the layer tree of each component's default variant.
 // COMPONENT_KEYS ({ label: key }) and PART are filled in by the caller.
 const COMPONENT_KEYS = __COMPONENT_KEYS__;
 const PART = __PART__;
@@ -19,6 +20,31 @@ const owners = {};
 const errors = {};
 for (const [label, key] of Object.entries(COMPONENT_KEYS)) {
   try { owners[label] = await importAny(key); } catch (e) { errors[label] = String(e); }
+}
+
+if (PART === 'structure') {
+  // The layer tree of each component's default variant: which layers hold the text, icons
+  // and slots, which properties drive them, and what ships at a fixed size. Saves the build
+  // from probing component internals with throwaway scripts.
+  const MAX_DEPTH = 4;
+  const tree = (n, depth) => {
+    if (depth > MAX_DEPTH) return '';
+    const refs = n.componentPropertyReferences && Object.keys(n.componentPropertyReferences).length
+      ? ' {' + Object.entries(n.componentPropertyReferences).map(([k, v]) => `${k}:${v.split('#')[0]}`).join(', ') + '}' : '';
+    const layout = n.layoutMode && n.layoutMode !== 'NONE' ? ` ${n.layoutMode === 'VERTICAL' ? 'V' : 'H'}` : '';
+    const short = v => ({ FIXED: 'fix', HUG: 'hug', FILL: 'fill' })[v] || v;
+    const sizing = 'layoutSizingHorizontal' in n && n.parent && n.parent.type !== 'COMPONENT_SET' ? ` ${short(n.layoutSizingHorizontal)}/${short(n.layoutSizingVertical)}` : '';
+    const text = n.type === 'TEXT' ? ` "${n.characters.slice(0, 24)}"` : '';
+    let s = `${'  '.repeat(depth)}${n.type} ${n.name}${text}${refs}${layout}${sizing} ${Math.round(n.width)}x${Math.round(n.height)}\n`;
+    if ('children' in n && n.type !== 'INSTANCE') for (const c of n.children) s += tree(c, depth + 1);
+    return s;
+  };
+  const structure = {};
+  for (const [label, node] of Object.entries(owners)) {
+    const d = node.type === 'COMPONENT_SET' ? node.defaultVariant : node;
+    structure[label] = tree(d, 0).slice(0, 2500);
+  }
+  return { structure, errors, legend: 'Each line: TYPE name "text" {property refs} H|V (auto layout direction) horizontal/vertical sizing (fix, hug, fill) WxH. Nested instances are not expanded.' };
 }
 
 if (PART === 'components') {
