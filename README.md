@@ -6,8 +6,10 @@ then tested on Figma's Simple Design System. Results are in [REPORT.md](REPORT.m
 
 ## Use it
 
-Lockstep ships as a Claude Code plugin in [`plugin/`](plugin/README.md): a `lockstep` skill that
-runs the build → score → fix loop, plus a write guard for protected library files.
+Lockstep ships as a Claude Code plugin in [`plugin/`](plugin/README.md) with four commands:
+`lockstep:init` (set up a library), `lockstep:build` (build a page and loop until it passes),
+`lockstep:score` (measure any frame, read-only) and `lockstep:fix` (bind raw values to tokens).
+It also has a write guard for protected library files.
 
 ```bash
 claude --plugin-dir ./plugin
@@ -20,9 +22,8 @@ covers setup.
 
 | Path | What it is |
 |---|---|
-| `plugin/skills/lockstep/SKILL.md` | The workflow Claude follows |
-| `plugin/skills/lockstep/scripts/` | The scripts: `inventory.js`, `score.js` and `fix.js`, plus `render.py`, which fills their placeholders |
-| `plugin/skills/lockstep/references/` | Build patterns and traps; example builds for both test libraries, with their keys and the page brief |
+| `plugin/skills/{init,build,score,fix}/` | The four commands; `build` also holds the build patterns and the example builds |
+| `plugin/scripts/` | Shared scripts: `inventory.js`, `score.js` and `fix.js`, plus `render.py`, which fills their placeholders |
 | `plugin/hooks/` | The write guard (PreToolUse) |
 | `research/` | Raw search output and notes from the Slalom spike |
 | `REPORT.md` | Scores, what the Figma MCP can and can't do, and the gaps |

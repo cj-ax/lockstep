@@ -42,27 +42,22 @@ Three layers enforce it:
 1. A **PreToolUse hook** blocks any Figma write tool whose target names a protected file.
 2. Every **write script** checks `figma.fileKey` inside Figma and refuses to run in a protected
    file.
-3. The **skill** tells Claude to check the key before each write.
+3. Every **skill that writes** tells Claude to check the key before each write.
 
 If a settings file exists but can't be read, every Figma write is blocked until you fix it, so a
 typo can't quietly turn the protection off. The hook can't see which file Figma desktop has open,
 so it doesn't cover the third-party figma-console MCP; don't run that against your library.
 
-## Use it
+## Commands
 
-Just ask:
+Four skills. Claude picks the right one from what you ask, or you can name it.
 
-> Build our user settings page in Figma using our design library: profile, notifications and
-> account tabs, plus the delete-account dialog.
-
-> How faithfully does this frame use our library? <figma link>
-
-Claude:
-1. finds your library's components and tokens and reads them through Figma's plugin API;
-2. writes a build script and builds the page in a draft;
-3. scores it and looks at screenshots;
-4. fixes and rescores until it passes;
-5. reports the scores with a link.
+| Command | What it does | Ask it like |
+|---|---|---|
+| `lockstep:init` | One-time setup per library. Protects the library file, finds its components and tokens, reads their variants, slots and values from Figma, and saves a summary to `lockstep/<library>/` in your project. | "Set up Lockstep for our design library: <figma link>" |
+| `lockstep:build` | Builds a page in a draft from library instances and tokens, then scores, looks at screenshots and fixes until it passes. Runs `init` first if needed. | "Build our team members page in Figma with our design system" |
+| `lockstep:score` | Read-only. Measures how faithfully any frame uses its library and lists the offending layers. | "How faithfully does this frame use our library? <link>" |
+| `lockstep:fix` | Clones frames and binds raw values to exact-match library tokens, so nothing looks different. Then rescores and lists the values that have no token. | "Bind this design's spacing and colours to our tokens" |
 
 ## What "faithful" means here
 
@@ -79,14 +74,14 @@ Claude also looks at a screenshot of every frame, because the score can't judge 
 
 ## Contents
 
-- `skills/lockstep/SKILL.md`: the workflow Claude follows.
-- `skills/lockstep/scripts/`: the scripts.
-  - `inventory.js` reads the library.
+- `skills/init`, `skills/build`, `skills/score`, `skills/fix`: the four commands. `build` also
+  holds the build-patterns reference and two worked example builds.
+- `scripts/`: shared by all four.
+  - `inventory.js` reads a library.
   - `score.js` scores frames.
   - `fix.js` binds raw values to exact-match tokens.
   - `render.py` fills a script's placeholders.
   - `lockstep_config.py` loads the protected keys.
-- `skills/lockstep/references/`: build patterns and traps, plus two worked example builds.
 - `hooks/`: the write guard.
 
 ## Known limits

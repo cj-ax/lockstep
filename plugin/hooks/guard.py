@@ -11,7 +11,7 @@ import os
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(os.environ.get("CLAUDE_PLUGIN_ROOT", Path(__file__).parent.parent)) / "skills" / "lockstep" / "scripts"))
+sys.path.insert(0, str(Path(os.environ.get("CLAUDE_PLUGIN_ROOT", Path(__file__).parent.parent)) / "scripts"))
 from lockstep_config import ConfigError, protected_file_keys  # noqa: E402
 
 
