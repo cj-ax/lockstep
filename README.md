@@ -25,5 +25,6 @@ covers setup.
 | `plugin/skills/{init,build,score,fix}/` | The four commands; `build` also holds the build patterns and the example builds |
 | `plugin/scripts/` | Shared scripts: `inventory.js`, `score.js` and `fix.js`, plus `render.py`, which fills their placeholders |
 | `plugin/hooks/` | The write guard (PreToolUse) |
-| `research/` | Raw search output and notes from the Slalom spike |
+| `site/` | The companion site: `index.html` (one self-contained page), its images exported from the Figma drafts, and `NOTES.md` from studying impeccable.style |
+| `research/` | Raw search output and notes from the Slalom spike, and the fresh-agent trial's artefacts |
 | `REPORT.md` | Scores, what the Figma MCP can and can't do, and the gaps |
