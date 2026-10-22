@@ -87,9 +87,23 @@ function checkClipped(node) {
       return;
     }
   }
+  // Text deeper down can overflow a non-clipping frame and still be cut off here.
+  const box = node.absoluteBoundingBox;
+  if (!box) return;
+  for (const t of node.findAll(n => n.type === 'TEXT')) {
+    let shown = true;
+    for (let a = t; a && a.id !== node.id; a = a.parent) if (a.visible === false) shown = false;
+    const b = t.absoluteBoundingBox;
+    if (!shown || !b || !t.characters.trim()) continue;
+    if (b.x + b.width > box.x + box.width + 1 || b.y + b.height > box.y + box.height + 1) {
+      counts.integrityIssues++;
+      flag(t, 'clipped-text', `"${t.characters.slice(0, 40)}" is cut off by "${node.name}"`);
+      return;
+    }
+  }
 }
 
-function checkDefaultText(inst, main) {
+function sampleText(inst, main, top) {
   // A visible text property still showing the library's sample text ("Button", "Label").
   const owner = main && main.parent && main.parent.type === 'COMPONENT_SET' ? main.parent : main;
   if (!owner) return;
@@ -97,8 +111,20 @@ function checkDefaultText(inst, main) {
   for (const [key, p] of Object.entries(inst.componentProperties)) {
     if (p.type !== 'TEXT' || !defs[key] || p.value !== defs[key].defaultValue) continue;
     const shown = inst.findAll(n => n.type === 'TEXT' && n.componentPropertyReferences && n.componentPropertyReferences.characters === key)
-      .some(n => { for (let a = n; a && a !== inst; a = a.parent) if (a.visible === false) return false; return true; });
-    if (shown) { counts.integrityIssues++; flag(inst, 'sample-text', `${key.split('#')[0]} = "${p.value}"`); }
+      .some(n => { for (let a = n; a && a.id !== inst.id; a = a.parent) if (a.visible === false) return false; return true; });
+    if (shown) { counts.integrityIssues++; flag(inst, 'sample-text', `${key.split('#')[0]} = "${p.value}"${inst.id === top.id ? '' : ` (inside "${top.name}")`}`); }
+  }
+}
+
+async function checkDefaultText(inst, main) {
+  sampleText(inst, main, inst);
+  // Also the visible instances nested inside it (the buttons in a button group). Slot
+  // contents are skipped here because walk() visits them as authored nodes.
+  for (const n of inst.findAll(x => x.type === 'INSTANCE')) {
+    let visible = true;
+    let inSlot = false;
+    for (let a = n; a && a.id !== inst.id; a = a.parent) { if (a.visible === false) visible = false; if (a.type === 'SLOT') inSlot = true; }
+    if (visible && !inSlot) sampleText(n, await n.getMainComponentAsync(), inst);
   }
 }
 
@@ -123,11 +149,13 @@ async function walk(node, isRoot) {
     if (main && main.remote) counts.libraryInstances++;
     else { counts.localInstances++; flag(node, 'not-library-instance', main ? `local component "${main.name}"` : 'missing main component'); }
     await checkInstanceOverrides(node);
-    checkDefaultText(node, main);
+    await checkDefaultText(node, main);
+    checkClipped(node);
     // Descend only into this instance's own slots: their contents are authored.
     const ownerOf = n => { let p = n.parent; while (p && p.type !== 'INSTANCE') p = p.parent; return p; };
-    for (const slot of node.findAllWithCriteria({ types: ['SLOT'] })) {
-      if (ownerOf(slot) !== node) continue;
+    // findAllWithCriteria misses slots of nested instances; compare by id, not by wrapper object.
+    for (const slot of node.findAll(n => n.type === 'SLOT')) {
+      if (!ownerOf(slot) || ownerOf(slot).id !== node.id) continue;
       checkClipped(slot);
       for (const c of slot.children) await walk(c, false);
     }
@@ -207,7 +235,7 @@ for (const id of ROOT_IDS) {
 const byRule = {};
 for (const o of allOffenders) byRule[o.rule] = (byRule[o.rule] || 0) + 1;
 // Most actionable first: visible breakage, then broken links to the library, then raw values.
-const RANK = ['clipped-content', 'sample-text', 'detached-instance', 'hardcoded-colour', 'not-library-instance'];
+const RANK = ['clipped-content', 'clipped-text', 'sample-text', 'detached-instance', 'hardcoded-colour', 'not-library-instance'];
 const rank = r => (RANK.includes(r) ? RANK.indexOf(r) : RANK.length);
 allOffenders.sort((a, b) => rank(a.rule) - rank(b.rule));
 return { scores: score(total), frames, counts: total, offendersByRule: byRule, offenders: allOffenders.slice(0, MAX_OFFENDERS), offenderCount: allOffenders.length };

@@ -88,7 +88,7 @@ function fixPaints(node, field) {
 async function walk(node) {
   if (node.visible === false) return;
   if (node.type === 'INSTANCE') {
-    for (const slot of node.findAllWithCriteria({ types: ['SLOT'] })) if (ownerOf(slot) === node) for (const c of slot.children) await walk(c);
+    for (const slot of node.findAll(n => n.type === 'SLOT')) if (ownerOf(slot) && ownerOf(slot).id === node.id) for (const c of slot.children) await walk(c);
     return;
   }
   if (node.type === 'TEXT') {
