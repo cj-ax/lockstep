@@ -53,3 +53,22 @@ Each step is reproducible. Paste the scripts into `use_figma` with the placehold
 - **The planned WIP token `brand/dark` was never created.** No binding to Background/Brand/Default survived on an authored layer, so the WIP collection has 9 mapped tokens, not 10.
 - **The census counts 4 detached Button Groups, not 5.** The Dialog's Button Group sits inside the Dialog instance's nested slot, and the census doesn't descend there.
 - **Detached frames keep a `detachedInfo.componentKey` that still resolves**, because the community SDS library still publishes all five "unpublished" parts. learn must treat them as de facto components, not import them by key.
+
+## Recovering it (milestone 2)
+
+`harvest/` holds what learn read from the degraded file and what it proposed:
+
+| File | Made by |
+|---|---|
+| `audit.json` | `render.py audit --roots 1:605,1:843,1:973,1:1098`, run through `use_figma` |
+| `inventory-components.json`, `inventory-variables.json` | `render.py inventory_local --part components` (and `variables`) |
+| `proposals.json`, `PROPOSALS.md` | `propose.py --audit harvest/audit.json --components … --variables … --out harvest` |
+| `audit-product-files-only.json`, `product-files-only/` | The same audit with every library binding and style removed, and its proposals: an org with no library |
+
+Score them:
+
+```bash
+python3 learn/fixture/score_recovery.py --proposals learn/fixture/harvest/proposals.json --audit learn/fixture/harvest/audit.json --out learn/fixture/RECOVERY.md
+```
+
+The results and their caveats are in `RECOVERY.md` and REPORT.md.

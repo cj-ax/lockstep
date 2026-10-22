@@ -1,6 +1,6 @@
 ---
 name: learn
-description: Learn an organization's design system when it isn't finished. It gathers the sources (Figma library and product files, a repository, Storybook, docs), protects every source file, works out the front-end stack from the repository or from questions for an architect, and records what exists so later steps can propose tokens and components. Use when someone has a half-built, unpublished or undocumented design system, has only product files and no library, wants design-system documentation, or wants to match their Figma files to their code.
+description: Learn an organization's design system when it isn't finished. It gathers the sources (Figma library and product files, a repository, Storybook, docs), protects every source file, works out the front-end stack from the repository or from questions for an architect, audits how the Figma files actually use colours, spacing, type and components, and drafts token and component proposals with evidence for a person to review. Use when someone has a half-built, unpublished or undocumented design system, has only product files and no library, wants design-system documentation, or wants to match their Figma files to their code.
 ---
 
 # lockstep:learn: learn a design system that isn't finished
@@ -13,9 +13,9 @@ the system.
 Shared scripts live in the plugin's `scripts/` folder, two levels up from this skill's base
 directory (shown when the skill loads). Below, `$LOCKSTEP` is that plugin folder.
 
-**Built so far: steps 1 and 2.** Steps 3–8 (design harvest, code harvest, reconcile, review,
-generate, gate) aren't built yet. When you finish step 2, tell the user what was found and
-that the next steps are coming. Don't improvise them.
+**Built so far: steps 1–3**, plus draft token and component proposals. Steps 4–8 (code harvest,
+reconcile against code, review, generate, gate) aren't built yet. When you finish step 3, show
+the user `PROPOSALS.md` and say the review and generate steps are coming. Don't improvise them.
 
 Everything goes in `lockstep/<org-slug>/` in the user's project:
 
@@ -24,11 +24,17 @@ Everything goes in `lockstep/<org-slug>/` in the user's project:
 | `SOURCES.md` | 1 | The intake answers, every source with its role, and the tier |
 | `stack.json`, `STACK.md` | 2 | The stack, found by `scan_repo.py`, then confirmed by a person |
 | `ARCHITECT-QUESTIONS.md` | 2 | Only when there's no repository: questions to forward |
+| `harvest/audit-<file>.json` | 3 | What each product file uses: instances, detached copies, values, repeated structures |
+| `harvest/inventory-*.json` | 3 | The library file's own components, variables and styles |
+| `proposals.json`, `PROPOSALS.md` | 3 | Draft tokens, de facto components, WIP mapping, unused local parts |
 
 ## Rules
 
 - **The org's files are read-only.** Every Figma file named at intake, library and product
   files alike, is protected before anything else happens. Lockstep only writes to drafts.
+  Learn reads protected files with read-only scripts, which the guard lets through only when
+  the code is exactly what `render.py` printed. Never edit a rendered script, and never write
+  your own `use_figma` code against a protected file: the guard blocks it, and it should.
 - **Read repositories, never run them.** No installs, builds, scripts or tests. `scan_repo.py`
   only reads files.
 - **The architect is a person.** Don't guess the stack from screenshots or file names. When
@@ -127,12 +133,59 @@ produces.
 the architect through them, says it's right, fill in the **Confirmed** line with their name
 and the date, and set `"confirmed"` in `stack.json` to the same.
 
+## 3. Design harvest and proposals
+
+Load `/figma-use` (or `skill://figma/figma-use/SKILL.md`) and call `create_session` first.
+Each `use_figma` call below gets the rendered script **unedited**, with the `fileKey` of the
+file it reads. Save each result to its file with the Write tool. If a result was saved to a
+file because it's large, copy that file instead.
+
+**Each product file** from SOURCES.md. Audit whole pages, or the frames that show the system
+in use (`get_metadata` on the page lists them):
+
+```bash
+python3 "$LOCKSTEP/scripts/render.py" audit --roots <page or frame IDs>
+```
+
+Save to `lockstep/<org-slug>/harvest/audit-<short file name>.json`. If the result has
+`"next": <n>`, the file was too big for one call: render again with `--offset <n>` and save
+each part (`audit-<name>-2.json`, …).
+
+**The library file**, if there is one, and only if it's half-built or unpublished (a published
+library goes through `lockstep:init`):
+
+```bash
+python3 "$LOCKSTEP/scripts/render.py" inventory_local --part components
+python3 "$LOCKSTEP/scripts/render.py" inventory_local --part variables
+```
+
+Save to `harvest/inventory-components.json` and `harvest/inventory-variables.json`. A product
+file can hold local components and variables too; run these on it when the audit shows local
+variables (`local:` labels) or the user mentions a library page.
+
+**Then propose:**
+
+```bash
+python3 "$LOCKSTEP/scripts/propose.py" --audit lockstep/<org-slug>/harvest/audit-a.json --audit lockstep/<org-slug>/harvest/audit-b.json --components lockstep/<org-slug>/harvest/inventory-components.json --variables lockstep/<org-slug>/harvest/inventory-variables.json --out lockstep/<org-slug>
+```
+
+Leave out flags for files you don't have. Read `PROPOSALS.md` before showing it, and check
+two or three proposals against screenshots (`get_screenshot` on an example node). Then tell
+the user, in plain words:
+
+- how many tokens were found, how many already have a library name, and which drift values
+  were found (a hair off a token, probably by accident);
+- the de facto components: patterns people rebuild or detach, with no live component behind
+  them. These are the strongest candidates for the library;
+- what the WIP variables map to, and which ones nothing uses;
+- local components nobody uses, and what they duplicate.
+
+Everything here is a proposal. Say so: nothing is generated until a person has reviewed it.
+
 ## What comes next (not built yet)
 
-3. **Design harvest:** an inventory of local components and tokens in unpublished libraries,
-   and a usage audit of product files: detached frames, raw values and repeated structures.
 4. **Code harvest:** tokens and components in detail, from the sources STACK.md names.
-5. **Reconcile:** cluster values into proposed tokens, build a coverage matrix
+5. **Reconcile:** match the proposals to code tokens and components, build a coverage matrix
    (design-only, code-only, both, drift), and list the conflicts.
 6. **Review:** a person accepts, renames or rejects each proposal.
 7. **Generate:** tokens, component docs, AI context, and a LIBRARY.md that `lockstep:build`

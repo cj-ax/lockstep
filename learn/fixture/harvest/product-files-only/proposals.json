@@ -1,0 +1,1165 @@
+{
+ "tokens": [
+  {
+   "id": "t1",
+   "kind": "color",
+   "value": "#1e1e1e",
+   "uses": 29,
+   "internalUses": 0,
+   "roles": {
+    "text": 29
+   },
+   "internalRoles": {},
+   "suggestedName": "text/primary",
+   "libraryNames": {},
+   "wipNames": {
+    "text/primary": 6
+   },
+   "evidence": "bound or defined",
+   "examples": [
+    "3:524",
+    "3:475",
+    "3:477",
+    "3:481"
+   ],
+   "drift": [
+    {
+     "value": "#201e1e",
+     "uses": 3,
+     "examples": [
+      "3:404",
+      "3:646",
+      "3:652"
+     ],
+     "distance": 0.38,
+     "alternatives": []
+    }
+   ]
+  },
+  {
+   "id": "t2",
+   "kind": "color",
+   "value": "#ffffff",
+   "uses": 17,
+   "internalUses": 0,
+   "roles": {
+    "frame": 17
+   },
+   "internalRoles": {},
+   "suggestedName": "bg/white",
+   "libraryNames": {},
+   "wipNames": {
+    "bg/white": 6
+   },
+   "evidence": "bound or defined",
+   "examples": [
+    "1:605",
+    "3:471",
+    "3:483",
+    "3:490"
+   ],
+   "drift": []
+  },
+  {
+   "id": "t3",
+   "kind": "color",
+   "value": "#d9d9d9",
+   "uses": 11,
+   "internalUses": 0,
+   "roles": {
+    "stroke": 11
+   },
+   "internalRoles": {},
+   "suggestedName": "border/light",
+   "libraryNames": {},
+   "wipNames": {
+    "border/light": 2
+   },
+   "evidence": "bound or defined",
+   "examples": [
+    "3:471",
+    "3:483",
+    "3:490",
+    "3:497"
+   ],
+   "drift": []
+  },
+  {
+   "id": "t4",
+   "kind": "color",
+   "value": "#757575",
+   "uses": 8,
+   "internalUses": 0,
+   "roles": {
+    "text": 5,
+    "stroke": 1,
+    "shape": 2
+   },
+   "internalRoles": {},
+   "suggestedName": null,
+   "libraryNames": {},
+   "wipNames": {},
+   "evidence": "raw values only",
+   "examples": [
+    "3:628",
+    "3:634",
+    "3:638",
+    "3:639"
+   ],
+   "drift": [
+    {
+     "value": "#777575",
+     "uses": 2,
+     "examples": [
+      "3:649",
+      "3:659"
+     ],
+     "distance": 0.3,
+     "alternatives": []
+    }
+   ]
+  },
+  {
+   "id": "t5",
+   "kind": "color",
+   "value": "#2c2c2c",
+   "uses": 7,
+   "internalUses": 0,
+   "roles": {
+    "frame": 4,
+    "stroke": 3
+   },
+   "internalRoles": {},
+   "suggestedName": null,
+   "libraryNames": {},
+   "wipNames": {},
+   "evidence": "raw values only",
+   "examples": [
+    "3:626",
+    "3:626",
+    "3:632",
+    "3:632"
+   ],
+   "drift": [
+    {
+     "value": "#2e2c2c",
+     "uses": 1,
+     "examples": [
+      "3:653"
+     ],
+     "distance": 0.36,
+     "alternatives": []
+    }
+   ]
+  },
+  {
+   "id": "t6",
+   "kind": "color",
+   "value": "#303030",
+   "uses": 4,
+   "internalUses": 0,
+   "roles": {
+    "stroke": 2,
+    "text": 2
+   },
+   "internalRoles": {},
+   "suggestedName": null,
+   "libraryNames": {},
+   "wipNames": {},
+   "evidence": "raw values only",
+   "examples": [
+    "3:517",
+    "3:518",
+    "3:734",
+    "3:735"
+   ],
+   "drift": []
+  },
+  {
+   "id": "t7",
+   "kind": "color",
+   "value": "#f5f5f5",
+   "uses": 4,
+   "internalUses": 0,
+   "roles": {
+    "shape": 4
+   },
+   "internalRoles": {},
+   "suggestedName": null,
+   "libraryNames": {},
+   "wipNames": {},
+   "evidence": "raw values only",
+   "examples": [
+    "3:627",
+    "3:633",
+    "3:648",
+    "3:654"
+   ],
+   "drift": []
+  },
+  {
+   "id": "t8",
+   "kind": "color",
+   "value": "#b2b2b2",
+   "uses": 3,
+   "internalUses": 0,
+   "roles": {
+    "stroke": 3
+   },
+   "internalRoles": {},
+   "suggestedName": null,
+   "libraryNames": {},
+   "wipNames": {},
+   "evidence": "raw values only",
+   "examples": [
+    "3:519",
+    "3:521",
+    "3:732"
+   ],
+   "drift": []
+  },
+  {
+   "id": "t9",
+   "kind": "color",
+   "value": "#767676",
+   "uses": 3,
+   "internalUses": 0,
+   "roles": {
+    "text": 3
+   },
+   "internalRoles": {},
+   "suggestedName": null,
+   "libraryNames": {},
+   "wipNames": {},
+   "evidence": "raw values only",
+   "examples": [
+    "3:520",
+    "3:522",
+    "3:733"
+   ],
+   "drift": []
+  },
+  {
+   "id": "t10",
+   "kind": "color",
+   "value": "#ffffffcc",
+   "uses": 1,
+   "internalUses": 0,
+   "roles": {
+    "frame": 1
+   },
+   "internalRoles": {},
+   "suggestedName": null,
+   "libraryNames": {},
+   "wipNames": {},
+   "evidence": "raw values only",
+   "examples": [
+    "3:748"
+   ],
+   "drift": []
+  },
+  {
+   "id": "t11",
+   "kind": "spacing",
+   "value": 12.0,
+   "uses": 29,
+   "internalUses": 0,
+   "roles": {
+    "padding": 22,
+    "itemSpacing": 7
+   },
+   "internalRoles": {},
+   "suggestedName": null,
+   "libraryNames": {},
+   "wipNames": {},
+   "evidence": "raw values only",
+   "examples": [
+    "3:517",
+    "3:517",
+    "3:519",
+    "3:519"
+   ],
+   "drift": []
+  },
+  {
+   "id": "t12",
+   "kind": "spacing",
+   "value": 24.0,
+   "uses": 23,
+   "internalUses": 0,
+   "roles": {
+    "itemSpacing": 6,
+    "padding": 17
+   },
+   "internalRoles": {},
+   "suggestedName": "spacing-l",
+   "libraryNames": {},
+   "wipNames": {
+    "spacing-l": 8
+   },
+   "evidence": "bound or defined",
+   "examples": [
+    "1:714",
+    "3:471",
+    "3:471",
+    "3:471"
+   ],
+   "drift": [
+    {
+     "value": 25.0,
+     "uses": 3,
+     "examples": [
+      "3:388",
+      "3:712",
+      "3:688"
+     ],
+     "distance": 1.0,
+     "alternatives": []
+    },
+    {
+     "value": 23.0,
+     "uses": 1,
+     "examples": [
+      "3:687"
+     ],
+     "distance": 1.0,
+     "alternatives": []
+    }
+   ]
+  },
+  {
+   "id": "t13",
+   "kind": "spacing",
+   "value": 16.0,
+   "uses": 21,
+   "internalUses": 0,
+   "roles": {
+    "itemSpacing": 9,
+    "padding": 12
+   },
+   "internalRoles": {},
+   "suggestedName": "spacing-m",
+   "libraryNames": {},
+   "wipNames": {
+    "spacing-m": 5
+   },
+   "evidence": "bound or defined",
+   "examples": [
+    "3:478",
+    "3:483",
+    "3:483",
+    "3:486"
+   ],
+   "drift": []
+  },
+  {
+   "id": "t14",
+   "kind": "spacing",
+   "value": 32.0,
+   "uses": 15,
+   "internalUses": 0,
+   "roles": {
+    "padding": 12,
+    "itemSpacing": 3
+   },
+   "internalRoles": {},
+   "suggestedName": "spacing-xl",
+   "libraryNames": {},
+   "wipNames": {
+    "spacing-xl": 3
+   },
+   "evidence": "bound or defined",
+   "examples": [
+    "1:673",
+    "1:673",
+    "1:673",
+    "1:673"
+   ],
+   "drift": []
+  },
+  {
+   "id": "t15",
+   "kind": "spacing",
+   "value": 8.0,
+   "uses": 14,
+   "internalUses": 0,
+   "roles": {
+    "itemSpacing": 14
+   },
+   "internalRoles": {},
+   "suggestedName": "spacing-xs",
+   "libraryNames": {},
+   "wipNames": {
+    "spacing-xs": 2
+   },
+   "evidence": "bound or defined",
+   "examples": [
+    "1:674",
+    "3:473",
+    "3:480",
+    "3:487"
+   ],
+   "drift": []
+  },
+  {
+   "id": "t16",
+   "kind": "spacing",
+   "value": 4.0,
+   "uses": 10,
+   "internalUses": 0,
+   "roles": {
+    "padding": 10
+   },
+   "internalRoles": {},
+   "suggestedName": null,
+   "libraryNames": {},
+   "wipNames": {},
+   "evidence": "raw values only",
+   "examples": [
+    "3:517",
+    "3:517",
+    "3:519",
+    "3:519"
+   ],
+   "drift": []
+  },
+  {
+   "id": "t17",
+   "kind": "radius",
+   "value": 8.0,
+   "uses": 44,
+   "internalUses": 0,
+   "roles": {
+    "radius": 44
+   },
+   "internalRoles": {},
+   "suggestedName": "radius-md",
+   "libraryNames": {},
+   "wipNames": {
+    "radius-md": 6
+   },
+   "evidence": "bound or defined",
+   "examples": [
+    "3:471",
+    "3:471",
+    "3:471",
+    "3:471"
+   ],
+   "drift": []
+  },
+  {
+   "id": "t18",
+   "kind": "radius",
+   "value": 9999.0,
+   "uses": 24,
+   "internalUses": 0,
+   "roles": {
+    "radius": 24
+   },
+   "internalRoles": {},
+   "suggestedName": null,
+   "libraryNames": {},
+   "wipNames": {},
+   "evidence": "raw values only",
+   "examples": [
+    "3:626",
+    "3:626",
+    "3:626",
+    "3:626"
+   ],
+   "drift": []
+  },
+  {
+   "id": "t19",
+   "kind": "radius",
+   "value": 4.0,
+   "uses": 10,
+   "internalUses": 0,
+   "roles": {
+    "radius": 10
+   },
+   "internalRoles": {},
+   "suggestedName": null,
+   "libraryNames": {},
+   "wipNames": {},
+   "evidence": "raw values only",
+   "examples": [
+    "3:517",
+    "3:517",
+    "3:519",
+    "3:519"
+   ],
+   "drift": []
+  },
+  {
+   "id": "t20",
+   "kind": "stroke",
+   "value": 1.0,
+   "uses": 17,
+   "internalUses": 0,
+   "roles": {
+    "strokeWeight": 17
+   },
+   "internalRoles": {},
+   "suggestedName": "border-w",
+   "libraryNames": {},
+   "wipNames": {
+    "border-w": 5
+   },
+   "evidence": "bound or defined",
+   "examples": [
+    "3:471",
+    "3:483",
+    "3:490",
+    "3:497"
+   ],
+   "drift": []
+  },
+  {
+   "id": "t21",
+   "kind": "effect",
+   "value": "bg-blur:4",
+   "uses": 1,
+   "internalUses": 0,
+   "roles": {},
+   "internalRoles": {},
+   "suggestedName": null,
+   "libraryNames": {},
+   "wipNames": {},
+   "evidence": "raw values only",
+   "examples": [
+    "3:748"
+   ],
+   "drift": []
+  },
+  {
+   "id": "t22",
+   "kind": "effect",
+   "value": 4.0,
+   "uses": 1,
+   "internalUses": 0,
+   "roles": {},
+   "internalRoles": {},
+   "suggestedName": null,
+   "libraryNames": {},
+   "wipNames": {},
+   "evidence": "raw values only",
+   "examples": [],
+   "drift": []
+  },
+  {
+   "id": "t23",
+   "kind": "type",
+   "value": "Inter|Regular|16|140%|0",
+   "uses": 27,
+   "internalUses": 0,
+   "roles": {},
+   "internalRoles": {},
+   "suggestedName": null,
+   "libraryNames": {},
+   "wipNames": {},
+   "evidence": "raw values only",
+   "examples": [
+    "3:518",
+    "3:520",
+    "3:522",
+    "3:477"
+   ],
+   "drift": []
+  },
+  {
+   "id": "t24",
+   "kind": "type",
+   "value": "Inter|Semi Bold|24|120%|-2%",
+   "uses": 8,
+   "internalUses": 0,
+   "roles": {},
+   "internalRoles": {},
+   "suggestedName": null,
+   "libraryNames": {},
+   "wipNames": {},
+   "evidence": "raw values only",
+   "examples": [
+    "3:475",
+    "3:392",
+    "3:617",
+    "3:622"
+   ],
+   "drift": []
+  },
+  {
+   "id": "t25",
+   "kind": "type",
+   "value": "Inter|Regular|16|100%|0",
+   "uses": 6,
+   "internalUses": 0,
+   "roles": {},
+   "internalRoles": {},
+   "suggestedName": null,
+   "libraryNames": {},
+   "wipNames": {},
+   "evidence": "raw values only",
+   "examples": [
+    "3:484",
+    "3:491",
+    "3:498",
+    "3:398"
+   ],
+   "drift": []
+  },
+  {
+   "id": "t26",
+   "kind": "type",
+   "value": "Inter|Bold|48|120%|-2%",
+   "uses": 2,
+   "internalUses": 0,
+   "roles": {},
+   "internalRoles": {},
+   "suggestedName": null,
+   "libraryNames": {},
+   "wipNames": {},
+   "evidence": "raw values only",
+   "examples": [
+    "3:524",
+    "3:670"
+   ],
+   "drift": []
+  },
+  {
+   "id": "t27",
+   "kind": "fontFamily",
+   "value": "Inter",
+   "uses": 43,
+   "internalUses": 0,
+   "roles": {},
+   "internalRoles": {},
+   "suggestedName": null,
+   "libraryNames": {},
+   "wipNames": {},
+   "evidence": "raw values only",
+   "examples": [
+    "3:524",
+    "3:670",
+    "3:518",
+    "3:520"
+   ],
+   "drift": []
+  },
+  {
+   "id": "t28",
+   "kind": "fontSize",
+   "value": 16.0,
+   "uses": 33,
+   "internalUses": 0,
+   "roles": {},
+   "internalRoles": {},
+   "suggestedName": null,
+   "libraryNames": {},
+   "wipNames": {},
+   "evidence": "raw values only",
+   "examples": [
+    "3:518",
+    "3:520",
+    "3:522",
+    "3:477"
+   ],
+   "drift": []
+  },
+  {
+   "id": "t29",
+   "kind": "fontSize",
+   "value": 24.0,
+   "uses": 8,
+   "internalUses": 0,
+   "roles": {},
+   "internalRoles": {},
+   "suggestedName": null,
+   "libraryNames": {},
+   "wipNames": {},
+   "evidence": "raw values only",
+   "examples": [
+    "3:475",
+    "3:392",
+    "3:617",
+    "3:622"
+   ],
+   "drift": []
+  },
+  {
+   "id": "t30",
+   "kind": "fontSize",
+   "value": 48.0,
+   "uses": 2,
+   "internalUses": 0,
+   "roles": {},
+   "internalRoles": {},
+   "suggestedName": null,
+   "libraryNames": {},
+   "wipNames": {},
+   "evidence": "raw values only",
+   "examples": [
+    "3:524",
+    "3:670"
+   ],
+   "drift": []
+  },
+  {
+   "id": "t31",
+   "kind": "fontWeight",
+   "value": 400.0,
+   "uses": 33,
+   "internalUses": 0,
+   "roles": {},
+   "internalRoles": {},
+   "suggestedName": null,
+   "libraryNames": {},
+   "wipNames": {},
+   "evidence": "raw values only",
+   "examples": [
+    "3:518",
+    "3:520",
+    "3:522",
+    "3:477"
+   ],
+   "drift": []
+  },
+  {
+   "id": "t32",
+   "kind": "fontWeight",
+   "value": 600.0,
+   "uses": 8,
+   "internalUses": 0,
+   "roles": {},
+   "internalRoles": {},
+   "suggestedName": null,
+   "libraryNames": {},
+   "wipNames": {},
+   "evidence": "raw values only",
+   "examples": [
+    "3:475",
+    "3:392",
+    "3:617",
+    "3:622"
+   ],
+   "drift": []
+  },
+  {
+   "id": "t33",
+   "kind": "fontWeight",
+   "value": 700.0,
+   "uses": 2,
+   "internalUses": 0,
+   "roles": {},
+   "internalRoles": {},
+   "suggestedName": null,
+   "libraryNames": {},
+   "wipNames": {},
+   "evidence": "raw values only",
+   "examples": [
+    "3:524",
+    "3:670"
+   ],
+   "drift": []
+  }
+ ],
+ "wipVariables": [
+  {
+   "collection": "Tokens (WIP)",
+   "name": "bg/white",
+   "type": "COLOR",
+   "value": "#ffffff",
+   "boundUses": 6,
+   "mapsTo": null,
+   "token": "#ffffff",
+   "status": "no library token with this value"
+  },
+  {
+   "collection": "Tokens (WIP)",
+   "name": "spacing-xl",
+   "type": "FLOAT",
+   "value": 32,
+   "boundUses": 3,
+   "mapsTo": null,
+   "token": 32.0,
+   "status": "no library token with this value"
+  },
+  {
+   "collection": "Tokens (WIP)",
+   "name": "spacing-l",
+   "type": "FLOAT",
+   "value": 24,
+   "boundUses": 8,
+   "mapsTo": null,
+   "token": 24.0,
+   "status": "no library token with this value"
+  },
+  {
+   "collection": "Tokens (WIP)",
+   "name": "border-w",
+   "type": "FLOAT",
+   "value": 1,
+   "boundUses": 5,
+   "mapsTo": null,
+   "token": 1.0,
+   "status": "no library token with this value"
+  },
+  {
+   "collection": "Tokens (WIP)",
+   "name": "spacing-m",
+   "type": "FLOAT",
+   "value": 16,
+   "boundUses": 5,
+   "mapsTo": null,
+   "token": 16.0,
+   "status": "no library token with this value"
+  },
+  {
+   "collection": "Tokens (WIP)",
+   "name": "spacing-xs",
+   "type": "FLOAT",
+   "value": 8,
+   "boundUses": 2,
+   "mapsTo": null,
+   "token": 8.0,
+   "status": "no library token with this value"
+  },
+  {
+   "collection": "Tokens (WIP)",
+   "name": "text/primary",
+   "type": "COLOR",
+   "value": "#1e1e1e",
+   "boundUses": 6,
+   "mapsTo": null,
+   "token": "#1e1e1e",
+   "status": "no library token with this value"
+  },
+  {
+   "collection": "Tokens (WIP)",
+   "name": "radius-md",
+   "type": "FLOAT",
+   "value": 8,
+   "boundUses": 6,
+   "mapsTo": null,
+   "token": 8.0,
+   "status": "no library token with this value"
+  },
+  {
+   "collection": "Tokens (WIP)",
+   "name": "border/light",
+   "type": "COLOR",
+   "value": "#d9d9d9",
+   "boundUses": 2,
+   "mapsTo": null,
+   "token": "#d9d9d9",
+   "status": "no library token with this value"
+  },
+  {
+   "collection": "Tokens (WIP)",
+   "name": "blue-accent",
+   "type": "COLOR",
+   "value": "#3b82f6",
+   "boundUses": 0,
+   "mapsTo": null,
+   "status": "unused: bound nowhere in the audited files"
+  },
+  {
+   "collection": "Tokens (WIP)",
+   "name": "spacing-s",
+   "type": "FLOAT",
+   "value": 6,
+   "boundUses": 0,
+   "mapsTo": null,
+   "status": "unused: bound nowhere in the audited files"
+  }
+ ],
+ "components": [
+  {
+   "name": "Text Heading",
+   "source": "detached copies",
+   "detached": 7,
+   "liveInstances": 0,
+   "status": "de facto: only detached copies, no live instances",
+   "componentKeys": [
+    "035ac61042305c533b39b786ff35ab1164bdd068"
+   ],
+   "frames": [
+    "Settings / Account",
+    "Settings / Notifications",
+    "Settings / Profile"
+   ],
+   "nodes": [
+    "3:474",
+    "3:391",
+    "3:616",
+    "3:621",
+    "3:642",
+    "3:715",
+    "3:690"
+   ],
+   "structureMatches": [
+    "F(H0,0,0,0g0)[T(Inter Semi Bold 24)]"
+   ]
+  },
+  {
+   "name": "Input Field",
+   "source": "detached copies",
+   "detached": 6,
+   "liveInstances": 3,
+   "status": "published, but detached in places",
+   "componentKeys": [
+    "67d02a629e38a4c2d63cc777c45232fda3a84ac3"
+   ],
+   "frames": [
+    "Settings / Profile"
+   ],
+   "nodes": [
+    "3:480",
+    "3:487",
+    "3:494",
+    "3:394",
+    "3:400",
+    "3:406"
+   ],
+   "structureMatches": [
+    "F(V0,0,0,0g8)[T(Inter Regular 16),F(H12,16,12,16g0fsr)[T(Inter Regular 16)]]"
+   ]
+  },
+  {
+   "name": "Switch Field",
+   "source": "detached copies",
+   "detached": 6,
+   "liveInstances": 0,
+   "status": "de facto: only detached copies, no live instances",
+   "componentKeys": [
+    "5cf56597fdbe3ddd40c1ab011c4c23465575eb8f",
+    "b1b13f3c9558d5236c78dced7a1736560b913fb7"
+   ],
+   "frames": [
+    "Settings / Notifications"
+   ],
+   "nodes": [
+    "3:623",
+    "3:629",
+    "3:635",
+    "3:644",
+    "3:650",
+    "3:656"
+   ],
+   "structureMatches": [
+    "F(V0,0,0,0g0)[F(H0,0,0,0g12)[T(Inter Regular 16),F(absfsr)[V]],T(Inter Regular 16)]"
+   ]
+  },
+  {
+   "name": "Tab",
+   "source": "detached copies",
+   "detached": 5,
+   "liveInstances": 4,
+   "status": "published, but detached in places",
+   "componentKeys": [
+    "897c7eaec934eaa52e07bcb964711b4c10420b85",
+    "b5fbcd8dd55b045caa31511c5585d370ce761583"
+   ],
+   "frames": [
+    "Settings / Account",
+    "Settings / Profile"
+   ],
+   "nodes": [
+    "3:517",
+    "3:519",
+    "3:521",
+    "3:732",
+    "3:734"
+   ],
+   "structureMatches": [
+    "F(H4,12,4,12g0s)[T(Inter Regular 16)]"
+   ]
+  },
+  {
+   "name": "Card (Slot)",
+   "source": "detached copies",
+   "detached": 5,
+   "liveInstances": 0,
+   "status": "de facto: only detached copies, no live instances",
+   "componentKeys": [
+    "938ddbc1add07bdc6bbec6388327aa27d9d04868"
+   ],
+   "frames": [
+    "Settings / Account",
+    "Settings / Notifications",
+    "Settings / Profile"
+   ],
+   "nodes": [
+    "3:471",
+    "3:388",
+    "3:613",
+    "3:712",
+    "3:687"
+   ],
+   "structureMatches": [
+    "F(V24,24,24,24g24fsr)[F(V0,0,0,0g24)]"
+   ]
+  },
+  {
+   "name": "Button Group",
+   "source": "detached copies",
+   "detached": 4,
+   "liveInstances": 0,
+   "status": "de facto: only detached copies, no live instances",
+   "componentKeys": [
+    "b075bdec1dea0e7e0dfa89eaccc4c66b73cf1a99"
+   ],
+   "frames": [
+    "Settings / Account",
+    "Settings / Profile"
+   ],
+   "nodes": [
+    "3:500",
+    "3:412",
+    "3:718",
+    "3:693"
+   ],
+   "structureMatches": []
+  },
+  {
+   "name": "Tabs",
+   "source": "detached copies",
+   "detached": 3,
+   "liveInstances": 0,
+   "status": "de facto: only detached copies, no live instances",
+   "componentKeys": [
+    "b839f8a495ef7b0ef0a47ad1aefd6e05438825b5"
+   ],
+   "frames": [
+    "Settings / Account",
+    "Settings / Notifications",
+    "Settings / Profile"
+   ],
+   "nodes": [
+    "3:515",
+    "3:662",
+    "3:729"
+   ],
+   "structureMatches": [
+    "F(H0,0,0,0g0)[F(H0,0,0,0g0)]"
+   ]
+  },
+  {
+   "name": "Text",
+   "source": "detached copies",
+   "detached": 3,
+   "liveInstances": 5,
+   "status": "published, but detached in places",
+   "componentKeys": [
+    "fbaca594bc38824e75467b952cbca0a976c46856"
+   ],
+   "frames": [
+    "Settings / Notifications",
+    "Settings / Profile"
+   ],
+   "nodes": [
+    "3:476",
+    "3:667",
+    "3:618"
+   ],
+   "structureMatches": [
+    "F(H0,0,0,0g0)[T(Inter Regular 16)]"
+   ]
+  },
+  {
+   "name": "Text Title Page",
+   "source": "detached copies",
+   "detached": 2,
+   "liveInstances": 1,
+   "status": "published, but detached in places",
+   "componentKeys": [
+    "f1e2f812cd9a9e7babb0032e88b57c4d681e8bbb"
+   ],
+   "frames": [
+    "Settings / Notifications",
+    "Settings / Profile"
+   ],
+   "nodes": [
+    "3:523",
+    "3:669"
+   ],
+   "structureMatches": []
+  },
+  {
+   "name": "Dialog",
+   "source": "detached copies",
+   "detached": 1,
+   "liveInstances": 0,
+   "status": "de facto: only detached copies, no live instances",
+   "componentKeys": [
+    "050bf5b28eb08c43b117646b3e4b00c9db55c540"
+   ],
+   "frames": [
+    "Settings / Dialog"
+   ],
+   "nodes": [
+    "3:748"
+   ],
+   "structureMatches": []
+  },
+  {
+   "name": "Card title",
+   "source": "repeated structure",
+   "detached": 0,
+   "liveInstances": 0,
+   "status": "de facto: a repeated pattern that isn't a component",
+   "repeats": 4,
+   "names": {
+    "Page title": 1,
+    "Card title": 3
+   },
+   "nodes": [
+    "1:674",
+    "1:876",
+    "3:390",
+    "3:473",
+    "3:615",
+    "3:689",
+    "3:714"
+   ],
+   "signature": "F(V0,0,0,0g8)[F(H0,0,0,0g0),I(Text)]"
+  }
+ ],
+ "localComponents": [
+  {
+   "name": "Card / Base",
+   "id": "3:821",
+   "page": "Library (WIP)",
+   "status": "UNPUBLISHED",
+   "instancesInFile": 0,
+   "duplicates": [
+    "Card (Slot)"
+   ],
+   "note": "unused; looks like Card (Slot)"
+  },
+  {
+   "name": "Section Heading",
+   "id": "3:826",
+   "page": "Library (WIP)",
+   "status": "UNPUBLISHED",
+   "instancesInFile": 0,
+   "duplicates": [
+    "Text Heading"
+   ],
+   "note": "unused; looks like Text Heading"
+  },
+  {
+   "name": "Toggle row",
+   "id": "3:839",
+   "page": "Library (WIP)",
+   "status": "UNPUBLISHED",
+   "instancesInFile": 0,
+   "duplicates": [
+    "Switch Field"
+   ],
+   "note": "unused; looks like Switch Field"
+  }
+ ],
+ "sources": [
+  "bgsOIiq7b6ToKhhGPSjkvY"
+ ]
+}

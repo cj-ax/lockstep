@@ -1,0 +1,66 @@
+{
+ "file": "bgsOIiq7b6ToKhhGPSjkvY",
+ "components": [
+  {
+   "name": "Card / Base",
+   "id": "3:821",
+   "page": "Library (WIP)",
+   "type": "COMPONENT",
+   "key": "3ec325081a8b9e39dfa88fb8b798fdc0a86b89b2",
+   "status": "UNPUBLISHED",
+   "variants": 1,
+   "props": {},
+   "default": "Card / Base",
+   "size": [
+    240,
+    168
+   ],
+   "instancesInFile": 0,
+   "sig": {
+    "full": "F(V24,24,24,24g24fsr)[F(V0,0,0,0g24)[]]",
+    "shell": "F(V24,24,24,24g24fsr)[F(V0,0,0,0g24)]"
+   }
+  },
+  {
+   "name": "Section Heading",
+   "id": "3:826",
+   "page": "Library (WIP)",
+   "type": "COMPONENT",
+   "key": "adac86641710288f5686438f1a51251ad29d5b70",
+   "status": "UNPUBLISHED",
+   "variants": 1,
+   "props": {},
+   "default": "Section Heading",
+   "size": [
+    149,
+    29
+   ],
+   "instancesInFile": 0,
+   "sig": {
+    "full": "F(H0,0,0,0g0)[T(Inter Semi Bold 24)]",
+    "shell": "F(H0,0,0,0g0)[T(Inter Semi Bold 24)]"
+   }
+  },
+  {
+   "name": "Toggle row",
+   "id": "3:839",
+   "page": "Library (WIP)",
+   "type": "COMPONENT",
+   "key": "b448b4a6fed59b8493be735ab93885781e201c2a",
+   "status": "UNPUBLISHED",
+   "variants": 1,
+   "props": {},
+   "default": "Toggle row",
+   "size": [
+    120,
+    46
+   ],
+   "instancesInFile": 0,
+   "sig": {
+    "full": "F(V0,0,0,0g0)[F(H0,0,0,0g12)[T(Inter Regular 16),F(absfsr)[V]],T(Inter Regular 16)]",
+    "shell": "F(V0,0,0,0g0)[F(H0,0,0,0g12),T(Inter Regular 16)]"
+   }
+  }
+ ],
+ "truncated": false
+}

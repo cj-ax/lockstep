@@ -8,9 +8,9 @@ description: Score how faithfully Figma frames use their design library, read-on
 Shared scripts live in the plugin's `scripts/` folder, two levels up from this skill's base
 directory (shown when the skill loads). Below, `$LOCKSTEP` is that plugin folder.
 
-Scoring changes nothing. It still runs through `use_figma`, and the write guard blocks every
-`use_figma` call on a protected file. To score frames that live in the library itself, duplicate
-them into a draft first.
+Scoring changes nothing. It runs through `use_figma`, and the write guard lets it reach a
+protected file only when the code is exactly what `render.py` printed, so pass the output
+unedited. If the guard still blocks it, duplicate the frames into a draft and score them there.
 
 ## Steps
 

@@ -1,0 +1,1531 @@
+{
+ "file": "bgsOIiq7b6ToKhhGPSjkvY",
+ "roots": [
+  {
+   "id": "1:605",
+   "name": "Settings / Profile"
+  },
+  {
+   "id": "1:843",
+   "name": "Settings / Notifications"
+  },
+  {
+   "id": "1:973",
+   "name": "Settings / Account"
+  },
+  {
+   "id": "1:1098",
+   "name": "Settings / Dialog"
+  }
+ ],
+ "next": null,
+ "instances": {
+  "Header": {
+   "key": "a1f69d8fdde4a1fe8523e49d3baa3c8464ad17d2",
+   "remote": true,
+   "n": 3,
+   "variants": {
+    "Platform=Desktop, State=Default": 3
+   },
+   "overrides": {
+    "boundVariables": 3,
+    "height": 3,
+    "width": 3
+   },
+   "ex": [
+    "1:606",
+    "1:844",
+    "1:974"
+   ]
+  },
+  "Navigation Pill": {
+   "key": "e8a6afab337fee965cf758d46d54789201291803",
+   "remote": true,
+   "n": 21,
+   "variants": {
+    "State=Active": 3,
+    "State=Default": 18
+   },
+   "overrides": {},
+   "ex": [
+    "I1:606;1442:7704;7768:19971",
+    "I1:606;1442:7704;7768:19995",
+    "I1:606;1442:7704;7768:20019",
+    "I1:606;1442:7704;7768:20051"
+   ]
+  },
+  "Text": {
+   "key": "fbaca594bc38824e75467b952cbca0a976c46856",
+   "remote": true,
+   "n": 5,
+   "variants": {},
+   "overrides": {
+    "height": 5,
+    "primaryAxisSizingMode": 5,
+    "width": 5,
+    "layoutGrow": 5,
+    "textAutoResize": 5
+   },
+   "ex": [
+    "1:677",
+    "3:393",
+    "1:1009",
+    "3:717"
+   ]
+  },
+  "Input Field": {
+   "key": "c28150b04d333d34ed9d2b77abd9f2f54e1a878a",
+   "remote": true,
+   "n": 3,
+   "variants": {
+    "State=Default, Value Type=Default": 3
+   },
+   "overrides": {
+    "counterAxisSizingMode": 3,
+    "height": 3,
+    "width": 3
+   },
+   "ex": [
+    "3:479",
+    "3:493",
+    "I3:749;6031:9153;1:1186"
+   ]
+  },
+  "Button": {
+   "key": "cc8b558dc7d9684011b6b99ce8e6509399bc836b",
+   "remote": true,
+   "n": 5,
+   "variants": {
+    "Variant=Neutral, State=Default, Size=Medium": 3,
+    "Variant=Primary, State=Default, Size=Medium": 2
+   },
+   "overrides": {
+    "height": 5,
+    "primaryAxisSizingMode": 5,
+    "width": 5
+   },
+   "ex": [
+    "3:501",
+    "3:502",
+    "3:414",
+    "3:720"
+   ]
+  },
+  "Tab": {
+   "key": "18aa207708b43593a2af7096b2dfd531553f3414",
+   "remote": true,
+   "n": 4,
+   "variants": {
+    "State=Default, Active=Off": 3,
+    "State=Default, Active=On": 1
+   },
+   "overrides": {
+    "height": 4,
+    "width": 4
+   },
+   "ex": [
+    "3:664",
+    "3:665",
+    "3:666",
+    "3:731"
+   ]
+  },
+  "Text Title Page": {
+   "key": "f1e2f812cd9a9e7babb0032e88b57c4d681e8bbb",
+   "remote": true,
+   "n": 1,
+   "variants": {},
+   "overrides": {
+    "height": 1,
+    "primaryAxisSizingMode": 1,
+    "width": 1,
+    "layoutGrow": 1,
+    "textAutoResize": 1
+   },
+   "ex": [
+    "1:1007"
+   ]
+  },
+  "Button Danger": {
+   "key": "3d3073170c1014cfacc5d047c23495cfed01e0a8",
+   "remote": true,
+   "n": 2,
+   "variants": {
+    "Variant=Primary, State=Default, Size=Medium": 2
+   },
+   "overrides": {
+    "height": 2,
+    "primaryAxisSizingMode": 2,
+    "width": 2
+   },
+   "ex": [
+    "3:695",
+    "I3:749;6031:9153;3:741"
+   ]
+  },
+  "Dialog Body": {
+   "key": "629a55849475c74b3aeea85d7de846e271cf504f",
+   "remote": true,
+   "n": 1,
+   "variants": {
+    "Type=Card": 1
+   },
+   "overrides": {
+    "height": 1,
+    "width": 1
+   },
+   "ex": [
+    "3:749"
+   ]
+  }
+ },
+ "detached": [
+  {
+   "id": "3:523",
+   "name": "Text Title Page",
+   "frame": "Settings / Profile",
+   "type": "library",
+   "key": "f1e2f812cd9a9e7babb0032e88b57c4d681e8bbb",
+   "componentId": null
+  },
+  {
+   "id": "3:515",
+   "name": "Tabs",
+   "frame": "Settings / Profile",
+   "type": "library",
+   "key": "b839f8a495ef7b0ef0a47ad1aefd6e05438825b5",
+   "componentId": null
+  },
+  {
+   "id": "3:517",
+   "name": "Tab",
+   "frame": "Settings / Profile",
+   "type": "library",
+   "key": "b5fbcd8dd55b045caa31511c5585d370ce761583",
+   "componentId": null
+  },
+  {
+   "id": "3:519",
+   "name": "Tab",
+   "frame": "Settings / Profile",
+   "type": "library",
+   "key": "897c7eaec934eaa52e07bcb964711b4c10420b85",
+   "componentId": null
+  },
+  {
+   "id": "3:521",
+   "name": "Tab",
+   "frame": "Settings / Profile",
+   "type": "library",
+   "key": "897c7eaec934eaa52e07bcb964711b4c10420b85",
+   "componentId": null
+  },
+  {
+   "id": "3:471",
+   "name": "Card (Slot)",
+   "frame": "Settings / Profile",
+   "type": "library",
+   "key": "938ddbc1add07bdc6bbec6388327aa27d9d04868",
+   "componentId": null
+  },
+  {
+   "id": "3:474",
+   "name": "Text Heading",
+   "frame": "Settings / Profile",
+   "type": "library",
+   "key": "035ac61042305c533b39b786ff35ab1164bdd068",
+   "componentId": null
+  },
+  {
+   "id": "3:476",
+   "name": "Text",
+   "frame": "Settings / Profile",
+   "type": "library",
+   "key": "fbaca594bc38824e75467b952cbca0a976c46856",
+   "componentId": null
+  },
+  {
+   "id": "3:480",
+   "name": "Input Field",
+   "frame": "Settings / Profile",
+   "type": "library",
+   "key": "67d02a629e38a4c2d63cc777c45232fda3a84ac3",
+   "componentId": null
+  },
+  {
+   "id": "3:487",
+   "name": "Input Field",
+   "frame": "Settings / Profile",
+   "type": "library",
+   "key": "67d02a629e38a4c2d63cc777c45232fda3a84ac3",
+   "componentId": null
+  },
+  {
+   "id": "3:494",
+   "name": "Input Field",
+   "frame": "Settings / Profile",
+   "type": "library",
+   "key": "67d02a629e38a4c2d63cc777c45232fda3a84ac3",
+   "componentId": null
+  },
+  {
+   "id": "3:500",
+   "name": "Button Group",
+   "frame": "Settings / Profile",
+   "type": "library",
+   "key": "b075bdec1dea0e7e0dfa89eaccc4c66b73cf1a99",
+   "componentId": null
+  },
+  {
+   "id": "3:388",
+   "name": "Card (Slot)",
+   "frame": "Settings / Profile",
+   "type": "library",
+   "key": "938ddbc1add07bdc6bbec6388327aa27d9d04868",
+   "componentId": null
+  },
+  {
+   "id": "3:391",
+   "name": "Text Heading",
+   "frame": "Settings / Profile",
+   "type": "library",
+   "key": "035ac61042305c533b39b786ff35ab1164bdd068",
+   "componentId": null
+  },
+  {
+   "id": "3:394",
+   "name": "Input Field",
+   "frame": "Settings / Profile",
+   "type": "library",
+   "key": "67d02a629e38a4c2d63cc777c45232fda3a84ac3",
+   "componentId": null
+  },
+  {
+   "id": "3:400",
+   "name": "Input Field",
+   "frame": "Settings / Profile",
+   "type": "library",
+   "key": "67d02a629e38a4c2d63cc777c45232fda3a84ac3",
+   "componentId": null
+  },
+  {
+   "id": "3:406",
+   "name": "Input Field",
+   "frame": "Settings / Profile",
+   "type": "library",
+   "key": "67d02a629e38a4c2d63cc777c45232fda3a84ac3",
+   "componentId": null
+  },
+  {
+   "id": "3:412",
+   "name": "Button Group",
+   "frame": "Settings / Profile",
+   "type": "library",
+   "key": "b075bdec1dea0e7e0dfa89eaccc4c66b73cf1a99",
+   "componentId": null
+  },
+  {
+   "id": "3:669",
+   "name": "Text Title Page",
+   "frame": "Settings / Notifications",
+   "type": "library",
+   "key": "f1e2f812cd9a9e7babb0032e88b57c4d681e8bbb",
+   "componentId": null
+  },
+  {
+   "id": "3:667",
+   "name": "Text",
+   "frame": "Settings / Notifications",
+   "type": "library",
+   "key": "fbaca594bc38824e75467b952cbca0a976c46856",
+   "componentId": null
+  },
+  {
+   "id": "3:662",
+   "name": "Tabs",
+   "frame": "Settings / Notifications",
+   "type": "library",
+   "key": "b839f8a495ef7b0ef0a47ad1aefd6e05438825b5",
+   "componentId": null
+  },
+  {
+   "id": "3:613",
+   "name": "Card (Slot)",
+   "frame": "Settings / Notifications",
+   "type": "library",
+   "key": "938ddbc1add07bdc6bbec6388327aa27d9d04868",
+   "componentId": null
+  },
+  {
+   "id": "3:616",
+   "name": "Text Heading",
+   "frame": "Settings / Notifications",
+   "type": "library",
+   "key": "035ac61042305c533b39b786ff35ab1164bdd068",
+   "componentId": null
+  },
+  {
+   "id": "3:618",
+   "name": "Text",
+   "frame": "Settings / Notifications",
+   "type": "library",
+   "key": "fbaca594bc38824e75467b952cbca0a976c46856",
+   "componentId": null
+  },
+  {
+   "id": "3:621",
+   "name": "Text Heading",
+   "frame": "Settings / Notifications",
+   "type": "library",
+   "key": "035ac61042305c533b39b786ff35ab1164bdd068",
+   "componentId": null
+  },
+  {
+   "id": "3:623",
+   "name": "Switch Field",
+   "frame": "Settings / Notifications",
+   "type": "library",
+   "key": "b1b13f3c9558d5236c78dced7a1736560b913fb7",
+   "componentId": null
+  },
+  {
+   "id": "3:629",
+   "name": "Switch Field",
+   "frame": "Settings / Notifications",
+   "type": "library",
+   "key": "b1b13f3c9558d5236c78dced7a1736560b913fb7",
+   "componentId": null
+  },
+  {
+   "id": "3:635",
+   "name": "Switch Field",
+   "frame": "Settings / Notifications",
+   "type": "library",
+   "key": "5cf56597fdbe3ddd40c1ab011c4c23465575eb8f",
+   "componentId": null
+  },
+  {
+   "id": "3:642",
+   "name": "Text Heading",
+   "frame": "Settings / Notifications",
+   "type": "library",
+   "key": "035ac61042305c533b39b786ff35ab1164bdd068",
+   "componentId": null
+  },
+  {
+   "id": "3:644",
+   "name": "Switch Field",
+   "frame": "Settings / Notifications",
+   "type": "library",
+   "key": "b1b13f3c9558d5236c78dced7a1736560b913fb7",
+   "componentId": null
+  },
+  {
+   "id": "3:650",
+   "name": "Switch Field",
+   "frame": "Settings / Notifications",
+   "type": "library",
+   "key": "b1b13f3c9558d5236c78dced7a1736560b913fb7",
+   "componentId": null
+  },
+  {
+   "id": "3:656",
+   "name": "Switch Field",
+   "frame": "Settings / Notifications",
+   "type": "library",
+   "key": "5cf56597fdbe3ddd40c1ab011c4c23465575eb8f",
+   "componentId": null
+  },
+  {
+   "id": "3:729",
+   "name": "Tabs",
+   "frame": "Settings / Account",
+   "type": "library",
+   "key": "b839f8a495ef7b0ef0a47ad1aefd6e05438825b5",
+   "componentId": null
+  },
+  {
+   "id": "3:732",
+   "name": "Tab",
+   "frame": "Settings / Account",
+   "type": "library",
+   "key": "897c7eaec934eaa52e07bcb964711b4c10420b85",
+   "componentId": null
+  },
+  {
+   "id": "3:734",
+   "name": "Tab",
+   "frame": "Settings / Account",
+   "type": "library",
+   "key": "b5fbcd8dd55b045caa31511c5585d370ce761583",
+   "componentId": null
+  },
+  {
+   "id": "3:712",
+   "name": "Card (Slot)",
+   "frame": "Settings / Account",
+   "type": "library",
+   "key": "938ddbc1add07bdc6bbec6388327aa27d9d04868",
+   "componentId": null
+  },
+  {
+   "id": "3:715",
+   "name": "Text Heading",
+   "frame": "Settings / Account",
+   "type": "library",
+   "key": "035ac61042305c533b39b786ff35ab1164bdd068",
+   "componentId": null
+  },
+  {
+   "id": "3:718",
+   "name": "Button Group",
+   "frame": "Settings / Account",
+   "type": "library",
+   "key": "b075bdec1dea0e7e0dfa89eaccc4c66b73cf1a99",
+   "componentId": null
+  },
+  {
+   "id": "3:687",
+   "name": "Card (Slot)",
+   "frame": "Settings / Account",
+   "type": "library",
+   "key": "938ddbc1add07bdc6bbec6388327aa27d9d04868",
+   "componentId": null
+  },
+  {
+   "id": "3:690",
+   "name": "Text Heading",
+   "frame": "Settings / Account",
+   "type": "library",
+   "key": "035ac61042305c533b39b786ff35ab1164bdd068",
+   "componentId": null
+  },
+  {
+   "id": "3:693",
+   "name": "Button Group",
+   "frame": "Settings / Account",
+   "type": "library",
+   "key": "b075bdec1dea0e7e0dfa89eaccc4c66b73cf1a99",
+   "componentId": null
+  },
+  {
+   "id": "3:748",
+   "name": "Dialog",
+   "frame": "Settings / Dialog",
+   "type": "library",
+   "key": "050bf5b28eb08c43b117646b3e4b00c9db55c540",
+   "componentId": null
+  }
+ ],
+ "colors": {
+  "#ffffff": {
+   "n": 17,
+   "ex": [
+    "1:605",
+    "3:471",
+    "3:483",
+    "3:490"
+   ],
+   "role": {
+    "frame": 17
+   },
+   "bound": {
+    "local:Tokens (WIP)/bg/white": 6
+   }
+  },
+  "#1e1e1e": {
+   "n": 29,
+   "ex": [
+    "3:524",
+    "3:475",
+    "3:477",
+    "3:481"
+   ],
+   "role": {
+    "text": 29
+   },
+   "bound": {
+    "local:Tokens (WIP)/text/primary": 6
+   }
+  },
+  "#303030": {
+   "n": 4,
+   "ex": [
+    "3:517",
+    "3:518",
+    "3:734",
+    "3:735"
+   ],
+   "role": {
+    "stroke": 2,
+    "text": 2
+   }
+  },
+  "#b2b2b2": {
+   "n": 3,
+   "ex": [
+    "3:519",
+    "3:521",
+    "3:732"
+   ],
+   "role": {
+    "stroke": 3
+   }
+  },
+  "#767676": {
+   "n": 3,
+   "ex": [
+    "3:520",
+    "3:522",
+    "3:733"
+   ],
+   "role": {
+    "text": 3
+   }
+  },
+  "#d9d9d9": {
+   "n": 11,
+   "ex": [
+    "3:471",
+    "3:483",
+    "3:490",
+    "3:497"
+   ],
+   "role": {
+    "stroke": 11
+   },
+   "bound": {
+    "local:Tokens (WIP)/border/light": 2
+   }
+  },
+  "#201e1e": {
+   "n": 3,
+   "ex": [
+    "3:404",
+    "3:646",
+    "3:652"
+   ],
+   "role": {
+    "text": 3
+   }
+  },
+  "#2c2c2c": {
+   "n": 7,
+   "ex": [
+    "3:626",
+    "3:626",
+    "3:632",
+    "3:632"
+   ],
+   "role": {
+    "frame": 4,
+    "stroke": 3
+   }
+  },
+  "#f5f5f5": {
+   "n": 4,
+   "ex": [
+    "3:627",
+    "3:633",
+    "3:648",
+    "3:654"
+   ],
+   "role": {
+    "shape": 4
+   }
+  },
+  "#757575": {
+   "n": 8,
+   "ex": [
+    "3:628",
+    "3:634",
+    "3:638",
+    "3:639"
+   ],
+   "role": {
+    "text": 5,
+    "stroke": 1,
+    "shape": 2
+   }
+  },
+  "#777575": {
+   "n": 2,
+   "ex": [
+    "3:649",
+    "3:659"
+   ],
+   "role": {
+    "text": 1,
+    "stroke": 1
+   }
+  },
+  "#2e2c2c": {
+   "n": 1,
+   "ex": [
+    "3:653"
+   ],
+   "role": {
+    "stroke": 1
+   }
+  },
+  "#ffffffcc": {
+   "n": 1,
+   "ex": [
+    "3:748"
+   ],
+   "role": {
+    "frame": 1
+   }
+  }
+ },
+ "numbers": {
+  "spacing:32": {
+   "n": 15,
+   "ex": [
+    "1:673",
+    "1:673",
+    "1:673",
+    "1:673"
+   ],
+   "prop": {
+    "padding": 12,
+    "itemSpacing": 3
+   },
+   "bound": {
+    "local:Tokens (WIP)/spacing-xl": 3
+   }
+  },
+  "spacing:8": {
+   "n": 14,
+   "ex": [
+    "1:674",
+    "3:473",
+    "3:480",
+    "3:487"
+   ],
+   "prop": {
+    "itemSpacing": 14
+   },
+   "bound": {
+    "local:Tokens (WIP)/spacing-xs": 2
+   }
+  },
+  "spacing:4": {
+   "n": 10,
+   "ex": [
+    "3:517",
+    "3:517",
+    "3:519",
+    "3:519"
+   ],
+   "prop": {
+    "padding": 10
+   }
+  },
+  "spacing:12": {
+   "n": 29,
+   "ex": [
+    "3:517",
+    "3:517",
+    "3:519",
+    "3:519"
+   ],
+   "prop": {
+    "padding": 22,
+    "itemSpacing": 7
+   }
+  },
+  "radius:4": {
+   "n": 10,
+   "ex": [
+    "3:517",
+    "3:517",
+    "3:519",
+    "3:519"
+   ],
+   "prop": {
+    "radius": 10
+   }
+  },
+  "spacing:24": {
+   "n": 23,
+   "ex": [
+    "1:714",
+    "3:471",
+    "3:471",
+    "3:471"
+   ],
+   "prop": {
+    "itemSpacing": 6,
+    "padding": 17
+   },
+   "bound": {
+    "local:Tokens (WIP)/spacing-l": 8
+   }
+  },
+  "radius:8": {
+   "n": 44,
+   "ex": [
+    "3:471",
+    "3:471",
+    "3:471",
+    "3:471"
+   ],
+   "prop": {
+    "radius": 44
+   },
+   "bound": {
+    "local:Tokens (WIP)/radius-md": 6
+   }
+  },
+  "stroke:1": {
+   "n": 17,
+   "ex": [
+    "3:471",
+    "3:483",
+    "3:490",
+    "3:497"
+   ],
+   "prop": {
+    "strokeWeight": 17
+   },
+   "bound": {
+    "local:Tokens (WIP)/border-w": 5
+   }
+  },
+  "spacing:16": {
+   "n": 21,
+   "ex": [
+    "3:478",
+    "3:483",
+    "3:483",
+    "3:486"
+   ],
+   "prop": {
+    "itemSpacing": 9,
+    "padding": 12
+   },
+   "bound": {
+    "local:Tokens (WIP)/spacing-m": 5
+   }
+  },
+  "spacing:25": {
+   "n": 3,
+   "ex": [
+    "3:388",
+    "3:712",
+    "3:688"
+   ],
+   "prop": {
+    "padding": 2,
+    "itemSpacing": 1
+   }
+  },
+  "radius:9999": {
+   "n": 24,
+   "ex": [
+    "3:626",
+    "3:626",
+    "3:626",
+    "3:626"
+   ],
+   "prop": {
+    "radius": 24
+   }
+  },
+  "spacing:23": {
+   "n": 1,
+   "ex": [
+    "3:687"
+   ],
+   "prop": {
+    "padding": 1
+   }
+  }
+ },
+ "type": {
+  "Inter|Bold|48|120%|-2%": {
+   "n": 2,
+   "ex": [
+    "3:524",
+    "3:670"
+   ],
+   "bound": {
+    "Typography/Title Page/Size Base": 2
+   },
+   "style": {
+    "Title Page": 1
+   }
+  },
+  "Inter|Regular|16|140%|0": {
+   "n": 27,
+   "ex": [
+    "3:518",
+    "3:520",
+    "3:522",
+    "3:477"
+   ],
+   "bound": {
+    "Typography/Body/Size Medium": 27
+   },
+   "style": {
+    "Body Base": 2
+   }
+  },
+  "Inter|Semi Bold|24|120%|-2%": {
+   "n": 8,
+   "ex": [
+    "3:475",
+    "3:392",
+    "3:617",
+    "3:622"
+   ],
+   "bound": {
+    "Typography/Heading/Size Base": 8
+   },
+   "style": {
+    "Heading": 1
+   }
+  },
+  "Inter|Regular|16|100%|0": {
+   "n": 6,
+   "ex": [
+    "3:484",
+    "3:491",
+    "3:498",
+    "3:398"
+   ],
+   "bound": {
+    "Typography/Body/Size Medium": 6
+   }
+  }
+ },
+ "effects": {
+  "bg-blur:4": {
+   "n": 1,
+   "ex": [
+    "3:748"
+   ]
+  }
+ },
+ "internal": {
+  "Color/Background/Default/Default": {
+   "n": 7,
+   "values": {
+    "#ffffff": 7
+   },
+   "props": {
+    "fill": 7
+   }
+  },
+  "Color/Border/Default/Default": {
+   "n": 7,
+   "values": {
+    "#d9d9d9": 7
+   },
+   "props": {
+    "stroke": 7
+   }
+  },
+  "Size/Space/600": {
+   "n": 4,
+   "values": {
+    "24": 4
+   },
+   "props": {
+    "itemSpacing": 4
+   }
+  },
+  "Size/Space/800": {
+   "n": 16,
+   "values": {
+    "32": 16
+   },
+   "props": {
+    "padding": 16
+   }
+  },
+  "Size/Stroke/Border": {
+   "n": 79,
+   "values": {
+    "1": 79
+   },
+   "props": {
+    "strokeWeight": 79
+   }
+  },
+  "Color/Icon/Default/Default": {
+   "n": 4,
+   "values": {
+    "#1e1e1e": 4
+   },
+   "props": {
+    "stroke": 4
+   }
+  },
+  "Size/Space/200": {
+   "n": 152,
+   "values": {
+    "8": 152
+   },
+   "props": {
+    "itemSpacing": 40,
+    "padding": 112
+   }
+  },
+  "Responsive/border-width": {
+   "n": 12,
+   "values": {
+    "1": 12
+   },
+   "props": {
+    "strokeWeight": 12
+   }
+  },
+  "Size/Space/300": {
+   "n": 45,
+   "values": {
+    "12": 45
+   },
+   "props": {
+    "itemSpacing": 3,
+    "padding": 42
+   }
+  },
+  "Color/Background/Neutral/Tertiary": {
+   "n": 6,
+   "values": {
+    "#e3e3e3": 6
+   },
+   "props": {
+    "fill": 6
+   }
+  },
+  "Color/Border/Neutral/Secondary": {
+   "n": 6,
+   "values": {
+    "#767676": 6
+   },
+   "props": {
+    "stroke": 6
+   }
+  },
+  "Size/Radius/200": {
+   "n": 152,
+   "values": {
+    "8": 152
+   },
+   "props": {
+    "radius": 152
+   }
+  },
+  "Color/Text/Default/Default": {
+   "n": 36,
+   "values": {
+    "#1e1e1e": 36
+   },
+   "props": {
+    "text": 36
+   }
+  },
+  "Typography/Body/Size Medium": {
+   "n": 49,
+   "values": {
+    "16": 49
+   },
+   "props": {
+    "fontSize": 49
+   }
+  },
+  "Typography/Body/Font Family": {
+   "n": 49,
+   "values": {
+    "fontFamily": 49
+   },
+   "props": {
+    "fontFamily": 49
+   }
+  },
+  "Typography/Body/Font Weight Regular": {
+   "n": 49,
+   "values": {
+    "400": 49
+   },
+   "props": {
+    "fontWeight": 49
+   }
+  },
+  "Color/Background/Brand/Default": {
+   "n": 5,
+   "values": {
+    "#2c2c2c": 5
+   },
+   "props": {
+    "fill": 5
+   }
+  },
+  "Color/Border/Brand/Default": {
+   "n": 5,
+   "values": {
+    "#2c2c2c": 5
+   },
+   "props": {
+    "stroke": 5
+   }
+  },
+  "Color/Text/Brand/On Brand": {
+   "n": 5,
+   "values": {
+    "#f5f5f5": 5
+   },
+   "props": {
+    "text": 5
+   }
+  },
+  "Color/Background/Brand/Tertiary": {
+   "n": 3,
+   "values": {
+    "#f5f5f5": 3
+   },
+   "props": {
+    "fill": 3
+   }
+  },
+  "Color/Text/Brand/On Brand Secondary": {
+   "n": 3,
+   "values": {
+    "#1e1e1e": 3
+   },
+   "props": {
+    "text": 3
+   }
+  },
+  "Size/Space/400": {
+   "n": 6,
+   "values": {
+    "16": 6
+   },
+   "props": {
+    "padding": 6
+   }
+  },
+  "Color/Border/Neutral/tertiary": {
+   "n": 3,
+   "values": {
+    "#b2b2b2": 3
+   },
+   "props": {
+    "stroke": 3
+   }
+  },
+  "Size/Space/100": {
+   "n": 8,
+   "values": {
+    "4": 8
+   },
+   "props": {
+    "padding": 8
+   }
+  },
+  "Size/Radius/100": {
+   "n": 8,
+   "values": {
+    "4": 8
+   },
+   "props": {
+    "radius": 8
+   }
+  },
+  "Color/Text/Neutral/Tertiary": {
+   "n": 3,
+   "values": {
+    "#767676": 3
+   },
+   "props": {
+    "text": 3
+   }
+  },
+  "Color/Border/Neutral/Default": {
+   "n": 1,
+   "values": {
+    "#303030": 1
+   },
+   "props": {
+    "stroke": 1
+   }
+  },
+  "Color/Text/Neutral/Default": {
+   "n": 1,
+   "values": {
+    "#303030": 1
+   },
+   "props": {
+    "text": 1
+   }
+  },
+  "Typography/Title Page/Size Base": {
+   "n": 1,
+   "values": {
+    "48": 1
+   },
+   "props": {
+    "fontSize": 1
+   }
+  },
+  "Typography/Title Page/Font Family": {
+   "n": 1,
+   "values": {
+    "fontFamily": 1
+   },
+   "props": {
+    "fontFamily": 1
+   }
+  },
+  "Typography/Title Page/Font Weight": {
+   "n": 1,
+   "values": {
+    "700": 1
+   },
+   "props": {
+    "fontWeight": 1
+   }
+  },
+  "Color/Background/Danger/Default": {
+   "n": 2,
+   "values": {
+    "#ec221f": 2
+   },
+   "props": {
+    "fill": 2
+   }
+  },
+  "Color/Border/Danger/Secondary": {
+   "n": 2,
+   "values": {
+    "#c00f0c": 2
+   },
+   "props": {
+    "stroke": 2
+   }
+  },
+  "Color/Text/Danger/On Danger": {
+   "n": 2,
+   "values": {
+    "#fee9e7": 2
+   },
+   "props": {
+    "text": 2
+   }
+  },
+  "Color Primitives/Black/100": {
+   "n": 1,
+   "values": {
+    "#0c0c0d0d": 1
+   },
+   "props": {
+    "effect.color": 1
+   }
+  },
+  "Size/Depth/Negative 100": {
+   "n": 2,
+   "values": {
+    "-4": 2
+   },
+   "props": {
+    "effect.spread": 2
+   }
+  },
+  "Size/Depth/100": {
+   "n": 2,
+   "values": {
+    "4": 2
+   },
+   "props": {
+    "effect.radius": 1,
+    "effect.offsetY": 1
+   }
+  },
+  "Size/Depth/0": {
+   "n": 2,
+   "values": {
+    "0": 2
+   },
+   "props": {
+    "effect.offsetX": 2
+   }
+  },
+  "Color Primitives/Black/200": {
+   "n": 1,
+   "values": {
+    "#0c0c0d1a": 1
+   },
+   "props": {
+    "effect.color": 1
+   }
+  },
+  "Size/Depth/800": {
+   "n": 1,
+   "values": {
+    "32": 1
+   },
+   "props": {
+    "effect.radius": 1
+   }
+  },
+  "Size/Depth/400": {
+   "n": 1,
+   "values": {
+    "16": 1
+   },
+   "props": {
+    "effect.offsetY": 1
+   }
+  },
+  "Typography Primitives/Scale 06": {
+   "n": 4,
+   "values": {
+    "32": 4
+   },
+   "props": {
+    "radius": 4
+   }
+  }
+ },
+ "structures": [
+  {
+   "kind": "full",
+   "n": 6,
+   "size": 83,
+   "names": {
+    "Switch Field": 6
+   },
+   "detached": 6,
+   "insideDetached": 6,
+   "ids": [
+    "3:623",
+    "3:629",
+    "3:635",
+    "3:644",
+    "3:650",
+    "3:656"
+   ],
+   "sig": "F(V0,0,0,0g0)[F(H0,0,0,0g12)[T(Inter Regular 16),F(absfsr)[V]],T(Inter Regular 16)]"
+  },
+  {
+   "kind": "full",
+   "n": 6,
+   "size": 76,
+   "names": {
+    "Input Field": 6
+   },
+   "detached": 6,
+   "insideDetached": 6,
+   "ids": [
+    "3:394",
+    "3:400",
+    "3:406",
+    "3:480",
+    "3:487",
+    "3:494"
+   ],
+   "sig": "F(V0,0,0,0g8)[T(Inter Regular 16),F(H12,16,12,16g0fsr)[T(Inter Regular 16)]]"
+  },
+  {
+   "kind": "full",
+   "n": 7,
+   "size": 36,
+   "names": {
+    "Text Heading": 7
+   },
+   "detached": 7,
+   "insideDetached": 7,
+   "ids": [
+    "3:391",
+    "3:474",
+    "3:616",
+    "3:621",
+    "3:642",
+    "3:690",
+    "3:715"
+   ],
+   "sig": "F(H0,0,0,0g0)[T(Inter Semi Bold 24)]"
+  },
+  {
+   "kind": "full",
+   "n": 6,
+   "size": 48,
+   "names": {
+    "Checkbox and Label": 6
+   },
+   "detached": 0,
+   "insideDetached": 6,
+   "ids": [
+    "3:624",
+    "3:630",
+    "3:636",
+    "3:645",
+    "3:651",
+    "3:657"
+   ],
+   "sig": "F(H0,0,0,0g12)[T(Inter Regular 16),F(absfsr)[V]]"
+  },
+  {
+   "kind": "full",
+   "n": 6,
+   "size": 41,
+   "names": {
+    "Input": 6
+   },
+   "detached": 0,
+   "insideDetached": 6,
+   "ids": [
+    "3:397",
+    "3:403",
+    "3:409",
+    "3:483",
+    "3:490",
+    "3:497"
+   ],
+   "sig": "F(H12,16,12,16g0fsr)[T(Inter Regular 16)]"
+  },
+  {
+   "kind": "full",
+   "n": 5,
+   "size": 37,
+   "names": {
+    "Tab": 5
+   },
+   "detached": 5,
+   "insideDetached": 5,
+   "ids": [
+    "3:517",
+    "3:519",
+    "3:521",
+    "3:732",
+    "3:734"
+   ],
+   "sig": "F(H4,12,4,12g0s)[T(Inter Regular 16)]"
+  },
+  {
+   "kind": "shell",
+   "n": 5,
+   "size": 37,
+   "names": {
+    "Card (Slot)": 5
+   },
+   "detached": 5,
+   "insideDetached": 0,
+   "ids": [
+    "3:388",
+    "3:471",
+    "3:613",
+    "3:687",
+    "3:712"
+   ],
+   "sig": "F(V24,24,24,24g24fsr)[F(V0,0,0,0g24)]"
+  },
+  {
+   "kind": "full",
+   "n": 6,
+   "size": 12,
+   "names": {
+    "Switch": 6
+   },
+   "detached": 0,
+   "insideDetached": 6,
+   "ids": [
+    "3:626",
+    "3:632",
+    "3:638",
+    "3:647",
+    "3:653",
+    "3:659"
+   ],
+   "sig": "F(absfsr)[V]"
+  },
+  {
+   "kind": "shell",
+   "n": 4,
+   "size": 36,
+   "names": {
+    "Page title": 1,
+    "Card title": 3
+   },
+   "detached": 0,
+   "insideDetached": 3,
+   "ids": [
+    "1:674",
+    "3:390",
+    "3:689",
+    "3:714"
+   ],
+   "sig": "F(V0,0,0,0g8)[F(H0,0,0,0g0),I(Text)]"
+  },
+  {
+   "kind": "full",
+   "n": 3,
+   "size": 59,
+   "names": {
+    "Card title": 3
+   },
+   "detached": 0,
+   "insideDetached": 3,
+   "ids": [
+    "3:390",
+    "3:689",
+    "3:714"
+   ],
+   "sig": "F(V0,0,0,0g8)[F(H0,0,0,0g0)[T(Inter Semi Bold 24)],I(Text)]"
+  },
+  {
+   "kind": "shell",
+   "n": 3,
+   "size": 42,
+   "names": {
+    "Card title": 2,
+    "Page title": 1
+   },
+   "detached": 0,
+   "insideDetached": 2,
+   "ids": [
+    "1:876",
+    "3:473",
+    "3:615"
+   ],
+   "sig": "F(V0,0,0,0g8)[F(H0,0,0,0g0),F(H0,0,0,0g0)]"
+  },
+  {
+   "kind": "full",
+   "n": 3,
+   "size": 34,
+   "names": {
+    "Text": 3
+   },
+   "detached": 3,
+   "insideDetached": 2,
+   "ids": [
+    "3:476",
+    "3:618",
+    "3:667"
+   ],
+   "sig": "F(H0,0,0,0g0)[T(Inter Regular 16)]"
+  },
+  {
+   "kind": "shell",
+   "n": 3,
+   "size": 28,
+   "names": {
+    "Tabs": 3
+   },
+   "detached": 3,
+   "insideDetached": 0,
+   "ids": [
+    "3:515",
+    "3:662",
+    "3:729"
+   ],
+   "sig": "F(H0,0,0,0g0)[F(H0,0,0,0g0)]"
+  }
+ ],
+ "structureClusters": 13
+}

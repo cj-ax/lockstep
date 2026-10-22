@@ -97,6 +97,10 @@ Three layers enforce it:
    file.
 3. Every **skill that writes** tells Claude to check the key before each write.
 
+Reading is allowed: `lockstep:score` and `lockstep:learn` read protected files with read-only
+scripts. The hook lets one through only when its code is exactly what `render.py` printed, so
+edited or hand-written code is still blocked.
+
 If a settings file exists but can't be read, every Figma write is blocked until you fix it, so a
 typo can't quietly turn the protection off. The hook can't see which file Figma desktop has open,
 so it doesn't cover the third-party figma-console MCP; don't run that against your library.
@@ -111,7 +115,7 @@ Five skills. Claude picks the right one from what you ask, or you can name it.
 | `lockstep:build` | Builds a page in a draft from library instances and tokens, then scores, looks at screenshots and fixes until it passes. Runs `init` first if needed. | "Build our team members page in Figma with our design system" |
 | `lockstep:score` | Read-only. Measures how faithfully any frame uses its library and lists the offending layers. | "How faithfully does this frame use our library? <link>" |
 | `lockstep:fix` | Clones frames and binds raw values to exact-match library tokens, so nothing looks different. Then rescores and lists the values that have no token. | "Bind this design's spacing and colours to our tokens" |
-| `lockstep:learn` (early) | For a design system that isn't finished. Protects every source file, works out the front-end stack from a repository (or writes questions for whoever knows it), and records what exists. Proposing tokens and components comes next. | "Learn our design system: here's the Figma library, two product files and the repo" |
+| `lockstep:learn` (early) | For a design system that isn't finished. Protects every source file, works out the front-end stack from a repository (or writes questions for whoever knows it), audits how your Figma files use colours, spacing, type and components, and drafts token and component proposals for review. Generating the system comes next. | "Learn our design system: here's the Figma library, two product files and the repo" |
 
 ## What "faithful" means here
 
@@ -140,6 +144,9 @@ Claude also looks at a screenshot of every frame, because the score can't judge 
   - `lockstep_config.py` loads the protected keys, and adds one with `protect`.
   - `scan_repo.py` reads a front-end repository (without running it) and drafts STACK.md, or
     writes questions for an architect when there's no repository.
+  - `audit.js` records what a product file uses; `inventory_local.js` reads an unpublished
+    library in place. Both are read-only.
+  - `propose.py` turns those into draft tokens and components.
 - `hooks/`: the write guard.
 
 ## Known limits

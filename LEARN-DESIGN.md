@@ -84,15 +84,20 @@ It writes `stack.json` (the machine-readable result) and a draft `STACK.md`. The
 
 ### 3. Design harvest (milestone 2)
 
-**Library inventory.** This uses the existing `inventory.js` (components, variables and structure) for a **published** library. Half-built libraries are often unpublished, and importing by key fails for local components. So `inventory.js` gains a `local` mode: it walks the library file's own COMPONENT and COMPONENT_SET nodes, and reads its local variable collections (`getLocalVariableCollectionsAsync`) in place. It switches to each page once per call and fans pages out across calls, following Figma's page rule.
+**Library inventory.** This uses the existing `inventory.js` (components, variables and structure) for a **published** library. Half-built libraries are often unpublished, and importing by key fails for local components. So there's a separate read-only script, `inventory_local.js` (built in milestone 2). It runs in the library file itself, so `inventory.js`, which imports, never has to. It has two parts:
+- **components:** walks each page's COMPONENT and COMPONENT_SET nodes (loading pages with `page.loadAsync`, never switching the current page) and records each one's properties, publish status, instance count in the file, and a structure signature;
+- **variables:** reads local variable collections and styles in place.
 
-**Usage audit**, the new `audit.js`, runs on each product file. It reuses `score.js`'s walk, which already separates authored nodes, library internals and slot contents, and raw values from bound ones. It records:
+Pages can be fanned out across calls with `--pages`.
+
+**Usage audit**, the new `audit.js` (built in milestone 2), runs on each product file. It reuses `score.js`'s walk, which already separates authored nodes, library internals and slot contents, and raw values from bound ones. It records:
 - **instances:** per component, the count, the variant combinations used, and which overrides were made;
-- **detached frames:** the count, and the original `detachedInfo.componentKey`. This is direct evidence of which component they came from, and the strongest signal for both de facto and deleted components;
+- **detached frames:** the count, and the original `detachedInfo.componentKey`. This is direct evidence of which component they came from, and the strongest signal for both de facto and deleted components. The key is the *variant's* key, not the set's, so learn groups detached copies by name and keeps the keys as evidence;
+- **library internals:** the variables bound inside library instances, with their values and the properties they drive. This names values the product layers left raw: `#1e1e1e` is `Text/Default/Default` because the library's own text uses it;
 - **raw values:** every colour, type style (family, size, weight, line height), spacing, radius, stroke width and effect, with whether it's bound, to which variable or style, and the node it's on;
-- **repeated structures:** a structural hash of each frame subtree. The hash covers node types, auto-layout direction, sizing modes, padding and gap, and child order, and ignores text content and exact sizes. Clusters of three or more matching subtrees become de facto component candidates.
+- **repeated structures:** a structural signature of each frame subtree, at two depths. It covers node types, auto-layout direction, padding and gap (rounded to 4, so drift doesn't split a pattern), paint presence, text style and child order. It ignores text content, sizes and sizing modes, because a component hugs and its placed copies stretch. The *full* signature (3 levels) matches identical parts. The *shell* signature (1 level) matches containers with different contents, such as cards. Clusters of three or more become de facto component candidates. A slot counts as one node, whatever it holds.
 
-Output goes to `audit/<file>.json`, capped per call, with pagination for large files. Reading these files needs the guard change in **"Reading protected files"** below.
+Output is aggregated (values with counts and example node IDs, not every node), so it fits `use_figma`'s 48 KB. Large files are paged with `--offset`. Reading these files needs the guard change in **"Reading protected files"** below.
 
 ### 4. Code harvest (milestone 2–3)
 
@@ -102,13 +107,14 @@ Output goes to `audit/<file>.json`, capped per call, with pagination for large f
 
 ### 5. Reconcile (milestone 3)
 
-**Token proposals.** These cluster raw and bound values across all sources:
-- colours by OKLab distance (ΔE under 2 is the same token);
-- spacing and radius by exact value, with ±1px drift flagged against the nearest 4px step;
-- type by the tuple (family, size, weight, line height).
+**Token proposals** (`propose.py`, built early, in milestone 2). These group raw and bound values across all sources:
+- **Evidence is never merged.** A value bound to a variable or style anywhere, or defined as a local variable, is a token of its own. The milestone 2 fixture showed why: SDS's own greys sit within OKLab ΔE 2 of each other (`#2c2c2c` and `#303030` are 1.6 apart; `#757575` and `#767676` are 0.3 apart). "ΔE under 2 is the same token" would have merged real tokens.
+- **Drift is an unbound value near a token** (colour: ΔE under 2; numbers: within 1), used a third as often or less. It's attached to that token. A near tie goes to the value designers place most, and the alternative is listed.
+- **Unbound values with nothing near them** are proposals of their own.
+- **Type** is grouped by the tuple (family, style, size, line height, letter spacing).
 
 Each cluster becomes a proposal with:
-- a suggested name, taken from existing variable or code names where any match, otherwise from role, such as `color/text/default`;
+- a suggested name. It's taken from the library variables bound to that value, choosing the one whose words fit how designers use it: a value used on shapes and frames gets `Background/…` over `Text/…`. WIP names are used when there's no library name. Role names (`color/text/default`) for unnamed values come in milestone 3;
 - its usage count;
 - the drift values it absorbed;
 - example node IDs.
@@ -147,11 +153,11 @@ See "Proving it" below. Each milestone reports its numbers the way REPORT.md doe
 
 Today the write guard blocks every `use_figma` call on a protected file, including reads. Learn has to read the library and product files, and protecting them is right, so the guard needs a read-only allowance.
 
-**Proposal for milestone 2:**
-- `render.py` stamps Lockstep's read-only scripts (`inventory`, `score`, `audit`) with a first-line marker: `// lockstep-readonly sha256=<hash of the rest of the code>`.
-- The guard allows `use_figma` on a protected file only when the code carries that marker, the hash matches, and the script is on the read-only list.
-- Any other code, including a hand-edited copy of a read-only script, stays blocked.
-- The read-only scripts never call a mutating API, and a unit test lists every mutating Plugin API call to enforce that.
+**Built in milestone 2:**
+- `render.py` stamps Lockstep's read-only scripts (`score`, `audit`, `inventory_local`) with a first line, `// lockstep-readonly {"script": …, "values": …}`, naming the script and the values it was filled with.
+- The guard allows `use_figma` on a protected file only when it can **re-render the script from that line and get exactly the same code**. A hash alone wouldn't do: anyone can compute a hash of edited code. Each value must be plain JSON, so a value can't smuggle code in.
+- Any other code, a hand-edited copy, code appended to a render, or a stamp naming a write script stays blocked. So does the allowance on any tool but `use_figma`.
+- `tests/test_readonly.py` checks this, and checks that the read-only scripts call none of a list of mutating Plugin API calls. The list does flag `fix.js`, `settle.js`, `inventory.js` (it imports) and the fixture's `degrade.js`.
 
 **Fallback:** the user duplicates each source file to their Drafts ("Duplicate to your drafts" in Figma), and learn reads the copies. This needs one manual step per file, which is why it's the fallback.
 
@@ -159,14 +165,14 @@ Read-only MCP tools (`search_design_system`, `get_metadata`, `get_variable_defs`
 
 ## Proving it: degrade and recover
 
-**Fixture:** a draft built from Figma's Simple Design System (SDS) and then broken on purpose, in a way that's deterministic and logged. It's built by `learn/fixture/make_fixture.js`, and `learn/fixture/ground-truth.json` records the truth. See `learn/fixture/README.md`. It contains:
-- **half a library:** some SDS components turned into local, unpublished components on a Library page, and the rest deleted;
+**Fixture:** a draft built from Figma's Simple Design System (SDS) and then broken on purpose, in a way that's deterministic and logged. It's built by `capture_truth.js`, `degrade.js` and `census.js` in `learn/fixture/`, and `learn/fixture/ground-truth.json` records the truth. See `learn/fixture/README.md`. It contains:
 - **product pages:** the settings page (four frames) from Lockstep's SDS build, with:
-  - instances of deleted components detached;
+  - every instance of five "unpublished" components detached;
   - half the remaining instances detached;
-  - most variable bindings replaced by raw values;
-  - a few raw values nudged to simulate drift;
-- **a half-built token collection:** a local "Tokens (WIP)" collection holding about a third of SDS's tokens, some under different names.
+  - 80% of variable bindings replaced by raw values;
+  - ten raw values nudged to simulate drift;
+- **a half-built token collection:** a local "Tokens (WIP)" collection with nine renamed SDS tokens and two unused ones;
+- **a started-and-abandoned library page:** three local components that duplicate deleted parts, used nowhere.
 
 **Metrics, scored by `learn/fixture/score_recovery.py` from milestone 2:**
 
@@ -177,6 +183,7 @@ Read-only MCP tools (`search_design_system`, `get_metadata`, `get_variable_defs`
 | Drift detection | Injected drift values that are flagged and attached to the right token |
 | Component recall | Deleted or detached components found as de facto or detached-from candidates |
 | WIP mapping | WIP variables correctly mapped to their SDS token despite renaming |
+| Names | Suggested names that are a library name for that value and use, and that are exactly the designer's token |
 | Build faithfulness | `build` on the learned system: Lockstep's usual score plus a screenshot check |
 
 Recall is measured before review, against all proposals, to test the harvest. Precision is measured after a scripted review that approves everything, which makes it a worst case.
@@ -186,7 +193,7 @@ Recall is measured before review, against all proposals, to test the harvest. Pr
 | # | Scope | Done means |
 |---|---|---|
 | **1** | This design; the degraded SDS fixture and its ground truth; intake and stack discovery | `learn` runs steps 1–2 on a real repo (Slalom DS), a non-DS app and no repo; the fixture exists in a draft with its ground truth committed |
-| 2 | `inventory.js` local mode; `audit.js`; read-only guard allowance; token clustering; `score_recovery.py` | Token and component recall on the fixture, reported |
+| **2** | `inventory_local.js`; `audit.js`; read-only guard allowance; token and component proposals (`propose.py`); `score_recovery.py` | Token and component recall on the fixture, reported: see `learn/fixture/RECOVERY.md` and REPORT.md |
 | 3 | Code harvest (Tier 2–3), reconcile, coverage matrix, review page | Coverage and conflicts for the fixture and for Slalom (Figma plus `design-system-beta`) |
 | 4 | Generate tokens, docs, context and draft variables; `build` reads learned files | `build` on the fixture's learned system, scored |
 | 5 | Code to Figma: draft components for code-only and de facto parts | Draft library components scored by `score` and a screenshot check |
@@ -194,7 +201,7 @@ Recall is measured before review, against all proposals, to test the harvest. Pr
 
 ## Open questions for review
 
-1. **The read-only allowance in the guard**, or duplicate-to-drafts only? Recommendation: the allowance, with the fallback documented.
+1. ~~The read-only allowance in the guard, or duplicate-to-drafts only?~~ Built in milestone 2, with the fallback documented.
 2. **One `lockstep:learn` command, or one per step?** Recommendation: one command that resumes from `SOURCES.md`, plus the existing `init` for a finished library.
 3. **Token naming:** propose names from roles (`color/text/default`) or keep whatever names exist, however messy? Recommendation: keep existing names when there's a match, and use role names only for unnamed values.
 4. **Where the review page lives:** an artifact with the database capability (shareable, persistent), or a Markdown checklist in the repo (simplest)? Recommendation: start with Markdown in milestone 3, and make it a page if reviewers aren't technical.

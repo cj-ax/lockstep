@@ -191,6 +191,42 @@ The fix is a new shared script, `settle.js`. It nudges every library instance th
 5. **Packaging.** `use_figma` is the only way to run code inside Figma, so the scripts must travel with the tool. A skill that holds `inventory.js`, `score.js` and `fix.js` and sends them is realistic. A write guard should be a configurable hook (protected file keys), not one hard-coded key.
 6. **The scorer still needs to grow.** It catches binding, instance use, detachment, colour, auto layout, clipped content and clipped text, and sample text (including in nested components). It doesn't yet catch overlap, a wrong variant for the context (for example a destructive action that isn't negative), or uninformative placeholder icons.
 
+## lockstep:learn on the degraded fixture (2026-10-22)
+
+**Setup.** `learn` is for design systems that aren't finished (see `LEARN-DESIGN.md`). Its test is a fixture with a known answer: four SDS settings frames, broken on purpose and logged (`learn/fixture/README.md`).
+- Five components were "never published", so every copy of them is detached; half the other placements are detached too: 42 detached frames in all.
+- 80% of token bindings are raw values, 39 of 43 text layers lost their style, and ten values were nudged a hair off their token.
+- A half-built `Tokens (WIP)` collection holds nine renamed SDS tokens and two unused ones, and a "Library (WIP)" page holds three local components nobody uses.
+
+Learn read it with two new read-only scripts, `audit.js` and `inventory_local.js` (one call each, plus one for variables). `propose.py` drafted proposals offline, and `learn/fixture/score_recovery.py` scored them against `ground-truth.json`. Full output: `learn/fixture/RECOVERY.md`.
+
+| Metric | With the library's evidence | Product files only |
+|---|---|---|
+| Token recall: tokens the frames' own layers used | 24/24 | 24/24 |
+| Token recall: also tokens used only inside library components | 52/52 | 41/52 |
+| Token precision, approving every proposal | 44/44 | 33/33 |
+| Suggested name is a library name for that value and use | 20/24 | 0/24 (WIP names only) |
+| Suggested name is exactly the designer's token | 18/24 | 0/24 |
+| Text styles found | 4/4 | 4/4 |
+| Drift edits flagged and attached to the right token | 10/10 | 10/10 |
+| Components found | 10/10 | 10/10 |
+| Components found from structure alone | 7/10 | 7/10 |
+| Components classified correctly (de facto vs published) | 9/10 | 9/10 |
+| WIP variables mapped to the right library token | 9/9 | 0/9 |
+| Noise variables flagged as unused | 2/2 | 2/2 |
+| Local components linked to what they duplicate, flagged unused | 3/3 | 3/3 |
+
+"Product files only" reruns the proposals with every library binding and style stripped from the audit (`harvest/audit-product-files-only.json`), as for an org with no library at all (tier 1a).
+
+**Read these numbers carefully.**
+- **The fixture is kind.** SDS is still a live library, so the frames' remaining instances bind real SDS variables internally. That's where most names and the WIP mapping come from, and it's why the "product files only" column loses them. A real tier-1a org will see names drop to whatever local variables exist.
+- **Components are found mostly from detach evidence.** `detachedInfo.componentKey` survives deletion, so every detached copy names its origin. Structure alone finds 7 of 10. It misses Button Group (its copies hold different buttons), Text Title Page (2 copies) and Dialog (1), because a pattern needs 3 matching copies.
+- **Values match more easily than names.** Precision and recall are by value. the original frames use 25 colour tokens but only 16 distinct colour values, so "found" says nothing about telling `Text/Default/Default` from `Icon/Default/Default`; the name rows do.
+- **Misses:** the dialog scrim (`#ffffffcc`), the font families and one font weight have no name, because nothing binds them in the frames. `#757575` (8 raw uses) has no name either: no variable in these frames is bound to it, though SDS defines it. Dialog is called de facto because these frames have a detached copy and no live instance; telling "published but unused here" from "deleted" needs the library's own inventory.
+- **One iteration on the fixture.** The first pass found the right values but merged `#757575` into `#767676` as drift. That showed the design doc's "ΔE under 2 is one token" rule was wrong for real greys, so the rule is now "evidence is never merged" (`LEARN-DESIGN.md`, step 5). Signatures also stopped including sizing modes, after local components failed to match their stretched product copies. Both changes are general, not fixture-specific, but the scores are after one round of fixing against this fixture.
+
+**Reading protected files.** The guard now lets a read-only script reach a protected file, but only when it can re-render the script from its first line and get identical code. `tests/test_readonly.py` passes 14 checks: the read-only scripts call no mutating API, and edited, appended, forged or smuggled code is blocked. Lockstep isn't installed as a plugin in this session, so the hook was tested by piping tool calls to it, not live. The fixture draft itself isn't protected.
+
 ## Caveats
 - **Small sample.** There was one run per arm, with the same model. Read differences of a few points as directional.
 - **Who built what.** I built L myself and also wrote the scorer, so L may be tuned to what the scorer measures. A and B were built by independent subagents that never saw the scorer. The fresh-agent trial is the independent check: an agent with only the plugin scored 99 on a page it hadn't seen, though it shipped a defect the score couldn't see.
@@ -201,5 +237,7 @@ Everything now lives in the Claude Code plugin at `plugin/` (see `plugin/README.
 - `plugin/scripts/score.js`: the faithfulness score. It is read-only and org-agnostic; render it with `render.py score --roots ...`.
 - `plugin/scripts/fix.js`: the auto-fix pass. It binds only raw values that exactly match a library token and lists the rest as decisions.
 - `plugin/scripts/inventory.js`: reads a library's components and token values, in two parts.
+- `plugin/scripts/audit.js`, `inventory_local.js`, `propose.py`: learn's read-only harvest and its proposals. `learn/fixture/` holds the fixture, its ground truth, the harvest and `RECOVERY.md`.
+- `tests/test_readonly.py`: the guard's read-only allowance.
 - `plugin/skills/build/references/examples/`: the Slalom and Simple Design System builds, their keys, and `PAGE_BRIEF.md`, the shared prompt given to every arm.
 - `research/`: how the Slalom library was read, and the raw search output.

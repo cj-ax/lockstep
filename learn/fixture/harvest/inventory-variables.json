@@ -1,0 +1,114 @@
+{
+ "file": "bgsOIiq7b6ToKhhGPSjkvY",
+ "collections": [
+  {
+   "name": "Tokens (WIP)",
+   "id": "VariableCollectionId:3:750",
+   "modes": [
+    "Mode 1"
+   ],
+   "variables": [
+    [
+     "bg/white",
+     "COLOR",
+     [
+      "#ffffff"
+     ],
+     "ALL_SCOPES",
+     null
+    ],
+    [
+     "spacing-xl",
+     "FLOAT",
+     [
+      32
+     ],
+     "ALL_SCOPES",
+     null
+    ],
+    [
+     "spacing-l",
+     "FLOAT",
+     [
+      24
+     ],
+     "ALL_SCOPES",
+     null
+    ],
+    [
+     "border-w",
+     "FLOAT",
+     [
+      1
+     ],
+     "ALL_SCOPES",
+     null
+    ],
+    [
+     "spacing-m",
+     "FLOAT",
+     [
+      16
+     ],
+     "ALL_SCOPES",
+     null
+    ],
+    [
+     "spacing-xs",
+     "FLOAT",
+     [
+      8
+     ],
+     "ALL_SCOPES",
+     null
+    ],
+    [
+     "text/primary",
+     "COLOR",
+     [
+      "#1e1e1e"
+     ],
+     "ALL_SCOPES",
+     null
+    ],
+    [
+     "radius-md",
+     "FLOAT",
+     [
+      8
+     ],
+     "ALL_SCOPES",
+     null
+    ],
+    [
+     "border/light",
+     "COLOR",
+     [
+      "#d9d9d9"
+     ],
+     "ALL_SCOPES",
+     null
+    ],
+    [
+     "blue-accent",
+     "COLOR",
+     [
+      "#3b82f6"
+     ],
+     "ALL_SCOPES",
+     null
+    ],
+    [
+     "spacing-s",
+     "FLOAT",
+     [
+      6
+     ],
+     "ALL_SCOPES",
+     null
+    ]
+   ]
+  }
+ ],
+ "styles": []
+}

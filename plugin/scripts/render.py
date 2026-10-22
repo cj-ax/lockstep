@@ -4,13 +4,20 @@
   render.py fix --roots 8:517,8:559
   render.py settle --roots 7:922,7:1302
   render.py inventory --keys keys.json --part components   (or variables, structure)
+  render.py inventory_local --part components [--pages 0:1,5:2]   (or variables)
+  render.py audit --roots 0:1 [--offset 0]
   render.py path/to/build.js --which Profile,Account --version 2
 
-score, fix, settle and inventory are the scripts next to this file; anything else is a path to a build
-script. Every script gets __PROTECTED_FILE_KEYS__ from lockstep_config, so a write script
-refuses to run inside a protected file even if the hook isn't installed. Full-line comments
-are stripped to save tokens. It exits non-zero if a placeholder is left unfilled or the code
-is over use_figma's 50,000-character limit.
+Named scripts are the ones next to this file; anything else is a path to a build script.
+Every script gets __PROTECTED_FILE_KEYS__ from lockstep_config, so a write script refuses to
+run inside a protected file even if the hook isn't installed. Full-line comments are stripped
+to save tokens. It exits non-zero if a placeholder is left unfilled or the code is over
+use_figma's 50,000-character limit.
+
+Read-only scripts (READONLY below) get a first line, `// lockstep-readonly {...}`, naming the
+script and its filled-in values. The write guard re-renders from that line and lets the call
+reach a protected file only if the result is identical, so learn can read an org's library
+and product files while any other code, or an edited copy, stays blocked.
 """
 import argparse
 import json
@@ -23,46 +30,88 @@ sys.path.insert(0, str(HERE))
 from lockstep_config import ConfigError, protected_file_keys  # noqa: E402
 
 CODE_LIMIT = 50_000
+NAMED = ("score", "fix", "settle", "inventory", "inventory_local", "audit")
+READONLY = ("score", "inventory_local", "audit")
+MARKER = "// lockstep-readonly "
 
 
-def main():
-    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("script", help="score | fix | settle | inventory | path to a build script")
-    ap.add_argument("--roots", help="comma-separated frame node IDs (score, fix, settle)")
-    ap.add_argument("--keys", help="JSON file of {label: component or component set key} (inventory)")
-    ap.add_argument("--part", choices=["components", "variables", "structure"], help="inventory part")
-    ap.add_argument("--which", help="comma-separated frame names (build scripts)")
-    ap.add_argument("--version", type=int, help="canvas row for this pass (build scripts)")
-    args = ap.parse_args()
+class RenderError(Exception):
+    pass
 
-    path = HERE / f"{args.script}.js" if args.script in ("score", "fix", "settle", "inventory") else Path(args.script)
+
+def render(script, values):
+    """Code for `script` (a NAMED script or a path) with `values` ({PLACEHOLDER: JSON text}) filled in."""
+    path = HERE / f"{script}.js" if script in NAMED else Path(script)
     source = path.read_text()
-
-    try:
-        protected = sorted(protected_file_keys())
-    except ConfigError as e:
-        sys.exit(str(e))
-    values = {"PROTECTED_FILE_KEYS": json.dumps(protected)}
-    if args.roots:
-        values["ROOT_IDS"] = json.dumps([r.strip() for r in args.roots.split(",") if r.strip()])
-    if args.keys:
-        values["COMPONENT_KEYS"] = json.dumps(json.loads(Path(args.keys).read_text()))
-    if args.part:
-        values["PART"] = json.dumps(args.part)
-    if args.which:
-        values["WHICH"] = json.dumps([w.strip() for w in args.which.split(",") if w.strip()])
-    if args.version is not None:
-        values["VERSION"] = str(args.version)
-
+    values = {"PROTECTED_FILE_KEYS": json.dumps(sorted(protected_file_keys())), **values}
     lines = [l for l in source.splitlines() if not l.strip().startswith("//")]
     code = re.sub(r"\n{3,}", "\n\n", "\n".join(lines)).strip() + "\n"
     for name, value in values.items():
         code = code.replace(f"__{name}__", value)
     missing = sorted(set(re.findall(r"__([A-Z_]+)__", code)))
     if missing:
-        sys.exit(f"{path.name} still needs: {', '.join(missing)}. See render.py --help.")
+        raise RenderError(f"{path.name} still needs: {', '.join(missing)}. See render.py --help.")
+    if script in READONLY:
+        stamp = {"script": script, "values": {k: v for k, v in values.items() if k != "PROTECTED_FILE_KEYS"}}
+        code = MARKER + json.dumps(stamp, separators=(",", ":")) + "\n" + code
     if len(code) > CODE_LIMIT:
-        sys.exit(f"{path.name} renders to {len(code):,} characters, over use_figma's {CODE_LIMIT:,} limit. Build fewer frames per call.")
+        raise RenderError(f"{path.name} renders to {len(code):,} characters, over use_figma's {CODE_LIMIT:,} limit. Build fewer frames per call.")
+    return code
+
+
+def is_lockstep_readonly(code):
+    """True only if `code` is exactly what render() produces for a read-only script."""
+    if not isinstance(code, str) or not code.startswith(MARKER):
+        return False
+    try:
+        stamp = json.loads(code[len(MARKER):code.index("\n")])
+        script = stamp["script"]
+        # Values must be plain JSON data, so a value can't smuggle code into the script.
+        values = {str(k): json.dumps(json.loads(v)) for k, v in stamp["values"].items()}
+    except (ValueError, KeyError, TypeError, AttributeError):
+        return False
+    if script not in READONLY or "PROTECTED_FILE_KEYS" in values:
+        return False
+    try:
+        return render(script, values) == code
+    except (RenderError, ConfigError, OSError):
+        return False
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("script", help=" | ".join(NAMED) + " | path to a build script")
+    ap.add_argument("--roots", help="comma-separated node IDs: frames, or pages for audit")
+    ap.add_argument("--keys", help="JSON file of {label: component or component set key} (inventory)")
+    ap.add_argument("--part", choices=["components", "variables", "structure"], help="inventory part")
+    ap.add_argument("--pages", help="comma-separated page IDs (inventory_local; default all pages)")
+    ap.add_argument("--offset", type=int, help="where to resume a large audit (audit)")
+    ap.add_argument("--which", help="comma-separated frame names (build scripts)")
+    ap.add_argument("--version", type=int, help="canvas row for this pass (build scripts)")
+    args = ap.parse_args()
+
+    split = lambda s: [x.strip() for x in s.split(",") if x.strip()]
+    values = {}
+    if args.roots:
+        values["ROOT_IDS"] = json.dumps(split(args.roots))
+    if args.keys:
+        values["COMPONENT_KEYS"] = json.dumps(json.loads(Path(args.keys).read_text()))
+    if args.part:
+        values["PART"] = json.dumps(args.part)
+    if args.script == "inventory_local":
+        values["PAGE_IDS"] = json.dumps(split(args.pages) if args.pages else [])
+    if args.script == "audit":
+        values["OFFSET"] = json.dumps(args.offset or 0)
+    if args.which:
+        values["WHICH"] = json.dumps(split(args.which))
+    if args.version is not None:
+        values["VERSION"] = str(args.version)
+
+    try:
+        code = render(args.script, values)
+        protected = protected_file_keys()
+    except (RenderError, ConfigError) as e:
+        sys.exit(str(e))
     if not protected:
         print("Warning: no protected file keys are configured, so nothing guards the library. See the skill's setup step.", file=sys.stderr)
     sys.stdout.write(code)

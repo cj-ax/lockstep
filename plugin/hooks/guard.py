@@ -2,6 +2,8 @@
 
 The tool call arrives as JSON on stdin. If a protected file key appears in any of its input
 fields (fileKey, URLs, ...), the call is blocked (exit 2, reason on stderr, which Claude sees).
+One exception: a use_figma call whose code is exactly one of Lockstep's read-only scripts as
+render.py produced it (see render.is_lockstep_readonly), so learn can read the org's files.
 The `code` field is skipped: Lockstep's rendered scripts carry the protected keys in their own
 guard, and that guard checks figma.fileKey inside Figma. An unreadable config also blocks, so a
 typo can't switch the protection off.
@@ -13,6 +15,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(os.environ.get("CLAUDE_PLUGIN_ROOT", Path(__file__).parent.parent)) / "scripts"))
 from lockstep_config import ConfigError, protected_file_keys  # noqa: E402
+from render import is_lockstep_readonly  # noqa: E402
 
 
 def main():
@@ -29,10 +32,13 @@ def main():
     fields = json.dumps({k: v for k, v in tool_input.items() if k != "code"} if isinstance(tool_input, dict) else tool_input)
     for key, name in keys.items():
         if key in fields:
+            if call.get("tool_name", "").endswith("__use_figma") and is_lockstep_readonly(tool_input.get("code")):
+                return 0
             target = f"{name} (file key {key})" if name else f"file {key}"
             print(
                 f"Blocked: this would write to {target}, which is protected. "
-                "Lockstep only writes to draft files: create one with create_new_file, or use a copy in your Drafts.",
+                "Lockstep only writes to draft files: create one with create_new_file, or use a copy in your Drafts. "
+                "To read a protected file, pass a read-only script exactly as render.py printed it.",
                 file=sys.stderr,
             )
             return 2
