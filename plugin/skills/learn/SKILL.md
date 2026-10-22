@@ -13,9 +13,10 @@ the system.
 Shared scripts live in the plugin's `scripts/` folder, two levels up from this skill's base
 directory (shown when the skill loads). Below, `$LOCKSTEP` is that plugin folder.
 
-**Built so far: steps 1–3**, plus draft token and component proposals. Steps 4–8 (code harvest,
-reconcile against code, review, generate, gate) aren't built yet. When you finish step 3, show
-the user `PROPOSALS.md` and say the review and generate steps are coming. Don't improvise them.
+**Built so far: steps 1–5**: intake, stack discovery, design harvest with proposals, code
+harvest, and reconcile (a coverage matrix and the conflicts to rule on). Steps 6–8 (review,
+generate, gate) aren't built yet. When you finish step 5, show the user `COVERAGE.md` and say
+the review and generate steps are coming. Don't improvise them.
 
 Everything goes in `lockstep/<org-slug>/` in the user's project:
 
@@ -27,6 +28,8 @@ Everything goes in `lockstep/<org-slug>/` in the user's project:
 | `harvest/audit-<file>.json` | 3 | What each product file uses: instances, detached copies, values, repeated structures |
 | `harvest/inventory-*.json` | 3 | The library file's own components, variables and styles |
 | `proposals.json`, `PROPOSALS.md` | 3 | Draft tokens, de facto components, WIP mapping, unused local parts |
+| `code.json` | 4 | Code tokens resolved per theme, type styles, component facts |
+| `coverage.json`, `COVERAGE.md` | 5 | What's in Figma, code, both or neither, and the conflicts |
 
 ## Rules
 
@@ -182,11 +185,50 @@ the user, in plain words:
 
 Everything here is a proposal. Say so: nothing is generated until a person has reviewed it.
 
+## 4. Code harvest
+
+Only with a repository (tier 3), after STACK.md is confirmed:
+
+```bash
+python3 "$LOCKSTEP/scripts/harvest_code.py" <repo path> --stack lockstep/<org-slug>/stack.json --out lockstep/<org-slug>/code.json
+```
+
+It resolves every token in the sources STACK.md lists to a value per theme (`var()` and `$`
+references followed, rgba turned into hex with alpha), groups type variables into styles, counts
+where each token is used, and notes each component's casing, fonts and hard-coded colours. Read
+its one-line summary: if a token source you expected is missing, check STACK.md's token list.
+
+## 5. Reconcile
+
+**The design side** is one of:
+- a **published library**: run `lockstep:init`'s inventory (components and variables) in a draft.
+  The variables part only sees variables and styles that the inventoried components use, so:
+  - for each code component with no Figma match, search the library for it
+    (`search_design_system`, one query per name) and add the sets you find to `keys.json`
+    before inventorying components;
+  - for code type styles and shadows with no Figma match, search for the style names and read
+    them with `render.py inventory --style-keys <file> --part styles`, then add the result to
+    the variables file's `styles`.
+  Otherwise "code-only" means "not inventoried", which is wrong.
+- **proposals** from step 3, when there's no finished library.
+
+```bash
+python3 "$LOCKSTEP/scripts/reconcile.py" --components <inventory.components.json> --variables <inventory.variables.json> --code lockstep/<org-slug>/code.json --title "<library> and <repo>" --out lockstep/<org-slug>
+python3 "$LOCKSTEP/scripts/reconcile.py" --proposals lockstep/<org-slug>/proposals.json --code lockstep/<org-slug>/code.json --out lockstep/<org-slug>
+```
+
+Leave out `--code` with no repository. Then check before showing anything:
+- open the code files behind three conflicts and confirm the values;
+- look at two "complete" rows whose names don't match (`nameMatch: false` in coverage.json):
+  same value, different meaning is possible;
+- any "code-only" component: search the library once more under another name.
+
+Tell the user, in plain words: how much of Figma is in code and the reverse, the conflicts
+(each is a question for the team, not a bug report), and the near misses listed as "close code
+value". Everything is still a proposal until a person rules on the conflicts.
+
 ## What comes next (not built yet)
 
-4. **Code harvest:** tokens and components in detail, from the sources STACK.md names.
-5. **Reconcile:** match the proposals to code tokens and components, build a coverage matrix
-   (design-only, code-only, both, drift), and list the conflicts.
 6. **Review:** a person accepts, renames or rejects each proposal.
 7. **Generate:** tokens, component docs, AI context, and a LIBRARY.md that `lockstep:build`
    can use.

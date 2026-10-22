@@ -115,7 +115,7 @@ Five skills. Claude picks the right one from what you ask, or you can name it.
 | `lockstep:build` | Builds a page in a draft from library instances and tokens, then scores, looks at screenshots and fixes until it passes. Runs `init` first if needed. | "Build our team members page in Figma with our design system" |
 | `lockstep:score` | Read-only. Measures how faithfully any frame uses its library and lists the offending layers. | "How faithfully does this frame use our library? <link>" |
 | `lockstep:fix` | Clones frames and binds raw values to exact-match library tokens, so nothing looks different. Then rescores and lists the values that have no token. | "Bind this design's spacing and colours to our tokens" |
-| `lockstep:learn` (early) | For a design system that isn't finished. Protects every source file, works out the front-end stack from a repository (or writes questions for whoever knows it), audits how your Figma files use colours, spacing, type and components, and drafts token and component proposals for review. Generating the system comes next. | "Learn our design system: here's the Figma library, two product files and the repo" |
+| `lockstep:learn` (early) | For a design system that isn't finished. Protects every source file, works out the front-end stack from a repository (or writes questions for whoever knows it), audits how your Figma files use colours, spacing, type and components, drafts token and component proposals, and compares Figma with your code: what's in both, what's missing, and where they disagree. Generating the system comes next. | "Learn our design system: here's the Figma library, two product files and the repo" |
 
 ## What "faithful" means here
 
@@ -147,6 +147,8 @@ Claude also looks at a screenshot of every frame, because the score can't judge 
   - `audit.js` records what a product file uses; `inventory_local.js` reads an unpublished
     library in place. Both are read-only.
   - `propose.py` turns those into draft tokens and components.
+  - `harvest_code.py` resolves a repository's tokens per theme; `reconcile.py` matches design
+    and code into a coverage matrix and a list of conflicts.
 - `hooks/`: the write guard.
 
 ## Known limits

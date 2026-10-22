@@ -99,13 +99,22 @@ Pages can be fanned out across calls with `--pages`.
 
 Output is aggregated (values with counts and example node IDs, not every node), so it fits `use_figma`'s 48 KB. Large files are paged with `--offset`. Reading these files needs the guard change in **"Reading protected files"** below.
 
-### 4. Code harvest (milestone 2–3)
+### 4. Code harvest (milestone 3)
 
-- **Tier 3:** `stack.json` already lists components and props. This step adds token values, resolved from SCSS, CSS variables, the Tailwind theme or a theme object to concrete values, plus import paths and default props.
-- **Tier 2:** the same from Storybook. Its `index.json` gives story titles and args, so neither a repo nor a running Storybook is needed if the static build is available.
+- **Tier 3 (built: `harvest_code.py`):** `stack.json` already lists components and props. This step adds token values per theme, resolved from CSS custom properties (scoped by theme selector), Sass and Less variables and theme objects, following `var()` and `$` references. It also groups type variables into styles (`heading-6-size`, `-weight`, `-line-height`, `-spacing`), counts each token's uses, and records per component its `text-transform`, its hard-coded font families and its hard-coded colours. Not yet: Tailwind config values, DTCG files, import paths and default props.
+- **Tier 2 (not built):** the same from Storybook. Its `index.json` gives story titles and args, so neither a repo nor a running Storybook is needed if the static build is available.
 - **Tier 0–1:** the framework's public API, as in DS-AI-Bridge Tier 1, mapped from the questionnaire's answer.
 
-### 5. Reconcile (milestone 3)
+### 5. Reconcile (milestone 3; built as `reconcile.py`)
+
+**What it compares.** The design side is a published library's inventory or learn's proposals; the code side is `code.json`. Tokens are compared within a kind. Modes pair with themes by name (`Light` with `slalomLight`, `BuildDark` with `slalomBuild`). Letter spacing in percent is converted with the font size. Components pair by name after dropping prefixes (`SButton`, `v-avatar`) and a short synonym list (`modal` = `dialog`, `Status Alert Bar` = `alert`). Their variant axes are compared value by value after removing words shared with the axis, prop and component names (`label in` against `labelType: in`, `Error Toast` against `error`).
+
+Interaction-state axes (hover, pressed, focused) and on/off axes are listed but not compared: code styles states in CSS.
+
+**What milestone 3 changed from the plan.**
+- **A token is drift only if the name matches word for word, or closely with one mode agreeing.** A loose name match produced false drift on Slalom (`success` against `theme.primary`, because the folder "Primary Colors" counted).
+- **Every code token with the same value is covered,** not just the best-named one. Otherwise `--slm-primary` came out code-only next to an exact Figma match.
+- **The design side has to be complete for "code-only" to mean anything.** `inventory.js` only sees variables and styles the inventoried components use. So learn searches the library for each unmatched code component and style, and reads styles by key (`inventory --part styles`). On Slalom, that turned 9 code-only components into matches and 4 code-only type styles into 3 complete and 1 drift.
 
 **Token proposals** (`propose.py`, built early, in milestone 2). These group raw and bound values across all sources:
 - **Evidence is never merged.** A value bound to a variable or style anywhere, or defined as a local variable, is a token of its own. The milestone 2 fixture showed why: SDS's own greys sit within OKLab ΔE 2 of each other (`#2c2c2c` and `#303030` are 1.6 apart; `#757575` and `#767676` are 0.3 apart). "ΔE under 2 is the same token" would have merged real tokens.
@@ -194,8 +203,8 @@ Recall is measured before review, against all proposals, to test the harvest. Pr
 |---|---|---|
 | **1** | This design; the degraded SDS fixture and its ground truth; intake and stack discovery | `learn` runs steps 1–2 on a real repo (Slalom DS), a non-DS app and no repo; the fixture exists in a draft with its ground truth committed |
 | **2** | `inventory_local.js`; `audit.js`; read-only guard allowance; token and component proposals (`propose.py`); `score_recovery.py` | Token and component recall on the fixture, reported: see `learn/fixture/RECOVERY.md` and REPORT.md |
-| 3 | Code harvest (Tier 2–3), reconcile, coverage matrix, review page | Coverage and conflicts for the fixture and for Slalom (Figma plus `design-system-beta`) |
-| 4 | Generate tokens, docs, context and draft variables; `build` reads learned files | `build` on the fixture's learned system, scored |
+| **3** | Code harvest (tier 3), reconcile, coverage matrix, conflicts | Coverage and conflicts for Slalom (Figma plus `design-system-beta`): `learn/slalom/COVERAGE.md`; the fixture's design-only coverage, since SDS's code isn't in hand. Tier 2 (Storybook) and the review page move to milestone 4 |
+| 4 | Review page; generate tokens, docs, context and draft variables; `build` reads learned files | `build` on the fixture's learned system, scored |
 | 5 | Code to Figma: draft components for code-only and de facto parts | Draft library components scored by `score` and a screenshot check |
 | 6 | Pilot on Josh's programme | Whatever that programme needs first, most likely documentation |
 

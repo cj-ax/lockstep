@@ -1,0 +1,1611 @@
+{
+ "collections": {
+  "Brand Color tokens (to be deleted) [Mode 1]": [],
+  "Brand colors  [Light mode,Dark mode,Build Mode,Mobile]": [
+   [
+    "color display text light",
+    "68fd708e837d6e50319426cdf14f7c6418b99136",
+    "#ffffff",
+    "fills",
+    {
+     "Light mode": "#ffffff",
+     "Dark mode": "#ffffff",
+     "Build Mode": "#ffffff",
+     "Mobile": "#ffffff"
+    }
+   ]
+  ],
+  "Color Semantic Variables (updated) [Light,Dark]": [
+   [
+    "Font Colors/text-regular",
+    "82f040093af673c7804535a216ebb111286a3872",
+    "#000000",
+    "fills",
+    {
+     "Light": "#000000",
+     "Dark": "#ffffff"
+    }
+   ],
+   [
+    "Font Colors/text-regular inverse",
+    "5d55fc3d0f76e10f7d4f5127dfd8ed6e0af672c7",
+    "#ffffff",
+    "fills/textRangeFills",
+    {
+     "Light": "#ffffff",
+     "Dark": "#000000"
+    }
+   ],
+   [
+    "Font Colors/text-high-emphasis",
+    "6832154e7c05c97989461ead61f71087f3fd0e83",
+    "#000000e6",
+    "fills/textRangeFills",
+    {
+     "Light": "#000000e6",
+     "Dark": "#ffffff"
+    }
+   ],
+   [
+    "Font Colors/text-medium-emphasis",
+    "cd9f5777cd48ce8534a9c02326d7bd71a9206209",
+    "#00000099",
+    "fills",
+    {
+     "Light": "#00000099",
+     "Dark": "#ffffffb3"
+    }
+   ],
+   [
+    "Font Colors/text-disabled",
+    "12c2e538e9c902c0812c954f7bb0fb1b87e64305",
+    "#00000066",
+    "fills",
+    {
+     "Light": "#00000066",
+     "Dark": "#ffffff80"
+    }
+   ],
+   [
+    "Font Colors/text-error",
+    "df78849fe94e902c9fc4a05e7d775b2750675916",
+    "#d2023f",
+    "fills",
+    {
+     "Light": "#d2023f",
+     "Dark": "#ffdbdf"
+    }
+   ],
+   [
+    "Font Colors/text-icon-fill",
+    "5e887003d29efa810aae3f66858caa7753a64bf5",
+    "#000000",
+    "fills/textRangeFills",
+    {
+     "Light": "#000000",
+     "Dark": "#000000"
+    }
+   ],
+   [
+    "Font Colors/text-high-contrast-bg-1",
+    "0fbdf66bd1d51dd61acb36e68cdc079d2fe1e768",
+    "#000000",
+    "",
+    {
+     "Light": "#000000",
+     "Dark": "#000000"
+    }
+   ],
+   [
+    "Font Colors/text-high-contrast-bg-2",
+    "1cb5979888751a94f15cf826660edecedbd338af",
+    "#ffffff",
+    "",
+    {
+     "Light": "#ffffff",
+     "Dark": "#ffffff"
+    }
+   ],
+   [
+    "Primary Colors/background-disable-field",
+    "816ab613e4f1e090169fa632ad1aaa58f943841f",
+    "#e0e0e0",
+    "fills",
+    {
+     "Light": "#e0e0e0",
+     "Dark": "#e0e0e033"
+    }
+   ],
+   [
+    "Primary Colors/background-field",
+    "2cd6dc0992802cf9bfb7c91539db4872aebd0402",
+    "#ffffff",
+    "fills",
+    {
+     "Light": "#ffffff",
+     "Dark": "#444444"
+    }
+   ],
+   [
+    "Primary Colors/background-page",
+    "91a116c8d0add16d8c319dc62995977f1f26973c",
+    "#fafafa",
+    "fills",
+    {
+     "Light": "#fafafa",
+     "Dark": "#212121"
+    }
+   ],
+   [
+    "Primary Colors/background-surface",
+    "9aa251a20d0aec20bd2db28c4e62ce5adb7a3c7b",
+    "#ffffff",
+    "fills",
+    {
+     "Light": "#ffffff",
+     "Dark": "#444444"
+    }
+   ],
+   [
+    "Primary Colors/background-table cell",
+    "d68b505b45e6bc091a5798a4b9dab327b4c5e2cb",
+    "#fafafa",
+    "fills",
+    {
+     "Light": "#fafafa",
+     "Dark": "#424242"
+    }
+   ],
+   [
+    "Primary Colors/primary",
+    "3b6aece34df47b7fd19d5433f277e86e81bade5a",
+    "#0c62fb",
+    "fills",
+    {
+     "Light": "#0c62fb",
+     "Dark": "#86b1fd"
+    }
+   ],
+   [
+    "Primary Colors/primary-fill-hover",
+    "d686729633f9afe49e11b7c9aab87853d6c66608",
+    "#0c62fb1a",
+    "",
+    {
+     "Light": "#0c62fb1a",
+     "Dark": "#86b1fd4d"
+    }
+   ],
+   [
+    "Primary Colors/success",
+    "75870dc02b7b8a216df9a2bf15d52ac5322fdb2d",
+    "#5cb85c",
+    "fills",
+    {
+     "Light": "#5cb85c",
+     "Dark": "#5cb85c"
+    }
+   ],
+   [
+    "Primary Colors/error-element",
+    "fe8101841a7d1d38ae37435760271c7503e69547",
+    "#d2023f",
+    "fills",
+    {
+     "Light": "#d2023f",
+     "Dark": "#ffdbdf"
+    }
+   ],
+   [
+    "Primary Colors/menu-icon",
+    "0378f69351639aeed95e20589245d3fd84504813",
+    "#00000099",
+    "fills",
+    {
+     "Light": "#00000099",
+     "Dark": "#ffffffb3"
+    }
+   ],
+   [
+    "Primary Colors/hover",
+    "610e7b85f248a32e62ce0aadec196750a7c66892",
+    "#f0f3f8",
+    "fills",
+    {
+     "Light": "#f0f3f8",
+     "Dark": "#757575"
+    }
+   ],
+   [
+    "Primary Colors/toggle-background-off",
+    "c484a07bfb2c2880f571a86a5d6b729909d30e04",
+    "#9b9b9b",
+    "fills",
+    {
+     "Light": "#9b9b9b",
+     "Dark": "#757575"
+    }
+   ],
+   [
+    "Primary Colors/toggle-background-on",
+    "3e093783fadf000e806b353263cfab565bcf396c",
+    "#73a6ff",
+    "fills",
+    {
+     "Light": "#73a6ff",
+     "Dark": "#86b1fd99"
+    }
+   ],
+   [
+    "Primary Colors/toggle-thumb",
+    "d3ac4ce0c2d9afbc0b1f7e27cf646ec06cca2d94",
+    "#ffffff",
+    "fills",
+    {
+     "Light": "#ffffff",
+     "Dark": "#e0e0e0"
+    }
+   ],
+   [
+    "Primary Colors/background-chip-emphasis-1",
+    "8b873f124700b1d283ff5766a01e861664d76d7e",
+    "#deff4d66",
+    "",
+    {
+     "Light": "#deff4d66",
+     "Dark": "#9488f066"
+    }
+   ],
+   [
+    "Primary Colors/background-chip-emphasis-2",
+    "994dfdd0bf73640df83f9d1b3e76468327809cb0",
+    "#0c62fb1a",
+    "",
+    {
+     "Light": "#0c62fb1a",
+     "Dark": "#86b1fd4d"
+    }
+   ],
+   [
+    "Border Colors/primary-border-reduced",
+    "ebb9197fde275fe67788722c300437743c53ca87",
+    "#86b1fd",
+    "",
+    {
+     "Light": "#86b1fd",
+     "Dark": "#86b1fd80"
+    }
+   ],
+   [
+    "Border Colors/neutral-border-color",
+    "e744c3d18f19cb505a7a04cf3aeafa1991c48f64",
+    "#dbdbdb",
+    "strokes",
+    {
+     "Light": "#dbdbdb",
+     "Dark": "#757575"
+    }
+   ],
+   [
+    "Border Colors/table-neutral-border-color",
+    "b737ab103e76bb269e7c0e908c9ceee838911437",
+    "#dbdbdb",
+    "strokes",
+    {
+     "Light": "#dbdbdb",
+     "Dark": "#616161"
+    }
+   ],
+   [
+    "Border Colors/field-border-default",
+    "b55a88b344a76a37d6e2e886b7a3fc65fa49017c",
+    "#757575",
+    "strokes",
+    {
+     "Light": "#757575",
+     "Dark": "#ffffff80"
+    }
+   ],
+   [
+    "Border Colors/field-border-hover",
+    "9c4c4c87eb13f8bf55c48709c044dce91ac81d34",
+    "#000000",
+    "strokes",
+    {
+     "Light": "#000000",
+     "Dark": "#ffffff"
+    }
+   ],
+   [
+    "Border Colors/field-border-pressed",
+    "3f30de8c90915b1444a21d102353f516fd450134",
+    "#0c62fb",
+    "strokes",
+    {
+     "Light": "#0c62fb",
+     "Dark": "#86b1fd"
+    }
+   ],
+   [
+    "Border Colors/field-border-error",
+    "38080ded76ed5166fbb5fff1941997969ed22230",
+    "#d2023f",
+    "strokes",
+    {
+     "Light": "#d2023f",
+     "Dark": "#ffa6af"
+    }
+   ],
+   [
+    "semantic button color/outline/positive-outlined-txt",
+    "abcaf78e07fd96e3cf266f1eb5105b4e0ae3356a",
+    "#5cb85c",
+    "fills",
+    {
+     "Light": "#5cb85c",
+     "Dark": "#5cb85c"
+    }
+   ],
+   [
+    "semantic button color/outline/positive-outlined-bg-default",
+    "c4e6487abe6d573fc8bb5143e746712ee222eda0",
+    "#ffffff",
+    "fills",
+    {
+     "Light": "#ffffff",
+     "Dark": "#444444"
+    }
+   ],
+   [
+    "semantic button color/outline/positive-outlined-stroke-default",
+    "50b8faa36da36756e3d1c3ba35e1604582d28895",
+    "#5cb85c",
+    "strokes",
+    {
+     "Light": "#5cb85c",
+     "Dark": "#5cb85c"
+    }
+   ],
+   [
+    "semantic button color/outline/positive-outlined-bg-hover",
+    "88fda6542155f888da11e3b2b326d1355ef1e45f",
+    "#f0f3f8",
+    "fills",
+    {
+     "Light": "#f0f3f8",
+     "Dark": "#757575"
+    }
+   ],
+   [
+    "semantic button color/outline/positive-outlined-stroke-hover",
+    "ac91bdb33747f11e27678fa0a7ed6f12e815baa8",
+    "#5cb85c",
+    "strokes",
+    {
+     "Light": "#5cb85c",
+     "Dark": "#5cb85c"
+    }
+   ],
+   [
+    "semantic button color/outline/positive-outlined-bg-pressed",
+    "736a9e95dae1d51f98cd04c060414fbfeedda9e7",
+    "#ffffff",
+    "fills",
+    {
+     "Light": "#ffffff",
+     "Dark": "#444444"
+    }
+   ],
+   [
+    "semantic button color/outline/positive-outlined-overlay-pressed",
+    "3fd944099f1a2d8cbf5357e08687718fc0f1a3a9",
+    "#0000004d",
+    "fills",
+    {
+     "Light": "#0000004d",
+     "Dark": "#ffffff1a"
+    }
+   ],
+   [
+    "semantic button color/outline/positive-outlined-stroke-pressed",
+    "714753241f7778b725f0ecf9a7d2887bd1f62bae",
+    "#5cb85c",
+    "strokes",
+    {
+     "Light": "#5cb85c",
+     "Dark": "#5cb85c"
+    }
+   ],
+   [
+    "semantic button color/outline/positive-outlined-bg-disable",
+    "cd0e2966cf08542ac754d987f30536b6c20d6441",
+    "#ffffff",
+    "fills",
+    {
+     "Light": "#ffffff",
+     "Dark": "#444444"
+    }
+   ],
+   [
+    "semantic button color/outline/positive-outlined-stroke-disable",
+    "3be10e9d9c66c4945c2d27aec4b3d662bbf592cc",
+    "#9b9b9b",
+    "strokes",
+    {
+     "Light": "#9b9b9b",
+     "Dark": "#9b9b9b"
+    }
+   ],
+   [
+    "semantic button color/outline/positive-outlined-txt-disable",
+    "7eb081297a5ab5ed5f66c1262961c2a11eb5f8cd",
+    "#9b9b9b",
+    "fills",
+    {
+     "Light": "#9b9b9b",
+     "Dark": "#9b9b9b"
+    }
+   ],
+   [
+    "semantic button color/outline/negative-outlined-txt",
+    "f21922d1cee3e387183f50179a8dd3fd9d0e3a8a",
+    "#d2023f",
+    "fills",
+    {
+     "Light": "#d2023f",
+     "Dark": "#ffa6af"
+    }
+   ],
+   [
+    "semantic button color/outline/negative-outlined-bg-default",
+    "b1dab4a1244a6ce90fe80da4ded179e887377943",
+    "#ffffff",
+    "fills",
+    {
+     "Light": "#ffffff",
+     "Dark": "#444444"
+    }
+   ],
+   [
+    "semantic button color/outline/negative-outlined-txt-disable",
+    "e2efdb41ef467e62cfef4817ce9404f850e2f62e",
+    "#00000066",
+    "fills",
+    {
+     "Light": "#00000066",
+     "Dark": "#ffffff80"
+    }
+   ],
+   [
+    "semantic button color/outline/negative-outlined-stroke-default",
+    "ef4575022cc4665672aabc0ebfec3a306e31ea50",
+    "#d2023f66",
+    "strokes",
+    {
+     "Light": "#d2023f66",
+     "Dark": "#ffa6af"
+    }
+   ],
+   [
+    "semantic button color/outline/negative-outlined-bg-hover",
+    "2333a279a000b56fd84a30a1eb3f0c3f497967bc",
+    "#f0f3f8",
+    "fills",
+    {
+     "Light": "#f0f3f8",
+     "Dark": "#757575"
+    }
+   ],
+   [
+    "semantic button color/outline/negative-outlined-stroke-hover",
+    "4afc3a7cd8aa5a378695cc070d19c26954c1e9e3",
+    "#d2023f66",
+    "strokes",
+    {
+     "Light": "#d2023f66",
+     "Dark": "#ffa6af"
+    }
+   ],
+   [
+    "semantic button color/outline/negative-outlined-bg-pressed",
+    "babec607c2e48b9ed3643347bbb5386156f60a8a",
+    "#ffffff",
+    "fills",
+    {
+     "Light": "#ffffff",
+     "Dark": "#444444"
+    }
+   ],
+   [
+    "semantic button color/outline/negative-outlined-overlay-pressed",
+    "ee3d92ca61cb4399a49ee74689117ba179bb7a84",
+    "#0000004d",
+    "fills",
+    {
+     "Light": "#0000004d",
+     "Dark": "#ffffff1a"
+    }
+   ],
+   [
+    "semantic button color/outline/negative-outlined-stroke-pressed",
+    "43127f481772fb1075b116f142c3074d96f00f60",
+    "#d2023f66",
+    "strokes",
+    {
+     "Light": "#d2023f66",
+     "Dark": "#ffa6af"
+    }
+   ],
+   [
+    "semantic button color/outline/negative-outlined-bg-disable",
+    "eb20e4c5ec51fff4099c379862928a3a2438d842",
+    "#ffffff",
+    "fills",
+    {
+     "Light": "#ffffff",
+     "Dark": "#444444"
+    }
+   ],
+   [
+    "semantic button color/outline/negative-outlined-stroke-disable",
+    "5180149b54b27c34d61770e023da580aceb98452",
+    "#9b9b9b",
+    "strokes",
+    {
+     "Light": "#9b9b9b",
+     "Dark": "#757575"
+    }
+   ],
+   [
+    "semantic button color/contained/negative-contained-bg-default",
+    "1008ec6762969672b3b1a6a9b704b962d30c0a90",
+    "#d2023f",
+    "fills",
+    {
+     "Light": "#d2023f",
+     "Dark": "#ffa6af"
+    }
+   ],
+   [
+    "semantic button color/contained/negative-contained-txt",
+    "be145c754cfbea7e5e743b81fbab2dbd317d9033",
+    "#ffffff",
+    "fills",
+    {
+     "Light": "#ffffff",
+     "Dark": "#444444"
+    }
+   ],
+   [
+    "semantic button color/contained/negative-contained-bg-hover",
+    "4f3fe91a480962d2e99b39be4431f65dfb57daf2",
+    "#d2023fcc",
+    "fills",
+    {
+     "Light": "#d2023fcc",
+     "Dark": "#ffa6af"
+    }
+   ],
+   [
+    "semantic button color/contained/negative-contained-bg-pressed",
+    "010c72b21ba5ed464b948ed27e53d42ae8d7cb13",
+    "#d2023f",
+    "fills",
+    {
+     "Light": "#d2023f",
+     "Dark": "#ffa6af"
+    }
+   ],
+   [
+    "semantic button color/contained/negative-contained-overlay-pressed",
+    "e9c366c1ab1d753d79e98b02c20146f8982847e6",
+    "#0000004d",
+    "fills",
+    {
+     "Light": "#0000004d",
+     "Dark": "#0000001a"
+    }
+   ],
+   [
+    "semantic button color/contained/negative-contained-bg-disable",
+    "8a2cc9e3ad22fc4def1521f99dcff6aafa6169b2",
+    "#9b9b9b",
+    "fills",
+    {
+     "Light": "#9b9b9b",
+     "Dark": "#757575"
+    }
+   ],
+   [
+    "semantic button color/contained/negative-contained-txt-disable",
+    "9033db259d0f0bf09cc848749b74b4b1ff907945",
+    "#d3d3d3",
+    "fills",
+    {
+     "Light": "#d3d3d3",
+     "Dark": "#424242"
+    }
+   ],
+   [
+    "button Colors/contained/contained-btn-default-bg",
+    "918829971201f5a0e50b4ed25791fdd73b5841d3",
+    "#0c62fb",
+    "fills",
+    {
+     "Light": "#0c62fb",
+     "Dark": "#86b1fd"
+    }
+   ],
+   [
+    "button Colors/contained/contained-btn-hover-bg",
+    "847eca58c6f72126c27856d2288b2d4938d0cf57",
+    "#0c62fb",
+    "fills",
+    {
+     "Light": "#0c62fb",
+     "Dark": "#86b1fd"
+    }
+   ],
+   [
+    "button Colors/contained/contained-btn-hover-overlay",
+    "059ddce9c923957fe12506255f9ae4e919cb516e",
+    "#ffffff33",
+    "fills",
+    {
+     "Light": "#ffffff33",
+     "Dark": "#ffffff33"
+    }
+   ],
+   [
+    "button Colors/contained/contained-btn-pressed-bg",
+    "d9081e48d8dcc78d2c3329ce2d443406d87d2164",
+    "#0c62fb",
+    "fills",
+    {
+     "Light": "#0c62fb",
+     "Dark": "#86b1fd"
+    }
+   ],
+   [
+    "button Colors/contained/contained-btn-pressed-overlay",
+    "76792d030607e630c2faa0c791ed0e2a0c0463f0",
+    "#ffffff4d",
+    "fills",
+    {
+     "Light": "#ffffff4d",
+     "Dark": "#0000004d"
+    }
+   ],
+   [
+    "button Colors/contained/contained-btn-disabled-bg",
+    "396031737531d3c2523e377f28b48a5b7a8072b9",
+    "#0c62fb4d",
+    "fills",
+    {
+     "Light": "#0c62fb4d",
+     "Dark": "#86b1fd4d"
+    }
+   ],
+   [
+    "button Colors/contained/contained-btn-txt",
+    "9ad564b61996432efac76bcafc189283fdf1e241",
+    "#ffffff",
+    "fills",
+    {
+     "Light": "#ffffff",
+     "Dark": "#000000"
+    }
+   ],
+   [
+    "button Colors/contained/contained-btn-txt disable",
+    "e1358a30e9dd6bc072493c10c852cdf732f30f03",
+    "#ffffff",
+    "fills",
+    {
+     "Light": "#ffffff",
+     "Dark": "#000000"
+    }
+   ],
+   [
+    "button Colors/outlined/outlined-btn-default-bg",
+    "76eabef1048a5df377dd93bc34fd434733a8d348",
+    "#ffffff",
+    "fills",
+    {
+     "Light": "#ffffff",
+     "Dark": "#444444"
+    }
+   ],
+   [
+    "button Colors/neutral-outlined/outlined-neutral-btn-default-bg",
+    "e06b472f9c962a627d26bcf71e063ba54c7fd98d",
+    "#ffffff",
+    "fills",
+    {
+     "Light": "#ffffff",
+     "Dark": "#444444"
+    }
+   ],
+   [
+    "button Colors/neutral-outlined/outlined-neutral-btn-default-stroke",
+    "be64d169390cf8a4d4795a70d1368ff313cda92f",
+    "#000000e6",
+    "strokes",
+    {
+     "Light": "#000000e6",
+     "Dark": "#ffffff"
+    }
+   ],
+   [
+    "button Colors/neutral-outlined/outlined-neutral-btn-txt",
+    "006ad53a2e75c78dedc8580d4d6b0d5e97fdb756",
+    "#000000e6",
+    "fills",
+    {
+     "Light": "#000000e6",
+     "Dark": "#ffffffb3"
+    }
+   ],
+   [
+    "button Colors/neutral-outlined/outlined-neutral-btn-hover-overlay",
+    "b973c04bcb2b980cbfa18f9ec025d88400acc317",
+    "#0000001a",
+    "fills",
+    {
+     "Light": "#0000001a",
+     "Dark": "#ffffff1a"
+    }
+   ],
+   [
+    "button Colors/neutral-outlined/outlined-neutral-btn-pressed-overlay",
+    "dae9b8989eae516de3e87e43ed6c3ad2f4a22d8c",
+    "#0000004d",
+    "fills",
+    {
+     "Light": "#0000004d",
+     "Dark": "#ffffff4d"
+    }
+   ],
+   [
+    "button Colors/neutral-outlined/outlined-neutra-btn-disable-stroke",
+    "bac364c1dfea25aa52eede7a35d0c6a600568396",
+    "#00000066",
+    "strokes",
+    {
+     "Light": "#00000066",
+     "Dark": "#757575"
+    }
+   ],
+   [
+    "button Colors/neutral-outlined/outlined-neutra-btn-disable-txt",
+    "4762985e2d3dab1fea5ce99695883cb9447d2a49",
+    "#00000066",
+    "fills",
+    {
+     "Light": "#00000066",
+     "Dark": "#ffffff80"
+    }
+   ],
+   [
+    "button Colors/outlined/outlined-btn-default-stroke",
+    "8cc853608c3afb4f888e5aea4f1e4f4fcb1f54f0",
+    "#86b1fd",
+    "strokes",
+    {
+     "Light": "#86b1fd",
+     "Dark": "#86b1fd66"
+    }
+   ],
+   [
+    "button Colors/outlined/outlined-btn-hover-bg",
+    "a22ccf788457b89cbdd3582b396c30c233c06e3e",
+    "#f0f3f8",
+    "fills",
+    {
+     "Light": "#f0f3f8",
+     "Dark": "#757575"
+    }
+   ],
+   [
+    "button Colors/outlined/outlined-btn-hover-border",
+    "c9c4cd2002fc4e00de0941da5c003a9a17adcfe0",
+    "#86b1fd",
+    "strokes",
+    {
+     "Light": "#86b1fd",
+     "Dark": "#86b1fd80"
+    }
+   ],
+   [
+    "button Colors/outlined/outlined-btn-pressed-overlay",
+    "277a390de7a8d2875456a702d412784c889ca91c",
+    "#bdbdbd4d",
+    "fills",
+    {
+     "Light": "#bdbdbd4d",
+     "Dark": "#0000001a"
+    }
+   ],
+   [
+    "button Colors/outlined/outlined-btn-pressed-bg",
+    "476a3cdb0a81b565b9439a9eb75621814861b090",
+    "#ffffff",
+    "fills",
+    {
+     "Light": "#ffffff",
+     "Dark": "#444444"
+    }
+   ],
+   [
+    "button Colors/outlined/outlined-btn-pressed-stroke",
+    "b565360d4343bd5d60ab8e94ff46fb0e3867a698",
+    "#86b1fd",
+    "strokes",
+    {
+     "Light": "#86b1fd",
+     "Dark": "#86b1fd80"
+    }
+   ],
+   [
+    "button Colors/outlined/outlined-btn-disable-bg",
+    "d96ed5994b236d789ccb69bc4c4f3c323e7eee97",
+    "#ffffff",
+    "fills",
+    {
+     "Light": "#ffffff",
+     "Dark": "#444444"
+    }
+   ],
+   [
+    "button Colors/outlined/outlined-btn-disable-stroke",
+    "37ca677a22ab030be22921d83ef90360306bb135",
+    "#dbdbdb",
+    "strokes",
+    {
+     "Light": "#dbdbdb",
+     "Dark": "#eaeaea"
+    }
+   ],
+   [
+    "button Colors/outlined/outlined-btn-disable-txt",
+    "05a30586060120d95e6944fbb8293dd6651eb882",
+    "#00000066",
+    "fills",
+    {
+     "Light": "#00000066",
+     "Dark": "#ffffff80"
+    }
+   ],
+   [
+    "button Colors/outlined/outlined-btn-txt",
+    "e264abb6f96c372eca0f352475032f85ec7f0dc3",
+    "#0c62fb",
+    "fills",
+    {
+     "Light": "#0c62fb",
+     "Dark": "#86b1fd"
+    }
+   ],
+   [
+    "button Colors/text/text-btn-bg-default",
+    "5f262dfe0b6af8a4cede06eb48849a09b3aab90a",
+    "#ffffff",
+    "fills",
+    {
+     "Light": "#ffffff",
+     "Dark": "#444444"
+    }
+   ],
+   [
+    "button Colors/text/text-btn-bg-hover",
+    "23707787dfd0cae68ed9184955267e58db4710a0",
+    "#f0f3f8",
+    "fills",
+    {
+     "Light": "#f0f3f8",
+     "Dark": "#757575"
+    }
+   ],
+   [
+    "button Colors/text/text-btn-bg-pressed",
+    "8ea2428e89f6c8875c952c298b5b13e4b079a1fa",
+    "#f0f3f8",
+    "fills",
+    {
+     "Light": "#f0f3f8",
+     "Dark": "#757575"
+    }
+   ],
+   [
+    "button Colors/text/text-btn-overlay-pressed",
+    "84bea2a269fac427dc18498d5f33d326cdc44a50",
+    "#0c62fb33",
+    "fills",
+    {
+     "Light": "#0c62fb33",
+     "Dark": "#86b1fd33"
+    }
+   ],
+   [
+    "button Colors/text/text-btn-txt",
+    "877060afb9e6bcaaea8096b612fcaeb45f95488d",
+    "#0c62fb",
+    "fills",
+    {
+     "Light": "#0c62fb",
+     "Dark": "#86b1fd"
+    }
+   ],
+   [
+    "button Colors/text/text-btn-txt-disable",
+    "ac64384d02286406d5529f90c5e0ca3dec95f5b7",
+    "#00000080",
+    "fills",
+    {
+     "Light": "#00000080",
+     "Dark": "#ffffff80"
+    }
+   ],
+   [
+    "button Colors/text/text-btn-bg-disable",
+    "daa3cf48f9c99499c25bb2d5a75249133c131cc4",
+    "#ffffff",
+    "fills",
+    {
+     "Light": "#ffffff",
+     "Dark": "#444444"
+    }
+   ],
+   [
+    "button Colors/plain/plain-txt",
+    "4bd97472cb1e69f372cb0b912773d890ad0ce881",
+    "#00000099",
+    "fills",
+    {
+     "Light": "#00000099",
+     "Dark": "#ffffffb3"
+    }
+   ],
+   [
+    "button Colors/plain/plain-txt-bg-default",
+    "01b9f9bd3dfe9575eadcefc84ade32c5ba1bf6e0",
+    "#ffffff",
+    "fills",
+    {
+     "Light": "#ffffff",
+     "Dark": "#444444"
+    }
+   ],
+   [
+    "button Colors/plain/plain-txt-bg-hover",
+    "315e1f8335f5adf25e0fe025916c9eb9f64bb92c",
+    "#fafafa",
+    "fills",
+    {
+     "Light": "#fafafa",
+     "Dark": "#212121"
+    }
+   ],
+   [
+    "button Colors/plain/plain-txt-bg-pressed",
+    "5fd4aff424288556c6d3c59aeebd1f283b322298",
+    "#fafafa",
+    "fills",
+    {
+     "Light": "#fafafa",
+     "Dark": "#212121"
+    }
+   ],
+   [
+    "button Colors/plain/plain-txt-overlay-pressed",
+    "4619f312cb9650dd4a885b1c91c6714a6388f852",
+    "#00000033",
+    "fills",
+    {
+     "Light": "#00000033",
+     "Dark": "#ffffff1a"
+    }
+   ],
+   [
+    "button Colors/plain/plain-txt-disable",
+    "93c5baebf2ba311833c4cd4e9714a4bfb4d362d4",
+    "#00000066",
+    "fills",
+    {
+     "Light": "#00000066",
+     "Dark": "#ffffff80"
+    }
+   ],
+   [
+    "button Colors/plain/plain-txt-bg-disable",
+    "598fd03f73a36820b229e6ffba1c8497089cf9e9",
+    "#ffffff",
+    "fills",
+    {
+     "Light": "#ffffff",
+     "Dark": "#444444"
+    }
+   ],
+   [
+    "shadow colors/shadow-1",
+    "038877c10bd9e4f40e89ec1d1e6490a59f1ca34f",
+    "#0000001a",
+    "effects",
+    {
+     "Light": "#0000001a",
+     "Dark": "#0000001a"
+    }
+   ],
+   [
+    "shadow colors/shadow-2",
+    "5ed596e0967ab95fcc80bf1d8cd93b607a06aa3a",
+    "#00000024",
+    "effects",
+    {
+     "Light": "#00000024",
+     "Dark": "#00000024"
+    }
+   ],
+   [
+    "shadow colors/shadow-3",
+    "9dbf8973958a36f19908f6d7e06f8e3476d8f7da",
+    "#00000026",
+    "effects",
+    {
+     "Light": "#00000026",
+     "Dark": "#00000026"
+    }
+   ],
+   [
+    "shadow colors/shadow-4",
+    "456b2edb526415ad7e9d7713283e8cc525844a0f",
+    "#00000033",
+    "effects",
+    {
+     "Light": "#00000033",
+     "Dark": "#00000033"
+    }
+   ],
+   [
+    "shadow colors/shadow-5",
+    "bcdd1196a5a5759bc087a466c23338f3f4597d59",
+    "#0000003d",
+    "effects",
+    {
+     "Light": "#0000003d",
+     "Dark": "#0000003d"
+    }
+   ],
+   [
+    "shadow colors/shadow-6",
+    "6eb9494058be373697a4a7200e169572db4cbf84",
+    "#00000040",
+    "effects",
+    {
+     "Light": "#00000040",
+     "Dark": "#00000040"
+    }
+   ],
+   [
+    "card color/card-bg-primary",
+    "5c97fd5410445372f242c1490269090f632fb843",
+    "#fafafa",
+    "fills",
+    {
+     "Light": "#fafafa",
+     "Dark": "#212121"
+    }
+   ],
+   [
+    "card color/card-stroke-primary",
+    "78789efaa47c4efc4a93b4c578b2201213d3fd9a",
+    "#dbdbdb",
+    "strokes",
+    {
+     "Light": "#dbdbdb",
+     "Dark": "#757575"
+    }
+   ],
+   [
+    "card color/card-bg-secondary",
+    "76571ea57b1ae5bf5ec4117235a0865af75df39b",
+    "#ffffff",
+    "fills",
+    {
+     "Light": "#ffffff",
+     "Dark": "#424242"
+    }
+   ],
+   [
+    "card color/card-stroke-secondary",
+    "06d07d01b471d06db3ee5ff6956377667b9bf6ff",
+    "#dbdbdb",
+    "strokes",
+    {
+     "Light": "#dbdbdb",
+     "Dark": "#eaeaea4d"
+    }
+   ]
+  ],
+  "Colors [Light,Dark,BuildDark]": [
+   [
+    "Border Colors/neutral-border-color",
+    "2406b6c38d78b7178d6a88c42886acb91c9608e2",
+    "#dbdbdb",
+    "strokes",
+    {
+     "Light": "#dbdbdb",
+     "Dark": "#eaeaea",
+     "BuildDark": "#eaeaea"
+    }
+   ],
+   [
+    "Font Colors/text-disabled",
+    "3e93d58fcb6efd9008e4e0a5e2966c3a731285a2",
+    "#00000061",
+    "fills",
+    {
+     "Light": "#00000061",
+     "Dark": "#ffffff80",
+     "BuildDark": "#ffffff80"
+    }
+   ]
+  ],
+  "Corner radius [Mode 1]": [
+   [
+    "Medium",
+    "5beb601eb798f0a285b8c762fec2d4d9d5e34e78",
+    4,
+    "radius"
+   ]
+  ],
+  "Font Variables [Mode 1]": [
+   [
+    "font weight/weight-400",
+    "c61038c1050a6183e39dbcc388c71ef78af2f129",
+    400,
+    "fontWeight"
+   ],
+   [
+    "font weight/weight-700",
+    "8d0ce9782d742a600e9c7e8a10c2c26315a2bf26",
+    700,
+    "fontWeight"
+   ]
+  ],
+  "Radius [Value]": [
+   [
+    "radius-0",
+    "1a664bcec26cde4dae8c9eb50d6ba723e2fb0720",
+    0,
+    "radius"
+   ],
+   [
+    "radius-m",
+    "cc8c1aa474202f648958851ad7002a9e3dabb369",
+    4,
+    "radius"
+   ],
+   [
+    "radius-l",
+    "1564ab3e4c5e49f92472f47707f92d3eb51a245b",
+    8,
+    "radius"
+   ],
+   [
+    "radius-xl",
+    "8a4f6e2a1c88fd5a399f8f9a27fa8e469a55dbb5",
+    24,
+    "radius"
+   ],
+   [
+    "radius-pill",
+    "073cbfc72fb979e12180fb4cec7c2737bbcf6707",
+    9999,
+    "radius"
+   ]
+  ],
+  "Radius [Business @ Slalom,Me @ Slalom]": [
+   [
+    "radius-m",
+    "d597b3694ac41b2b6f92987d822cfabb72514bc6",
+    4,
+    "radius",
+    {
+     "Business @ Slalom": 4,
+     "Me @ Slalom": 4
+    }
+   ],
+   [
+    "radius-l",
+    "0a41c068294a7ee7dbaf445068385317bf8ff531",
+    8,
+    "padding",
+    {
+     "Business @ Slalom": 8,
+     "Me @ Slalom": 8
+    }
+   ],
+   [
+    "radius-pill",
+    "9bcd88f0584d5efdb8e80a697598ab6e092984e9",
+    9999,
+    "radius",
+    {
+     "Business @ Slalom": 9999,
+     "Me @ Slalom": 9999
+    }
+   ]
+  ],
+  "Text [Mode 1]": [
+   [
+    "weight-400",
+    "75bad96e1fadff7aa572f0bdb7a7754cda510a07",
+    400,
+    ""
+   ],
+   [
+    "weight-500",
+    "fc19d3f2b2b94a691dbb8b6e477893efc2d656db",
+    500,
+    "fontWeight"
+   ]
+  ],
+  "border variables [Mode 1]": [
+   [
+    "border-sm",
+    "1e322266d455c87fa64640ff72dcaf3fdec66351",
+    1,
+    "stroke"
+   ],
+   [
+    "border-md",
+    "cf575421bbb7d631d153f21ffd06adf589cf5fac",
+    2,
+    "stroke"
+   ]
+  ],
+  "space variables [Mode 1]": [
+   [
+    "padding/uniform/pa-0",
+    "60a49ef439417247dafe7583e4e7f5c08e15ea23",
+    0,
+    "padding/itemSpacing"
+   ],
+   [
+    "padding/uniform/pa-1",
+    "1c51cef25f4a3fce3c00ff7a34b55fa250cb9b19",
+    4,
+    "padding"
+   ],
+   [
+    "padding/uniform/pa-2",
+    "7fe63e15bd96326b8bb0c7221cf039bcb1f86adb",
+    8,
+    "padding/itemSpacing"
+   ],
+   [
+    "padding/uniform/pa-3",
+    "6922917e98e322e265725533c78efe433f72da94",
+    12,
+    "padding"
+   ],
+   [
+    "padding/uniform/pa-4",
+    "87fe317f560bbeeb8ef93d02cbd4a17a352c6be3",
+    16,
+    "padding"
+   ],
+   [
+    "padding/uniform/pa-6",
+    "e7de87cb0f77390abaa76950a0539a237c88849b",
+    24,
+    "padding"
+   ],
+   [
+    "padding/uniform/pa-8",
+    "267fd6c72c81a443e83fb75724159e472868ba5e",
+    32,
+    "padding"
+   ],
+   [
+    "padding/horizontal/px-0",
+    "153045676b39c4f57824a7ba4c7a16096d3a28b5",
+    0,
+    "padding"
+   ],
+   [
+    "padding/horizontal/px-1",
+    "44d02162cd7145be6da4d6851f5bb5cf39e2f226",
+    4,
+    "padding"
+   ],
+   [
+    "padding/horizontal/px-2",
+    "987589353eadf7c8e817d2d2a2312e85f4e8f8f1",
+    8,
+    "padding"
+   ],
+   [
+    "padding/horizontal/px-3",
+    "4389e5002e21e312ddfc60063980b2d726106ce6",
+    12,
+    "padding"
+   ],
+   [
+    "padding/top/pt-0",
+    "bdd9a377cfd05ff1f030c54a9172cc55d2ab8961",
+    0,
+    "padding"
+   ],
+   [
+    "padding/horizontal/px-4",
+    "f4a99f4a38e5163f77ccc788e091edd5d4feda9b",
+    16,
+    "padding"
+   ],
+   [
+    "padding/top/pt-1",
+    "1f4d4cca0b305102a097f02361692426f9411f23",
+    4,
+    "padding"
+   ],
+   [
+    "padding/top/pt-4",
+    "95a66fd03693b4c02851841ae7f3491617558563",
+    16,
+    "padding"
+   ],
+   [
+    "padding/top/pt-6",
+    "404c7028ec57436cbe366dec63d478985199bc8b",
+    24,
+    "padding"
+   ],
+   [
+    "padding/horizontal/px-6",
+    "9c6bde37f6e7f7674f7932910c4f55a993a7d401",
+    24,
+    "padding"
+   ],
+   [
+    "padding/horizontal/px-8",
+    "55b6965aff4dd1ab0f999839c80e97a7456a3e4e",
+    32,
+    "padding"
+   ],
+   [
+    "gap/ga-0",
+    "4a127b119409919f7b3d3eb0041b34e885561a22",
+    0,
+    "itemSpacing"
+   ],
+   [
+    "gap/ga-1",
+    "2a9b7e507c68e545738e0d37021faaeab6f689ba",
+    4,
+    "itemSpacing"
+   ],
+   [
+    "gap/ga-2",
+    "0562032ad8aec53e74320b6f7f51aff4273efa94",
+    8,
+    "itemSpacing"
+   ],
+   [
+    "gap/ga-3",
+    "20dfde205688bbeca3bec9cdb40eeac4845b8b76",
+    12,
+    "itemSpacing"
+   ],
+   [
+    "gap/ga-4",
+    "c39e9ab323c2317dfcadbc7fd291852d5b730be1",
+    16,
+    "itemSpacing"
+   ],
+   [
+    "gap/ga-6",
+    "e3e6edeb7ddf385a94aa9365ab8da416f8e0d2cd",
+    24,
+    "itemSpacing"
+   ],
+   [
+    "padding/bottom/pb-0",
+    "71f11910489902757e1df8342a5af1d3a8a995ec",
+    0,
+    "padding"
+   ],
+   [
+    "padding/bottom/pb-1",
+    "5f117aa9b121fe07766a73793ab0a56bb00476ae",
+    4,
+    "padding"
+   ],
+   [
+    "padding/bottom/pb-6",
+    "371c661426710cb312af2f12ecb9e0c9c0c5f85d",
+    24,
+    "padding"
+   ],
+   [
+    "padding/bottom/pb-8",
+    "dc7e0e8b8856d8f638588f029c4bdf4d9d7cfa71",
+    32,
+    "padding"
+   ],
+   [
+    "elevation/Elevation-0",
+    "4f58b00d3de04fcc52bd3a3b33d6d7400ee35887",
+    0,
+    "effects"
+   ],
+   [
+    "elevation/Elevation-1",
+    "8416a668c94cb53cd2b387c62bca88ad0ed58ac4",
+    1,
+    "effects"
+   ],
+   [
+    "elevation/Elevation-2",
+    "60ee6e4768655bbc57b615603c78dc7bd1240cc5",
+    2,
+    "effects"
+   ],
+   [
+    "elevation/Elevation-3",
+    "1cdac358c8bc0648f1741073cfb6e0815fc094bb",
+    3,
+    "effects"
+   ],
+   [
+    "elevation/Elevation-4",
+    "d1d3f5de03c214da3a475cdc7b8f7300c68407f1",
+    4,
+    "effects"
+   ]
+  ]
+ },
+ "next": null,
+ "styles": [
+  [
+   "TEXT",
+   "Subtitle-2",
+   "dcc9a2aa3928e1e8d6f88775f96867e5c2098564",
+   "Slalom Sans Regular 14 / 22.4px / 0.1px"
+  ],
+  [
+   "EFFECT",
+   "surface-shadow",
+   "d123f47619dfd307f114ca03e2bd71009089fa5e",
+   "0 1 4 0 #00000040"
+  ],
+  [
+   "TEXT",
+   "Body-2",
+   "a505c525b8cbe17ddbf33d75d84cbb0e7a2a6d1c",
+   "Slalom Sans Regular 14 / 20px / 0.5px"
+  ],
+  [
+   "TEXT",
+   "Body-1",
+   "bc04f5a9ac30e8f94d13610c13160f8b0f33870e",
+   "Slalom Sans Regular 16 / 24px / 0.5px"
+  ],
+  [
+   "TEXT",
+   "Caption",
+   "62e820f7869460c67e902453ace1ff0b8a03f1be",
+   "Slalom Sans Regular 12 / 20px / 0.4px"
+  ],
+  [
+   "TEXT",
+   "button-lg-upcase",
+   "c50f3c166b3e32cdc56cb55469c4c040b744cbfb",
+   "Slalom Sans Bold 16 / 28px / 1.25px"
+  ],
+  [
+   "TEXT",
+   "button-lg-ttlcase",
+   "f48373f863689914c22a4fbad8ca59bcb82ce985",
+   "Slalom Sans Bold 16 / 28px / 1.25px"
+  ],
+  [
+   "TEXT",
+   "button-md-upcase",
+   "de617d5e0d4e904c33f08b9b291934430af8901d",
+   "Slalom Sans Bold 14 / 22.4px / 1.25px"
+  ],
+  [
+   "TEXT",
+   "button-md-ttlcase",
+   "963f61e40e3cb2d5e08ab04b8f2b96eb86834cf3",
+   "Slalom Sans Bold 14 / 22.4px / 1.25px"
+  ],
+  [
+   "TEXT",
+   "button-sm-upcase",
+   "717b03ce60c7c574c319bdfb97b8f98d2336a13f",
+   "Slalom Sans Bold 12 / 20px / 1.25px"
+  ],
+  [
+   "TEXT",
+   "button-sm-ttlcase",
+   "e825fcc0c7e5e1ca68e91679c2b6d8bc97f05f72",
+   "Slalom Sans Bold 12 / 20px / 1.25px"
+  ],
+  [
+   "TEXT",
+   "Subtitle-2",
+   "607b4082586849e101293d23bd672a16354ec3e3",
+   "Slalom Sans Regular 14 / 22.4px / 0.1px"
+  ],
+  [
+   "TEXT",
+   "Heading 6",
+   "394c402ae3847698d62cd546133a4207cc789e78",
+   "Slalom Sans Bold 20 / 32px / 0.15%"
+  ],
+  [
+   "TEXT",
+   "Heading 3",
+   "3fcb780d121143c56d84fe2dfd8d66a82a025bfb",
+   "Slalom Sans Regular 48 / 50.4px / 0%"
+  ],
+  [
+   "TEXT",
+   "Heading 4",
+   "75041c6b21a453b35bba16dc950f6dba732d1c7e",
+   "Slalom Sans Regular 34 / 40px / 0.12%"
+  ],
+  [
+   "TEXT",
+   "Heading 5",
+   "0b6200fe3e529e9febf52b656c7568a03271c15f",
+   "Slalom Sans Bold 24 / 32px / 0%"
+  ],
+  [
+   "TEXT",
+   "Subtitle-1",
+   "8e2ec1a8e50f9857467e931697852c71e3e7c61a",
+   "Slalom Sans Regular 16 / 28px / 0.5px"
+  ],
+  [
+   "EFFECT",
+   "button_shadow-1",
+   "6223d123a8ae0e0f158d15b04900821188b3bd3f",
+   "0 0 2 0 #73a6ff1a"
+  ],
+  [
+   "EFFECT",
+   "button_shadow-3",
+   "7fba346bdb6447c3580ba2c2f9dd3ff4beb1115e",
+   "0 1 5 0 #00000033"
+  ],
+  [
+   "EFFECT",
+   "button_shadow-4",
+   "bd6bbcd4b9427b99eafcbd608894e6192bcc7a2b",
+   "0 3 4 0 #0000001a"
+  ],
+  [
+   "EFFECT",
+   "button_shadow-5",
+   "d83f13e5422aff7ea9fb4c6af060dda076f9ba84",
+   "0 2 4 0 #00000024"
+  ],
+  [
+   "EFFECT",
+   "button_shadow-6",
+   "8f9d829295074dbb72331be8bec2e5d7e4273979",
+   "0 1 10 0 #00000033"
+  ],
+  [
+   "EFFECT",
+   "button_shadow-7",
+   "dd8a7b49a174099a55e73669967da2b299e36bca",
+   "0 4 5 0 #0000001a"
+  ]
+ ],
+ "errors": {}
+}

@@ -3,7 +3,8 @@
   render.py score --roots 7:922,7:1302
   render.py fix --roots 8:517,8:559
   render.py settle --roots 7:922,7:1302
-  render.py inventory --keys keys.json --part components   (or variables, structure)
+  render.py inventory --keys keys.json --part components   (or variables, structure; --offset N resumes variables)
+  render.py inventory --style-keys style-keys.json --part styles
   render.py inventory_local --part components [--pages 0:1,5:2]   (or variables)
   render.py audit --roots 0:1 [--offset 0]
   render.py path/to/build.js --which Profile,Account --version 2
@@ -83,9 +84,10 @@ def main():
     ap.add_argument("script", help=" | ".join(NAMED) + " | path to a build script")
     ap.add_argument("--roots", help="comma-separated node IDs: frames, or pages for audit")
     ap.add_argument("--keys", help="JSON file of {label: component or component set key} (inventory)")
-    ap.add_argument("--part", choices=["components", "variables", "structure"], help="inventory part")
+    ap.add_argument("--part", choices=["components", "variables", "structure", "styles"], help="inventory part")
+    ap.add_argument("--style-keys", help="JSON file of {label: style key} (inventory --part styles)")
     ap.add_argument("--pages", help="comma-separated page IDs (inventory_local; default all pages)")
-    ap.add_argument("--offset", type=int, help="where to resume a large audit (audit)")
+    ap.add_argument("--offset", type=int, help="where to resume when a result says `next` (audit, inventory variables)")
     ap.add_argument("--which", help="comma-separated frame names (build scripts)")
     ap.add_argument("--version", type=int, help="canvas row for this pass (build scripts)")
     args = ap.parse_args()
@@ -96,11 +98,14 @@ def main():
         values["ROOT_IDS"] = json.dumps(split(args.roots))
     if args.keys:
         values["COMPONENT_KEYS"] = json.dumps(json.loads(Path(args.keys).read_text()))
+    if args.script == "inventory":
+        values["STYLE_KEYS"] = json.dumps(json.loads(Path(args.style_keys).read_text()) if args.style_keys else {})
+        values.setdefault("COMPONENT_KEYS", "{}")
     if args.part:
         values["PART"] = json.dumps(args.part)
     if args.script == "inventory_local":
         values["PAGE_IDS"] = json.dumps(split(args.pages) if args.pages else [])
-    if args.script == "audit":
+    if args.script in ("audit", "inventory"):
         values["OFFSET"] = json.dumps(args.offset or 0)
     if args.which:
         values["WHICH"] = json.dumps(split(args.which))

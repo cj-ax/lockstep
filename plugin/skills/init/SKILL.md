@@ -108,8 +108,13 @@ python3 "$LOCKSTEP/scripts/render.py" inventory --keys lockstep/<slug>/keys.json
 
 Run each through `use_figma` in the draft, and save each result to its file with the Write
 tool. These are three calls because `use_figma` returns at most 48 KB. Build reads the
-structure file instead of probing component internals with one-off scripts. If a part still overflows, split
-`keys.json` into halves and merge the results.
+structure file instead of probing component internals with one-off scripts.
+
+- **Variables part says `"next": <n>`:** the library's collections didn't fit in one call.
+  Render again with `--offset <n>` and merge the `collections` of every call into one file.
+- **Components or structure part overflows:** split `keys.json` into halves and merge the results.
+- Values come back for every mode (light and dark, for example), resolved to plain colours and
+  numbers, including colours stored as a colour plus an opacity.
 
 ## 5. Write LIBRARY.md
 

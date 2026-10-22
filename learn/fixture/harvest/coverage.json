@@ -1,0 +1,438 @@
+{
+ "tokens": [
+  {
+   "status": "design-only",
+   "kind": "color",
+   "design": "Color/Text/Default/Default",
+   "values": {
+    "default": "#1e1e1e"
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "color",
+   "design": "Color/Background/Default/Default",
+   "values": {
+    "default": "#ffffff"
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "color",
+   "design": "Color/Border/Default/Default",
+   "values": {
+    "default": "#d9d9d9"
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "color",
+   "design": "Color/Background/Brand/Default",
+   "values": {
+    "default": "#2c2c2c"
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "color",
+   "design": "Color/Text/Neutral/Tertiary",
+   "values": {
+    "default": "#767676"
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "color",
+   "design": "Color/Background/Brand/Tertiary",
+   "values": {
+    "default": "#f5f5f5"
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "color",
+   "design": "color #757575",
+   "values": {
+    "default": "#757575"
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "color",
+   "design": "Color/Border/Neutral/Default",
+   "values": {
+    "default": "#303030"
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "color",
+   "design": "Color/Border/Neutral/tertiary",
+   "values": {
+    "default": "#b2b2b2"
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "color",
+   "design": "Color/Background/Neutral/Tertiary",
+   "values": {
+    "default": "#e3e3e3"
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "color",
+   "design": "Color/Background/Danger/Default",
+   "values": {
+    "default": "#ec221f"
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "color",
+   "design": "Color/Border/Danger/Secondary",
+   "values": {
+    "default": "#c00f0c"
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "color",
+   "design": "Color/Text/Danger/On Danger",
+   "values": {
+    "default": "#fee9e7"
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "color",
+   "design": "color #ffffffcc",
+   "values": {
+    "default": "#ffffffcc"
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "color",
+   "design": "Color Primitives/Black/100",
+   "values": {
+    "default": "#0c0c0d0d"
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "color",
+   "design": "Color Primitives/Black/200",
+   "values": {
+    "default": "#0c0c0d1a"
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "spacing",
+   "design": "Size/Space/200",
+   "values": {
+    "default": 8.0
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "spacing",
+   "design": "Size/Space/300",
+   "values": {
+    "default": 12.0
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "spacing",
+   "design": "Size/Space/800",
+   "values": {
+    "default": 32.0
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "spacing",
+   "design": "Size/Space/600",
+   "values": {
+    "default": 24.0
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "spacing",
+   "design": "Size/Space/400",
+   "values": {
+    "default": 16.0
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "spacing",
+   "design": "Size/Space/100",
+   "values": {
+    "default": 4.0
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "radius",
+   "design": "Size/Radius/200",
+   "values": {
+    "default": 8.0
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "radius",
+   "design": "radius 9999.0",
+   "values": {
+    "default": 9999.0
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "radius",
+   "design": "Size/Radius/100",
+   "values": {
+    "default": 4.0
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "radius",
+   "design": "Typography Primitives/Scale 06",
+   "values": {
+    "default": 32.0
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "stroke",
+   "design": "Size/Stroke/Border",
+   "values": {
+    "default": 1.0
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "effect",
+   "design": "Size/Depth/100",
+   "values": {
+    "default": 4.0
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "effect",
+   "design": "Size/Depth/Negative 100",
+   "values": {
+    "default": -4.0
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "effect",
+   "design": "Size/Depth/0",
+   "values": {
+    "default": 0.0
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "effect",
+   "design": "effect bg-blur:4",
+   "values": {
+    "default": "bg-blur:4"
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "effect",
+   "design": "Size/Depth/800",
+   "values": {
+    "default": 32.0
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "effect",
+   "design": "Size/Depth/400",
+   "values": {
+    "default": 16.0
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "fontFamily",
+   "design": "fontFamily Inter",
+   "values": {
+    "default": "Inter"
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "fontSize",
+   "design": "Typography/Body/Size Medium",
+   "values": {
+    "default": 16.0
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "fontSize",
+   "design": "Typography/Heading/Size Base",
+   "values": {
+    "default": 24.0
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "fontSize",
+   "design": "Typography/Title Page/Size Base",
+   "values": {
+    "default": 48.0
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "fontWeight",
+   "design": "Typography/Body/Font Weight Regular",
+   "values": {
+    "default": 400.0
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "fontWeight",
+   "design": "fontWeight 600.0",
+   "values": {
+    "default": 600.0
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "fontWeight",
+   "design": "Typography/Title Page/Font Weight",
+   "values": {
+    "default": 700.0
+   }
+  }
+ ],
+ "typography": [
+  {
+   "status": "design-only",
+   "kind": "type",
+   "design": "Body Base",
+   "values": {
+    "name": "Body Base",
+    "fontFamily": "Inter",
+    "fontWeight": 400,
+    "fontSize": 16.0,
+    "lineHeight": 22.4,
+    "letterSpacing": 0.0
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "type",
+   "design": "Heading",
+   "values": {
+    "name": "Heading",
+    "fontFamily": "Inter",
+    "fontWeight": 600,
+    "fontSize": 24.0,
+    "lineHeight": 28.8,
+    "letterSpacing": -0.48
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "type",
+   "design": "Inter|Regular|16|100%|0",
+   "values": {
+    "name": "Inter|Regular|16|100%|0",
+    "fontFamily": "Inter",
+    "fontWeight": 400,
+    "fontSize": 16.0,
+    "lineHeight": 16.0,
+    "letterSpacing": 0.0
+   }
+  },
+  {
+   "status": "design-only",
+   "kind": "type",
+   "design": "Title Page",
+   "values": {
+    "name": "Title Page",
+    "fontFamily": "Inter",
+    "fontWeight": 700,
+    "fontSize": 48.0,
+    "lineHeight": 57.6,
+    "letterSpacing": -0.96
+   }
+  }
+ ],
+ "components": [
+  {
+   "status": "de facto",
+   "design": "Text Heading",
+   "designAxes": {}
+  },
+  {
+   "status": "design-only",
+   "design": "Input Field",
+   "designAxes": {}
+  },
+  {
+   "status": "de facto",
+   "design": "Switch Field",
+   "designAxes": {}
+  },
+  {
+   "status": "design-only",
+   "design": "Tab",
+   "designAxes": {}
+  },
+  {
+   "status": "de facto",
+   "design": "Card (Slot)",
+   "designAxes": {}
+  },
+  {
+   "status": "de facto",
+   "design": "Button Group",
+   "designAxes": {}
+  },
+  {
+   "status": "de facto",
+   "design": "Tabs",
+   "designAxes": {}
+  },
+  {
+   "status": "design-only",
+   "design": "Text",
+   "designAxes": {}
+  },
+  {
+   "status": "design-only",
+   "design": "Text Title Page",
+   "designAxes": {}
+  },
+  {
+   "status": "de facto",
+   "design": "Dialog",
+   "designAxes": {}
+  },
+  {
+   "status": "de facto",
+   "design": "Card title",
+   "designAxes": {}
+  }
+ ],
+ "designModes": [],
+ "codeThemes": [],
+ "conflicts": []
+}

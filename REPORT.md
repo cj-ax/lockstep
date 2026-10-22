@@ -227,6 +227,43 @@ Learn read it with two new read-only scripts, `audit.js` and `inventory_local.js
 
 **Reading protected files.** The guard now lets a read-only script reach a protected file, but only when it can re-render the script from its first line and get identical code. `tests/test_readonly.py` passes 14 checks: the read-only scripts call no mutating API, and edited, appended, forged or smuggled code is blocked. Lockstep isn't installed as a plugin in this session, so the hook was tested by piping tool calls to it, not live. The fixture draft itself isn't protected.
 
+## lockstep:learn: Slalom's library against its code (2026-10-22)
+
+**Setup.** This compared the Business@Slalom Figma library with `design-system-beta` (`@slalom/design-system`, Vue 3 and Vuetify). The production library was never opened for writing.
+- **Library:** `inventory.js` read 28 component sets and every variable and style they use, in all modes, in a draft (`w3v1epae69aKLLEOKCkr88`). The 9 component sets beyond the 19 in the build keys were found by searching for each code component; 10 text and effect styles were read by key.
+- **Code:** `harvest_code.py` read the repo without running it. It found 170 tokens across three themes, 12 type styles and 17 components.
+- **Reconcile:** `reconcile.py` matched the two. Full output: `learn/slalom/COVERAGE.md`.
+
+| | Complete | Drift | Figma only | Code only |
+|---|---|---|---|---|
+| Components | 13 | 2 | 13 | 3 |
+| Tokens | 87 | 10 | 72 | 72 |
+| Type styles | 14 | 1 | 0 | 0 |
+
+**The 15 conflicts it raised, checked by hand against the repo and the Figma values:**
+- **Fonts:** ten components hard-code `font-family: 'DM Sans'`, and `SProgressRing` uses Roboto. Figma uses Slalom Sans throughout, and the tokens file defines `$slm-font-family: 'Slalom Sans', …`.
+- **Label case:** Figma's buttons are Title Case by default (`title case=true`), but `SButton` sets `text-transform: uppercase`. This is the case the design doc predicted.
+- **Button variants:** Figma has `neutral_outlined`, `icon` and `icon contained`; `SButton` has none of them. Semantic buttons in code also allow `text` and `plain`, which Figma's semantic set doesn't.
+- **Colours:**
+  - disabled text is 40% black in Figma and 38% in code;
+  - success is `#5cb85c` in Figma, but code's Vuetify theme says `#2e7d32` (light) and `#4caf50` (dark), while `SButton` hard-codes `#5cb85c`;
+  - dark-mode error, border and card colours differ.
+- **Type:** Heading 5 has a letter spacing of 0 in Figma and 1.92px in code.
+- **Shadows:** three button shadows differ. Figma's `button_shadow-1` is a 10% blue glow; code's is 12% black.
+
+**Read these numbers carefully.**
+- **"Complete" includes 19 tokens matched by value alone.** For example, `outlined-btn-disable-bg` matches `--slm-app-card-bg`, because both are white in light and `#444444` in dark. Same value isn't always same meaning; the skill tells the reviewer to check these.
+- **Many "Figma only" tokens are component-specific by design.** Figma has `button Colors/…`, `semantic button color/…` and the like, while code reuses a few shared tokens. They're listed, not judged.
+- **Interaction-state axes aren't compared.** Code styles hover and pressed in CSS. Most "complete" components still differ in Figma-only axes such as `has value` and `rounded border`, which code expresses another way. They're noted in `coverage.json`, not raised as conflicts.
+- **Three passes of fixes, all general.** The first pass raised 46 conflicts, most of them noise:
+  - folder names counted as name words;
+  - state axes were compared;
+  - `label in` didn't match `labelType: in`;
+  - a whole set of code tokens with an exact Figma match showed as code-only.
+
+  The 15 left are each a real question. All the fixes are in the matching rules, none in Slalom-specific code. But the rules were tuned on this one pair, so a second library and repo is the honest next test.
+- **The fixture has no code side**, so its coverage (`learn/fixture/harvest/COVERAGE.md`) is design-only and de facto. A real check needs SDS's own code.
+
 ## Caveats
 - **Small sample.** There was one run per arm, with the same model. Read differences of a few points as directional.
 - **Who built what.** I built L myself and also wrote the scorer, so L may be tuned to what the scorer measures. A and B were built by independent subagents that never saw the scorer. The fresh-agent trial is the independent check: an agent with only the plugin scored 99 on a page it hadn't seen, though it shipped a defect the score couldn't see.
@@ -239,5 +276,6 @@ Everything now lives in the Claude Code plugin at `plugin/` (see `plugin/README.
 - `plugin/scripts/inventory.js`: reads a library's components and token values, in two parts.
 - `plugin/scripts/audit.js`, `inventory_local.js`, `propose.py`: learn's read-only harvest and its proposals. `learn/fixture/` holds the fixture, its ground truth, the harvest and `RECOVERY.md`.
 - `tests/test_readonly.py`: the guard's read-only allowance.
+- `plugin/scripts/harvest_code.py`, `reconcile.py`: learn's code harvest and coverage matrix. `learn/slalom/` holds the Slalom run: design inventory, code harvest and `COVERAGE.md`.
 - `plugin/skills/build/references/examples/`: the Slalom and Simple Design System builds, their keys, and `PAGE_BRIEF.md`, the shared prompt given to every arm.
 - `research/`: how the Slalom library was read, and the raw search output.

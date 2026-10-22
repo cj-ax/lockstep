@@ -1,0 +1,793 @@
+{
+ "components": [
+  {
+   "label": "header",
+   "name": "Header",
+   "type": "COMPONENT_SET",
+   "variants": 2,
+   "props": {
+    "Version": [
+     "Default",
+     "Taxonomy"
+    ]
+   },
+   "default": "Version=Default",
+   "size": [
+    1728,
+    64
+   ],
+   "description": "What the Component Does\nProvides the application\u2019s top header, bringing together platform branding, a menu icon, and the user\u2019s avatar-menu access point. Its primary use is to maintain a consistent application shell while exposing relevant top-level controls. The Taxonomy presentation additionally includes a search area.\n\nThis is the application header, not a content-card header. Platform navigation remains in the left-hand menu, and account/help/preferences content is supplied through the avatar menu.\n\nVariants and Controls\n\u2022 Version=Default: the default presentation, containing the Business@Slalom branding, menu icon, and nested avatar menu.\n\u2022 Version=Taxonomy: contains the branding and menu icon, plus a Function Group with a Search presentation and nested avatar menu.\n\u2022 Version is the only exposed Header property. There are no header-level text properties, visibility switches, content slots, or responsive/open-state variants.\n\u2022 Both nested avatar menus use status=Default in the samples. Configure their identity information, content slots, and opened/closed presentation through the avatar menu component, following its documented application-specific guidance.\n\u2022 The menu element is an icon instance, not the contextual action-menu component. Its presence does not establish a navigation-expansion interaction.\n\u2022 Search in Version=Taxonomy is a frame containing a search icon and \u201cSearch\u201d text. It is a visual presentation, not a functioning text input or an exposed Header search "
+  },
+  {
+   "label": "container",
+   "name": "container",
+   "type": "COMPONENT_SET",
+   "variants": 2,
+   "props": {
+    "header#2470:0": "SLOT",
+    "Table slot#2470:3": "SLOT",
+    "type": [
+     "general container",
+     "table container"
+    ]
+   },
+   "default": "type=general container",
+   "size": [
+    1400,
+    145
+   ],
+   "description": "What the Component Does?\n\nProvides the base layout surface for page content sections. Use containers to group related section content consistently and follow the applicable product\u2019s layout rules for placement, arrangement, and content composition.\n\n\nStandard content inside containers must maintain 32 px padding for consistency. The minimum container width is 460 px, corresponding to the minimum breakpoint. \n\nDo not reduce the container below this width or reduce standard content padding to fit a narrower layout.\n\nVariants and Controls\n\u2022 type=general container: the default variant for content sections without an embedded table. The container has 32 px padding on all four sides and a minimum width of 460 px.\n\n\u2022 type=table container: the table-specific version referred to in product guidance as Type B. Select this variant whenever a container includes a table.\n\n\u2022 header: a content slot available in both variants. In general container, it is the available slot for section content; in table container, use it for the heading, controls, or other content above the table.\n\n\u2022 Table slot: available only in table container. Insert the table here, not inside the padded header area. This slot has 0 px padding on all sides.\n\n\u2022 Both variants use a vertical layout and have a 460 px minimum width. The sample width is 1400 px, not a required usage width.\n\n\u2022 Current table-container spacing: the outer frame has 32 px top, 0 px side, and 16 px bottom padding; its header supplies 32 px left/right "
+  },
+  {
+   "label": "card",
+   "name": "card",
+   "type": "COMPONENT_SET",
+   "variants": 12,
+   "props": {
+    "content Slot#2121:18": "SLOT",
+    "CTA slot#2121:19": "SLOT",
+    "has header#2121:20": "BOOLEAN=true",
+    "has CTA#2140:22": "BOOLEAN=true",
+    "header slot#4989:21": "SLOT",
+    "primary color": [
+     "true",
+     "false"
+    ],
+    "status": [
+     "Default",
+     "hover",
+     "banner"
+    ],
+    "type": [
+     "tonal",
+     "elevated",
+     "small"
+    ]
+   },
+   "default": "primary color=true, status=Default, type=elevated",
+   "size": [
+    400,
+    351
+   ],
+   "description": "What the Component Does?\n\nGroups related content and its supporting actions into a distinct surface.\n\nIts primary use is to present one coherent topic, record, summary, or task with a header, body, and optional call-to-action area, making the content easy to scan within a larger page.\n\nVariants and Controls\n\n\u2022 Type=elevated: a card presentation for visually separating content from its surrounding surface. Supports status=Default, hover, and banner.\n\u2022 Type=tonal: an alternate surface treatment for grouped content. Supports status=Default only.\n\n\u2022 type=small: a compact card presentation. Supports status=Default and hover.\n\n\u2022 status=Default: resting presentation.\n\n\u2022 status=hover: pointer-over presentation; it does not establish that the entire card is clickable.\n\n\u2022 status=banner: a distinct header/banner presentation, not an interaction state. Available only for elevated cards.\n\n\u2022 primary color: a variant axis with values true and false, available for each supported type/status combination. Use the matching color treatment for the surrounding design; this is a variant selector, not a Boolean visibility control.\n\n\u2022 The set contains 12 variants, not every possible combination of its axes. Current Figma default: type=elevated, status=Default, primary color=true.\n\nContent controls:\n\n\u2022 header slot: supplies the card header. Default and hover samples contain a nested card header; banner samples use a different header composition.\n\n\u2022 content Slot: supplies the main body; empty in the s"
+  },
+  {
+   "label": "cardHeader",
+   "name": "card header",
+   "type": "COMPONENT_SET",
+   "variants": 2,
+   "props": {
+    "Title sm#2140:0": "BOOLEAN=false",
+    "title lg#2140:3": "BOOLEAN=true",
+    "right icon#2140:6": "BOOLEAN=true",
+    "left icon#2140:9": "BOOLEAN=false",
+    "has subtitle#4990:30": "BOOLEAN=false",
+    "Property 1": [
+     "center-header",
+     "left-header"
+    ]
+   },
+   "default": "Property 1=center-header",
+   "size": [
+    334,
+    40
+   ],
+   "description": "What the Component Does\nProvides the title area for the main card component, with optional leading/trailing icons and a subtitle where supported. Its primary use is to identify the card\u2019s content and provide relevant header affordances while keeping the card\u2019s heading consistent.\n\nThis is a supporting component for the main card\u2019s header slot. Usage is restricted to the main card component; it is not a standalone page, container, dialog, or specialized-card header.\n\nVariants and Controls\n\u2022 Property 1=center-header: the default centered-header presentation, with title and optional icons in a horizontal row.\n\u2022 Property 1=left-header: a left-aligned header presentation with an optional subtitle beneath the title row.\n\u2022 Title sm: controls visibility of the small-title presentation; default is false.\n\u2022 title lg: controls visibility of the large-title presentation; default is true. Use one title presentation at a time rather than showing both.\n\u2022 right icon: controls the trailing icon; default is true.\n\u2022 left icon: controls the leading icon; default is false.\n\u2022 has subtitle: controls the subtitle in the left-header presentation; default is false. The center-header variant contains no subtitle presentation.\n\u2022 Replace \u201cCard Title\u201d and \u201cCard subtitle\u201d with meaningful content through the relevant text layers. Title and subtitle text are not exposed as component-level text properties.\n\u2022 The default icon artwork is sample content, not a prescribed action. Choose icons that accurately repr"
+  },
+  {
+   "label": "button",
+   "name": "button",
+   "type": "COMPONENT_SET",
+   "variants": 90,
+   "props": {
+    "icon right#295:0": "BOOLEAN=true",
+    "title case#429:0": "BOOLEAN=true",
+    "uppercase#429:49": "BOOLEAN=false",
+    "Text#4927:3": "TEXT=\"Button\"",
+    "icon-left#6019:0": "BOOLEAN=true",
+    "size": [
+     "lg",
+     "md",
+     "sm"
+    ],
+    "variant": [
+     "contained_button",
+     "outlined",
+     "text",
+     "Plain",
+     "neutral_outlined",
+     "icon",
+     "icon contained"
+    ],
+    "status": [
+     "enabled",
+     "disabled",
+     "hover",
+     "pressed",
+     "sync"
+    ]
+   },
+   "default": "size=lg, variant=contained_button, status=enabled",
+   "size": [
+    156,
+    48
+   ],
+   "description": "What the Component Does?\nProvides a reusable button for initiating a user action, with labeled and icon-only presentations. Variants control visual emphasis, size, and interaction-state appearance.\n\nProperties:\n\u2022 size: lg, md, sm.\n\u2022 variant: contained_button, outlined, text, Plain, neutral_outlined, icon, icon contained.\n\u2022 status: enabled, disabled, hover, pressed. The sync status displays a loading indicator and is available only for contained_button and neutral_outlined, in all three sizes.\n\n\u2022 Text sets the label (default: \u201cButton\u201d). icon-left and icon right control optional leading and trailing icons on labeled variants; both default to true. All button labels are Title Case by default (title case=true; uppercase=false).\n\u2022 Default usage: size=md, variant=contained_button, status=enabled.\n\u2022 These variants represent visual states; application behavior must be implemented separately.\n\nUse Cases\n\nRecommended usage:\n\u2022 contained_button: a prominent primary action, such as Save or Submit.\n\u2022 outlined: a secondary action that needs a visible boundary without a filled background.\n\u2022 neutral_outlined: a secondary or supporting action with neutral visual emphasis, such as Cancel.\n\u2022 text: a low-emphasis action alongside more prominent buttons.\n\u2022 Plain: a minimal, neutral action within supporting content.\n\u2022 icon: a compact icon-only action in a toolbar or repeated row.\n\u2022 icon contained: an icon-only action that needs stronger filled emphasis.\n\u2022 md: the default button size. Use for action"
+  },
+  {
+   "label": "semanticButton",
+   "name": "semantic Buttons",
+   "type": "COMPONENT_SET",
+   "variants": 48,
+   "props": {
+    "label#450:0": "TEXT=\"Button\"",
+    "icon left#450:49": "BOOLEAN=true",
+    "icon right#450:98": "BOOLEAN=true",
+    "Upper Case#450:147": "BOOLEAN=false",
+    "Title Case#450:196": "BOOLEAN=true",
+    "semantic": [
+     "negative",
+     "positive"
+    ],
+    "status": [
+     "default",
+     "disable",
+     "hover",
+     "pressed"
+    ],
+    "variant": [
+     "contained_button",
+     "outlined"
+    ],
+    "Size": [
+     "lg",
+     "md",
+     "sm"
+    ]
+   },
+   "default": "semantic=negative, status=default, variant=contained_button, Size=lg",
+   "size": [
+    156,
+    48
+   ],
+   "description": "What the Component Does\n\nProvides action buttons with negative or positive semantic emphasis. Use negative for destructive actions such as Remove or Delete; use positive when an action needs positive semantic emphasis.\n\nAs with the main buttons, contained_button provides the highest visual hierarchy and is used only when the action is standalone. Outlined provides lower emphasis for actions within tables, lists, and action groups.\n\nAvailable variants and controls:\n\u2022 semantic: negative, positive.\n\u2022 variant: contained_button, outlined.\n\u2022 Size: lg, md, sm.\n\u2022 status: default (available action), hover (pointer-over feedback), pressed (active press feedback), disable (unavailable action).\n\u2022 All 48 combinations of semantic, variant, Size, and status are available.\n\u2022 label controls the button text (default: \u201cButton\u201d). icon left and icon right control optional icons; both default to true.\n\u2022 Labels are Title Case by default (Title Case=true; Upper Case=false), consistent with the main buttons.\n\u2022 Status variants represent visual states; application behavior must be implemented separately.\n\nUse Cases and Exceptions\n\nHierarchy and size guidance:\n\u2022 Standalone actions: use contained_button only when the action stands alone and requires the highest emphasis.\n\u2022 lg: use only when the button is beside a field, consistent with the main buttons.\n\nNegative actions:\n\u2022 Highlighted Remove or Delete action in a section: use negative + contained_button + md when the action is standalone and needs promi"
+  },
+  {
+   "label": "textField",
+   "name": "input/textField",
+   "type": "COMPONENT_SET",
+   "variants": 15,
+   "props": {
+    "icon-left#520:0": "BOOLEAN=true",
+    "has label#677:0": "BOOLEAN=true",
+    "content#677:16": "TEXT=\"Input text\"",
+    "field label#677:32": "TEXT=\"Label\"",
+    "assistive text#677:48": "TEXT=\"Assistive text\"",
+    "error text#677:64": "TEXT=\"Error text\"",
+    "has user guidance#692:0": "BOOLEAN=false",
+    "is required#717:1": "BOOLEAN=false",
+    "icon-right#6122:7": "BOOLEAN=true",
+    "Assistive Text#6176:0": "BOOLEAN=true",
+    "state": [
+     "enabled",
+     "focused",
+     "error",
+     "disabled",
+     "hover",
+     "input"
+    ],
+    "has value": [
+     "false",
+     "true",
+     "textField"
+    ],
+    "Label style": [
+     "label on",
+     "label in"
+    ]
+   },
+   "default": "state=input, has value=textField, Label style=label on",
+   "size": [
+    332,
+    104
+   ],
+   "description": "What the Component Does\nCollects a single line of user-entered text with a visible label and optional supporting feedback. Use type=label on when the label sits above the field and type=label in when the label is integrated into the field. Choose has value=true for populated fields and false for empty fields where available. Set state to enabled, hover, focused, error, or disabled to match the current interaction and validation state.\n\n\nUse Cases\n\u2022 Forms that collect names, titles, dates, search terms, or other short values.\n\u2022 Showing hover and focus feedback during entry.\n\u2022 Communicating validation problems with the error state and supporting message.\n\u2022 Displaying read-only unavailable controls with the disabled state.\n\n\nExceptions"
+  },
+  {
+   "label": "textArea",
+   "name": "text area",
+   "type": "COMPONENT_SET",
+   "variants": 15,
+   "props": {
+    "user guidance#721:0": "BOOLEAN=false",
+    "is required#721:16": "BOOLEAN=false",
+    "assistive text#721:48": "BOOLEAN=true",
+    "error text#721:64": "BOOLEAN=true",
+    "drag horizontal#721:80": "BOOLEAN=true",
+    "drag corner#721:96": "BOOLEAN=true",
+    "has label#721:112": "BOOLEAN=true",
+    "content#721:128": "TEXT=\"Input text\"",
+    "label text#721:144": "TEXT=\"Label\"",
+    "assistive content#721:160": "TEXT=\"Assistive text\"",
+    "error content#721:176": "TEXT=\"Error text\"",
+    "type": [
+     "label in",
+     "label on"
+    ],
+    "status": [
+     "disable",
+     "enable",
+     "error",
+     "focused",
+     "hover"
+    ],
+    "has value": [
+     "false",
+     "true"
+    ]
+   },
+   "default": "type=label on, status=enable, has value=true",
+   "size": [
+    332,
+    192
+   ],
+   "description": "What the Component Does\nCollects multi-line text with configurable labeling, guidance, validation, and resize affordances. Use type=label on when the label sits above the field and label in when it is integrated into the field. Set has value to true or false where available, and choose status=enable, hover, focused, error, or disable to match the current interaction state. Configure the label, content, assistive, and error text; use is required, user guidance, assistive text, error text, and has label to control supporting information. Use drag horizontal and drag corner to show the appropriate resize affordances.\n\n\nUse Cases\n\u2022 Collecting descriptions, comments, notes, feedback, or other longer responses.\n\u2022 Showing assistive guidance, required status, and validation errors.\n\u2022 Providing hover, focus, and disabled feedback during form entry.\n\u2022 Allowing users to resize the field when the experience supports it.\n\n\nExceptions"
+  },
+  {
+   "label": "singleSelect",
+   "name": "single-select",
+   "type": "COMPONENT_SET",
+   "variants": 15,
+   "props": {
+    "has label#695:16": "BOOLEAN=true",
+    "assistive text#695:32": "BOOLEAN=true",
+    "label text#695:48": "TEXT=\"Label\"",
+    "dropdown text#695:64": "TEXT=\"Dropdown Text\"",
+    "select assistive text#695:80": "TEXT=\"Assistive text\"",
+    "error text#695:96": "BOOLEAN=true",
+    "Error Text#695:112": "TEXT=\"Error text\"",
+    "has user guidance#696:128": "BOOLEAN=false",
+    "is Required#739:0": "BOOLEAN=true",
+    "left icon#1503:0": "BOOLEAN=false",
+    "show text#5550:16": "BOOLEAN=true",
+    "show chip group#5563:32": "BOOLEAN=false",
+    "status": [
+     "disable",
+     "enable",
+     "error",
+     "focused",
+     "hover"
+    ],
+    "has value": [
+     "false",
+     "true"
+    ],
+    "type": [
+     "label on",
+     "label-in"
+    ]
+   },
+   "default": "status=enable, has value=true, type=label on",
+   "size": [
+    332,
+    104
+   ],
+   "description": "What the Component Does\nLets users choose one option from a predefined list. Use type=label on when the label sits above the field and label-in when it is integrated into the field. Set has value to true or false where available, and choose status=enable, hover, focused, error, or disable to match the current state. Configure the label, dropdown, assistive, and error text; use show text or show chip group for the selected-value treatment. Control required status, user guidance, and the optional left icon with the available properties.\n\n\nUse Cases\n\u2022 Forms and settings where exactly one predefined option can be selected.\n\u2022 Filters, categories, statuses, locations, or assignment choices.\n\u2022 Showing selected values as text or an approved chip treatment.\n\u2022 Providing guidance, validation feedback, and disabled states.\n\n\nExceptions"
+  },
+  {
+   "label": "autocomplete",
+   "name": "autocomplete",
+   "type": "COMPONENT_SET",
+   "variants": 18,
+   "props": {
+    "has label#735:17": "BOOLEAN=true",
+    "is required#735:36": "BOOLEAN=false",
+    "assistive text#735:93": "BOOLEAN=true",
+    "error text#735:112": "BOOLEAN=true",
+    "has icon#735:131": "BOOLEAN=true",
+    "has arrow#735:150": "BOOLEAN=true",
+    "clear icon#735:169": "BOOLEAN=true",
+    "content#735:188": "TEXT=\"Input text\"",
+    "label content#735:207": "TEXT=\"Label\"",
+    "assistive content#735:226": "TEXT=\"Assistive text\"",
+    "error content#735:245": "TEXT=\"Error text\"",
+    "text response#754:0": "BOOLEAN=true",
+    "chips#754:19": "BOOLEAN=false",
+    "left icon#1607:0": "BOOLEAN=false",
+    "user guidance#3855:0": "BOOLEAN=false",
+    "status": [
+     "disable",
+     "enable",
+     "error",
+     "filled",
+     "focus",
+     "hover"
+    ],
+    "type": [
+     "label in",
+     "label on"
+    ],
+    "has value": [
+     "false",
+     "true"
+    ]
+   },
+   "default": "status=enable, type=label on, has value=true",
+   "size": [
+    414,
+    104
+   ],
+   "description": "What the Component Does\nLets users type to find and select a value from a suggested set of options. Use type=label on when the label sits above the field and label in when it is integrated into the field. Set has value to true or false where available, and choose status=enable, hover, focus, filled, error, or disable to match the current state. Configure labels, input, assistive, and error text; use text response or chips for the selected-value treatment. Control required status, guidance, icons, dropdown arrow, and clear action with the available properties.\n\n\nUse Cases\n\u2022 Searching and selecting from long option lists such as people, projects, locations, or categories.\n\u2022 Supporting single-value text selections or chip-based selections.\n\u2022 Showing focus, filled, error, and disabled form states.\n\u2022 Providing guidance, validation, clearing, and dropdown affordances.\n\n\nExceptions"
+  },
+  {
+   "label": "datePicker",
+   "name": "date picker",
+   "type": "COMPONENT_SET",
+   "variants": 20,
+   "props": {
+    "mm/yy label#746:7": "TEXT=\"Mar\"",
+    "sections": [
+     "day selector",
+     "month selector",
+     "year selector"
+    ],
+    "status": [
+     "default",
+     "hover",
+     "selected",
+     "current selected"
+    ],
+    "rounded border": [
+     "false",
+     "true"
+    ]
+   },
+   "default": "sections=day selector, status=default, rounded border=false",
+   "size": [
+    340,
+    374
+   ],
+   "description": "What the Component Does\nProvides a calendar control for choosing a day, month, or year. Use the sections property to display the day selector, month selector, or year selector. Use status to show default, hover, selected, or current selected states where available. Use rounded border to switch between square and rounded containers, and update the mm/yy label text property for the displayed month or year label.\n\nUse Cases\n\u2022 Selecting a date in forms, filters, scheduling, booking, or reporting flows.\n\u2022 Moving between day, month, and year selection views.\n\u2022 Showing hover feedback, a chosen value, or the currently selected date.\n\u2022 Matching layouts that require either rounded or square picker containers.\n\nExceptions"
+  },
+  {
+   "label": "radio",
+   "name": "radio button",
+   "type": "COMPONENT_SET",
+   "variants": 6,
+   "props": {
+    "status": [
+     "default",
+     "selected"
+    ],
+    "Size": [
+     "lg",
+     "md",
+     "sm"
+    ]
+   },
+   "default": "status=default, Size=lg",
+   "size": [
+    113,
+    48
+   ],
+   "description": "What the Component Does\nLets users choose one option from a mutually exclusive group. Use status=default for an unselected option and selected for the chosen option. Set Size to sm, md, or lg to match the density and hierarchy of the surrounding interface. Keep only one radio button selected within each group.\n\n\nUse Cases\n\u2022 Forms and settings where users must choose exactly one option.\n\u2022 Selecting a plan, preference, method, or other mutually exclusive value.\n\u2022 Adapting the control size for compact, standard, or spacious layouts.\n\n\nExceptions"
+  },
+  {
+   "label": "switch",
+   "name": "Switch Toggle",
+   "type": "COMPONENT_SET",
+   "variants": 4,
+   "props": {
+    "Toggle Status": [
+     "Off",
+     "On"
+    ],
+    "State": [
+     "Enabled",
+     "Disabled"
+    ]
+   },
+   "default": "Toggle Status=Off, State=Enabled",
+   "size": [
+    52,
+    32
+   ],
+   "description": "What the Component Does\nControls a binary setting that can be turned on or off. Set Toggle Status to Off or On to reflect the current value, and set State to Enabled when the control is available or Disabled when it cannot be changed. Keep the visual status synchronized with the underlying setting.\n\n\nUse Cases\n\u2022 Enabling or disabling settings, preferences, features, or visibility.\n\u2022 Providing an immediate binary choice without a separate submit action.\n\u2022 Showing an existing on or off value that is temporarily unavailable with the disabled state.\n\n\nExceptions"
+  },
+  {
+   "label": "listItem",
+   "name": "list item",
+   "type": "COMPONENT_SET",
+   "variants": 4,
+   "props": {
+    "bottom description#4339:0": "BOOLEAN=false",
+    "has icon#4339:1": "BOOLEAN=true",
+    "has toggle#4339:2": "BOOLEAN=false",
+    "directional#4339:3": "BOOLEAN=true",
+    "Instance#4339:4": "INSTANCE_SWAP=\"5:26\"",
+    "label#4339:5": "TEXT=\"Section Label\"",
+    "right icon#4340:6": "BOOLEAN=false",
+    "right description#4340:9": "BOOLEAN=false",
+    "has chip#4345:0": "BOOLEAN=true",
+    "info icon#4345:5": "BOOLEAN=true",
+    "status": [
+     "Default",
+     "secondary",
+     "errored",
+     "queued"
+    ]
+   },
+   "default": "status=Default",
+   "size": [
+    912,
+    48
+   ],
+   "description": "What the Component Does?\n\nRepresents one item in a list, combining a primary label with optional icons, supporting descriptions, a toggle, and status information. Its primary use is to present related entries in a consistent, scannable row; a row can indicate navigation, expose a setting, or communicate an item\u2019s status according to the surrounding context.\n\nVariants and Controls\n\n-Status\n\n\u2022 Default: the default row presentation.\n\n\u2022 secondary: an alternate visual presentation. Its name does not define selected, hover, or disabled behavior; use according to the surrounding design\u2019s hierarchy.\n\n\u2022 errored: error-emphasis presentation with optional information icon and status chip.\n\n\u2022 queued: queued-status presentation with optional information icon and status chip. Do not treat a queued item as disabled solely because of its visual styling.\n\nContent and visibility controls:\n\n\u2022 label: primary text; default is \u201cSection Label\u201d.\n\n\u2022 has icon: shows the leading icon; default is true. Instance swaps the leading icon component.\n\n\u2022 directional: shows the trailing navigation indicator; default is true.\n\n\u2022 bottom description and right description: show supporting text below the label or on the right; both default to false. Replace their sample text when shown.\n\n\u2022 has toggle: shows the switch; default is false.\n\n\u2022 right icon: shows an additional trailing icon; default is false.\n\n\u2022 has chip and info icon: show status elements in errored and queued variants; both default to true.\n\n\u2022 These con"
+  },
+  {
+   "label": "listSection",
+   "name": "list-section",
+   "type": "COMPONENT_SET",
+   "variants": 2,
+   "props": {
+    "list container slot#4340:12": "SLOT",
+    "has title#4340:13": "BOOLEAN=true",
+    "divider#4340:14": "BOOLEAN=true",
+    "type": [
+     "menu lists",
+     "modal lists"
+    ]
+   },
+   "default": "type=menu lists",
+   "size": [
+    912,
+    260
+   ],
+   "description": "What the Component Does?\nGroups related list items into a single vertical section with an optional section title and bottom divider. Its primary use is to organize a menu or modal\u2019s entries into clear, scannable groups while keeping row presentation consistent.\n\nVariants and Controls\n\u2022 Type=menu lists: the default section presentation. The sample content contains three list item instances with leading icons and trailing directional indicators, suitable for grouped navigation entries.\n\n type=modal lists: a section presentation for modal content. The sample rows use the secondary list item presentation with leading grip-style icons, right-side metadata, and trailing delete icons; directional indicators are hidden.\n\u2022 list container slot: supplies the section\u2019s list content. Both variants contain three sample rows; this is sample content, not a documented three-item limit.\n\u2022 has title: shows or hides the header; default is true. Replace \u201cSection title\u201d with a descriptive group title. Title text is not exposed as a section-level text property.\n\u2022 divider: shows or hides the bottom divider; default is true.\n\n\u2022 Row labels, icons, metadata, toggles, and status presentations belong to the nested list items, not the section-level controls. Configure those through the list content.\n\u2022 The section uses a vertical layout: header, list content, then divider.\n\n\u2022 The variants define visual presentation only. Navigation, deletion, reordering, selection, and scrolling must be configured separate"
+  },
+  {
+   "label": "avatar",
+   "name": "v-avatar",
+   "type": "COMPONENT_SET",
+   "variants": 10,
+   "props": {
+    "Collegue initials#4698:0": "TEXT=\"AB\"",
+    "size": [
+     "lg",
+     "m",
+     "s",
+     "xl",
+     "xs"
+    ],
+    "image version": [
+     "false",
+     "true"
+    ]
+   },
+   "default": "size=xs, image version=false",
+   "size": [
+    28,
+    28
+   ],
+   "description": "What the Component Does\nDisplays a user's identity as either initials or an image. Choose the image version property to switch between the initials and image variants. Select xs, s, m, lg, or xl with the size property, and update the user initials text property when using initials.\n\n\nUse Cases\n\u2022 Representing people in navigation, profiles, comments, tables, lists, and activity feeds.\n\u2022 Using initials when no profile image is available.\n\u2022 Selecting a size that matches the density and hierarchy of the surrounding interface.\n\n\nExceptions"
+  },
+  {
+   "label": "modal",
+   "name": "modal",
+   "type": "COMPONENT_SET",
+   "variants": 6,
+   "props": {
+    "close#2587:36": "BOOLEAN=true",
+    "has icon#2587:45": "BOOLEAN=true",
+    "content slot#2587:54": "SLOT",
+    "CTA Section#2595:0": "SLOT",
+    "Show CTA Section#2651:0": "BOOLEAN=true",
+    "upper case#2701:10": "BOOLEAN=false",
+    "Sentence Case#2701:17": "BOOLEAN=true",
+    "type": [
+     "alert",
+     "data",
+     "announcement"
+    ],
+    "rounded corner": [
+     "false",
+     "true"
+    ]
+   },
+   "default": "type=alert, rounded corner=true",
+   "size": [
+    600,
+    353
+   ],
+   "description": "What the Component Does?\n\nPresents focused information, a decision, or a task in a dialog without requiring users to leave the current product context. \nUse dialogs to ensure users understand relevant product information, respond to important warnings or urgent decisions, or enter data and perform system-related tasks.\n\n\nVariants and Controls\n\n\u2022 type=alert: informs users about important warnings or decisions requiring urgent attention. Keep the message and response focused on the immediate issue.\n\n\u2022 type=data: supports information and knowledge introduction, including data definitions, terminology, tutorials, and guidance; also supports relevant data entry and task workflows that need more content space.\n\n\u2022 type=announcement: highlights relevant launches or information users need to know, such as policies or new features. Uses a distinct banner-style header.\n\n\u2022 rounded corner: a variant axis with values true and false. The set contains both treatments, but permitted usage is restricted to rounded corner=true for alert, data, and announcement. \n\nUse a 24 px corner radius (radius-xl) and 24 px dialog content padding on all sides (pa-6). \n\nThe 24 px radius is corner rounding, not border stroke thickness. Do not use rounded corner=false or override these radius and padding values.\n\n\n\u2022 Current Figma default: type=alert, rounded corner=true.\n\n\u2022 content slot: supplies the dialog body. Insert the relevant information, warning, form, or task content; sample bodies are empty.\n\n\u2022 CTA Se"
+  },
+  {
+   "label": "divider",
+   "name": "divider",
+   "type": "COMPONENT_SET",
+   "variants": 4,
+   "props": {
+    "Property 1": [
+     "Alpha",
+     "Gamma",
+     "beta",
+     "new"
+    ]
+   },
+   "default": "Property 1=beta",
+   "size": [
+    965,
+    111
+   ],
+   "description": ""
+  },
+  {
+   "label": "contentSlot",
+   "name": "content-slot",
+   "type": "COMPONENT_SET",
+   "variants": 2,
+   "props": {
+    "type": [
+     "content-centered",
+     "content-left"
+    ]
+   },
+   "default": "type=content-centered",
+   "size": [
+    334,
+    200
+   ],
+   "description": "What the Component Does\nProvides the descriptive body text for the main card component. Its primary use is to explain the card\u2019s subject or supply supporting information between the header and any related actions, using a consistent centered or left-aligned presentation.\n\nUsage is restricted to the main card component\u2019s content area. Despite its name, content-slot is a component set containing text, not an exposed content slot for arbitrary inserted content.\n\nVariants and Controls\n\u2022 type=content-centered: the default variant; the visible body text is center-aligned.\n\u2022 type=content-left: the visible body text is left-aligned. Select based on the parent card\u2019s content hierarchy and product rules.\n\u2022 type is the only exposed property. There are no top-level text, visibility, instance-swap, or content-slot controls.\n\u2022 Both variants contain a visible text layer named Subtitle with placeholder body copy. Replace its content through the relevant text layer; the layer name does not make it the card header\u2019s subtitle.\n\u2022 The visible body text uses truncation in a fixed sample area. Longer copy may be clipped or truncated; do not assume automatic height growth or an included Read More action.\n\u2022 Each variant also contains a hidden Description-left frame. It is not a separate exposed control and is not the visible text source; do not populate hidden content instead of the active text.\n\u2022 The variant names describe text alignment. The visible frame is named Description-Centered in both varia"
+  },
+  {
+   "label": "statusAlertBar",
+   "name": "Status Alert Bar",
+   "type": "COMPONENT_SET",
+   "variants": 11,
+   "props": {
+    "Warning CTA Hyperlink#1933:0": "TEXT=\"CTA Hyperlink Version\"",
+    "Show Modal Pop-up#1933:9": "BOOLEAN=true",
+    "Error CTA Hyperlink#2003:0": "TEXT=\"CTA Hyperlink Version\"",
+    "Error Message#2007:30": "TEXT=\"Error Alert Message.\"",
+    "Show Icon#4156:0": "BOOLEAN=true",
+    "Warning Alert Message#10962:10": "TEXT=\"Warning Alert Message.\"",
+    "informative message#12682:0": "TEXT=\"Informative Alert Message.\"",
+    "Type": [
+     "Error Alert",
+     "Warning Alert",
+     "informative"
+    ],
+    "Function": [
+     "Closeable",
+     "Info",
+     "Button Action",
+     "Hyperlink Action"
+    ]
+   },
+   "default": "Type=Warning Alert, Function=Closeable",
+   "size": [
+    1400,
+    40
+   ],
+   "description": "What the Component Does\nDisplays a full-width status message using warning, error, or informative styling. Choose Type based on message severity. Choose Function=Closeable for dismissible alerts, Info for an informational affordance, Button Action for a labeled button, or Hyperlink Action for an inline link where that combination is available. Update the corresponding message and CTA text properties, use Show Icon to control the leading status icon, and use Show Modal Pop-up when the configured action should expose a modal.\n\n\nUse Cases\n\u2022 Warning users about conditions that may require attention.\n\u2022 Reporting errors that block or interrupt a task.\n\u2022 Sharing neutral system or workflow information.\n\u2022 Providing dismissal, more information, a button action, or a hyperlink action when supported by the selected type.\n\n\nExceptions"
+  },
+  {
+   "label": "toast",
+   "name": "Toast Notifications",
+   "type": "COMPONENT_SET",
+   "variants": 3,
+   "props": {
+    "Has CTA#4712:4": "BOOLEAN=true",
+    "Error Toast Messaging#10936:5": "TEXT=\"This is an error.\"",
+    "Success Toast#11367:0": "TEXT=\"This was a success!\"",
+    "Info Toast Messaging#11367:6": "TEXT=\"This is informative.\"",
+    "Show Icon#11391:0": "BOOLEAN=true",
+    "State": [
+     "Error Toast",
+     "Information",
+     "Success"
+    ]
+   },
+   "default": "State=Information",
+   "size": [
+    1762,
+    44
+   ],
+   "description": "What the Component Does\nDisplays a brief status notification without interrupting the current workflow. Choose State=Information for neutral updates, Error Toast for failed actions or problems, and Success for completed actions. Update the corresponding message text property, use Has CTA to show or hide the action, and use Show Icon to control the leading status icon.\n\n\nUse Cases\n\u2022 Confirming that an action completed successfully.\n\u2022 Brief message display that typically will disappear after a few seconds. The time parameter can be adjusted as needed.\n\u2022 Reporting an error after a user or system action.\n\u2022 Sharing short, non-blocking informational updates.\n\u2022 Including a relevant follow-up action when the user can immediately respond.\n\n\nExceptions"
+  },
+  {
+   "label": "step",
+   "name": "step",
+   "type": "COMPONENT_SET",
+   "variants": 12,
+   "props": {
+    "step description#731:9": "TEXT=\"Step 1\"",
+    "connector line#731:12": "BOOLEAN=true",
+    "horizontal label": [
+     "true",
+     "false"
+    ],
+    "horizontal line": [
+     "true",
+     "false"
+    ],
+    "status": [
+     "current step",
+     "completed",
+     "Next Step"
+    ]
+   },
+   "default": "horizontal label=true, horizontal line=true, status=current step",
+   "size": [
+    191,
+    32
+   ],
+   "description": "What the Component Does\nCombines a step indicator, label, and optional connector into one stepper item. Update the step description text property for the label. Use status=current step for the active step, completed for a finished step, and Next Step for an upcoming step. Set horizontal label to control the label orientation, horizontal line to control the connector orientation, and connector line to show or hide the connector\u2014typically hiding it on the final step.\n\n\nUse Cases\n\u2022 Building horizontal or vertical steppers for forms, onboarding, setup, and checkout.\n\u2022 Showing completed, active, and upcoming steps with descriptive labels.\n\u2022 Mixing label and connector orientations to fit the available layout.\n\u2022 Removing the connector from the final item in a sequence.\n\n\nExceptions"
+  },
+  {
+   "label": "stepCounter",
+   "name": "step counter",
+   "type": "COMPONENT_SET",
+   "variants": 3,
+   "props": {
+    "step#731:0": "TEXT=\"1\"",
+    "status": [
+     "completed",
+     "current",
+     "next"
+    ]
+   },
+   "default": "status=current",
+   "size": [
+    32,
+    32
+   ],
+   "description": "What the Component Does\nDisplays the position and progress of one step in a multi-step flow. Update the step text property with the step number. Use status=completed for a finished step, current for the active step, and next for an upcoming step.\n\n\nUse Cases\n\u2022 Multi-step forms, setup flows, onboarding, and checkout processes.\n\u2022 Showing which steps are complete, active, or still ahead.\n\u2022 Combining multiple instances into a progress indicator or stepper.\n\n\nExceptions"
+  },
+  {
+   "label": "loading1",
+   "name": "loading_1",
+   "type": "COMPONENT_SET",
+   "variants": 4,
+   "props": {
+    "Property 1": [
+     "start",
+     "step1",
+     "step2",
+     "step3"
+    ]
+   },
+   "default": "Property 1=start",
+   "size": [
+    22,
+    22
+   ],
+   "description": ""
+  },
+  {
+   "label": "accordionRow",
+   "name": "Accordion Row",
+   "type": "COMPONENT_SET",
+   "variants": 8,
+   "props": {
+    "Accordion Row Name#1191:0": "TEXT=\"Accordion Row Name\"",
+    "Show Progress Ring#1191:5": "BOOLEAN=true",
+    "Show Row 1#1191:10": "BOOLEAN=true",
+    "Show Row 2#1191:15": "BOOLEAN=true",
+    "Show Row 3#1191:20": "BOOLEAN=true",
+    "Show Row 4#1191:25": "BOOLEAN=true",
+    "Show Comments Group#1191:30": "BOOLEAN=true",
+    "header slot#3459:0": "SLOT",
+    "content slot#3459:6": "SLOT",
+    "engagement dates#6048:0": "BOOLEAN=false",
+    "status": [
+     "Collapsed",
+     "Collapsed Hover",
+     "Expanded",
+     "Expanded Hover"
+    ],
+    "Type": [
+     "custom",
+     "general"
+    ]
+   },
+   "default": "status=Collapsed, Type=custom",
+   "size": [
+    370,
+    48
+   ],
+   "description": "What the Component Does\n\nOrganizes related information into a row with a visible header and an expandable content area.\n\nIts primary use is progressive disclosure: keep the section title visible while showing detailed content only when the row is expanded, reducing clutter without leaving the current view.\n\nVariants:\n\u2022 Type=custom: a preconfigured detail layout with status information, a progress ring, labeled detail rows, and a comments/notes group this is the version only for engagement summary.\n\n\u2022 Type=general: a flexible layout with a header slot and content slot for context-specific content. The content slot is empty by default and must be populated for a meaningful expanded view.\n\n\u2022 status=Collapsed: header visible; content hidden.\n\n\u2022 status=Collapsed Hover: collapsed presentation with pointer-over feedback.\n\n\u2022 status=Expanded: header and content visible.\n\n\u2022 status=Expanded Hover: expanded presentation with pointer-over feedback.\n\n\u2022 Both types support all four statuses, for eight variants. The current Figma default is Type=custom, status=Collapsed.\n\nUse Case and exceptions\nThe custom version is only for Engagement Summary section. For all the other applications the recommended version is the general version."
+  },
+  {
+   "label": "emptyState",
+   "name": "empty State",
+   "type": "COMPONENT_SET",
+   "variants": 2,
+   "props": {
+    "has CTA#15673:0": "BOOLEAN=true",
+    "Type": [
+     "horizontal",
+     "vertical"
+    ]
+   },
+   "default": "Type=horizontal",
+   "size": [
+    1152,
+    264
+   ],
+   "description": "What the Component Does\nCommunicates that a page, section, or collection has no content yet by pairing an illustration with a title, supporting message, and optional call to action. Use Type=horizontal for a compact side-by-side arrangement and Type=vertical for a centered stacked arrangement. Use has CTA to show or hide the action.\n\n\nUse Cases\n\u2022 First-use experiences where content has not been created yet.\n\u2022 Search, filter, or data views that return no results.\n\u2022 Empty sections that need explanation and a clear next step.\n\u2022 Horizontal layouts in shorter or wider spaces, and vertical layouts in larger centered spaces.\n\n\nExceptions\nThere some scenarios where we can remove or reduce the size of the illustration"
+  },
+  {
+   "label": "loading",
+   "name": "loading",
+   "type": "COMPONENT_SET",
+   "variants": 2,
+   "props": {
+    "type": [
+     "neutral_loading_1",
+     "primary_loading_1"
+    ]
+   },
+   "default": "type=neutral_loading_1",
+   "size": [
+    32,
+    32
+   ],
+   "description": ""
+  },
+  {
+   "label": "combobox",
+   "name": "combobox",
+   "type": "COMPONENT_SET",
+   "variants": 6,
+   "props": {
+    "mandatory#735:264": "BOOLEAN=true",
+    "user guidance#735:271": "BOOLEAN=false",
+    "has label#735:278": "BOOLEAN=true",
+    "button1#735:285": "BOOLEAN=true",
+    "button2#735:292": "BOOLEAN=true",
+    "assistive text#735:299": "BOOLEAN=true",
+    "error text#735:306": "BOOLEAN=true",
+    "has icon#735:313": "BOOLEAN=true",
+    "label text#735:320": "TEXT=\"Label\"",
+    "description text#735:327": "TEXT=\"Combobox Label\"",
+    "assistive content#735:334": "TEXT=\"Assistive text\"",
+    "Status": [
+     "disable",
+     "enable",
+     "error",
+     "filled",
+     "focused",
+     "hover"
+    ]
+   },
+   "default": "Status=enable",
+   "size": [
+    466,
+    112
+   ],
+   "description": "What the Component Does\nCombines text entry with option selection and optional adjacent actions. Set Status to enable, hover, focused, filled, error, or disable to match the current interaction and validation state. Configure the label, description, and assistive content; use mandatory, user guidance, has label, assistive text, error text, and has icon to control supporting information. Use button1 and button2 to show or hide the available companion actions.\n\n\nUse Cases\n\u2022 Forms where users can type a value or choose from suggested options.\n\u2022 Selecting known items while still supporting direct text entry.\n\u2022 Showing one or two related actions beside the field.\n\u2022 Providing required status, guidance, validation feedback, and disabled states.\n\n\nExceptions"
+  }
+ ],
+ "errors": {}
+}
