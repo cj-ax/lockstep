@@ -1,0 +1,11 @@
+{
+ "name": "Acme",
+ "repo": null,
+ "scannedOn": "2026-10-22",
+ "pendingQuestionnaire": "ARCHITECT-QUESTIONS.md",
+ "hints": [
+  "The library's colours and spacing look like a custom scale (no MUI or Vuetify defaults found).",
+  "Component names (Card (Slot), Button Group, Switch Field) don't match any common UI library's names."
+ ],
+ "confirmed": null
+}

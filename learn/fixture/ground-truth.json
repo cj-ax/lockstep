@@ -1,0 +1,1315 @@
+{
+ "fixture": {
+  "figmaFile": "bgsOIiq7b6ToKhhGPSjkvY",
+  "url": "https://www.figma.com/design/bgsOIiq7b6ToKhhGPSjkvY",
+  "built": "2026-10-22",
+  "library": "Figma Simple Design System (community)",
+  "frames": [
+   {
+    "id": "1:605",
+    "name": "Settings / Profile"
+   },
+   {
+    "id": "1:843",
+    "name": "Settings / Notifications"
+   },
+   {
+    "id": "1:973",
+    "name": "Settings / Account"
+   },
+   {
+    "id": "1:1098",
+    "name": "Settings / Dialog"
+   }
+  ],
+  "libraryPage": "Library (WIP)",
+  "how": "Pristine frames built with plugin/skills/build/references/examples/build-settings-sds.js (VERSION 0); capture_truth.js read them; degrade.js broke them (seed 20261022); census.js verified the result. See README.md."
+ },
+ "pristine": {
+  "tokensUsed": [
+   {
+    "name": "Background/Brand/Default",
+    "collection": "Color",
+    "type": "COLOR",
+    "key": "69276caf7d902cb108d2f8f6463078190f11e0ac",
+    "value": "#2c2c2c",
+    "props": [
+     "fills"
+    ],
+    "authored": 0,
+    "internal": 18
+   },
+   {
+    "name": "Background/Brand/Tertiary",
+    "collection": "Color",
+    "type": "COLOR",
+    "key": "db01590690e2fcdd5fb2f4551e1999ec6c8267e6",
+    "value": "#f5f5f5",
+    "props": [
+     "fills"
+    ],
+    "authored": 6,
+    "internal": 0
+   },
+   {
+    "name": "Background/Danger/Default",
+    "collection": "Color",
+    "type": "COLOR",
+    "key": "e06e1faaca4d7237237c73a5b7e4647aa7ee0cad",
+    "value": "#ec221f",
+    "props": [
+     "fills"
+    ],
+    "authored": 0,
+    "internal": 4
+   },
+   {
+    "name": "Background/Default/Default",
+    "collection": "Color",
+    "type": "COLOR",
+    "key": "a4865545b526a5b3399a512667f40c9efe0c2fc4",
+    "value": "#ffffff",
+    "props": [
+     "fills"
+    ],
+    "authored": 24,
+    "internal": 24
+   },
+   {
+    "name": "Background/Neutral/Tertiary",
+    "collection": "Color",
+    "type": "COLOR",
+    "key": "5131a463005201852fe09bd47f7f2f172cd4942b",
+    "value": "#e3e3e3",
+    "props": [
+     "fills"
+    ],
+    "authored": 0,
+    "internal": 12
+   },
+   {
+    "name": "Background/Utilities/Scrim",
+    "collection": "Color",
+    "type": "COLOR",
+    "key": "6137b8a6f2ca44bad94748cc1151a3487a82eb0e",
+    "value": "#ffffffcc",
+    "props": [
+     "fills"
+    ],
+    "authored": 2,
+    "internal": 0
+   },
+   {
+    "name": "Border/Brand/Default",
+    "collection": "Color",
+    "type": "COLOR",
+    "key": "9ea1a1e101e28fa521718235210f9dfc28258896",
+    "value": "#2c2c2c",
+    "props": [
+     "strokes"
+    ],
+    "authored": 0,
+    "internal": 18
+   },
+   {
+    "name": "Border/Brand/Tertiary",
+    "collection": "Color",
+    "type": "COLOR",
+    "key": "6478463699a90b8d6ddd87ec49cd4bdce957c2df",
+    "value": "#757575",
+    "props": [
+     "strokes"
+    ],
+    "authored": 0,
+    "internal": 4
+   },
+   {
+    "name": "Border/Danger/Secondary",
+    "collection": "Color",
+    "type": "COLOR",
+    "key": "ec9e323bc00133aa2f753c13ae87403681664561",
+    "value": "#c00f0c",
+    "props": [
+     "strokes"
+    ],
+    "authored": 0,
+    "internal": 4
+   },
+   {
+    "name": "Border/Default/Default",
+    "collection": "Color",
+    "type": "COLOR",
+    "key": "395870afebb3397e858358930ffdd69a5ec0f73d",
+    "value": "#d9d9d9",
+    "props": [
+     "strokes"
+    ],
+    "authored": 16,
+    "internal": 20
+   },
+   {
+    "name": "Border/Neutral/Default",
+    "collection": "Color",
+    "type": "COLOR",
+    "key": "016efb3cf2dd26fdc6a88c51eb2116541b3aa079",
+    "value": "#303030",
+    "props": [
+     "strokes"
+    ],
+    "authored": 6,
+    "internal": 0
+   },
+   {
+    "name": "Border/Neutral/Secondary",
+    "collection": "Color",
+    "type": "COLOR",
+    "key": "0b93841a8d5c59f5ddee0643cd4b21c9bf368c83",
+    "value": "#767676",
+    "props": [
+     "strokes"
+    ],
+    "authored": 0,
+    "internal": 12
+   },
+   {
+    "name": "Border/Neutral/tertiary",
+    "collection": "Color",
+    "type": "COLOR",
+    "key": "d8303951ff289e688e1cc90284ce3f9e41638c9a",
+    "value": "#b2b2b2",
+    "props": [
+     "strokes"
+    ],
+    "authored": 12,
+    "internal": 0
+   },
+   {
+    "name": "Icon/Brand/On Brand",
+    "collection": "Color",
+    "type": "COLOR",
+    "key": "63e319623d69f8f12f6bc2eb9ef4462b52f4dc14",
+    "value": "#f5f5f5",
+    "props": [
+     "fills"
+    ],
+    "authored": 0,
+    "internal": 8
+   },
+   {
+    "name": "Icon/Brand/Tertiary",
+    "collection": "Color",
+    "type": "COLOR",
+    "key": "be02d39a77eb029232c3a6c1bb6b60af6d72833d",
+    "value": "#757575",
+    "props": [
+     "fills"
+    ],
+    "authored": 0,
+    "internal": 4
+   },
+   {
+    "name": "Icon/Default/Default",
+    "collection": "Color",
+    "type": "COLOR",
+    "key": "d2e9e262e437336d54e8e740f8af30755a666af2",
+    "value": "#1e1e1e",
+    "props": [
+     "strokes"
+    ],
+    "authored": 0,
+    "internal": 8
+   },
+   {
+    "name": "Text/Brand/On Brand",
+    "collection": "Color",
+    "type": "COLOR",
+    "key": "384c39920914c95964c44586d898abeb59b621c9",
+    "value": "#f5f5f5",
+    "props": [
+     "fills"
+    ],
+    "authored": 0,
+    "internal": 10
+   },
+   {
+    "name": "Text/Brand/On Brand Secondary",
+    "collection": "Color",
+    "type": "COLOR",
+    "key": "c31a0540ce1729a0017dced1fb76a0d96ce139f6",
+    "value": "#1e1e1e",
+    "props": [
+     "fills"
+    ],
+    "authored": 0,
+    "internal": 6
+   },
+   {
+    "name": "Text/Danger/On Danger",
+    "collection": "Color",
+    "type": "COLOR",
+    "key": "f66cec833fe384ed00dde4de0f1ec43b91539f65",
+    "value": "#fee9e7",
+    "props": [
+     "fills"
+    ],
+    "authored": 0,
+    "internal": 4
+   },
+   {
+    "name": "Text/Default/Default",
+    "collection": "Color",
+    "type": "COLOR",
+    "key": "cf92d4e8c6a5a5ed82f024d47d11c21d5162ac3c",
+    "value": "#1e1e1e",
+    "props": [
+     "fills"
+    ],
+    "authored": 4,
+    "internal": 132
+   },
+   {
+    "name": "Text/Default/Secondary",
+    "collection": "Color",
+    "type": "COLOR",
+    "key": "3184ed9d395b6588f571919557ce051337792211",
+    "value": "#757575",
+    "props": [
+     "fills"
+    ],
+    "authored": 0,
+    "internal": 12
+   },
+   {
+    "name": "Text/Neutral/Default",
+    "collection": "Color",
+    "type": "COLOR",
+    "key": "762dff8523424661e1ddfb799a8258004cc702f1",
+    "value": "#303030",
+    "props": [
+     "fills"
+    ],
+    "authored": 0,
+    "internal": 6
+   },
+   {
+    "name": "Text/Neutral/Tertiary",
+    "collection": "Color",
+    "type": "COLOR",
+    "key": "cf21c2d4d26f82172bf1a6ad250a29e3c39aaf84",
+    "value": "#767676",
+    "props": [
+     "fills"
+    ],
+    "authored": 0,
+    "internal": 12
+   },
+   {
+    "name": "Black/100",
+    "collection": "Color Primitives",
+    "type": "COLOR",
+    "key": "eddfeaed561cbfd41b52cbcbc5758fa036951267",
+    "value": "#0c0c0d0d",
+    "props": [
+     "effects"
+    ],
+    "authored": 0,
+    "internal": 1
+   },
+   {
+    "name": "Black/200",
+    "collection": "Color Primitives",
+    "type": "COLOR",
+    "key": "872f2351d47ba3cf4d92a4271e304b850f2b0500",
+    "value": "#0c0c0d1a",
+    "props": [
+     "effects"
+    ],
+    "authored": 0,
+    "internal": 1
+   },
+   {
+    "name": "border-width",
+    "collection": "Responsive",
+    "type": "FLOAT",
+    "key": "48b81bb53e859ca381a99ac6ba56425a0c0e85cd",
+    "value": 1,
+    "props": [
+     "strokeBottomWeight",
+     "strokeLeftWeight",
+     "strokeRightWeight",
+     "strokeTopWeight"
+    ],
+    "authored": 3,
+    "internal": 12
+   },
+   {
+    "name": "Blur/100",
+    "collection": "Size",
+    "type": "FLOAT",
+    "key": "6c850fa56d1cb55d7631c78858e48569c34b077d",
+    "value": 4,
+    "props": [
+     "effects"
+    ],
+    "authored": 1,
+    "internal": 0
+   },
+   {
+    "name": "Depth/0",
+    "collection": "Size",
+    "type": "FLOAT",
+    "key": "578f74c4745d8d1f6b70268aeacdabe1bf263ce4",
+    "value": 0,
+    "props": [
+     "effects"
+    ],
+    "authored": 0,
+    "internal": 1
+   },
+   {
+    "name": "Depth/100",
+    "collection": "Size",
+    "type": "FLOAT",
+    "key": "30982ce9825390a29c3cbec5b4cc7b50ba69b46b",
+    "value": 4,
+    "props": [
+     "effects"
+    ],
+    "authored": 0,
+    "internal": 1
+   },
+   {
+    "name": "Depth/400",
+    "collection": "Size",
+    "type": "FLOAT",
+    "key": "a6bf256d99b502f692b6374bac9402fd215f7d57",
+    "value": 16,
+    "props": [
+     "effects"
+    ],
+    "authored": 0,
+    "internal": 1
+   },
+   {
+    "name": "Depth/800",
+    "collection": "Size",
+    "type": "FLOAT",
+    "key": "413b6de0b8b7f9f519bbfc8728223569f62937d4",
+    "value": 32,
+    "props": [
+     "effects"
+    ],
+    "authored": 0,
+    "internal": 1
+   },
+   {
+    "name": "Depth/Negative 100",
+    "collection": "Size",
+    "type": "FLOAT",
+    "key": "faf5a24df4c836f8d3b83db785647fadf49262e4",
+    "value": -4,
+    "props": [
+     "effects"
+    ],
+    "authored": 0,
+    "internal": 1
+   },
+   {
+    "name": "Radius/100",
+    "collection": "Size",
+    "type": "FLOAT",
+    "key": "f5da0f9da178ba7c668ca66f7adc84f0ba1a43a3",
+    "value": 4,
+    "props": [
+     "radius"
+    ],
+    "authored": 18,
+    "internal": 0
+   },
+   {
+    "name": "Radius/200",
+    "collection": "Size",
+    "type": "FLOAT",
+    "key": "9e82491aff6fe809fe71856da5612db502221455",
+    "value": 8,
+    "props": [
+     "radius"
+    ],
+    "authored": 104,
+    "internal": 92
+   },
+   {
+    "name": "Radius/Full",
+    "collection": "Size",
+    "type": "FLOAT",
+    "key": "15d41e10759196590418df58d5bb77642991e569",
+    "value": 9999,
+    "props": [
+     "radius"
+    ],
+    "authored": 0,
+    "internal": 24
+   },
+   {
+    "name": "Space/100",
+    "collection": "Size",
+    "type": "FLOAT",
+    "key": "6991c8db166da9c4d23de28830fc570f19aba2e9",
+    "value": 4,
+    "props": [
+     "padding"
+    ],
+    "authored": 18,
+    "internal": 0
+   },
+   {
+    "name": "Space/200",
+    "collection": "Size",
+    "type": "FLOAT",
+    "key": "15bb1c0f339146e931cf0dc15f89ed57dcbd907e",
+    "value": 8,
+    "props": [
+     "itemSpacing",
+     "padding"
+    ],
+    "authored": 122,
+    "internal": 44
+   },
+   {
+    "name": "Space/300",
+    "collection": "Size",
+    "type": "FLOAT",
+    "key": "fabe3eb617318c0a59ce59bbea8eebdf1fa7d14c",
+    "value": 12,
+    "props": [
+     "itemSpacing",
+     "padding"
+    ],
+    "authored": 19,
+    "internal": 55
+   },
+   {
+    "name": "Space/400",
+    "collection": "Size",
+    "type": "FLOAT",
+    "key": "16bc6f84b6e7e20e4234ef79030ee580ec0f4505",
+    "value": 16,
+    "props": [
+     "itemSpacing",
+     "padding"
+    ],
+    "authored": 9,
+    "internal": 18
+   },
+   {
+    "name": "Space/600",
+    "collection": "Size",
+    "type": "FLOAT",
+    "key": "be3115966ea99eef888c9f25751b54695c7e88d2",
+    "value": 24,
+    "props": [
+     "itemSpacing",
+     "padding"
+    ],
+    "authored": 30,
+    "internal": 1
+   },
+   {
+    "name": "Space/800",
+    "collection": "Size",
+    "type": "FLOAT",
+    "key": "9acadea8b7c7c9884455b896e21c88b8bc62d6da",
+    "value": 32,
+    "props": [
+     "itemSpacing",
+     "padding"
+    ],
+    "authored": 27,
+    "internal": 4
+   },
+   {
+    "name": "Stroke/Border",
+    "collection": "Size",
+    "type": "FLOAT",
+    "key": "394d05bc08ab0cf40ac4b4130446b8141106372e",
+    "value": 1,
+    "props": [
+     "strokeBottomWeight",
+     "strokeLeftWeight",
+     "strokeRightWeight",
+     "strokeTopWeight"
+    ],
+    "authored": 32,
+    "internal": 120
+   },
+   {
+    "name": "Body/Font Family",
+    "collection": "Typography",
+    "type": "STRING",
+    "key": "1609ab397f795e881095bb5f539781832295e2ec",
+    "value": "Inter",
+    "props": [
+     "fontFamily"
+    ],
+    "authored": 1,
+    "internal": 81
+   },
+   {
+    "name": "Body/Font Weight Regular",
+    "collection": "Typography",
+    "type": "FLOAT",
+    "key": "bfdce669b31940bfcfd61f832d51fdcd1767424c",
+    "value": 400,
+    "props": [
+     "fontWeight"
+    ],
+    "authored": 1,
+    "internal": 81
+   },
+   {
+    "name": "Body/Size Medium",
+    "collection": "Typography",
+    "type": "FLOAT",
+    "key": "12a79f19457fa89c417aa75e5379ea0fd9edcb88",
+    "value": 16,
+    "props": [
+     "fontSize"
+    ],
+    "authored": 1,
+    "internal": 81
+   },
+   {
+    "name": "Heading/Font Family",
+    "collection": "Typography",
+    "type": "STRING",
+    "key": "05ced7ef43fefc4bbdf3e3366618c6b1e159adf5",
+    "value": "Inter",
+    "props": [
+     "fontFamily"
+    ],
+    "authored": 1,
+    "internal": 7
+   },
+   {
+    "name": "Heading/Font Weight",
+    "collection": "Typography",
+    "type": "FLOAT",
+    "key": "256184138aeae56d0c18a48590ba1e00606c7443",
+    "value": 600,
+    "props": [
+     "fontWeight"
+    ],
+    "authored": 1,
+    "internal": 7
+   },
+   {
+    "name": "Heading/Size Base",
+    "collection": "Typography",
+    "type": "FLOAT",
+    "key": "ab6ba1889596233fb14c1c359759fcbf90a67e80",
+    "value": 24,
+    "props": [
+     "fontSize"
+    ],
+    "authored": 1,
+    "internal": 7
+   },
+   {
+    "name": "Title Page/Font Family",
+    "collection": "Typography",
+    "type": "STRING",
+    "key": "605bc149b10c9f2ffb12c8a74272e31f4316c1bd",
+    "value": "Inter",
+    "props": [
+     "fontFamily"
+    ],
+    "authored": 0,
+    "internal": 3
+   },
+   {
+    "name": "Title Page/Font Weight",
+    "collection": "Typography",
+    "type": "FLOAT",
+    "key": "78bf7829008f764390f68d032c3ad0ae52f98177",
+    "value": 700,
+    "props": [
+     "fontWeight"
+    ],
+    "authored": 0,
+    "internal": 3
+   },
+   {
+    "name": "Title Page/Size Base",
+    "collection": "Typography",
+    "type": "FLOAT",
+    "key": "9cbd0b7d2ffa26d8597796036de185303d0b7a2d",
+    "value": 48,
+    "props": [
+     "fontSize"
+    ],
+    "authored": 0,
+    "internal": 3
+   },
+   {
+    "name": "Scale 06",
+    "collection": "Typography Primitives",
+    "type": "FLOAT",
+    "key": "cc51e6af78c7a95e2282eb686c41066fdec7b2e7",
+    "value": 32,
+    "props": [
+     "radius"
+    ],
+    "authored": 0,
+    "internal": 4
+   }
+  ],
+  "tokensAllNote": "Every variable in the SDS collections the frames touch (Color, Size, Responsive, Typography, Typography Primitives, Color Primitives), first mode. Token precision is measured against this list.",
+  "tokensAll": {
+   "Color": {
+    "Background/Default/Default": "#ffffff",
+    "Background/Neutral/Tertiary": "#e3e3e3",
+    "Background/Neutral/Tertiary Hover": "#cdcdcd",
+    "Background/Default/Default Hover": "#f5f5f5",
+    "Background/Default/Secondary": "#f5f5f5",
+    "Background/Default/Secondary Hover": "#e6e6e6",
+    "Background/Brand/Default": "#2c2c2c",
+    "Background/Brand/Hover": "#1e1e1e",
+    "Background/Brand/Tertiary": "#f5f5f5",
+    "Background/Danger/Default": "#ec221f",
+    "Background/Danger/Hover": "#c00f0c",
+    "Background/Danger/Tertiary Hover": "#fdd3d0",
+    "Background/Disabled/Default": "#d9d9d9",
+    "Background/Utilities/Scrim": "#ffffffcc",
+    "Text/Default/Default": "#1e1e1e",
+    "Text/Default/Secondary": "#757575",
+    "Text/Default/Tertiary": "#b3b3b3",
+    "Text/Neutral/Default": "#303030",
+    "Text/Neutral/Tertiary": "#767676",
+    "Text/Brand/On Brand": "#f5f5f5",
+    "Text/Brand/On Brand Secondary": "#1e1e1e",
+    "Text/Danger/Default": "#900b09",
+    "Text/Danger/On Danger": "#fee9e7",
+    "Text/Disabled/Default": "#b3b3b3",
+    "Text/Disabled/On Disabled": "#b3b3b3",
+    "Border/Default/Default": "#d9d9d9",
+    "Border/Neutral/Default": "#303030",
+    "Border/Neutral/Secondary": "#767676",
+    "Border/Neutral/tertiary": "#b2b2b2",
+    "Border/Brand/Default": "#2c2c2c",
+    "Border/Brand/Tertiary": "#757575",
+    "Border/Danger/Default": "#900b09",
+    "Border/Danger/Secondary": "#c00f0c",
+    "Border/Disabled/default": "#b3b3b3",
+    "Icon/Default/Default": "#1e1e1e",
+    "Icon/Brand/Default": "#2c2c2c",
+    "Icon/Brand/Tertiary": "#757575",
+    "Icon/Brand/On Brand": "#f5f5f5",
+    "Icon/Brand/On Brand Secondary": "#1e1e1e",
+    "Icon/Danger/Default": "#900b09",
+    "Icon/Danger/On Danger": "#fee9e7",
+    "Icon/Disabled/Default": "#b3b3b3",
+    "Icon/Disabled/On Disabled": "#b3b3b3"
+   },
+   "Size": {
+    "Space/100": 4,
+    "Space/200": 8,
+    "Space/300": 12,
+    "Space/400": 16,
+    "Space/600": 24,
+    "Space/800": 32,
+    "Space/1600": 64,
+    "Radius/100": 4,
+    "Radius/200": 8,
+    "Blur/100": 4,
+    "Radius/Full": 9999,
+    "Depth/0": 0,
+    "Depth/100": 4,
+    "Depth/400": 16,
+    "Depth/800": 32,
+    "Depth/Negative 100": -4,
+    "Stroke/Border": 1,
+    "Icon/Small": 24,
+    "Icon/Medium": 32,
+    "Icon/Large": 40
+   },
+   "Responsive": {
+    "Device Width": 1200
+   },
+   "Typography": {
+    "Title Page/Font Family": "Inter",
+    "Title Page/Size Base": 48,
+    "Title Page/Font Weight": 700,
+    "Heading/Font Family": "Inter",
+    "Heading/Size Base": 24,
+    "Heading/Font Weight": 600,
+    "Subheading/Font Family": "Inter",
+    "Subheading/Size Medium": 20,
+    "Subheading/Font Weight": 400,
+    "Body/Font Family": "Inter",
+    "Body/Size Small": 14,
+    "Body/Size Medium": 16,
+    "Body/Font Weight Regular": 400
+   },
+   "Color Primitives": {
+    "Brand/100": "#f5f5f5",
+    "Brand/300": "#d9d9d9",
+    "Brand/400": "#b3b3b3",
+    "Brand/500": "#757575",
+    "Brand/600": "#444444",
+    "Brand/800": "#2c2c2c",
+    "Brand/900": "#1e1e1e",
+    "Black/100": "#0c0c0d0d",
+    "Black/200": "#0c0c0d1a",
+    "Gray/100": "#f5f5f5",
+    "Gray/200": "#e6e6e6",
+    "Gray/300": "#d9d9d9",
+    "Gray/400": "#b3b3b3",
+    "Gray/500": "#757575",
+    "Gray/600": "#444444",
+    "Gray/700": "#383838",
+    "Gray/800": "#2c2c2c",
+    "Gray/900": "#1e1e1e",
+    "White/400": "#ffffff66",
+    "White/500": "#ffffffb2",
+    "White/1000": "#ffffff",
+    "Red/100": "#fee9e7",
+    "Red/200": "#fdd3d0",
+    "Red/400": "#f4776a",
+    "Red/500": "#ec221f",
+    "Red/600": "#c00f0c",
+    "Red/700": "#900b09",
+    "Red/1000": "#300603",
+    "Slate/100": "#f3f3f3",
+    "Slate/200": "#e3e3e3",
+    "Slate/300": "#cdcdcd",
+    "Slate/400": "#b2b2b2",
+    "Slate/500": "#949494",
+    "Slate/600": "#767676",
+    "Slate/900": "#303030",
+    "Slate/1000": "#242424"
+   },
+   "Typography Primitives": {
+    "Family Sans": "Inter",
+    "Scale 02": 14,
+    "Scale 03": 16,
+    "Scale 04": 20,
+    "Scale 05": 24,
+    "Scale 06": 32,
+    "Scale 07": 40,
+    "Scale 08": 48,
+    "Weight Regular": 400,
+    "Weight Semibold": 600,
+    "Weight Bold": 700
+   }
+  },
+  "textStyles": [
+   {
+    "name": "Single Line/Body Base",
+    "key": "cd8fb7890d02bb365020e6d4d9dc37dd932bbf3b",
+    "font": "Inter Regular",
+    "size": 16,
+    "lineHeight": 100,
+    "count": 43
+   },
+   {
+    "name": "Title Page",
+    "key": "544463062895acc44da824a28de8b76f0893d1bb",
+    "font": "Inter Bold",
+    "size": 48,
+    "lineHeight": 120.00000476837158,
+    "count": 3
+   },
+   {
+    "name": "Body Base",
+    "key": "cebee1b62ea594fa8f97b0b247fd163730736f2a",
+    "font": "Inter Regular",
+    "size": 16,
+    "lineHeight": 139.9999976158142,
+    "count": 39
+   },
+   {
+    "name": "Heading",
+    "key": "dfbe5c8aedd892ba1aa0fe61bf528889ff866e4f",
+    "font": "Inter Semi Bold",
+    "size": 24,
+    "lineHeight": 120.00000476837158,
+    "count": 8
+   }
+  ],
+  "componentsNote": "authored = placed by the build (outside library internals, or in a slot); nested = inside another library component.",
+  "components": [
+   {
+    "set": "Button",
+    "variant": "Variant=Neutral, State=Default, Size=Small",
+    "key": "a76528dfa8a50f8772660dc8c4b1f11272373a62",
+    "authored": 0,
+    "nested": 3
+   },
+   {
+    "set": "Button",
+    "variant": "Variant=Primary, State=Default, Size=Small",
+    "key": "a76528dfa8a50f8772660dc8c4b1f11272373a62",
+    "authored": 0,
+    "nested": 3
+   },
+   {
+    "set": "Button",
+    "variant": "Variant=Neutral, State=Default, Size=Medium",
+    "key": "cc8b558dc7d9684011b6b99ce8e6509399bc836b",
+    "authored": 0,
+    "nested": 3
+   },
+   {
+    "set": "Button",
+    "variant": "Variant=Primary, State=Default, Size=Medium",
+    "key": "cc8b558dc7d9684011b6b99ce8e6509399bc836b",
+    "authored": 0,
+    "nested": 2
+   },
+   {
+    "set": "Button Danger",
+    "variant": "Variant=Primary, State=Default, Size=Medium",
+    "key": "3d3073170c1014cfacc5d047c23495cfed01e0a8",
+    "authored": 0,
+    "nested": 2
+   },
+   {
+    "set": "Button Group",
+    "variant": "Align=End",
+    "key": "97bcba06a0df2ebfe08cd2efa567d04536ace541",
+    "authored": 5,
+    "nested": 0
+   },
+   {
+    "set": "Card (Slot)",
+    "variant": null,
+    "key": "938ddbc1add07bdc6bbec6388327aa27d9d04868",
+    "authored": 5,
+    "nested": 0
+   },
+   {
+    "set": "Dialog",
+    "variant": null,
+    "key": "050bf5b28eb08c43b117646b3e4b00c9db55c540",
+    "authored": 1,
+    "nested": 0
+   },
+   {
+    "set": "Dialog Body",
+    "variant": "Type=Card",
+    "key": "629a55849475c74b3aeea85d7de846e271cf504f",
+    "authored": 0,
+    "nested": 1
+   },
+   {
+    "set": "Header",
+    "variant": "Platform=Desktop, State=Default",
+    "key": "a1f69d8fdde4a1fe8523e49d3baa3c8464ad17d2",
+    "authored": 3,
+    "nested": 0
+   },
+   {
+    "set": "Header Auth",
+    "variant": "State=Logged Out",
+    "key": "4129103108b4aa1b535044a60f2379f362254a6c",
+    "authored": 0,
+    "nested": 3
+   },
+   {
+    "set": "Icon Button",
+    "variant": "Variant=Subtle, State=Default, Size=Small",
+    "key": "e098805c9e6db6bfa6a87de61a8324a545d42501",
+    "authored": 0,
+    "nested": 1
+   },
+   {
+    "set": "Input Field",
+    "variant": "State=Default, Value Type=Default",
+    "key": "c28150b04d333d34ed9d2b77abd9f2f54e1a878a",
+    "authored": 9,
+    "nested": 0
+   },
+   {
+    "set": "Navigation Pill",
+    "variant": "State=Active",
+    "key": "e8a6afab337fee965cf758d46d54789201291803",
+    "authored": 3,
+    "nested": 0
+   },
+   {
+    "set": "Navigation Pill",
+    "variant": "State=Default",
+    "key": "e8a6afab337fee965cf758d46d54789201291803",
+    "authored": 18,
+    "nested": 0
+   },
+   {
+    "set": "Navigation Pill List",
+    "variant": "Direction=Row",
+    "key": "868412c34424ea9c8439205c1cd8007b88d7ca7b",
+    "authored": 0,
+    "nested": 3
+   },
+   {
+    "set": "Switch Field",
+    "variant": "State=Default, Value Type=Checked",
+    "key": "7a8dc511d7173ec44c06ef0e8b1a5a6947c4a19c",
+    "authored": 4,
+    "nested": 0
+   },
+   {
+    "set": "Switch Field",
+    "variant": "State=Default, Value Type=Unchecked",
+    "key": "7a8dc511d7173ec44c06ef0e8b1a5a6947c4a19c",
+    "authored": 2,
+    "nested": 0
+   },
+   {
+    "set": "Tab",
+    "variant": "State=Default, Active=On",
+    "key": "18aa207708b43593a2af7096b2dfd531553f3414",
+    "authored": 3,
+    "nested": 0
+   },
+   {
+    "set": "Tab",
+    "variant": "State=Default, Active=Off",
+    "key": "18aa207708b43593a2af7096b2dfd531553f3414",
+    "authored": 6,
+    "nested": 0
+   },
+   {
+    "set": "Tabs",
+    "variant": null,
+    "key": "b839f8a495ef7b0ef0a47ad1aefd6e05438825b5",
+    "authored": 3,
+    "nested": 0
+   },
+   {
+    "set": "Text",
+    "variant": null,
+    "key": "fbaca594bc38824e75467b952cbca0a976c46856",
+    "authored": 8,
+    "nested": 0
+   },
+   {
+    "set": "Text Heading",
+    "variant": null,
+    "key": "035ac61042305c533b39b786ff35ab1164bdd068",
+    "authored": 7,
+    "nested": 0
+   },
+   {
+    "set": "Text Title Page",
+    "variant": null,
+    "key": "f1e2f812cd9a9e7babb0032e88b57c4d681e8bbb",
+    "authored": 3,
+    "nested": 0
+   },
+   {
+    "set": "X",
+    "variant": null,
+    "key": "093fa17e40b0a85bc10ba8232abc683d83218fa0",
+    "authored": 0,
+    "nested": 1
+   }
+  ]
+ },
+ "degradation": {
+  "seed": 20261022,
+  "unpublished": [
+   "Card (Slot)",
+   "Button Group",
+   "Switch Field",
+   "Text Heading",
+   "Tabs"
+  ],
+  "unpublishedNote": "These still exist in the SDS community library, so detached frames keep a resolvable detachedInfo.componentKey. learn must find them as de facto components from structure and that key's evidence, and must not import them by key; in a real org a deleted component's key no longer resolves.",
+  "detachShareForPublished": 0.5,
+  "unbindShare": 0.8,
+  "wipCollection": {
+   "name": "Tokens (WIP)",
+   "mapsToSds": {
+    "bg/white": "Background/Default/Default",
+    "text/primary": "Text/Default/Default",
+    "border/light": "Border/Default/Default",
+    "spacing-xs": "Space/200",
+    "spacing-m": "Space/400",
+    "spacing-l": "Space/600",
+    "spacing-xl": "Space/800",
+    "radius-md": "Radius/200",
+    "border-w": "Stroke/Border"
+   },
+   "notCreated": {
+    "brand/dark": "Background/Brand/Default (in the plan, but no binding to it survived on an authored layer, so it was never created)"
+   },
+   "noise": {
+    "blue-accent": "#3b82f6 (not an SDS token, unused)",
+    "spacing-s": "6 (not an SDS value, unused)"
+   }
+  },
+  "changes": {
+   "paintsMadeRaw": 79,
+   "paintsRebound": 14,
+   "numbersMadeRaw": 238,
+   "numbersRebound": 37,
+   "effectsUnbound": 1,
+   "textStylesRemoved": 39,
+   "textStylesKept": 4
+  },
+  "drift": [
+   {
+    "node": "3:404",
+    "layer": "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022",
+    "prop": "fills",
+    "from": "#1e1e1e",
+    "to": "#201e1e",
+    "token": "Text/Default/Default"
+   },
+   {
+    "node": "3:649",
+    "layer": "When someone messages you.",
+    "prop": "fills",
+    "from": "#757575",
+    "to": "#777575",
+    "token": "Text/Default/Secondary"
+   },
+   {
+    "node": "3:652",
+    "layer": "Mentions",
+    "prop": "fills",
+    "from": "#1e1e1e",
+    "to": "#201e1e",
+    "token": "Text/Default/Default"
+   },
+   {
+    "node": "3:653",
+    "layer": "Switch",
+    "prop": "strokes",
+    "from": "#2c2c2c",
+    "to": "#2e2c2c",
+    "token": "Border/Brand/Default"
+   },
+   {
+    "node": "3:646",
+    "layer": "Direct messages",
+    "prop": "fills",
+    "from": "#1e1e1e",
+    "to": "#201e1e",
+    "token": "Text/Default/Default"
+   },
+   {
+    "node": "3:659",
+    "layer": "Switch",
+    "prop": "strokes",
+    "from": "#757575",
+    "to": "#777575",
+    "token": "Border/Brand/Tertiary or Text/Default/Secondary (same value)"
+   },
+   {
+    "node": "3:687",
+    "layer": "Card (Slot)",
+    "prop": "paddingRight",
+    "from": 24,
+    "to": 23,
+    "token": "Space/600"
+   },
+   {
+    "node": "3:688",
+    "layer": "Slot",
+    "prop": "itemSpacing",
+    "from": 24,
+    "to": 25,
+    "token": "Space/600"
+   },
+   {
+    "node": "3:712",
+    "layer": "Card (Slot)",
+    "prop": "paddingTop",
+    "from": 24,
+    "to": 25,
+    "token": "Space/600"
+   },
+   {
+    "node": "3:388",
+    "layer": "Card (Slot)",
+    "prop": "paddingLeft",
+    "from": 24,
+    "to": 25,
+    "token": "Space/600"
+   }
+  ],
+  "localLibrary": [
+   {
+    "id": "3:821",
+    "name": "Card / Base",
+    "from": "Card (Slot)",
+    "usedInProduct": false
+   },
+   {
+    "id": "3:826",
+    "name": "Section Heading",
+    "from": "Text Heading",
+    "usedInProduct": false
+   },
+   {
+    "id": "3:839",
+    "name": "Toggle row",
+    "from": "Switch Field",
+    "usedInProduct": false
+   }
+  ]
+ },
+ "final": {
+  "note": "Verified by census.js after degrading. Node IDs here are current.",
+  "detachedFrames": 42,
+  "detachedByOrigin": {
+   "Card (Slot)": {
+    "count": 5,
+    "unpublished": true,
+    "nodes": [
+     "3:471",
+     "3:388",
+     "3:613",
+     "3:712",
+     "3:687"
+    ]
+   },
+   "Text Heading": {
+    "count": 7,
+    "unpublished": true,
+    "nodes": [
+     "3:474",
+     "3:391",
+     "3:616",
+     "3:621",
+     "3:642",
+     "3:715",
+     "3:690"
+    ]
+   },
+   "Switch Field": {
+    "count": 6,
+    "unpublished": true,
+    "nodes": [
+     "3:623",
+     "3:629",
+     "3:635",
+     "3:644",
+     "3:650",
+     "3:656"
+    ]
+   },
+   "Button Group": {
+    "count": 4,
+    "unpublished": true,
+    "nodes": [
+     "3:500",
+     "3:412",
+     "3:718",
+     "3:693"
+    ],
+    "note": "the Dialog's button group sits inside the Dialog instance's slot and is detached too, but census does not descend into an instance's nested slot contents, so the count shows 4 of 5"
+   },
+   "Tabs": {
+    "count": 3,
+    "unpublished": true,
+    "nodes": [
+     "3:515",
+     "3:662",
+     "3:729"
+    ]
+   },
+   "Input Field": {
+    "count": 6,
+    "unpublished": false,
+    "nodes": [
+     "3:480",
+     "3:487",
+     "3:494",
+     "3:394",
+     "3:400",
+     "3:406"
+    ]
+   },
+   "Tab": {
+    "count": 5,
+    "unpublished": false,
+    "nodes": [
+     "3:517",
+     "3:519",
+     "3:521",
+     "3:732",
+     "3:734"
+    ]
+   },
+   "Text": {
+    "count": 3,
+    "unpublished": false,
+    "nodes": [
+     "3:476",
+     "3:667",
+     "3:618"
+    ]
+   },
+   "Text Title Page": {
+    "count": 2,
+    "unpublished": false,
+    "nodes": [
+     "3:523",
+     "3:669"
+    ]
+   },
+   "Dialog": {
+    "count": 1,
+    "unpublished": false,
+    "nodes": [
+     "3:748"
+    ]
+   }
+  },
+  "libraryInstancesRemaining": {
+   "Header": 3,
+   "Navigation Pill": 21,
+   "Text": 5,
+   "Input Field": 3,
+   "Button": 5,
+   "Tab": 4,
+   "Text Title Page": 1,
+   "Button Danger": 2,
+   "Dialog Body": 1
+  },
+  "authoredValues": {
+   "paintsRaw": 79,
+   "paintsBoundToSds": 0,
+   "paintsBoundToWip": 14,
+   "numbersBoundToSds": 129,
+   "numbersBoundToWip": 37,
+   "textWithStyle": 4,
+   "textWithoutStyle": 39
+  },
+  "authoredValuesNote": "numbersBoundToSds are mostly typography bindings on text ranges, which degrade.js does not touch (they are per-range arrays). They model a file that is partly bound.",
+  "wipVariables": 11
+ },
+ "expectedRecovery": {
+  "note": "What a perfect learn run would find. Milestone 2 scores against this.",
+  "tokens": "Every pristine.tokensUsed entry, recovered by value (or by mapping a WIP variable), named sensibly. Exact SDS names are only expected where a WIP variable or the remaining SDS bindings reveal them.",
+  "deFactoComponents": [
+   "Card (Slot)",
+   "Button Group",
+   "Switch Field",
+   "Text Heading",
+   "Tabs"
+  ],
+  "detachedFromPublished": [
+   "Input Field",
+   "Tab",
+   "Text",
+   "Text Title Page",
+   "Dialog"
+  ],
+  "drift": "All 10 drift edits flagged and attached to the token they drifted from.",
+  "wipMapping": "All 9 WIP variables mapped to their SDS token; both noise variables flagged as unused.",
+  "localLibrary": "All 3 local components found, each linked to the de facto pattern it duplicates, and flagged as unused in product files."
+ }
+}

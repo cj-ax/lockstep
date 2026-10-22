@@ -1,0 +1,1107 @@
+{
+ "name": "@slalom/design-system",
+ "repo": "/Users/chrisaxelson/Downloads/design-system-beta-main",
+ "scannedOn": "2026-10-22",
+ "description": "Slalom Design System - A Vue 3 + Vuetify 3 component library derived from Figma design tokens",
+ "filesRead": 95,
+ "kind": {
+  "value": "component-library",
+  "label": "A component library",
+  "confidence": "high",
+  "signals": [
+   "the package entry exports 18 capitalised names",
+   "it declares peer dependencies",
+   "package.json lists what it publishes"
+  ]
+ },
+ "stack": {
+  "frameworks": [
+   {
+    "name": "Vue",
+    "package": "vue",
+    "version": "^3.5.25",
+    "declaredIn": "package.json (devDependencies)"
+   }
+  ],
+  "uiLibraries": [
+   {
+    "name": "Vuetify",
+    "package": "vuetify",
+    "version": "^3.11.8",
+    "declaredIn": "package.json (devDependencies)"
+   }
+  ],
+  "styling": [
+   {
+    "name": "Sass",
+    "package": "sass",
+    "version": "^1.97.3",
+    "declaredIn": "package.json (dependencies)"
+   }
+  ],
+  "buildTools": [
+   {
+    "name": "Vite",
+    "package": "vite",
+    "version": "^7.3.1",
+    "declaredIn": "package.json (devDependencies)"
+   }
+  ],
+  "packageManager": "npm"
+ },
+ "tokens": [
+  {
+   "kind": "css-custom-properties",
+   "file": "src/styles/_tokens.scss",
+   "count": 198,
+   "unique": 66,
+   "prefixes": {
+    "slm": 198
+   },
+   "themeSelectors": [
+    ".v-theme--slalomBuild",
+    ".v-theme--slalomDark",
+    ".v-theme--slalomLight"
+   ],
+   "sample": [
+    "--slm-primary: #0c62fb",
+    "--slm-on-primary: #ffffff",
+    "--slm-surface: #ffffff",
+    "--slm-on-surface: rgba(0, 0, 0, 0.87)",
+    "--slm-on-surface-variant: #000000",
+    "--slm-hover-bg: #f1f3f7"
+   ]
+  },
+  {
+   "kind": "scss-variables",
+   "file": "src/styles/_tokens.scss",
+   "count": 94,
+   "maps": [
+    "slm-spaces"
+   ],
+   "sample": [
+    "$slm-radius: 4px",
+    "$slm-font-family: 'Slalom Sans', 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "$slm-btn-letter-spacing: 1.25px",
+    "$slm-heading-3-size: 48px",
+    "$slm-heading-3-weight: 400",
+    "$slm-heading-3-line-height: 50.4px"
+   ]
+  },
+  {
+   "kind": "theme-object",
+   "file": "src/plugins/vuetify.ts",
+   "calls": [
+    "createVuetify"
+   ],
+   "themes": [
+    "slalomLight",
+    "slalomDark",
+    "slalomBuild"
+   ],
+   "hexValues": 78
+  }
+ ],
+ "entry": "src/index.ts",
+ "exported": [
+  "SAlert",
+  "SAutocomplete",
+  "SButton",
+  "SCombobox",
+  "SDatePicker",
+  "SEmptyState",
+  "SExpansionPanel",
+  "SExpansionPanels",
+  "SIcon",
+  "SProgressRing",
+  "SSelect",
+  "SSkeletonLoader",
+  "SStepper",
+  "SSwitch",
+  "STextArea",
+  "STextField",
+  "SToast",
+  "SlalomDS"
+ ],
+ "components": [
+  {
+   "name": "SAlert",
+   "file": "src/components/SAlert.vue",
+   "exported": true,
+   "page": false,
+   "primitive": false,
+   "propsFrom": "defineProps<{...}>",
+   "props": [
+    {
+     "name": "type",
+     "type": "AlertType",
+     "optional": true,
+     "default": "'warning'",
+     "values": [
+      "warning",
+      "error",
+      "info"
+     ]
+    },
+    {
+     "name": "variant",
+     "type": "AlertVariant",
+     "optional": true,
+     "default": "'close'",
+     "values": [
+      "close",
+      "button",
+      "more-info"
+     ]
+    },
+    {
+     "name": "message",
+     "type": "string",
+     "optional": true,
+     "default": "'Alert Message'"
+    },
+    {
+     "name": "actionText",
+     "type": "string",
+     "optional": true,
+     "default": "'BUTTON'"
+    }
+   ],
+   "slots": [],
+   "children": null,
+   "wraps": [
+    "v-alert"
+   ]
+  },
+  {
+   "name": "SAutocomplete",
+   "file": "src/components/SAutocomplete.vue",
+   "exported": true,
+   "page": false,
+   "primitive": false,
+   "propsFrom": "defineProps<{...}>",
+   "props": [
+    {
+     "name": "modelValue",
+     "type": "string | string[]",
+     "optional": true,
+     "default": "''"
+    },
+    {
+     "name": "label",
+     "type": "string",
+     "optional": true,
+     "default": "'Label'"
+    },
+    {
+     "name": "placeholder",
+     "type": "string",
+     "optional": true,
+     "default": "'Input text'"
+    },
+    {
+     "name": "assistiveText",
+     "type": "string",
+     "optional": true,
+     "default": "'Assistive text'"
+    },
+    {
+     "name": "errorText",
+     "type": "string",
+     "optional": true,
+     "default": "''"
+    },
+    {
+     "name": "error",
+     "type": "boolean",
+     "optional": true,
+     "default": "false"
+    },
+    {
+     "name": "disabled",
+     "type": "boolean",
+     "optional": true,
+     "default": "false"
+    },
+    {
+     "name": "mandatory",
+     "type": "boolean",
+     "optional": true,
+     "default": "false"
+    },
+    {
+     "name": "labelType",
+     "type": "'on' | 'in'",
+     "optional": true,
+     "default": "'on'",
+     "values": [
+      "on",
+      "in"
+     ]
+    },
+    {
+     "name": "options",
+     "type": "string[]",
+     "optional": true,
+     "default": "() => ['Option A'"
+    },
+    {
+     "name": "chips",
+     "type": "boolean",
+     "optional": true
+    },
+    {
+     "name": "forceState",
+     "type": "'' | 'enabled' | 'hover' | 'focused' | 'error' | 'disabled'",
+     "optional": true
+    },
+    {
+     "name": "forceOpen",
+     "type": "boolean",
+     "optional": true
+    }
+   ],
+   "slots": [],
+   "children": null,
+   "wraps": [
+    "v-autocomplete"
+   ]
+  },
+  {
+   "name": "SButton",
+   "file": "src/components/SButton.vue",
+   "exported": true,
+   "page": false,
+   "primitive": false,
+   "propsFrom": "defineProps<{...}>",
+   "props": [
+    {
+     "name": "variant",
+     "type": "ButtonVariant",
+     "optional": true,
+     "default": "'contained'",
+     "values": [
+      "contained",
+      "outlined",
+      "text",
+      "plain"
+     ]
+    },
+    {
+     "name": "size",
+     "type": "ButtonSize",
+     "optional": true,
+     "default": "'md'",
+     "values": [
+      "lg",
+      "md",
+      "sm"
+     ]
+    },
+    {
+     "name": "semantic",
+     "type": "ButtonSemantic",
+     "optional": true,
+     "values": [
+      "negative",
+      "positive"
+     ]
+    },
+    {
+     "name": "disabled",
+     "type": "boolean",
+     "optional": true,
+     "default": "false"
+    },
+    {
+     "name": "prependIcon",
+     "type": "boolean",
+     "optional": true,
+     "default": "false"
+    },
+    {
+     "name": "appendIcon",
+     "type": "boolean",
+     "optional": true,
+     "default": "false"
+    },
+    {
+     "name": "label",
+     "type": "string",
+     "optional": true,
+     "default": "'Button'"
+    },
+    {
+     "name": "href",
+     "type": "string",
+     "optional": true
+    },
+    {
+     "name": "type",
+     "type": "'button' | 'submit' | 'reset'",
+     "optional": true,
+     "default": "'button'",
+     "values": [
+      "button",
+      "submit",
+      "reset"
+     ]
+    },
+    {
+     "name": "forceState",
+     "type": "'' | 'hover' | 'pressed' | 'disabled'",
+     "optional": true,
+     "default": "''"
+    }
+   ],
+   "slots": [
+    "default",
+    "append",
+    "prepend"
+   ],
+   "children": null,
+   "wraps": null
+  },
+  {
+   "name": "SCombobox",
+   "file": "src/components/SCombobox.vue",
+   "exported": true,
+   "page": false,
+   "primitive": false,
+   "propsFrom": "defineProps<{...}>",
+   "props": [
+    {
+     "name": "modelValue",
+     "type": "string[]",
+     "optional": true,
+     "default": "() => [], label: 'Label', placeholder: 'Combobox Label', ass"
+    },
+    {
+     "name": "label",
+     "type": "string",
+     "optional": true
+    },
+    {
+     "name": "placeholder",
+     "type": "string",
+     "optional": true
+    },
+    {
+     "name": "assistiveText",
+     "type": "string",
+     "optional": true
+    },
+    {
+     "name": "errorText",
+     "type": "string",
+     "optional": true
+    },
+    {
+     "name": "error",
+     "type": "boolean",
+     "optional": true
+    },
+    {
+     "name": "disabled",
+     "type": "boolean",
+     "optional": true
+    },
+    {
+     "name": "mandatory",
+     "type": "boolean",
+     "optional": true
+    },
+    {
+     "name": "labelType",
+     "type": "'on' | 'in'",
+     "optional": true,
+     "values": [
+      "on",
+      "in"
+     ]
+    },
+    {
+     "name": "options",
+     "type": "string[]",
+     "optional": true
+    },
+    {
+     "name": "forceState",
+     "type": "'' | 'enabled' | 'hover' | 'focused' | 'error' | 'disabled'",
+     "optional": true
+    },
+    {
+     "name": "forceOpen",
+     "type": "boolean",
+     "optional": true
+    }
+   ],
+   "slots": [],
+   "children": null,
+   "wraps": [
+    "v-combobox"
+   ]
+  },
+  {
+   "name": "SDatePicker",
+   "file": "src/components/SDatePicker.vue",
+   "exported": true,
+   "page": false,
+   "primitive": false,
+   "propsFrom": "defineProps<{...}>",
+   "props": [
+    {
+     "name": "modelValue",
+     "type": "string",
+     "optional": true,
+     "default": "''"
+    },
+    {
+     "name": "rounded",
+     "type": "boolean",
+     "optional": true,
+     "default": "false"
+    }
+   ],
+   "slots": [],
+   "children": null,
+   "wraps": null
+  },
+  {
+   "name": "SEmptyState",
+   "file": "src/components/SEmptyState.vue",
+   "exported": true,
+   "page": false,
+   "primitive": false,
+   "propsFrom": "defineProps<{...}>",
+   "props": [
+    {
+     "name": "title",
+     "type": "string",
+     "optional": true,
+     "default": "'PLACE A TITLE FOR THE EMPTY SPACE'"
+    },
+    {
+     "name": "description",
+     "type": "string",
+     "optional": true,
+     "default": "'Write a text for your empty space'"
+    },
+    {
+     "name": "layout",
+     "type": "'horizontal' | 'vertical'",
+     "optional": true,
+     "default": "'vertical'",
+     "values": [
+      "horizontal",
+      "vertical"
+     ]
+    },
+    {
+     "name": "primaryText",
+     "type": "string",
+     "optional": true,
+     "default": "'Click to Change the Button text'"
+    },
+    {
+     "name": "secondaryText",
+     "type": "string",
+     "optional": true,
+     "default": "'Click to Change the Button text'"
+    },
+    {
+     "name": "showActions",
+     "type": "boolean",
+     "optional": true,
+     "default": "true"
+    },
+    {
+     "name": "illustration",
+     "type": "'workstream' | 'chat' | 'invite-only'",
+     "optional": true,
+     "default": "'workstream'",
+     "values": [
+      "workstream",
+      "chat",
+      "invite-only"
+     ]
+    }
+   ],
+   "slots": [],
+   "children": null,
+   "wraps": null
+  },
+  {
+   "name": "SExpansionPanel",
+   "file": "src/components/SExpansionPanel.vue",
+   "exported": true,
+   "page": false,
+   "primitive": false,
+   "propsFrom": "defineProps<{...}>",
+   "props": [
+    {
+     "name": "title",
+     "type": "string",
+     "optional": true
+    },
+    {
+     "name": "progress",
+     "type": "number",
+     "optional": true
+    },
+    {
+     "name": "statusRows",
+     "type": "DataField[]",
+     "optional": true
+    },
+    {
+     "name": "dataRows",
+     "type": "DataRow[]",
+     "optional": true
+    },
+    {
+     "name": "notes",
+     "type": "PanelNotes",
+     "optional": true
+    }
+   ],
+   "slots": [
+    "default",
+    "icon",
+    "secondary-icon"
+   ],
+   "children": null,
+   "wraps": [
+    "v-expansion-panel",
+    "v-expansion-panel-text",
+    "v-expansion-panel-title"
+   ]
+  },
+  {
+   "name": "SExpansionPanels",
+   "file": "src/components/SExpansionPanels.vue",
+   "exported": true,
+   "page": false,
+   "primitive": false,
+   "propsFrom": "defineProps<{...}>",
+   "props": [
+    {
+     "name": "multiple",
+     "type": "boolean",
+     "optional": true,
+     "default": "false"
+    }
+   ],
+   "slots": [
+    "default"
+   ],
+   "children": null,
+   "wraps": [
+    "v-expansion-panels"
+   ]
+  },
+  {
+   "name": "SIcon",
+   "file": "src/components/SIcon.vue",
+   "exported": true,
+   "page": false,
+   "primitive": false,
+   "propsFrom": "defineProps<{...}>",
+   "props": [
+    {
+     "name": "name",
+     "type": "string",
+     "optional": false
+    },
+    {
+     "name": "size",
+     "type": "number",
+     "optional": true,
+     "default": "24"
+    },
+    {
+     "name": "ariaLabel",
+     "type": "string",
+     "optional": true,
+     "default": "undefined"
+    }
+   ],
+   "slots": [],
+   "children": null,
+   "wraps": [
+    "v-icon"
+   ]
+  },
+  {
+   "name": "SProgressRing",
+   "file": "src/components/SProgressRing.vue",
+   "exported": true,
+   "page": false,
+   "primitive": false,
+   "propsFrom": "defineProps<{...}>",
+   "props": [
+    {
+     "name": "value",
+     "type": "number",
+     "optional": false
+    },
+    {
+     "name": "size",
+     "type": "number",
+     "optional": true,
+     "default": "70"
+    },
+    {
+     "name": "strokeWidth",
+     "type": "number",
+     "optional": true,
+     "default": "8"
+    },
+    {
+     "name": "fillColor",
+     "type": "string",
+     "optional": true,
+     "default": "'#0ed3eb'"
+    },
+    {
+     "name": "trackColor",
+     "type": "string",
+     "optional": true,
+     "default": "'#e6e6e6'"
+    },
+    {
+     "name": "ariaLabel",
+     "type": "string",
+     "optional": true,
+     "default": "undefined"
+    }
+   ],
+   "slots": [
+    "default"
+   ],
+   "children": null,
+   "wraps": [
+    "v-progress-circular"
+   ]
+  },
+  {
+   "name": "SSelect",
+   "file": "src/components/SSelect.vue",
+   "exported": true,
+   "page": false,
+   "primitive": false,
+   "propsFrom": "defineProps<{...}>",
+   "props": [
+    {
+     "name": "modelValue",
+     "type": "string",
+     "optional": true,
+     "default": "''"
+    },
+    {
+     "name": "label",
+     "type": "string",
+     "optional": true,
+     "default": "'Label'"
+    },
+    {
+     "name": "placeholder",
+     "type": "string",
+     "optional": true,
+     "default": "'Dropdown Text'"
+    },
+    {
+     "name": "assistiveText",
+     "type": "string",
+     "optional": true,
+     "default": "'Assistive text'"
+    },
+    {
+     "name": "errorText",
+     "type": "string",
+     "optional": true,
+     "default": "''"
+    },
+    {
+     "name": "error",
+     "type": "boolean",
+     "optional": true,
+     "default": "false"
+    },
+    {
+     "name": "disabled",
+     "type": "boolean",
+     "optional": true,
+     "default": "false"
+    },
+    {
+     "name": "mandatory",
+     "type": "boolean",
+     "optional": true,
+     "default": "false"
+    },
+    {
+     "name": "labelType",
+     "type": "'on' | 'in'",
+     "optional": true,
+     "default": "'on'",
+     "values": [
+      "on",
+      "in"
+     ]
+    },
+    {
+     "name": "options",
+     "type": "SelectOption[]",
+     "optional": true,
+     "default": "() => ["
+    },
+    {
+     "name": "forceState",
+     "type": "'' | 'enabled' | 'hover' | 'focused' | 'error' | 'disabled'",
+     "optional": true
+    }
+   ],
+   "slots": [],
+   "children": null,
+   "wraps": [
+    "v-select"
+   ]
+  },
+  {
+   "name": "SSkeletonLoader",
+   "file": "src/components/SSkeletonLoader.vue",
+   "exported": true,
+   "page": false,
+   "primitive": false,
+   "propsFrom": "defineProps<{...}>",
+   "props": [
+    {
+     "name": "type",
+     "type": "'text' | 'card' | 'list' | 'table'",
+     "optional": true,
+     "default": "'text'",
+     "values": [
+      "text",
+      "card",
+      "list",
+      "table"
+     ]
+    },
+    {
+     "name": "ariaLabel",
+     "type": "string",
+     "optional": true,
+     "default": "'Loading content'"
+    }
+   ],
+   "slots": [],
+   "children": null,
+   "wraps": [
+    "v-skeleton-loader"
+   ]
+  },
+  {
+   "name": "SStepper",
+   "file": "src/components/SStepper.vue",
+   "exported": true,
+   "page": false,
+   "primitive": false,
+   "propsFrom": "defineProps<{...}>",
+   "props": [
+    {
+     "name": "steps",
+     "type": "string[]",
+     "optional": true,
+     "default": "() => ['Step 1'"
+    },
+    {
+     "name": "currentStep",
+     "type": "number",
+     "optional": true
+    },
+    {
+     "name": "orientation",
+     "type": "'horizontal' | 'vertical'",
+     "optional": true,
+     "values": [
+      "horizontal",
+      "vertical"
+     ]
+    },
+    {
+     "name": "ariaLabel",
+     "type": "string",
+     "optional": true
+    }
+   ],
+   "slots": [],
+   "children": null,
+   "wraps": null
+  },
+  {
+   "name": "SSwitch",
+   "file": "src/components/SSwitch.vue",
+   "exported": true,
+   "page": false,
+   "primitive": false,
+   "propsFrom": "defineProps<{...}>",
+   "props": [
+    {
+     "name": "modelValue",
+     "type": "boolean",
+     "optional": true,
+     "default": "false"
+    },
+    {
+     "name": "label",
+     "type": "string",
+     "optional": true,
+     "default": "''"
+    },
+    {
+     "name": "disabled",
+     "type": "boolean",
+     "optional": true,
+     "default": "false"
+    },
+    {
+     "name": "forceState",
+     "type": "'' | 'on' | 'off' | 'disabled'",
+     "optional": true,
+     "default": "''"
+    }
+   ],
+   "slots": [],
+   "children": null,
+   "wraps": [
+    "v-switch"
+   ]
+  },
+  {
+   "name": "STextArea",
+   "file": "src/components/STextArea.vue",
+   "exported": true,
+   "page": false,
+   "primitive": false,
+   "propsFrom": "defineProps<{...}>",
+   "props": [
+    {
+     "name": "modelValue",
+     "type": "string",
+     "optional": true,
+     "default": "''"
+    },
+    {
+     "name": "label",
+     "type": "string",
+     "optional": true,
+     "default": "'Label'"
+    },
+    {
+     "name": "placeholder",
+     "type": "string",
+     "optional": true,
+     "default": "'Input text'"
+    },
+    {
+     "name": "assistiveText",
+     "type": "string",
+     "optional": true,
+     "default": "'Assistive text'"
+    },
+    {
+     "name": "errorText",
+     "type": "string",
+     "optional": true,
+     "default": "''"
+    },
+    {
+     "name": "error",
+     "type": "boolean",
+     "optional": true,
+     "default": "false"
+    },
+    {
+     "name": "disabled",
+     "type": "boolean",
+     "optional": true,
+     "default": "false"
+    },
+    {
+     "name": "mandatory",
+     "type": "boolean",
+     "optional": true,
+     "default": "true"
+    },
+    {
+     "name": "labelType",
+     "type": "'on' | 'in'",
+     "optional": true,
+     "default": "'on'",
+     "values": [
+      "on",
+      "in"
+     ]
+    },
+    {
+     "name": "rows",
+     "type": "number",
+     "optional": true,
+     "default": "5"
+    },
+    {
+     "name": "forceState",
+     "type": "'' | 'enabled' | 'hover' | 'focused' | 'error' | 'disabled'",
+     "optional": true,
+     "default": "''"
+    }
+   ],
+   "slots": [],
+   "children": null,
+   "wraps": [
+    "v-textarea"
+   ]
+  },
+  {
+   "name": "STextField",
+   "file": "src/components/STextField.vue",
+   "exported": true,
+   "page": false,
+   "primitive": false,
+   "propsFrom": "defineProps<{...}>",
+   "props": [
+    {
+     "name": "modelValue",
+     "type": "string",
+     "optional": true,
+     "default": "''"
+    },
+    {
+     "name": "label",
+     "type": "string",
+     "optional": true,
+     "default": "'Label'"
+    },
+    {
+     "name": "placeholder",
+     "type": "string",
+     "optional": true,
+     "default": "'Input text'"
+    },
+    {
+     "name": "assistiveText",
+     "type": "string",
+     "optional": true,
+     "default": "'Assistive text'"
+    },
+    {
+     "name": "errorText",
+     "type": "string",
+     "optional": true,
+     "default": "''"
+    },
+    {
+     "name": "error",
+     "type": "boolean",
+     "optional": true,
+     "default": "false"
+    },
+    {
+     "name": "disabled",
+     "type": "boolean",
+     "optional": true,
+     "default": "false"
+    },
+    {
+     "name": "mandatory",
+     "type": "boolean",
+     "optional": true,
+     "default": "true"
+    },
+    {
+     "name": "labelType",
+     "type": "'on' | 'in'",
+     "optional": true,
+     "default": "'on'",
+     "values": [
+      "on",
+      "in"
+     ]
+    },
+    {
+     "name": "forceState",
+     "type": "'' | 'enabled' | 'hover' | 'focused' | 'error' | 'disabled'",
+     "optional": true,
+     "default": "''"
+    }
+   ],
+   "slots": [],
+   "children": null,
+   "wraps": [
+    "v-text-field"
+   ]
+  },
+  {
+   "name": "SToast",
+   "file": "src/components/SToast.vue",
+   "exported": true,
+   "page": false,
+   "primitive": false,
+   "propsFrom": "defineProps<{...}>",
+   "props": [
+    {
+     "name": "type",
+     "type": "ToastType",
+     "optional": true,
+     "default": "'info'",
+     "values": [
+      "info",
+      "error",
+      "success"
+     ]
+    },
+    {
+     "name": "message",
+     "type": "string",
+     "optional": true,
+     "default": "'This is informative!'"
+    },
+    {
+     "name": "dismissible",
+     "type": "boolean",
+     "optional": true,
+     "default": "true"
+    }
+   ],
+   "slots": [],
+   "children": null,
+   "wraps": [
+    "v-alert"
+   ]
+  }
+ ],
+ "storybook": {
+  "configured": false,
+  "stories": 0,
+  "titles": []
+ },
+ "docs": [
+  {
+   "kind": "Showcase pages",
+   "file": "18 files, e.g. src/pages/AlertShowcase.vue"
+  }
+ ],
+ "tier": {
+  "tier": "3",
+  "why": "The repository has components with props, so learn can map code components to Figma ones."
+ },
+ "questions": [
+  "Is this the library product teams actually install, or a prototype? Which product repos consume it, and at what version?",
+  "Your components sit on top of Vuetify. When a screen needs a control the library lacks, do people use the Vuetify one directly, or build a new component? (13 components wrap Vuetify parts, e.g. SAlert, SAutocomplete, SCombobox.)",
+  "We found these themes: slalomBuild, slalomDark, slalomLight. Which ship to customers, and does Figma model each one as a variable mode?",
+  "Does each Figma component name match a code component (for example Figma's \"Button\" and code's \"SButton\")? Where don't they line up?",
+  "Which components are deprecated, or about to change?"
+ ],
+ "confirmed": null
+}

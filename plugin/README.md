@@ -103,7 +103,7 @@ so it doesn't cover the third-party figma-console MCP; don't run that against yo
 
 ## Commands
 
-Four skills. Claude picks the right one from what you ask, or you can name it.
+Five skills. Claude picks the right one from what you ask, or you can name it.
 
 | Command | What it does | Ask it like |
 |---|---|---|
@@ -111,6 +111,7 @@ Four skills. Claude picks the right one from what you ask, or you can name it.
 | `lockstep:build` | Builds a page in a draft from library instances and tokens, then scores, looks at screenshots and fixes until it passes. Runs `init` first if needed. | "Build our team members page in Figma with our design system" |
 | `lockstep:score` | Read-only. Measures how faithfully any frame uses its library and lists the offending layers. | "How faithfully does this frame use our library? <link>" |
 | `lockstep:fix` | Clones frames and binds raw values to exact-match library tokens, so nothing looks different. Then rescores and lists the values that have no token. | "Bind this design's spacing and colours to our tokens" |
+| `lockstep:learn` (early) | For a design system that isn't finished. Protects every source file, works out the front-end stack from a repository (or writes questions for whoever knows it), and records what exists. Proposing tokens and components comes next. | "Learn our design system: here's the Figma library, two product files and the repo" |
 
 ## What "faithful" means here
 
@@ -127,16 +128,18 @@ Claude also looks at a screenshot of every frame, because the score can't judge 
 
 ## Contents
 
-- `skills/init`, `skills/build`, `skills/score`, `skills/fix`: the four commands. `build` also
-  holds the build-patterns reference and two worked example builds.
-- `scripts/`: shared by all four.
+- `skills/init`, `skills/build`, `skills/score`, `skills/fix`, `skills/learn`: the five commands.
+  `build` also holds the build-patterns reference and two worked example builds.
+- `scripts/`: shared by all of them.
   - `inventory.js` reads a library.
   - `score.js` scores frames.
   - `fix.js` binds raw values to exact-match tokens.
   - `settle.js` makes Figma re-lay-out library instances a script resized, so they render at
     their real size.
   - `render.py` fills a script's placeholders.
-  - `lockstep_config.py` loads the protected keys.
+  - `lockstep_config.py` loads the protected keys, and adds one with `protect`.
+  - `scan_repo.py` reads a front-end repository (without running it) and drafts STACK.md, or
+    writes questions for an architect when there's no repository.
 - `hooks/`: the write guard.
 
 ## Known limits
