@@ -26,7 +26,8 @@ them into a draft first.
    what the score can't judge:
    - wrong components or variants for the context;
    - a control narrower or shorter than its siblings, such as one field in a form drawn at half
-     width;
+     width. If its layer reports the right width, that's Figma's stale layout after a scripted
+     resize: `settle.js` fixes it (lockstep:build runs it; lockstep:fix runs it on clones);
    - edges that don't line up, such as a table running to the container's edge while the title
      above it is inset;
    - overlap;

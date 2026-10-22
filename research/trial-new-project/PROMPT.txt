@@ -1,0 +1,5 @@
+Design a "New project" page in Figma using our design library, "Official [Business@Slalom] Design System". Put it in a new draft file.
+
+The page: the app header; the page title "New project" with one line of guidance; a form with project name, description (a few lines), owner (pick a person), start date and end date, and visibility (Private, Team or Organization, pick one). The fields start empty, apart from owner, which defaults to the current user. Below the form, a short "Notify the team" section with two on/off settings: email the team when the project is created, and post in the team channel. Actions at the bottom: Cancel and Create project. Then a second frame showing a "Discard this project?" confirmation that appears when someone cancels with unsaved changes: Keep editing and Discard. Desktop width.
+
+You're running unattended, so you can't ask me anything: make reasonable decisions and list them at the end. When you're done, give me the draft link, how faithfully it uses our library, and anything that isn't finished.

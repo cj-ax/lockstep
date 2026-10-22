@@ -80,6 +80,8 @@ Claude also looks at a screenshot of every frame, because the score can't judge 
   - `inventory.js` reads a library.
   - `score.js` scores frames.
   - `fix.js` binds raw values to exact-match tokens.
+  - `settle.js` makes Figma re-lay-out library instances a script resized, so they render at
+    their real size.
   - `render.py` fills a script's placeholders.
   - `lockstep_config.py` loads the protected keys.
 - `hooks/`: the write guard.

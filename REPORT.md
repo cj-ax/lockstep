@@ -118,7 +118,38 @@ The only content that isn't a library instance is three styled, token-bound text
 | Shell commands refused by Claude Code's command checker: a heredoc containing `{"`, and a redirect built from `$` variables (two in this run, one in the stopped run) | `init` and `build` now say to write files with the Write tool. |
 | The screenshot checklist didn't mention alignment or one control sized differently from its siblings | Both are now on the `score` checklist. |
 
-These fixes haven't been tested by a second fresh run yet.
+These fixes were tested by the second trial below.
+
+## Second fresh-agent trial (2026-10-22)
+
+**Setup.** This run used the same setup as the first, with the updated plugin, on another unseen page. The page was a "New project" form: mostly empty fields, a textarea, a person picker, two date fields, a visibility choice and two notification toggles, plus a "Discard this project?" confirmation. Empty text fields were chosen on purpose, because that variant drew at half width in trial 1. The prompt is in `research/trial-new-project/PROMPT.txt`. It again picked `lockstep:build` and ran `lockstep:init` first.
+
+It took 73 tool calls (76 turns), 14 minutes and $5.09. Most of the extra calls went on chasing one defect.
+
+**Scores.** My independent rescore matched its report:
+
+| Frame | Library instances | Bound | Detached | Hard-coded colours | Auto layout | Faithfulness | Integrity issues |
+|---|---|---|---|---|---|---|---|
+| NewProject / Form / v3 | 78.9% | 100% | 0% | 0% | 100% | 96 | 0 |
+| NewProject / Discard dialog / v1 | 80% | 100% | 0% | 0% | 100% | 96 | 0 |
+| **Both frames** | **79.2%** | **100%** | **0%** | **0%** | **100%** | **96** | **0** |
+
+Library instances are lower than in trial 1 because the form needed more labels the library has no component for. Five text layers are styled and token-bound: the title, the guidance line, the visibility group's label and help text, and the dialog message.
+
+**Did the fixes hold?**
+
+| Fix from trial 1 | Held? | Evidence |
+|---|---|---|
+| What you see wins | **Yes** | Four form fields rendered at the component's default width while their layers were full width. The agent cross-checked with `node.screenshot()`, called the defect real, spent two more build passes on it, and reported plainly: "the form frame isn't finished". In trial 1 the same kind of defect was reported as correct. |
+| `structure` inventory | **Yes** | `init` saved `inventory.structure.json` and `build` read it. There were no probe scripts before the first build, against four in trial 1. Its later test scripts went on the defect, not on reading internals. |
+| Write files with the Write tool | **Yes** | Every file was written with the Write tool. |
+| Shell friction | **Partly** | Two commands were still refused, of a different kind: a shell variable the checker couldn't analyse, and a `cd … &&` chain. `init` and `build` now say to run each command as one simple command with literal paths. |
+
+**The defect, solved.** The agent couldn't fix the narrow fields in three passes, but it left the key clue: a render taken inside its build script looked right, and later renders didn't. The cause is in Figma, not in the build. A library instance that a script sizes differently from its component can keep drawing its insides at the component's original width. The outline stops short and the dropdown arrow and resize handle float past it, until something makes Figma lay the instance out again. Its layers report the right size, so the score can't see it. This was also trial 1's half-width email field.
+
+The fix is a new shared script, `settle.js`. It nudges every library instance the build placed, including slot contents, one pixel and back, which forces the relayout without changing any size. Tested on a clone of the trial's broken form, it settled 15 instances in one call. Every field then rendered at full width, and the score was unchanged at 96. `build` now runs `settle` after every build pass, `fix` runs it on its clones, `score` names the symptom, and `build-patterns.md` lists the trap.
+
+**Not yet tested:** a third fresh run with `settle` and the shell rule in place.
 
 ## Links
 - L, the Lockstep build: <https://www.figma.com/design/J1IErNfcAsPZYi3MF0cexq>. Pass 2 is the second row (frames `7:922`, `7:1302`, `7:1721`, `7:1862`); pass 1 Profile is at the top left.
@@ -126,6 +157,7 @@ These fixes haven't been tested by a second fresh run yet.
 - B, MCP + DS-AI-Bridge, and C = B + fix (second row): <https://www.figma.com/design/w3v1epae69aKLLEOKCkr88>
 - Simple Design System build, v1 to v3 in rows (v3 is the bottom row: `12:625`, `12:824`, `12:954`, `12:1079`): <https://www.figma.com/design/LVUpC4NepsxIO2nxGnI5RM>
 - Fresh-agent trial, Team members page (v2 is the second row: `5:458`, `5:1214`): <https://www.figma.com/design/AJVkj6T0kHAdomFSk0p7bP>
+- Second fresh-agent trial, New project form (`6:348` is its last pass; `settle.js test`, beside it, is the same frame after settling): <https://www.figma.com/design/CTIj3A4tvG2KnY3eSqXX66>
 
 ## What the Figma MCP could and couldn't do
 

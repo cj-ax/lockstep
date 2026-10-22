@@ -30,6 +30,12 @@ rendered scripts check too; don't rely on them. Build in the user's draft or a n
   `skill://figma/figma-use/SKILL.md` and `skill://figma/figma-generate-design/SKILL.md`.
 - Call `create_session` on the target file and pass the `sessionId` on every call.
 
+## Shell commands
+
+Run each shell command as one simple command with literal paths: no `cd … &&` chains, no shell
+variables, no heredocs. Claude Code's command checker refuses those, and both fresh-agent trials
+lost turns to it. Write files with the Write tool.
+
 ## 1. Plan the page against the library
 
 Read `LIBRARY.md`, then `$BUILD/references/build-patterns.md`. For each part of the page, pick
@@ -66,6 +72,18 @@ python3 "$LOCKSTEP/scripts/render.py" lockstep/build-<page>.js --which List,Dial
 ```
 
 Pass the output as `use_figma`'s `code`. Never hand-edit placeholders.
+
+Then **settle** the frames the build returned, before you score or screenshot them:
+
+```bash
+python3 "$LOCKSTEP/scripts/render.py" settle --roots <frame ids from the build>
+```
+
+A library instance that a script sizes differently from its component can keep drawing its
+insides at the component's original width. A text field's outline stops halfway; a dropdown
+arrow floats past its box. Its layers report the right size, so the score can't see it.
+Settle forces Figma to lay those instances out again without changing any size. Run it after
+every build pass.
 
 ## 3. Score and look
 

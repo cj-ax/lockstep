@@ -32,7 +32,12 @@ on clones.
    instances already in the frames, then binds raw values that exactly match a token. It never
    snaps a value to a different one, so the design looks the same. It returns what it bound
    (`fixed`) and what it couldn't (`decisions`).
-5. **Rescore** the clones (lockstep:score), and screenshot them to confirm nothing moved.
+5. **Settle** the clones, so any library control drawn at its component's default width is laid out
+   again (nothing changes size):
+   ```bash
+   python3 "$LOCKSTEP/scripts/render.py" settle --roots <clone ids>
+   ```
+6. **Rescore** the clones (lockstep:score), and screenshot them to confirm nothing moved.
 
 ## Report
 

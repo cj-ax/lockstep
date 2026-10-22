@@ -26,6 +26,12 @@ call (`use_figma`, `generate_figma_design`, `upload_assets`, ...), check that th
 `use_figma` work, including reading the library, happens in a draft. Importing by key works
 there even when the library isn't added to the file.
 
+## Shell commands
+
+Run each shell command as one simple command with literal paths: no `cd … &&` chains, no shell
+variables, no heredocs. Claude Code's command checker refuses those, and both fresh-agent trials
+lost turns to it. Write files with the Write tool.
+
 ## 1. Protect the library
 
 Ask for the library's Figma link if you don't have it. Its file key is the part after

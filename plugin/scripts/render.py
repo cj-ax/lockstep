@@ -2,10 +2,11 @@
 
   render.py score --roots 7:922,7:1302
   render.py fix --roots 8:517,8:559
+  render.py settle --roots 7:922,7:1302
   render.py inventory --keys keys.json --part components   (or variables, structure)
   render.py path/to/build.js --which Profile,Account --version 2
 
-score, fix and inventory are the scripts next to this file; anything else is a path to a build
+score, fix, settle and inventory are the scripts next to this file; anything else is a path to a build
 script. Every script gets __PROTECTED_FILE_KEYS__ from lockstep_config, so a write script
 refuses to run inside a protected file even if the hook isn't installed. Full-line comments
 are stripped to save tokens. It exits non-zero if a placeholder is left unfilled or the code
@@ -26,15 +27,15 @@ CODE_LIMIT = 50_000
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("script", help="score | fix | inventory | path to a build script")
-    ap.add_argument("--roots", help="comma-separated frame node IDs (score, fix)")
+    ap.add_argument("script", help="score | fix | settle | inventory | path to a build script")
+    ap.add_argument("--roots", help="comma-separated frame node IDs (score, fix, settle)")
     ap.add_argument("--keys", help="JSON file of {label: component or component set key} (inventory)")
     ap.add_argument("--part", choices=["components", "variables", "structure"], help="inventory part")
     ap.add_argument("--which", help="comma-separated frame names (build scripts)")
     ap.add_argument("--version", type=int, help="canvas row for this pass (build scripts)")
     args = ap.parse_args()
 
-    path = HERE / f"{args.script}.js" if args.script in ("score", "fix", "inventory") else Path(args.script)
+    path = HERE / f"{args.script}.js" if args.script in ("score", "fix", "settle", "inventory") else Path(args.script)
     source = path.read_text()
 
     try:
