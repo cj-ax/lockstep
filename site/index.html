@@ -153,6 +153,10 @@ pre .w { color: var(--raw); }
 .steps h3 { font-size: var(--step-1); }
 .steps p { color: var(--muted); }
 
+.copyable { display: grid; gap: 0.4rem; min-width: 0; }
+.copy { order: -1; justify-self: end; font: 600 var(--step--1)/1 var(--font-sans); color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 0.4rem 0.65rem; cursor: pointer; }
+.copy:hover { border-color: var(--muted); }
+
 /* Commands */
 .commands { display: grid; gap: 0; border-top: 1px solid var(--line); }
 .cmd { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 1rem var(--gap); padding-block: 1.75rem; border-bottom: 1px solid var(--line); }
@@ -288,21 +292,26 @@ footer .wrap { border-top: 1px solid var(--line); padding-top: 1.5rem; display: 
     <section class="band" id="install" aria-labelledby="install-title">
       <div class="wrap split">
         <div class="stack">
-          <h2 id="install-title">Install in two steps</h2>
-          <p class="intro">You need Claude Code with the official Figma MCP server connected, a Figma seat that can create files, and <code>python3</code>.</p>
+          <h2 id="install-title">Start in three steps</h2>
+          <p class="intro">About five minutes. You need Claude Code and a Figma seat that can edit files. Lockstep checks the rest and tells you how to fix anything that's missing.</p>
         </div>
         <ol class="steps">
           <li>
-            <h3>Add the plugin</h3>
-            <p>From a clone of the Lockstep repository:</p>
-            <pre><code>claude --plugin-dir ./plugin</code></pre>
+            <h3>Connect Figma to Claude Code</h3>
+            <p>Once, in a terminal. Then restart Claude Code, type <code>/plugin</code>, open Installed, select figma and sign in.</p>
+            <pre><code>claude plugin install figma@claude-plugins-official</code></pre>
           </li>
           <li>
-            <h3>Protect your library</h3>
-            <p>List the file Lockstep must never write to, usually your published library. Its key is the part after <code>/design/</code> in its link. Put this in <code>.claude/lockstep.json</code>, or in <code>~/.claude/lockstep.json</code> for every project.</p>
-            <pre><code>{ "protectedFileKeys": {
-    "LMgKpbsEmxRpiHBKd9YGlw": "Official [Business@Slalom] Design System"
-} }</code></pre>
+            <h3>Install Lockstep</h3>
+            <p>Once, in a terminal. The repository is private for now, so ask to be added first.</p>
+            <pre><code>claude plugin marketplace add cj-ax/lockstep
+claude plugin install lockstep@lockstep</code></pre>
+          </li>
+          <li>
+            <h3>Point it at your library</h3>
+            <p>In Claude Code, paste your design library's Figma link. Lockstep protects that file so nothing writes to it, then reads its components and tokens.</p>
+            <pre><code>Set up Lockstep for our design library:
+https://www.figma.com/design/…</code></pre>
           </li>
         </ol>
       </div>
@@ -579,6 +588,35 @@ for (const el of document.querySelectorAll('.xray')) {
     s.style.cssText = `left:${(x / W) * 100}%;top:${(y / H) * 100}%;width:${(w / W) * 100}%;height:${(h / H) * 100}%`;
     el.appendChild(s);
   }
+}
+// Copy buttons on the install commands. The clipboard can be refused inside an artifact, so
+// fall back to selecting the text for the reader to copy.
+for (const pre of document.querySelectorAll('#install pre')) {
+  const wrap = document.createElement('div');
+  wrap.className = 'copyable';
+  pre.replaceWith(wrap);
+  wrap.appendChild(pre);
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'copy';
+  btn.textContent = 'Copy';
+  btn.setAttribute('aria-label', 'Copy this command');
+  btn.addEventListener('click', async () => {
+    const text = pre.innerText.trim();
+    try {
+      await navigator.clipboard.writeText(text);
+      btn.textContent = 'Copied';
+    } catch {
+      const range = document.createRange();
+      range.selectNodeContents(pre);
+      const sel = getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      btn.textContent = 'Selected';
+    }
+    setTimeout(() => { btn.textContent = 'Copy'; }, 1600);
+  });
+  wrap.appendChild(btn);
 }
 const toggle = document.getElementById('xray-toggle');
 const stage = document.getElementById('stage');

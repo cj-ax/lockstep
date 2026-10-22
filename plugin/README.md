@@ -24,14 +24,17 @@ Figma's guide: https://developers.figma.com/docs/figma-mcp-server/remote-server-
 **2. Install Lockstep (once).** In a terminal:
 
 ```bash
-claude plugin marketplace add <org>/lockstep
+claude plugin marketplace add cj-ax/lockstep
 ```
 
 ```bash
 claude plugin install lockstep@lockstep
 ```
 
-Or, inside Claude Code: `/plugin install lockstep --marketplace <org>/lockstep`. In the Claude
+The repository is private for now: ask Chris to add you to it, and make sure your Git sign-in
+for GitHub works (for example, run `gh auth login` once).
+
+Or, inside Claude Code: `/plugin install lockstep --marketplace cj-ax/lockstep`. In the Claude
 desktop app, once the marketplace is added, Lockstep also appears under **+**, then **Add
 plugins**, in the Code tab.
 
@@ -64,7 +67,7 @@ repository's `.claude/settings.json`. Each person is asked to trust the folder o
 ```json
 {
   "extraKnownMarketplaces": {
-    "lockstep": { "source": { "source": "github", "repo": "<org>/lockstep" } }
+    "lockstep": { "source": { "source": "github", "repo": "cj-ax/lockstep" } }
   },
   "enabledPlugins": { "lockstep@lockstep": true }
 }
