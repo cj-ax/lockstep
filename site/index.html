@@ -1,0 +1,590 @@
+<title>Lockstep</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="A Claude Code plugin that builds Figma pages from your organization's own design library, then scores and fixes them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: an inspection bench. A left-aligned reading column (max 68ch) for the argument; a
+   full-width "stage" for evidence (real Figma screenshots with their real layer bounds drawn on).
+   One bold moment: the hero's layer x-ray. Everything else is quiet type on paper.
+
+   +-------------------------------------------------------------+
+   | Lockstep                       Commands  How it works  Docs |
+   | Headline (2 lines)                                          |
+   | Support sentence. [Install the plugin]  See how it scores   |
+   | +--------- before ---------+ +---------- after ----------+  |
+   | | 77  plain Figma MCP      | | 98  Lockstep              |  |
+   | | [screenshot + # boxes]   | | [screenshot + ◇ boxes]    |  |
+   | +--------------------------+ +---------------------------+  |
+   | Install (2 steps) | Commands (4 rows) | Loop | Score + story |
+   | Examples (2 libraries) | Docs | Limits                      |
+   +-------------------------------------------------------------+ */
+:root {
+  /* Colour: two semantic hues carry the whole idea. Violet = library instance, amber = hand-drawn. */
+  --paper: #F2F4F7;      /* cool drafting-board grey, the page */
+  --surface: #FFFFFF;    /* panels that hold evidence */
+  --ink: #18202B;        /* text */
+  --muted: #566273;      /* secondary text, rules derive from it */
+  --instance: #6A4CE0;   /* library instance (Figma's own instance colour family) */
+  --raw: #B9580B;        /* hand-drawn frame, raw value */
+  --line: color-mix(in oklab, var(--muted) 28%, transparent);
+  --wash-instance: color-mix(in oklab, var(--instance) 9%, transparent);
+  --wash-raw: color-mix(in oklab, var(--raw) 10%, transparent);
+
+  /* Type: one grotesk for display and body; mono only where characters must align. */
+  --font-sans: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --step--1: 0.875rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.25rem;
+  --step-2: 1.625rem;
+  --step-3: clamp(2rem, 1.4rem + 2.4vw, 3rem);
+  --step-4: clamp(2.25rem, 1.5rem + 3vw, 3.75rem);
+
+  --measure: 68ch;
+  --wide: 1240px;
+  --gap: clamp(1rem, 0.6rem + 1.6vw, 2rem);
+  --section: clamp(4rem, 3rem + 5vw, 8rem);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #161B22; --surface: #1E242D; --ink: #E8ECF1; --muted: #9AA6B5;
+    --instance: #A391FF; --raw: #F0A35B; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #161B22; --surface: #1E242D; --ink: #E8ECF1; --muted: #9AA6B5;
+  --instance: #A391FF; --raw: #F0A35B; color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font: 400 var(--step-0)/1.6 var(--font-sans);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; height: auto; }
+a { color: inherit; text-decoration-color: var(--line); text-underline-offset: 0.2em; }
+a:hover { text-decoration-color: currentColor; }
+:focus-visible { outline: 2px solid var(--instance); outline-offset: 3px; border-radius: 2px; }
+code, pre, kbd, .mono { font-family: var(--font-mono); font-size: 0.875em; }
+h1, h2, h3 { text-wrap: balance; margin: 0; letter-spacing: -0.02em; }
+p { margin: 0; text-wrap: pretty; }
+
+.wrap { max-width: var(--wide); margin-inline: auto; }
+.read { max-width: var(--measure); }
+.stack { display: flex; flex-direction: column; gap: 1rem; min-width: 0; }
+
+/* Header */
+.site-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding-block: 1.25rem; }
+.brand { display: inline-flex; align-items: center; gap: 0.6rem; font-weight: 800; font-size: var(--step-1); letter-spacing: -0.03em; text-decoration: none; }
+.brand svg { width: 26px; height: 26px; }
+.nav { display: flex; gap: clamp(0.75rem, 2vw, 1.75rem); flex-wrap: wrap; font-size: var(--step--1); font-weight: 500; }
+.nav a { text-decoration: none; color: var(--muted); }
+.nav a:hover { color: var(--ink); }
+
+/* Hero */
+.hero { min-width: 0; padding-block: clamp(2rem, 1rem + 4vw, 4.5rem) clamp(1.5rem, 1rem + 2vw, 2.5rem); display: grid; gap: 1.5rem; }
+.hero h1 { font-size: var(--step-4); line-height: 1.04; font-weight: 700; letter-spacing: -0.03em; max-width: 18ch; }
+.hero .lede { font-size: var(--step-1); line-height: 1.5; color: var(--muted); max-width: 56ch; }
+.actions { display: flex; gap: 1rem 1.5rem; align-items: center; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.2rem; border-radius: 8px; background: var(--ink); color: var(--paper); font-weight: 600; text-decoration: none; font-size: var(--step-0); }
+.btn:hover { background: color-mix(in oklab, var(--ink) 85%, var(--instance)); }
+.link-quiet { font-weight: 600; text-decoration: underline; }
+
+/* Stage: the x-ray */
+.stage { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); align-items: start; padding-bottom: 1rem; }
+@media (max-width: 860px) { .stage { grid-template-columns: minmax(0, 1fr); } }
+.shot { min-width: 0; display: grid; gap: 0.9rem; }
+.shot-head { display: grid; grid-template-columns: auto 1fr; gap: 0.15rem 1rem; align-items: end; }
+.score { grid-row: span 2; font-family: var(--font-mono); font-weight: 500; font-size: clamp(3.5rem, 2.5rem + 4vw, 6rem); line-height: 0.85; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
+.shot[data-kind="raw"] .score { color: var(--raw); }
+.shot[data-kind="lib"] .score { color: var(--instance); }
+.shot-title { font-weight: 700; font-size: var(--step-1); line-height: 1.2; }
+.shot-sub { color: var(--muted); font-size: var(--step--1); }
+.frame { position: relative; border-radius: 10px; overflow: hidden; background: var(--surface); border: 1px solid var(--line); }
+.frame img { width: 100%; }
+.xray { position: absolute; inset: 0; pointer-events: none; transition: opacity 160ms ease-out; }
+.xray span { position: absolute; border: 1.5px solid; border-radius: 2px; }
+.xray .lib { border-color: color-mix(in oklab, var(--instance) 75%, transparent); border-width: 1px; }
+.xray .raw { border-color: var(--raw); border-style: dashed; border-width: 2px; background: color-mix(in oklab, var(--raw) 14%, transparent); }
+.xray .local { border-color: var(--raw); }
+.stage[data-xray="off"] .xray { opacity: 0; }
+.metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem 1.5rem; margin: 0; font-size: var(--step--1); }
+.metrics div { display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--line); padding-top: 0.45rem; }
+.metrics dt { color: var(--muted); }
+.metrics dd { margin: 0; font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.shot-note { font-size: var(--step--1); color: var(--muted); max-width: 60ch; }
+.stage-bar { display: flex; gap: 1rem 1.5rem; flex-wrap: wrap; align-items: center; justify-content: space-between; font-size: var(--step--1); color: var(--muted); padding-block: 0 1.25rem; }
+.legend { display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center; }
+.legend span { display: inline-flex; align-items: center; gap: 0.45rem; }
+.glyph { font-family: var(--font-mono); font-weight: 500; }
+.glyph.lib { color: var(--instance); }
+.glyph.raw { color: var(--raw); }
+.toggle { display: inline-flex; align-items: center; gap: 0.55rem; cursor: pointer; font: inherit; color: var(--ink); background: none; border: 1px solid var(--line); border-radius: 999px; padding: 0.35rem 0.85rem 0.35rem 0.4rem; }
+.toggle .pip { width: 30px; height: 18px; border-radius: 999px; background: var(--line); position: relative; transition: background 160ms ease-out; }
+.toggle .pip::after { content: ""; position: absolute; top: 2px; left: 2px; width: 14px; height: 14px; border-radius: 50%; background: var(--surface); transition: transform 160ms ease-out; box-shadow: 0 0 0 1px var(--line); }
+.toggle[aria-pressed="true"] .pip { background: var(--instance); }
+.toggle[aria-pressed="true"] .pip::after { transform: translateX(12px); }
+.fineprint { font-size: var(--step--1); color: var(--muted); }
+
+/* Sections */
+section.band { padding-block: var(--section) 0; }
+.band > .wrap { display: grid; gap: clamp(1.5rem, 1rem + 2vw, 2.5rem); }
+.band h2 { font-size: var(--step-3); line-height: 1.1; font-weight: 700; }
+.band .intro { font-size: var(--step-1); color: var(--muted); line-height: 1.5; }
+.split { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--gap); align-items: start; }
+@media (max-width: 860px) { .split { grid-template-columns: minmax(0, 1fr); } }
+
+pre { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 1rem 1.1rem; overflow-x: auto; line-height: 1.55; font-size: 0.85rem; }
+pre .c { color: var(--muted); }
+pre .k { color: var(--instance); }
+pre .w { color: var(--raw); }
+
+/* Install */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.75rem; counter-reset: step; }
+.steps > li { display: grid; grid-template-columns: 2.5rem minmax(0, 1fr); gap: 0.25rem 1rem; counter-increment: step; }
+.steps > li::before { content: counter(step); grid-row: span 3; font-family: var(--font-mono); font-weight: 500; font-size: var(--step-1); width: 2.25rem; height: 2.25rem; border-radius: 50%; border: 1.5px solid var(--ink); display: grid; place-items: center; line-height: 1; }
+.steps h3 { font-size: var(--step-1); }
+.steps p { color: var(--muted); }
+
+/* Commands */
+.commands { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.cmd { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 1rem var(--gap); padding-block: 1.75rem; border-bottom: 1px solid var(--line); }
+@media (max-width: 860px) { .cmd { grid-template-columns: minmax(0, 1fr); } }
+.cmd h3 { font-family: var(--font-mono); font-weight: 500; font-size: var(--step-1); letter-spacing: -0.01em; }
+.cmd .what { color: var(--muted); }
+.ask { font-weight: 600; }
+.ask::before { content: "You: "; color: var(--muted); font-weight: 500; }
+.out-label { font-size: var(--step--1); color: var(--muted); }
+
+/* Loop */
+.loop { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.75rem; }
+@media (max-width: 860px) { .loop { grid-template-columns: minmax(0, 1fr); } }
+.loop li { border-top: 2px solid var(--ink); padding-top: 0.8rem; display: grid; gap: 0.35rem; align-content: start; }
+.loop li:nth-child(4), .loop li:nth-child(5) { border-top-color: var(--instance); }
+.loop b { font-size: var(--step-1); }
+.loop span { color: var(--muted); font-size: var(--step--1); }
+.loop-note { color: var(--muted); }
+
+/* Tables */
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: var(--step--1); }
+th, td { text-align: left; padding: 0.7rem 0.9rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+th { font-weight: 600; color: var(--muted); }
+td.n, th.n { text-align: right; white-space: nowrap; }
+td.n { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+tr.lead td { font-weight: 600; }
+td.flag { color: var(--raw); }
+
+/* Story */
+.story { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); }
+@media (max-width: 860px) { .story { grid-template-columns: minmax(0, 1fr); } }
+.story figure { margin: 0; display: grid; gap: 0.75rem; min-width: 0; }
+.story .frame { border-color: var(--line); }
+.mark { position: absolute; border: 2px solid var(--raw); border-radius: 4px; box-shadow: 0 0 0 4px var(--wash-raw); }
+figcaption { font-size: var(--step--1); color: var(--muted); }
+figcaption b { color: var(--ink); }
+
+/* Examples */
+.pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); }
+@media (max-width: 860px) { .pair { grid-template-columns: minmax(0, 1fr); } }
+.pair figure { margin: 0; display: grid; gap: 0.75rem; min-width: 0; }
+
+/* Docs */
+.docs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem var(--gap); }
+@media (max-width: 860px) { .docs { grid-template-columns: minmax(0, 1fr); } }
+.docs article { display: grid; gap: 0.8rem; align-content: start; min-width: 0; }
+.docs h3 { font-size: var(--step-1); }
+.docs ol, .docs ul { margin: 0; padding-left: 1.2rem; display: grid; gap: 0.4rem; }
+.docs p, .docs li { color: var(--muted); }
+.docs li b, .docs p b { color: var(--ink); font-weight: 600; }
+
+/* Limits */
+.limits { margin: 0; padding-left: 1.2rem; display: grid; gap: 0.75rem; max-width: var(--measure); }
+.limits li::marker { color: var(--raw); }
+
+footer { padding-block: var(--section) 3rem; }
+footer .wrap { border-top: 1px solid var(--line); padding-top: 1.5rem; display: flex; gap: 1rem 2rem; flex-wrap: wrap; justify-content: space-between; color: var(--muted); font-size: var(--step--1); }
+</style>
+
+<div class="wrap">
+  <header class="site-head">
+    <a class="brand" href="#top" aria-label="Lockstep, back to top">
+      <svg viewBox="0 0 26 26" aria-hidden="true"><rect x="1" y="1" width="16" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><rect x="9" y="9" width="16" height="16" rx="2" fill="var(--instance)"/></svg>
+      Lockstep
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#install">Install</a>
+      <a href="#commands">Commands</a>
+      <a href="#loop">How it works</a>
+      <a href="#score">The score</a>
+      <a href="#docs">Docs</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">Figma pages built from your own library, with the score to prove it.</h1>
+      <p class="lede">Lockstep is a Claude Code plugin. It reads your design library through Figma, builds pages from its real components and tokens, then scores the result and fixes it until it passes.</p>
+      <div class="actions">
+        <a class="btn" href="#install">Install the plugin</a>
+        <a class="link-quiet" href="#score">See what the score measures</a>
+      </div>
+    </section>
+
+    <section aria-label="Before and after on the same settings page">
+      <div class="wrap stage-bar">
+        <div class="legend">
+          <span><span class="glyph lib" aria-hidden="true">◇</span> Library instance</span>
+          <span><span class="glyph raw" aria-hidden="true">#</span> Hand-drawn frame</span>
+          <span>Outlines are each layer's real bounds, read from Figma.</span>
+        </div>
+        <button class="toggle" id="xray-toggle" type="button" aria-pressed="true" aria-controls="stage"><span class="pip" aria-hidden="true"></span>Show layers</button>
+      </div>
+      <div class="stage" id="stage" data-xray="on">
+        <div class="shot" data-kind="raw">
+          <div class="shot-head">
+            <span class="score" aria-label="Faithfulness 77">77</span>
+            <span class="shot-title">Plain Figma MCP</span>
+            <span class="shot-sub">Same prompt, same library, no Lockstep</span>
+          </div>
+          <div class="frame">
+            <img src="img/before-plain-mcp-profile.png" width="1440" height="1337" alt="Settings page built by the plain Figma MCP: library fields and buttons inside hand-drawn card frames and a hand-drawn tab bar." loading="eager">
+            <div class="xray" data-layers="before" aria-hidden="true"></div>
+          </div>
+          <dl class="metrics">
+            <div><dt>Library instances</dt><dd>42%</dd></div>
+            <div><dt>Bound properties</dt><dd>45%</dd></div>
+          </dl>
+          <p class="shot-note">The cards and the tab bar are hand-drawn frames with raw padding, radius and gaps. The fields and buttons inside them are real library components.</p>
+        </div>
+        <div class="shot" data-kind="lib">
+          <div class="shot-head">
+            <span class="score" aria-label="Faithfulness 98">98</span>
+            <span class="shot-title">Lockstep</span>
+            <span class="shot-sub">Built, scored and fixed in two passes</span>
+          </div>
+          <div class="frame">
+            <img src="img/after-lockstep-slalom-profile.png" width="1440" height="804" alt="The same settings page built by Lockstep: header, container, tabs, cards, fields and buttons are all library instances." loading="eager">
+            <div class="xray" data-layers="after" aria-hidden="true"></div>
+          </div>
+          <dl class="metrics">
+            <div><dt>Library instances</dt><dd>88%</dd></div>
+            <div><dt>Bound properties</dt><dd>100%</dd></div>
+          </dl>
+          <p class="shot-note">Every outlined layer is a library instance, cards included. The page title and subtitle are styled text bound to tokens, because this library has no text component.</p>
+        </div>
+      </div>
+      <p class="wrap fineprint">Business@Slalom library, settings page. Scores cover all four frames of each build (profile, notifications, account, delete dialog); the profile frame is shown.</p>
+    </section>
+
+    <section class="band" id="install" aria-labelledby="install-title">
+      <div class="wrap split">
+        <div class="stack">
+          <h2 id="install-title">Install in two steps</h2>
+          <p class="intro">You need Claude Code with the official Figma MCP server connected, a Figma seat that can create files, and <code>python3</code>.</p>
+        </div>
+        <ol class="steps">
+          <li>
+            <h3>Add the plugin</h3>
+            <p>From a clone of the Lockstep repository:</p>
+            <pre><code>claude --plugin-dir ./plugin</code></pre>
+          </li>
+          <li>
+            <h3>Protect your library</h3>
+            <p>List the file Lockstep must never write to, usually your published library. Its key is the part after <code>/design/</code> in its link. Put this in <code>.claude/lockstep.json</code>, or in <code>~/.claude/lockstep.json</code> for every project.</p>
+            <pre><code>{ "protectedFileKeys": {
+    "LMgKpbsEmxRpiHBKd9YGlw": "Official [Business@Slalom] Design System"
+} }</code></pre>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="band" id="commands" aria-labelledby="commands-title">
+      <div class="wrap">
+        <div class="stack read">
+          <h2 id="commands-title">Four commands</h2>
+          <p class="intro">Claude picks the right one from what you ask, or you can name it.</p>
+        </div>
+        <div class="commands">
+          <article class="cmd">
+            <div class="stack">
+              <h3>lockstep:init</h3>
+              <p class="what">One-time setup per library. It protects the library file, finds its components and tokens, reads their variants, slots and values from Figma, and saves a summary to <code>lockstep/&lt;library&gt;/</code> in your project.</p>
+              <p class="ask">Set up Lockstep for our design library.</p>
+            </div>
+            <div class="stack">
+              <span class="out-label">Output: LIBRARY.md in the shape init writes, with values read from Figma's Simple Design System</span>
+<pre><code><span class="c">## Components</span>
+Card (Slot)    slot: Slot
+Tabs           slot: Slot (Tab instances)
+Input Field    State: Default | Error | Disabled
+Button         Variant: Primary | Neutral | Subtle
+Button Danger  Variant: Primary | Subtle
+
+<span class="c">## Shape of the library</span>
+Text components: yes, so 100% instances is reachable
+Read: 16 components, 7 token collections with values</code></pre>
+            </div>
+          </article>
+          <article class="cmd">
+            <div class="stack">
+              <h3>lockstep:build</h3>
+              <p class="what">Builds a page in a draft file from library instances and tokens, then scores it, looks at screenshots and fixes it until it passes. Runs init first if the library isn't set up.</p>
+              <p class="ask">Build our settings page in Figma with our design system.</p>
+            </div>
+            <div class="stack">
+              <span class="out-label">Output: the pass table it reports, from the Simple Design System run</span>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Pass</th><th class="n">Instances</th><th class="n">Bound</th><th class="n">Score</th><th class="n">Issues</th><th>Fixed</th></tr></thead>
+                  <tbody>
+                    <tr><td>v1</td><td class="n">100%</td><td class="n">100%</td><td class="n">100</td><td class="n flag">3</td><td>Buttons still read "Button"</td></tr>
+                    <tr><td>v2</td><td class="n">100%</td><td class="n">100%</td><td class="n">100</td><td class="n flag">1</td><td>Body text cut off</td></tr>
+                    <tr class="lead"><td>v3</td><td class="n">100%</td><td class="n">100%</td><td class="n">100</td><td class="n">0</td><td>Done</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </article>
+          <article class="cmd">
+            <div class="stack">
+              <h3>lockstep:score</h3>
+              <p class="what">Read-only. Measures how faithfully any frame uses its library and lists the offending layers, worst first. Works on designs Lockstep didn't build.</p>
+              <p class="ask">How faithfully does this frame use our library?</p>
+            </div>
+            <div class="stack">
+              <span class="out-label">Output: the plain Figma MCP build, scored</span>
+              <div class="table-wrap">
+                <table>
+                  <tbody>
+                    <tr><td>Library instances</td><td class="n">42%</td></tr>
+                    <tr><td>Bound properties</td><td class="n">45%</td></tr>
+                    <tr><td>Detached instances</td><td class="n">0%</td></tr>
+                    <tr><td>Hard-coded colours</td><td class="n">1.5%</td></tr>
+                    <tr><td>Auto layout</td><td class="n">100%</td></tr>
+                    <tr class="lead"><td>Faithfulness</td><td class="n">77</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </article>
+          <article class="cmd">
+            <div class="stack">
+              <h3>lockstep:fix</h3>
+              <p class="what">Clones the frames and binds raw values to library tokens with exactly the same value, so nothing looks different. Then it rescores and lists the values that have no token, for you to decide.</p>
+              <p class="ask">Bind this design's spacing and colours to our tokens.</p>
+            </div>
+            <div class="stack">
+              <span class="out-label">Output: on the Figma MCP + DS-AI-Bridge build</span>
+<pre><code>Bound 29 values to exact-match tokens
+Faithfulness   86 <span class="k">→ 92</span>
+Bound          59% <span class="k">→ 87%</span>
+
+<span class="w">9 decisions left</span>, for example:
+4px gaps          the library has no 4px gap token
+50% black scrim   the library has no overlay colour</code></pre>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="loop" aria-labelledby="loop-title">
+      <div class="wrap">
+        <div class="stack read">
+          <h2 id="loop-title">How the loop works</h2>
+          <p class="intro">Build is the whole loop. It stops when the score and the screenshots both pass, or after three passes.</p>
+        </div>
+        <ol class="loop">
+          <li><b>Read the library</b><span>Component variants, slots and token values come from Figma's plugin API. Search alone returns no values.</span></li>
+          <li><b>Build in a draft</b><span>Only library instances; every fill, stroke, padding, gap and radius bound to a variable; auto layout throughout.</span></li>
+          <li><b>Score</b><span>Five measures and an integrity check, with the offending layers ranked.</span></li>
+          <li><b>Look</b><span>A screenshot of every frame, because a frame can score 100 and still be broken.</span></li>
+          <li><b>Fix and rescore</b><span>Rebuild what's structurally wrong; bind raw values that match a token; ask about the rest.</span></li>
+        </ol>
+        <p class="loop-note read">Every write goes to a draft. Three separate checks keep Lockstep out of your library file; the docs below explain them.</p>
+      </div>
+    </section>
+
+    <section class="band" id="score" aria-labelledby="score-title">
+      <div class="wrap">
+        <div class="stack read">
+          <h2 id="score-title">What the score measures</h2>
+          <p class="intro">Faithfulness is the mean of five measures. Each one matters more than the mean.</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Measure</th><th>What it counts</th><th>Pass</th></tr></thead>
+            <tbody>
+              <tr><td>Library instances</td><td>Content that is an instance of a library component, rather than text, shapes or painted frames you drew</td><td>At the library's ceiling: 100% if it has text components</td></tr>
+              <tr><td>Bound properties</td><td>Fills, strokes, padding, gaps, radius and stroke weight bound to library variables; text using a text style</td><td>100%</td></tr>
+              <tr><td>Detached instances</td><td>Frames that were once library instances</td><td>0%</td></tr>
+              <tr><td>Hard-coded colours</td><td>Visible paints with no variable or style, including overrides inside instances</td><td>0%</td></tr>
+              <tr><td>Auto layout</td><td>Frames you made that use auto layout</td><td>100%</td></tr>
+              <tr class="lead"><td>Integrity issues</td><td>Content clipped by its container, text cut off further up, library sample text still showing</td><td>0</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="stack read">
+          <h3 style="font-size: var(--step-2); line-height: 1.15;">It scored 100. It was still broken.</h3>
+          <p>On Figma's Simple Design System, the first build was all library instances with every value bound, and it scored a perfect 100. The screenshot told a different story: a button nested inside a library button group still read "Button". The next pass fixed that and scored 100 again, with a sentence cut off mid-word.</p>
+          <p>Both are now integrity checks, and a frame with any integrity issue isn't done, whatever its score. The rescored Slalom build still scores 98 with no issues.</p>
+        </div>
+        <div class="story">
+          <figure>
+            <div class="frame">
+              <img src="img/story-sample-text.png" width="700" height="235" alt="A password card whose primary button reads Button instead of Update password." loading="lazy">
+              <span class="mark" style="left: 83.6%; top: 67.5%; width: 11.6%; height: 19%;" aria-hidden="true"></span>
+            </div>
+            <figcaption><b>Pass 1: 100, three issues.</b> Sample text inside a nested component.</figcaption>
+          </figure>
+          <figure>
+            <div class="frame">
+              <img src="img/story-clipped-text.png" width="696" height="190" alt="An Export your data card whose description ends mid-word at the card's edge." loading="lazy">
+              <span class="mark" style="left: 75.8%; top: 35.5%; width: 22.6%; height: 16%;" aria-hidden="true"></span>
+            </div>
+            <figcaption><b>Pass 2: 100, one issue.</b> Text cut off by a container further up.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="examples" aria-labelledby="examples-title">
+      <div class="wrap">
+        <div class="stack read">
+          <h2 id="examples-title">The same page on two unrelated libraries</h2>
+          <p class="intro">Reading the library, scoring and fixing ran unchanged on both. Only the build script, which maps the page onto each library's components, was written per library.</p>
+        </div>
+        <div class="pair">
+          <figure>
+            <div class="frame"><img src="img/after-lockstep-slalom-profile.png" width="1440" height="804" alt="Settings page on the Business@Slalom library." loading="lazy"></div>
+            <figcaption><b>Business@Slalom: 98, no issues.</b> Slot-based cards and no text components, so styled text caps library instances at about 88%.</figcaption>
+          </figure>
+          <figure>
+            <div class="frame"><img src="img/sds-profile.png" width="1440" height="798" alt="Settings page on Figma's Simple Design System." loading="lazy"></div>
+            <figcaption><b>Simple Design System: 100, no issues.</b> Text components, a generic slot card and a button group, so 100% library instances is reachable.</figcaption>
+          </figure>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Settings page, all four frames</th><th class="n">Instances</th><th class="n">Bound</th><th class="n">Faithfulness</th></tr></thead>
+            <tbody>
+              <tr><td>Plain Figma MCP</td><td class="n">42%</td><td class="n">45%</td><td class="n">77</td></tr>
+              <tr><td>Plain Figma MCP + Lockstep fix pass</td><td class="n">42%</td><td class="n">77%</td><td class="n">84</td></tr>
+              <tr><td>Figma MCP + DS-AI-Bridge context</td><td class="n">74%</td><td class="n">59%</td><td class="n">86</td></tr>
+              <tr><td>Figma MCP + DS-AI-Bridge + Lockstep fix pass</td><td class="n">74%</td><td class="n">87%</td><td class="n">92</td></tr>
+              <tr class="lead"><td>Lockstep build, Business@Slalom</td><td class="n">88%</td><td class="n">100%</td><td class="n">98</td></tr>
+              <tr class="lead"><td>Lockstep build, Simple Design System</td><td class="n">100%</td><td class="n">100%</td><td class="n">100</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="fineprint read">The fix pass raises bound properties but can't change which components were used. That's why the plain build stays at 42% library instances: its cards were drawn by hand.</p>
+      </div>
+    </section>
+
+    <section class="band" id="docs" aria-labelledby="docs-title">
+      <div class="wrap">
+        <div class="stack read">
+          <h2 id="docs-title">Docs</h2>
+        </div>
+        <div class="docs">
+          <article>
+            <h3>Where protected keys come from</h3>
+            <p>Keys from all three are combined:</p>
+            <ol>
+              <li><b><code>LOCKSTEP_PROTECTED_FILE_KEYS</code></b>, comma-separated, in the environment</li>
+              <li><b><code>~/.claude/lockstep.json</code></b>, for every project</li>
+              <li><b><code>.claude/lockstep.json</code></b> in the project</li>
+            </ol>
+            <p>Each file holds an object of key and library name, or a plain list of keys. If a file exists but can't be read, every Figma write is blocked until you fix it.</p>
+          </article>
+          <article>
+            <h3>The three guard layers</h3>
+            <ol>
+              <li><b>A PreToolUse hook</b> blocks any Figma write tool whose target names a protected file, including every <code>use_figma</code> call there.</li>
+              <li><b>Every write script</b> carries the protected keys and refuses to run if <code>figma.fileKey</code> is one of them.</li>
+              <li><b>Every command that writes</b> tells Claude to check the key before each write.</li>
+            </ol>
+            <p>The hook can't see which file Figma desktop has open, so it doesn't cover the third-party figma-console server.</p>
+          </article>
+          <article>
+            <h3>The scripts</h3>
+            <p>All of them run inside Figma through <code>use_figma</code>. <code>render.py</code> fills in each one's placeholders and checks the size limit.</p>
+            <ul>
+              <li><b><code>inventory.js</code></b> reads components, variants, slots and token values, in two parts to fit Figma's 48 KB return limit.</li>
+              <li><b><code>score.js</code></b> is read-only and reports the measures, integrity issues and ranked offenders.</li>
+              <li><b><code>fix.js</code></b> binds raw values to tokens with exactly the same value, and lists the rest.</li>
+            </ul>
+<pre><code>python3 plugin/scripts/render.py score --roots 7:922,7:1302</code></pre>
+          </article>
+          <article>
+            <h3>Scoring an existing design</h3>
+            <ol>
+              <li>Ask for <b>lockstep:score</b> with a link to the frames. Nothing is changed.</li>
+              <li>If raw values could be bound, ask for <b>lockstep:fix</b>. It works on clones placed below your originals.</li>
+              <li>Hand-drawn parts and broken layout need a rebuild with <b>lockstep:build</b>; binding can't replace a drawn card with a library one.</li>
+            </ol>
+            <p>Frames inside a protected library can't be scored in place. Duplicate them to a draft first.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="limits" aria-labelledby="limits-title">
+      <div class="wrap">
+        <div class="stack read">
+          <h2 id="limits-title">Limits</h2>
+        </div>
+        <ul class="limits">
+          <li>The numbers come from one run per approach. Read differences of a few points as directional.</li>
+          <li>The Lockstep builds above were made by the same agent that wrote the scorer, so they may be tuned to what it measures. As an independent check, a fresh agent with only the plugin built a page it hadn't seen and scored 99. It still shipped an email field drawn at half width, which the score can't see; the commands now tell it to trust the screenshot.</li>
+          <li>A high score means the page is built from the library, not that it's a good page. Lockstep looks at screenshots for that, and so should you.</li>
+          <li>Finding components depends on Figma's design-system search. Figma has no API to list every component in a library from another file.</li>
+          <li>The build script is written fresh for each page and library; only reading, scoring and fixing are generic. Expect a few passes on a new library.</li>
+          <li>Usage judgement, like which variant means Cancel, comes from your library's component descriptions. When they're thin, Lockstep has to ask.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>Lockstep, a Claude Code plugin for faithful Figma builds.</span>
+      <span>Scores and method: REPORT.md in the repository.</span>
+    </div>
+  </footer>
+</div>
+
+<script>
+// Draw each layer's real Figma bounds over its screenshot, as percentages of the frame.
+const LAYERS = {
+  before: { size: [1440, 1337], nodes: [["lib",0,0,1440,64],["raw",240,216,960,73],["lib",240,216,100,72],["lib",340,216,115,72],["lib",455,216,100,72],["raw",240,321,960,506],["lib",273,434,435,76],["lib",732,434,435,76],["lib",273,534,435,76],["lib",732,534,435,76],["lib",273,634,435,76],["lib",943,758,78,36],["lib",1033,758,134,36],["raw",240,851,960,406],["lib",273,964,435,76],["lib",273,1088,435,76],["lib",732,1088,435,76],["lib",1004,1188,163,36]] },
+  after: { size: [1440, 804], nodes: [["lib",0,0,1440,64],["lib",24,88,1392,692],["lib",56,212,100,72],["lib",156,212,115,72],["lib",271,212,100,72],["lib",56,308,652,412],["lib",72,324,620,52],["lib",72,392,302,76],["lib",390,392,302,76],["lib",72,484,302,76],["lib",390,484,302,76],["lib",72,576,620,76],["lib",464,668,78,36],["lib",558,668,134,36],["lib",732,308,652,440],["lib",748,324,620,52],["lib",748,392,620,76],["lib",748,484,620,104],["lib",748,604,620,76],["lib",1205,696,163,36]] }
+};
+for (const el of document.querySelectorAll('.xray')) {
+  const { size: [W, H], nodes } = LAYERS[el.dataset.layers];
+  for (const [kind, x, y, w, h] of nodes) {
+    const s = document.createElement('span');
+    s.className = kind;
+    s.style.cssText = `left:${(x / W) * 100}%;top:${(y / H) * 100}%;width:${(w / W) * 100}%;height:${(h / H) * 100}%`;
+    el.appendChild(s);
+  }
+}
+const toggle = document.getElementById('xray-toggle');
+const stage = document.getElementById('stage');
+toggle.addEventListener('click', () => {
+  const on = toggle.getAttribute('aria-pressed') !== 'true';
+  toggle.setAttribute('aria-pressed', String(on));
+  stage.dataset.xray = on ? 'on' : 'off';
+});
+</script>
