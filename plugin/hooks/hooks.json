@@ -1,0 +1,16 @@
+{
+  "description": "Blocks Figma write tools aimed at a protected file key (an org's published library). Keys come from LOCKSTEP_PROTECTED_FILE_KEYS, ~/.claude/lockstep.json or <project>/.claude/lockstep.json.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__.*[Ff]igma.*__(use_figma|generate_figma_design|send_code_to_figma|send_code_connect_mappings|add_code_connect_map|upload_assets|create_generative_plugin|update_generative_plugin|create_shader|update_shader|generate_diagram)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/guard.py\""
+          }
+        ]
+      }
+    ]
+  }
+}

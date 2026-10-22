@@ -1,17 +1,28 @@
 # Lockstep (working name)
 
-An org-agnostic tool for writing to Figma faithfully with an organization's own design library, then scoring and fixing the result. This folder is the first spike, which uses the Business@Slalom library as the test bed. Results are in [REPORT.md](REPORT.md).
+An org-agnostic tool for writing to Figma faithfully with an organization's own design library,
+then scoring and fixing the result. It started as a spike on the Business@Slalom library and was
+then tested on Figma's Simple Design System. Results are in [REPORT.md](REPORT.md).
 
-## Run the loop
+## Use it
 
-All scripts run through the Figma MCP's `use_figma` tool, in a draft file. Never run them against a library file. Each script has a placeholder at the top that you replace before sending it:
+Lockstep ships as a Claude Code plugin in [`plugin/`](plugin/README.md): a `lockstep` skill that
+runs the build → score → fix loop, plus a write guard for protected library files.
 
-| Script | Placeholder | What it does |
-|---|---|---|
-| `figma/build-settings.js` | `__WHICH__` (e.g. `['Profile', 'Notifications', 'Account', 'Dialog']`) and `__VERSION__` (the canvas row) | Builds the settings page from library instances and variables |
-| `figma/score.js` | `__ROOT_IDS__` (frame IDs) | Read-only. Returns the faithfulness percentages, integrity issues and a ranked list of offending nodes |
-| `figma/fix.js` | `__ROOT_IDS__` | Binds raw values that exactly match a library token, and lists the rest as decisions |
-| `figma/build-settings-sds.js` | same as `build-settings.js` | The same page on Figma's Simple Design System, the second test library |
-| `figma/inventory.js` | `__COMPONENT_KEYS__` and `__PART__` (`'components'` or `'variables'`) | Read-only. Returns component properties and descriptions, or the variables those components bind with their values. It runs in two parts to stay under `use_figma`'s 48 KB return limit |
+```bash
+claude --plugin-dir ./plugin
+```
 
-The loop: build → score → read the offenders and a screenshot → fix (rerun the build with corrections, or run `fix.js`) → rescore.
+Set your protected library keys before the first build. [plugin/README.md](plugin/README.md)
+covers setup.
+
+## Layout
+
+| Path | What it is |
+|---|---|
+| `plugin/skills/lockstep/SKILL.md` | The workflow Claude follows |
+| `plugin/skills/lockstep/scripts/` | The scripts: `inventory.js`, `score.js` and `fix.js`, plus `render.py`, which fills their placeholders |
+| `plugin/skills/lockstep/references/` | Build patterns and traps; example builds for both test libraries, with their keys and the page brief |
+| `plugin/hooks/` | The write guard (PreToolUse) |
+| `research/` | Raw search output and notes from the Slalom spike |
+| `REPORT.md` | Scores, what the Figma MCP can and can't do, and the gaps |

@@ -1,6 +1,6 @@
 # Lockstep spike: faithful Figma writes, scored
 
-Run 2026-10-21 on the Business@Slalom library, using the settings-page prompt (`figma/PAGE_BRIEF.md`). Every write went to a new draft file, and nothing was written to the production library (`LMgKpbsEmxRpiHBKd9YGlw`).
+Run 2026-10-21 on the Business@Slalom library, using the settings-page prompt (`plugin/skills/lockstep/references/examples/PAGE_BRIEF.md`). Every write went to a new draft file, and nothing was written to the production library (`LMgKpbsEmxRpiHBKd9YGlw`).
 
 **Result.**
 - An agent can build the page in Figma almost entirely from the org's own library: library instances with real variant properties, every authored value bound to a library variable, auto layout throughout, and nothing detached.
@@ -9,7 +9,7 @@ Run 2026-10-21 on the Business@Slalom library, using the settings-page prompt (`
 
 ## Scores
 
-Each arm was scored over all four frames: Profile, Notifications, Account and the delete dialog. The scorer is `figma/score.js`.
+Each arm was scored over all four frames: Profile, Notifications, Account and the delete dialog. The scorer is `plugin/skills/lockstep/scripts/score.js`.
 
 | Arm | Library instances | Bound properties | Detached | Hard-coded colours | Auto layout | **Faithfulness** | Integrity issues |
 |---|---|---|---|---|---|---|---|
@@ -51,7 +51,7 @@ This run repeated the same page on a library that has nothing to do with Slalom,
 - `score.js` and `fix.js` ran as written. The fix pass had nothing to do, because every value was already bound.
 - `inventory.js` read all 16 components and 7 token collections with values, after one change: it now splits its output into two calls, because the full inventory doesn't fit in `use_figma`'s 48 KB return limit.
 
-**What had to be written for this library:** the build script, `build-settings-sds.js`. It maps the page's intent onto this library's components:
+**What had to be written for this library:** the build script, `references/examples/build-settings-sds.js`. It maps the page's intent onto this library's components:
 - Card (Slot)
 - Tabs as a slot of Tab instances
 - Button Group with nested buttons
@@ -117,9 +117,9 @@ This mapping is the per-org work that `init` has to automate. Here I wrote it my
 - **The score doesn't judge design quality.** A high score means the page is built *from* the library, not that it's a good page. Screenshots were checked by eye: L pass 2 looks right. Two cosmetic problems remain: the Notifications card doesn't fill the full width, and the Account cards have spare height.
 
 ## Files
-- `figma/score.js`: the faithfulness score. It is read-only and org-agnostic; set `ROOT_IDS`.
-- `figma/fix.js`: the auto-fix pass. It binds only raw values that exactly match a library token and lists the rest as decisions.
-- `figma/build-settings.js`: the Lockstep build. Set `WHICH` and `VERSION`; it is safe to rerun.
-- `figma/build-settings-sds.js`, `figma/keys.sds.json`: the same page built on Simple Design System.
-- `figma/inventory.js`, `figma/keys.slalom.json`, `research/`: how the library was read, and the raw search output.
-- `figma/PAGE_BRIEF.md`: the shared prompt given to every arm.
+Everything now lives in the Claude Code plugin at `plugin/` (see `plugin/README.md`).
+- `plugin/skills/lockstep/scripts/score.js`: the faithfulness score. It is read-only and org-agnostic; render it with `render.py score --roots ...`.
+- `plugin/skills/lockstep/scripts/fix.js`: the auto-fix pass. It binds only raw values that exactly match a library token and lists the rest as decisions.
+- `plugin/skills/lockstep/scripts/inventory.js`: reads a library's components and token values, in two parts.
+- `plugin/skills/lockstep/references/examples/`: the Slalom and Simple Design System builds, their keys, and `PAGE_BRIEF.md`, the shared prompt given to every arm.
+- `research/`: how the Slalom library was read, and the raw search output.

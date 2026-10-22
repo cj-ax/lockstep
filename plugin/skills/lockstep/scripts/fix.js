@@ -4,7 +4,8 @@
 // on authored nodes to a library variable with exactly the same value. It never changes how
 // anything looks: values with no exact token are reported as decisions, not snapped.
 const ROOT_IDS = __ROOT_IDS__;
-if (figma.fileKey === 'LMgKpbsEmxRpiHBKd9YGlw') throw new Error('Refusing to write to the production library');
+const PROTECTED_FILE_KEYS = __PROTECTED_FILE_KEYS__;
+if (PROTECTED_FILE_KEYS.includes(figma.fileKey)) throw new Error(`Refusing to write: ${figma.fileKey} is a protected file. Use a draft.`);
 
 // 1. Learn the token table from the library components in use.
 const seenMains = new Set();

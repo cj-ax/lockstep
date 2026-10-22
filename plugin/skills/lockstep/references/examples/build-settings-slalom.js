@@ -1,11 +1,11 @@
 // Lockstep build: UserSettings, one frame per call. Run through use_figma in a DRAFT file.
 // WHICH = list of 'Profile' | 'Notifications' | 'Account' | 'Dialog'. Safe to retry: it
 // removes any existing frame with the same name first.
-// Every key below came from the inventory (figma/inventory.js) or search_design_system.
+// Every key below came from scripts/inventory.js or search_design_system (keys.slalom.json).
 const WHICH = __WHICH__;
 const VERSION = __VERSION__;
-const PRODUCTION_LIBRARY = 'LMgKpbsEmxRpiHBKd9YGlw';
-if (figma.fileKey === PRODUCTION_LIBRARY) throw new Error('Refusing to write to the production library');
+const PROTECTED_FILE_KEYS = __PROTECTED_FILE_KEYS__;
+if (PROTECTED_FILE_KEYS.includes(figma.fileKey)) throw new Error(`Refusing to write: ${figma.fileKey} is a protected file. Use a draft.`);
 
 const C = {
   header: 'a1f1f34b73b954a1533d18ac4330a5ad2d4cfaee', container: 'e33ee7e85bebeab756aab527e05c15b3a1829c6b',
@@ -44,7 +44,8 @@ const pad = (f, v) => { for (const p of ['paddingTop', 'paddingRight', 'paddingB
 const stack = (dir, name, gap) => { const f = figma.createAutoLayout(dir, { name }); f.fills = []; if (gap) f.setBoundVariable('itemSpacing', gap); return f; };
 const add = (parent, child, fill = true) => { parent.appendChild(child); if (fill) child.layoutSizingHorizontal = 'FILL'; return child; };
 const text = (chars, style, colour, name) => { const t = figma.createText(); t.name = name || chars.slice(0, 24); t.textStyleId = style.id; t.characters = chars; t.fills = bindPaint(colour); return t; };
-const slot = (inst, name) => inst.findAllWithCriteria({ types: ['SLOT'] }).find(s => s.name === name);
+// findAllWithCriteria({ types: ['SLOT'] }) misses slots of nested instances, so walk the tree.
+const slot = (inst, name) => inst.findAll(n => n.type === 'SLOT').find(s => s.name === name);
 const clearSlot = (s) => { for (const c of [...s.children]) c.remove(); };
 const setText = (node, chars) => { node.characters = chars; };
 

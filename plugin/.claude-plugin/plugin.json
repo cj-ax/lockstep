@@ -1,0 +1,7 @@
+{
+  "name": "lockstep",
+  "version": "0.1.0",
+  "description": "Build pages in Figma faithfully from your organization's own design library, then score the result and fix it: library instances, variables bound, nothing detached, nothing broken. Includes a write guard for protected library files.",
+  "author": { "name": "Chris Axelson" },
+  "keywords": ["figma", "design-system", "design-tokens", "faithfulness", "use_figma"]
+}

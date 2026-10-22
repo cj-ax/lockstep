@@ -2,10 +2,11 @@
 // Same page as build-settings.js; only the library mapping differs. Run through use_figma
 // in a DRAFT file. WHICH = list of 'Profile' | 'Notifications' | 'Account' | 'Dialog';
 // VERSION picks the canvas row. Safe to retry: it removes frames with the same name first.
-// Keys came from search_design_system and figma/inventory.js (figma/keys.sds.json).
+// Keys came from search_design_system and scripts/inventory.js (keys.sds.json).
 const WHICH = __WHICH__;
 const VERSION = __VERSION__;
-if (figma.fileKey === 'LMgKpbsEmxRpiHBKd9YGlw') throw new Error('Refusing to write to the production library');
+const PROTECTED_FILE_KEYS = __PROTECTED_FILE_KEYS__;
+if (PROTECTED_FILE_KEYS.includes(figma.fileKey)) throw new Error(`Refusing to write: ${figma.fileKey} is a protected file. Use a draft.`);
 
 const SETS = {
   header: 'a1f69d8fdde4a1fe8523e49d3baa3c8464ad17d2', tab: '18aa207708b43593a2af7096b2dfd531553f3414',
