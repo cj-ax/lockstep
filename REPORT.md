@@ -264,6 +264,36 @@ Learn read it with two new read-only scripts, `audit.js` and `inventory_local.js
   The 15 left are each a real question. All the fixes are in the matching rules, none in Slalom-specific code. But the rules were tuned on this one pair, so a second library and repo is the honest next test.
 - **The fixture has no code side**, so its coverage (`learn/fixture/harvest/COVERAGE.md`) is design-only and de facto. A real check needs SDS's own code.
 
+## lockstep:learn: review and generate (2026-10-22)
+
+**Setup.** People rule on the proposals or the conflicts; Lockstep generates only from what they approved.
+- **Review:** `review.py` builds the items. Each person rules on a published review page, which saves rulings to its database, or in a Markdown checklist. `review.py apply` collects the rulings.
+- **Generate:** `generate.py` writes DTCG tokens, CSS with one block per theme, and one doc page per approved component.
+
+| Run | Items | Approved | Generated |
+|---|---|---|---|
+| Fixture, scripted review that takes every suggestion (the worst case) | 69 | all but 2 noise variables deleted | 40 tokens, 4 type styles, 11 component pages |
+| Slalom, pipeline test: only the agreed item approved | 32 | 1 (86 tokens after merging duplicates, 14 type styles, 15 components) | tokens with light, dark, build, mobile and brand modes; 15 component pages, each listing its open conflicts; 31 items still open |
+
+**The Slalom review page is published** (private, https://claude.ai/artifact/F7AdBzqi7xwPmUyDV7sLgt). It holds the 15 conflicts, the 16 components on only one side, and one item for what both sides agree on. No real rulings are in yet. The pipeline-test rulings are in `learn/slalom/pipeline-test/`, labelled as a test.
+
+**What testing caught and fixed:**
+- **Names.** A token approved without a name came out as `--token`, and five tokens vanished in name collisions. Unnamed tokens are now named by kind and value. Same-name tokens with equal values merge, and different values keep both.
+- **Themes.** Figma collections name modes differently ("Dark mode", "Dark", "BuildDark"), which gave six CSS themes. Modes now normalise to dark, build, mobile and the "Me @ Slalom" brand mode.
+- **Values.** A background blur came out as invalid CSS, and shadow numbers had no units.
+- **Descriptions.** Figma descriptions are cut at 1,500 characters by the inventory, so docs now say so instead of ending mid-sentence.
+
+**Checked:**
+- **The review page:**
+  - looked at 1440px and 390px (the phone layout via a copy with the viewport tag that publishing adds);
+  - one ruling written, read back at view level, and deleted.
+- **The checklist:** a ticked copy of `REVIEW.md` applied correctly, rename and note included.
+
+**Not checked:**
+- Several people ruling at once on the live page.
+- The generated CSS in a real app.
+- DTCG validity against a validator. The JSON parses and follows the 2025.10 shapes for colour, dimension, shadow and typography, but no tool has checked it.
+
 ## Caveats
 - **Small sample.** There was one run per arm, with the same model. Read differences of a few points as directional.
 - **Who built what.** I built L myself and also wrote the scorer, so L may be tuned to what the scorer measures. A and B were built by independent subagents that never saw the scorer. The fresh-agent trial is the independent check: an agent with only the plugin scored 99 on a page it hadn't seen, though it shipped a defect the score couldn't see.
@@ -276,6 +306,7 @@ Everything now lives in the Claude Code plugin at `plugin/` (see `plugin/README.
 - `plugin/scripts/inventory.js`: reads a library's components and token values, in two parts.
 - `plugin/scripts/audit.js`, `inventory_local.js`, `propose.py`: learn's read-only harvest and its proposals. `learn/fixture/` holds the fixture, its ground truth, the harvest and `RECOVERY.md`.
 - `tests/test_readonly.py`: the guard's read-only allowance.
+- `plugin/scripts/review.py`, `generate.py`: learn's review and generation. `learn/*/review/` and `learn/fixture/generated/` hold their output.
 - `plugin/scripts/harvest_code.py`, `reconcile.py`: learn's code harvest and coverage matrix. `learn/slalom/` holds the Slalom run: design inventory, code harvest and `COVERAGE.md`.
 - `plugin/skills/build/references/examples/`: the Slalom and Simple Design System builds, their keys, and `PAGE_BRIEF.md`, the shared prompt given to every arm.
 - `research/`: how the Slalom library was read, and the raw search output.

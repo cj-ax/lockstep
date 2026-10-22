@@ -115,7 +115,7 @@ Five skills. Claude picks the right one from what you ask, or you can name it.
 | `lockstep:build` | Builds a page in a draft from library instances and tokens, then scores, looks at screenshots and fixes until it passes. Runs `init` first if needed. | "Build our team members page in Figma with our design system" |
 | `lockstep:score` | Read-only. Measures how faithfully any frame uses its library and lists the offending layers. | "How faithfully does this frame use our library? <link>" |
 | `lockstep:fix` | Clones frames and binds raw values to exact-match library tokens, so nothing looks different. Then rescores and lists the values that have no token. | "Bind this design's spacing and colours to our tokens" |
-| `lockstep:learn` (early) | For a design system that isn't finished. Protects every source file, works out the front-end stack from a repository (or writes questions for whoever knows it), audits how your Figma files use colours, spacing, type and components, drafts token and component proposals, and compares Figma with your code: what's in both, what's missing, and where they disagree. Generating the system comes next. | "Learn our design system: here's the Figma library, two product files and the repo" |
+| `lockstep:learn` (early) | For a design system that isn't finished. Protects every source file, works out the front-end stack from a repository (or writes questions for whoever knows it), audits how your Figma files use colours, spacing, type and components, drafts token and component proposals, compares Figma with your code, and puts every disagreement to your team on a review page. From what they approve, it generates DTCG tokens, CSS and component docs. | "Learn our design system: here's the Figma library, two product files and the repo" |
 
 ## What "faithful" means here
 
@@ -149,6 +149,9 @@ Claude also looks at a screenshot of every frame, because the score can't judge 
   - `propose.py` turns those into draft tokens and components.
   - `harvest_code.py` resolves a repository's tokens per theme; `reconcile.py` matches design
     and code into a coverage matrix and a list of conflicts.
+  - `review.py` turns those into decisions for people (a review page and a checklist) and
+    collects their rulings; `generate.py` writes DTCG tokens, CSS and component docs from what
+    they approved. The page template is in `skills/learn/references/review-page.html`.
 - `hooks/`: the write guard.
 
 ## Known limits

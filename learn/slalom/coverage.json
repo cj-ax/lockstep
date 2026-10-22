@@ -2692,7 +2692,15 @@
    "design": "Subtitle-2",
    "code": "slm-subtitle-2",
    "differences": [],
-   "codeCase": null
+   "codeCase": null,
+   "values": {
+    "name": "Subtitle-2",
+    "fontFamily": "Slalom Sans",
+    "fontWeight": 400,
+    "fontSize": 14.0,
+    "lineHeight": 22.4,
+    "letterSpacing": 0.1
+   }
   },
   {
    "status": "complete",
@@ -2700,7 +2708,15 @@
    "design": "Body-2",
    "code": "slm-body-2",
    "differences": [],
-   "codeCase": null
+   "codeCase": null,
+   "values": {
+    "name": "Body-2",
+    "fontFamily": "Slalom Sans",
+    "fontWeight": 400,
+    "fontSize": 14.0,
+    "lineHeight": 20.0,
+    "letterSpacing": 0.5
+   }
   },
   {
    "status": "complete",
@@ -2708,7 +2724,15 @@
    "design": "Body-1",
    "code": "slm-body-1",
    "differences": [],
-   "codeCase": null
+   "codeCase": null,
+   "values": {
+    "name": "Body-1",
+    "fontFamily": "Slalom Sans",
+    "fontWeight": 400,
+    "fontSize": 16.0,
+    "lineHeight": 24.0,
+    "letterSpacing": 0.5
+   }
   },
   {
    "status": "complete",
@@ -2716,7 +2740,15 @@
    "design": "Caption",
    "code": "slm-caption",
    "differences": [],
-   "codeCase": null
+   "codeCase": null,
+   "values": {
+    "name": "Caption",
+    "fontFamily": "Slalom Sans",
+    "fontWeight": 400,
+    "fontSize": 12.0,
+    "lineHeight": 20.0,
+    "letterSpacing": 0.4
+   }
   },
   {
    "status": "complete",
@@ -2724,7 +2756,15 @@
    "design": "button-lg-upcase",
    "code": "slm-btn-lg",
    "differences": [],
-   "codeCase": null
+   "codeCase": null,
+   "values": {
+    "name": "button-lg-upcase",
+    "fontFamily": "Slalom Sans",
+    "fontWeight": 700,
+    "fontSize": 16.0,
+    "lineHeight": 28.0,
+    "letterSpacing": 1.25
+   }
   },
   {
    "status": "complete",
@@ -2732,7 +2772,15 @@
    "design": "button-lg-ttlcase",
    "code": "slm-btn-lg",
    "differences": [],
-   "codeCase": null
+   "codeCase": null,
+   "values": {
+    "name": "button-lg-ttlcase",
+    "fontFamily": "Slalom Sans",
+    "fontWeight": 700,
+    "fontSize": 16.0,
+    "lineHeight": 28.0,
+    "letterSpacing": 1.25
+   }
   },
   {
    "status": "complete",
@@ -2740,7 +2788,15 @@
    "design": "button-md-upcase",
    "code": "slm-btn-md",
    "differences": [],
-   "codeCase": null
+   "codeCase": null,
+   "values": {
+    "name": "button-md-upcase",
+    "fontFamily": "Slalom Sans",
+    "fontWeight": 700,
+    "fontSize": 14.0,
+    "lineHeight": 22.4,
+    "letterSpacing": 1.25
+   }
   },
   {
    "status": "complete",
@@ -2748,7 +2804,15 @@
    "design": "button-md-ttlcase",
    "code": "slm-btn-md",
    "differences": [],
-   "codeCase": null
+   "codeCase": null,
+   "values": {
+    "name": "button-md-ttlcase",
+    "fontFamily": "Slalom Sans",
+    "fontWeight": 700,
+    "fontSize": 14.0,
+    "lineHeight": 22.4,
+    "letterSpacing": 1.25
+   }
   },
   {
    "status": "complete",
@@ -2756,7 +2820,15 @@
    "design": "button-sm-upcase",
    "code": "slm-btn-sm",
    "differences": [],
-   "codeCase": null
+   "codeCase": null,
+   "values": {
+    "name": "button-sm-upcase",
+    "fontFamily": "Slalom Sans",
+    "fontWeight": 700,
+    "fontSize": 12.0,
+    "lineHeight": 20.0,
+    "letterSpacing": 1.25
+   }
   },
   {
    "status": "complete",
@@ -2764,7 +2836,15 @@
    "design": "button-sm-ttlcase",
    "code": "slm-btn-sm",
    "differences": [],
-   "codeCase": null
+   "codeCase": null,
+   "values": {
+    "name": "button-sm-ttlcase",
+    "fontFamily": "Slalom Sans",
+    "fontWeight": 700,
+    "fontSize": 12.0,
+    "lineHeight": 20.0,
+    "letterSpacing": 1.25
+   }
   },
   {
    "status": "complete",
@@ -2772,7 +2852,15 @@
    "design": "Heading 6",
    "code": "slm-heading-6",
    "differences": [],
-   "codeCase": null
+   "codeCase": null,
+   "values": {
+    "name": "Heading 6",
+    "fontFamily": "Slalom Sans",
+    "fontWeight": 700,
+    "fontSize": 20.0,
+    "lineHeight": 32.0,
+    "letterSpacing": 0.03
+   }
   },
   {
    "status": "complete",
@@ -2780,7 +2868,15 @@
    "design": "Heading 3",
    "code": "slm-heading-3",
    "differences": [],
-   "codeCase": null
+   "codeCase": null,
+   "values": {
+    "name": "Heading 3",
+    "fontFamily": "Slalom Sans",
+    "fontWeight": 400,
+    "fontSize": 48.0,
+    "lineHeight": 50.4,
+    "letterSpacing": 0.0
+   }
   },
   {
    "status": "complete",
@@ -2788,7 +2884,15 @@
    "design": "Heading 4",
    "code": "slm-heading-4",
    "differences": [],
-   "codeCase": null
+   "codeCase": null,
+   "values": {
+    "name": "Heading 4",
+    "fontFamily": "Slalom Sans",
+    "fontWeight": 400,
+    "fontSize": 34.0,
+    "lineHeight": 40.0,
+    "letterSpacing": 0.041
+   }
   },
   {
    "status": "drift",
@@ -2802,7 +2906,15 @@
      "code": 1.92
     }
    ],
-   "codeCase": null
+   "codeCase": null,
+   "values": {
+    "name": "Heading 5",
+    "fontFamily": "Slalom Sans",
+    "fontWeight": 700,
+    "fontSize": 24.0,
+    "lineHeight": 32.0,
+    "letterSpacing": 0.0
+   }
   },
   {
    "status": "complete",
@@ -2810,7 +2922,15 @@
    "design": "Subtitle-1",
    "code": "slm-subtitle-1",
    "differences": [],
-   "codeCase": "uppercase"
+   "codeCase": "uppercase",
+   "values": {
+    "name": "Subtitle-1",
+    "fontFamily": "Slalom Sans",
+    "fontWeight": 400,
+    "fontSize": 16.0,
+    "lineHeight": 28.0,
+    "letterSpacing": 0.5
+   }
   }
  ],
  "components": [
@@ -3613,69 +3733,69 @@
    "question": "Should Figma's variant and code's variant offer the same options?"
   },
   {
-   "topic": "Color Semantic Variables (updated)/Font Colors/text-disabled vs --slm-disabled-text",
-   "design": "Light: #00000066; Dark: #ffffff80",
-   "code": "slalomLight: #00000061; slalomDark: #ffffff61",
+   "topic": "text-disabled / --slm-disabled-text",
+   "design": "Color Semantic Variables (updated)/Font Colors/text-disabled, Light: #00000066; Dark: #ffffff80",
+   "code": "--slm-disabled-text, slalomLight: #00000061; slalomDark: #ffffff61",
    "question": "Which value is right?"
   },
   {
-   "topic": "Color Semantic Variables (updated)/Font Colors/text-error vs theme.error",
-   "design": "Dark: #ffdbdf",
-   "code": "slalomDark: #ff6b6b",
+   "topic": "text-error / theme.error",
+   "design": "Color Semantic Variables (updated)/Font Colors/text-error, Dark: #ffdbdf",
+   "code": "theme.error, slalomDark: #ff6b6b",
    "question": "Which value is right?"
   },
   {
-   "topic": "Color Semantic Variables (updated)/Primary Colors/success vs theme.success",
-   "design": "Light: #5cb85c; Dark: #5cb85c",
-   "code": "slalomLight: #2e7d32; slalomDark: #4caf50",
+   "topic": "success / theme.success",
+   "design": "Color Semantic Variables (updated)/Primary Colors/success, Light: #5cb85c; Dark: #5cb85c",
+   "code": "theme.success, slalomLight: #2e7d32; slalomDark: #4caf50",
    "question": "Which value is right?"
   },
   {
-   "topic": "Color Semantic Variables (updated)/Primary Colors/error-element vs theme.error",
-   "design": "Dark: #ffdbdf",
-   "code": "slalomDark: #ff6b6b",
+   "topic": "error-element / theme.error",
+   "design": "Color Semantic Variables (updated)/Primary Colors/error-element, Dark: #ffdbdf",
+   "code": "theme.error, slalomDark: #ff6b6b",
    "question": "Which value is right?"
   },
   {
-   "topic": "Color Semantic Variables (updated)/Border Colors/neutral-border-color vs --slm-border",
-   "design": "Dark: #757575",
-   "code": "slalomDark: #eaeaea",
+   "topic": "neutral-border-color / --slm-border",
+   "design": "Color Semantic Variables (updated)/Border Colors/neutral-border-color, Dark: #757575",
+   "code": "--slm-border, slalomDark: #eaeaea",
    "question": "Which value is right?"
   },
   {
-   "topic": "Color Semantic Variables (updated)/card color/card-bg-secondary vs --slm-app-card-bg",
-   "design": "Dark: #424242",
-   "code": "slalomDark: #444444",
+   "topic": "card-bg-secondary / --slm-app-card-bg",
+   "design": "Color Semantic Variables (updated)/card color/card-bg-secondary, Dark: #424242",
+   "code": "--slm-app-card-bg, slalomDark: #444444",
    "question": "Which value is right?"
   },
   {
-   "topic": "Colors/Font Colors/text-disabled vs --slm-disabled-text",
-   "design": "Dark: #ffffff80; BuildDark: #ffffff80",
-   "code": "slalomDark: #ffffff61; slalomBuild: #ffffff61",
+   "topic": "text-disabled / --slm-disabled-text",
+   "design": "Colors/Font Colors/text-disabled, Dark: #ffffff80; BuildDark: #ffffff80",
+   "code": "--slm-disabled-text, slalomDark: #ffffff61; slalomBuild: #ffffff61",
    "question": "Which value is right?"
   },
   {
-   "topic": "button_shadow-1 vs $slm-shadow-button-1",
-   "design": "default: 0 0 2 0 #73a6ff1a",
-   "code": "default: 0 0 2 0 #0000001f",
+   "topic": "button_shadow-1 / $slm-shadow-button-1",
+   "design": "button_shadow-1, default: 0 0 2 0 #73a6ff1a",
+   "code": "$slm-shadow-button-1, default: 0 0 2 0 #0000001f",
    "question": "Which value is right?"
   },
   {
-   "topic": "button_shadow-4 vs $slm-shadow-button-4",
-   "design": "default: 0 3 4 0 #0000001a",
-   "code": "default: 0 3 4 0 #0000001f",
+   "topic": "button_shadow-4 / $slm-shadow-button-4",
+   "design": "button_shadow-4, default: 0 3 4 0 #0000001a",
+   "code": "$slm-shadow-button-4, default: 0 3 4 0 #0000001f",
    "question": "Which value is right?"
   },
   {
-   "topic": "button_shadow-7 vs $slm-shadow-button-7",
-   "design": "default: 0 4 5 0 #0000001a",
-   "code": "default: 0 4 5 0 #0000001f",
+   "topic": "button_shadow-7 / $slm-shadow-button-7",
+   "design": "button_shadow-7, default: 0 4 5 0 #0000001a",
+   "code": "$slm-shadow-button-7, default: 0 4 5 0 #0000001f",
    "question": "Which value is right?"
   },
   {
-   "topic": "Heading 5 vs slm-heading-5",
-   "design": "letterSpacing: 0.0",
-   "code": "letterSpacing: 1.92",
+   "topic": "Heading 5 / slm-heading-5",
+   "design": "Heading 5, letterSpacing: 0.0",
+   "code": "slm-heading-5, letterSpacing: 1.92",
    "question": "Which value is right?"
   }
  ]

@@ -1,0 +1,2850 @@
+{
+ "title": "SDS fixture review",
+ "source": "proposals",
+ "built": "2026-10-22",
+ "items": [
+  {
+   "id": "token-color-1e1e1e-29869d",
+   "group": "Tokens",
+   "kind": "color",
+   "value": "#1e1e1e",
+   "title": "color #1e1e1e",
+   "name": "Color/Text/Default/Default",
+   "evidence": [
+    "Used 29 times in product files, 43 times inside library components",
+    "Bound to Color/Text/Default/Default \u00d736, Color/Icon/Default/Default \u00d74, Color/Text/Brand/On Brand Secondary \u00d73",
+    "WIP variable text/primary",
+    "Absorbs #201e1e \u00d73, probably a slip"
+   ],
+   "examples": [
+    "3:524",
+    "3:475",
+    "3:477",
+    "3:481"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "color",
+    "value": "#1e1e1e",
+    "values": {
+     "default": "#1e1e1e"
+    },
+    "drift": [
+     {
+      "value": "#201e1e",
+      "uses": 3,
+      "examples": [
+       "3:404",
+       "3:646",
+       "3:652"
+      ],
+      "distance": 0.38,
+      "alternatives": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "token-color-ffffff-19e7ae",
+   "group": "Tokens",
+   "kind": "color",
+   "value": "#ffffff",
+   "title": "color #ffffff",
+   "name": "Color/Background/Default/Default",
+   "evidence": [
+    "Used 17 times in product files, 7 times inside library components",
+    "Bound to Color/Background/Default/Default \u00d77",
+    "WIP variable bg/white"
+   ],
+   "examples": [
+    "1:605",
+    "3:471",
+    "3:483",
+    "3:490"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "color",
+    "value": "#ffffff",
+    "values": {
+     "default": "#ffffff"
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-color-d9d9d9-f77770",
+   "group": "Tokens",
+   "kind": "color",
+   "value": "#d9d9d9",
+   "title": "color #d9d9d9",
+   "name": "Color/Border/Default/Default",
+   "evidence": [
+    "Used 11 times in product files, 7 times inside library components",
+    "Bound to Color/Border/Default/Default \u00d77",
+    "WIP variable border/light"
+   ],
+   "examples": [
+    "3:471",
+    "3:483",
+    "3:490",
+    "3:497"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "color",
+    "value": "#d9d9d9",
+    "values": {
+     "default": "#d9d9d9"
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-color-2c2c2c-2a5244",
+   "group": "Tokens",
+   "kind": "color",
+   "value": "#2c2c2c",
+   "title": "color #2c2c2c",
+   "name": "Color/Background/Brand/Default",
+   "evidence": [
+    "Used 7 times in product files, 10 times inside library components",
+    "Bound to Color/Background/Brand/Default \u00d75, Color/Border/Brand/Default \u00d75",
+    "Absorbs #2e2c2c \u00d71, probably a slip"
+   ],
+   "examples": [
+    "3:626",
+    "3:626",
+    "3:632",
+    "3:632"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "color",
+    "value": "#2c2c2c",
+    "values": {
+     "default": "#2c2c2c"
+    },
+    "drift": [
+     {
+      "value": "#2e2c2c",
+      "uses": 1,
+      "examples": [
+       "3:653"
+      ],
+      "distance": 0.36,
+      "alternatives": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "token-color-767676-f0edbd",
+   "group": "Tokens",
+   "kind": "color",
+   "value": "#767676",
+   "title": "color #767676",
+   "name": "Color/Text/Neutral/Tertiary",
+   "evidence": [
+    "Used 3 times in product files, 9 times inside library components",
+    "Bound to Color/Border/Neutral/Secondary \u00d76, Color/Text/Neutral/Tertiary \u00d73"
+   ],
+   "examples": [
+    "3:520",
+    "3:522",
+    "3:733"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "color",
+    "value": "#767676",
+    "values": {
+     "default": "#767676"
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-color-f5f5f5-2ef28e",
+   "group": "Tokens",
+   "kind": "color",
+   "value": "#f5f5f5",
+   "title": "color #f5f5f5",
+   "name": "Color/Background/Brand/Tertiary",
+   "evidence": [
+    "Used 4 times in product files, 8 times inside library components",
+    "Bound to Color/Text/Brand/On Brand \u00d75, Color/Background/Brand/Tertiary \u00d73"
+   ],
+   "examples": [
+    "3:627",
+    "3:633",
+    "3:648",
+    "3:654"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "color",
+    "value": "#f5f5f5",
+    "values": {
+     "default": "#f5f5f5"
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-color-757575-5b71e3",
+   "group": "Tokens",
+   "kind": "color",
+   "value": "#757575",
+   "title": "color #757575",
+   "name": "",
+   "evidence": [
+    "Used 8 times in product files",
+    "Absorbs #777575 \u00d72, probably a slip (or it belongs to #767676)"
+   ],
+   "examples": [
+    "3:628",
+    "3:634",
+    "3:638",
+    "3:639"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "rename",
+   "payload": {
+    "type": "token",
+    "kind": "color",
+    "value": "#757575",
+    "values": {
+     "default": "#757575"
+    },
+    "drift": [
+     {
+      "value": "#777575",
+      "uses": 2,
+      "examples": [
+       "3:649",
+       "3:659"
+      ],
+      "distance": 0.3,
+      "alternatives": [
+       "#767676"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "token-color-303030-6ad57b",
+   "group": "Tokens",
+   "kind": "color",
+   "value": "#303030",
+   "title": "color #303030",
+   "name": "Color/Border/Neutral/Default",
+   "evidence": [
+    "Used 4 times in product files, 2 times inside library components",
+    "Bound to Color/Border/Neutral/Default \u00d71, Color/Text/Neutral/Default \u00d71"
+   ],
+   "examples": [
+    "3:517",
+    "3:518",
+    "3:734",
+    "3:735"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "color",
+    "value": "#303030",
+    "values": {
+     "default": "#303030"
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-color-b2b2b2-3a7822",
+   "group": "Tokens",
+   "kind": "color",
+   "value": "#b2b2b2",
+   "title": "color #b2b2b2",
+   "name": "Color/Border/Neutral/tertiary",
+   "evidence": [
+    "Used 3 times in product files, 3 times inside library components",
+    "Bound to Color/Border/Neutral/tertiary \u00d73"
+   ],
+   "examples": [
+    "3:519",
+    "3:521",
+    "3:732"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "color",
+    "value": "#b2b2b2",
+    "values": {
+     "default": "#b2b2b2"
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-color-e3e3e3-5e4a36",
+   "group": "Tokens",
+   "kind": "color",
+   "value": "#e3e3e3",
+   "title": "color #e3e3e3",
+   "name": "Color/Background/Neutral/Tertiary",
+   "evidence": [
+    "Used 0 times in product files, 6 times inside library components",
+    "Bound to Color/Background/Neutral/Tertiary \u00d76"
+   ],
+   "examples": [],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "color",
+    "value": "#e3e3e3",
+    "values": {
+     "default": "#e3e3e3"
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-color-ec221f-9b9aca",
+   "group": "Tokens",
+   "kind": "color",
+   "value": "#ec221f",
+   "title": "color #ec221f",
+   "name": "Color/Background/Danger/Default",
+   "evidence": [
+    "Used 0 times in product files, 2 times inside library components",
+    "Bound to Color/Background/Danger/Default \u00d72"
+   ],
+   "examples": [],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "color",
+    "value": "#ec221f",
+    "values": {
+     "default": "#ec221f"
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-color-c00f0c-2c3f12",
+   "group": "Tokens",
+   "kind": "color",
+   "value": "#c00f0c",
+   "title": "color #c00f0c",
+   "name": "Color/Border/Danger/Secondary",
+   "evidence": [
+    "Used 0 times in product files, 2 times inside library components",
+    "Bound to Color/Border/Danger/Secondary \u00d72"
+   ],
+   "examples": [],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "color",
+    "value": "#c00f0c",
+    "values": {
+     "default": "#c00f0c"
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-color-fee9e7-9c5734",
+   "group": "Tokens",
+   "kind": "color",
+   "value": "#fee9e7",
+   "title": "color #fee9e7",
+   "name": "Color/Text/Danger/On Danger",
+   "evidence": [
+    "Used 0 times in product files, 2 times inside library components",
+    "Bound to Color/Text/Danger/On Danger \u00d72"
+   ],
+   "examples": [],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "color",
+    "value": "#fee9e7",
+    "values": {
+     "default": "#fee9e7"
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-color-ffffffcc-5e5700",
+   "group": "Tokens",
+   "kind": "color",
+   "value": "#ffffffcc",
+   "title": "color #ffffffcc",
+   "name": "",
+   "evidence": [
+    "Used 1 times in product files"
+   ],
+   "examples": [
+    "3:748"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "rename",
+   "payload": {
+    "type": "token",
+    "kind": "color",
+    "value": "#ffffffcc",
+    "values": {
+     "default": "#ffffffcc"
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-color-0c0c0d0d-771aa3",
+   "group": "Tokens",
+   "kind": "color",
+   "value": "#0c0c0d0d",
+   "title": "color #0c0c0d0d",
+   "name": "Color Primitives/Black/100",
+   "evidence": [
+    "Used 0 times in product files, 1 times inside library components",
+    "Bound to Color Primitives/Black/100 \u00d71"
+   ],
+   "examples": [],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "color",
+    "value": "#0c0c0d0d",
+    "values": {
+     "default": "#0c0c0d0d"
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-color-0c0c0d1a-9220b0",
+   "group": "Tokens",
+   "kind": "color",
+   "value": "#0c0c0d1a",
+   "title": "color #0c0c0d1a",
+   "name": "Color Primitives/Black/200",
+   "evidence": [
+    "Used 0 times in product files, 1 times inside library components",
+    "Bound to Color Primitives/Black/200 \u00d71"
+   ],
+   "examples": [],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "color",
+    "value": "#0c0c0d1a",
+    "values": {
+     "default": "#0c0c0d1a"
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-spacing-8-0-9b87cf",
+   "group": "Tokens",
+   "kind": "spacing",
+   "value": 8.0,
+   "title": "spacing 8",
+   "name": "Size/Space/200",
+   "evidence": [
+    "Used 14 times in product files, 152 times inside library components",
+    "Bound to Size/Space/200 \u00d7152",
+    "WIP variable spacing-xs"
+   ],
+   "examples": [
+    "1:674",
+    "3:473",
+    "3:480",
+    "3:487"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "spacing",
+    "value": 8.0,
+    "values": {
+     "default": 8.0
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-spacing-12-0-aa471e",
+   "group": "Tokens",
+   "kind": "spacing",
+   "value": 12.0,
+   "title": "spacing 12",
+   "name": "Size/Space/300",
+   "evidence": [
+    "Used 29 times in product files, 45 times inside library components",
+    "Bound to Size/Space/300 \u00d745"
+   ],
+   "examples": [
+    "3:517",
+    "3:517",
+    "3:519",
+    "3:519"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "spacing",
+    "value": 12.0,
+    "values": {
+     "default": 12.0
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-spacing-32-0-0f05f2",
+   "group": "Tokens",
+   "kind": "spacing",
+   "value": 32.0,
+   "title": "spacing 32",
+   "name": "Size/Space/800",
+   "evidence": [
+    "Used 15 times in product files, 16 times inside library components",
+    "Bound to Size/Space/800 \u00d716",
+    "WIP variable spacing-xl"
+   ],
+   "examples": [
+    "1:673",
+    "1:673",
+    "1:673",
+    "1:673"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "spacing",
+    "value": 32.0,
+    "values": {
+     "default": 32.0
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-spacing-24-0-59ecfe",
+   "group": "Tokens",
+   "kind": "spacing",
+   "value": 24.0,
+   "title": "spacing 24",
+   "name": "Size/Space/600",
+   "evidence": [
+    "Used 23 times in product files, 4 times inside library components",
+    "Bound to Size/Space/600 \u00d74",
+    "WIP variable spacing-l",
+    "Absorbs 25 \u00d73, probably a slip",
+    "Absorbs 23 \u00d71, probably a slip"
+   ],
+   "examples": [
+    "1:714",
+    "3:471",
+    "3:471",
+    "3:471"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "spacing",
+    "value": 24.0,
+    "values": {
+     "default": 24.0
+    },
+    "drift": [
+     {
+      "value": 25.0,
+      "uses": 3,
+      "examples": [
+       "3:388",
+       "3:712",
+       "3:688"
+      ],
+      "distance": 1.0,
+      "alternatives": []
+     },
+     {
+      "value": 23.0,
+      "uses": 1,
+      "examples": [
+       "3:687"
+      ],
+      "distance": 1.0,
+      "alternatives": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "token-spacing-16-0-1144e0",
+   "group": "Tokens",
+   "kind": "spacing",
+   "value": 16.0,
+   "title": "spacing 16",
+   "name": "Size/Space/400",
+   "evidence": [
+    "Used 21 times in product files, 6 times inside library components",
+    "Bound to Size/Space/400 \u00d76",
+    "WIP variable spacing-m"
+   ],
+   "examples": [
+    "3:478",
+    "3:483",
+    "3:483",
+    "3:486"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "spacing",
+    "value": 16.0,
+    "values": {
+     "default": 16.0
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-spacing-4-0-06ad0d",
+   "group": "Tokens",
+   "kind": "spacing",
+   "value": 4.0,
+   "title": "spacing 4",
+   "name": "Size/Space/100",
+   "evidence": [
+    "Used 10 times in product files, 8 times inside library components",
+    "Bound to Size/Space/100 \u00d78"
+   ],
+   "examples": [
+    "3:517",
+    "3:517",
+    "3:519",
+    "3:519"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "spacing",
+    "value": 4.0,
+    "values": {
+     "default": 4.0
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-radius-8-0-7ecbfa",
+   "group": "Tokens",
+   "kind": "radius",
+   "value": 8.0,
+   "title": "radius 8",
+   "name": "Size/Radius/200",
+   "evidence": [
+    "Used 44 times in product files, 152 times inside library components",
+    "Bound to Size/Radius/200 \u00d7152",
+    "WIP variable radius-md"
+   ],
+   "examples": [
+    "3:471",
+    "3:471",
+    "3:471",
+    "3:471"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "radius",
+    "value": 8.0,
+    "values": {
+     "default": 8.0
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-radius-9999-0-ce25c5",
+   "group": "Tokens",
+   "kind": "radius",
+   "value": 9999.0,
+   "title": "radius 9999",
+   "name": "",
+   "evidence": [
+    "Used 24 times in product files"
+   ],
+   "examples": [
+    "3:626",
+    "3:626",
+    "3:626",
+    "3:626"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "rename",
+   "payload": {
+    "type": "token",
+    "kind": "radius",
+    "value": 9999.0,
+    "values": {
+     "default": 9999.0
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-radius-4-0-fcc31b",
+   "group": "Tokens",
+   "kind": "radius",
+   "value": 4.0,
+   "title": "radius 4",
+   "name": "Size/Radius/100",
+   "evidence": [
+    "Used 10 times in product files, 8 times inside library components",
+    "Bound to Size/Radius/100 \u00d78"
+   ],
+   "examples": [
+    "3:517",
+    "3:517",
+    "3:519",
+    "3:519"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "radius",
+    "value": 4.0,
+    "values": {
+     "default": 4.0
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-radius-32-0-8436b7",
+   "group": "Tokens",
+   "kind": "radius",
+   "value": 32.0,
+   "title": "radius 32",
+   "name": "Typography Primitives/Scale 06",
+   "evidence": [
+    "Used 0 times in product files, 4 times inside library components",
+    "Bound to Typography Primitives/Scale 06 \u00d74"
+   ],
+   "examples": [],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "radius",
+    "value": 32.0,
+    "values": {
+     "default": 32.0
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-stroke-1-0-ccb8ff",
+   "group": "Tokens",
+   "kind": "stroke",
+   "value": 1.0,
+   "title": "stroke 1",
+   "name": "Size/Stroke/Border",
+   "evidence": [
+    "Used 17 times in product files, 91 times inside library components",
+    "Bound to Size/Stroke/Border \u00d779, Responsive/border-width \u00d712",
+    "WIP variable border-w"
+   ],
+   "examples": [
+    "3:471",
+    "3:483",
+    "3:490",
+    "3:497"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "stroke",
+    "value": 1.0,
+    "values": {
+     "default": 1.0
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-effect-4-0-36d401",
+   "group": "Tokens",
+   "kind": "effect",
+   "value": 4.0,
+   "title": "effect 4",
+   "name": "Size/Depth/100",
+   "evidence": [
+    "Used 1 times in product files, 2 times inside library components",
+    "Bound to Size/Depth/100 \u00d72"
+   ],
+   "examples": [],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "effect",
+    "value": 4.0,
+    "values": {
+     "default": 4.0
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-effect-4-0-cdb746",
+   "group": "Tokens",
+   "kind": "effect",
+   "value": -4.0,
+   "title": "effect -4",
+   "name": "Size/Depth/Negative 100",
+   "evidence": [
+    "Used 0 times in product files, 2 times inside library components",
+    "Bound to Size/Depth/Negative 100 \u00d72"
+   ],
+   "examples": [],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "effect",
+    "value": -4.0,
+    "values": {
+     "default": -4.0
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-effect-0-0-e19218",
+   "group": "Tokens",
+   "kind": "effect",
+   "value": 0.0,
+   "title": "effect 0",
+   "name": "Size/Depth/0",
+   "evidence": [
+    "Used 0 times in product files, 2 times inside library components",
+    "Bound to Size/Depth/0 \u00d72"
+   ],
+   "examples": [],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "effect",
+    "value": 0.0,
+    "values": {
+     "default": 0.0
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-effect-bg-blur-4-9f1fd6",
+   "group": "Tokens",
+   "kind": "effect",
+   "value": "bg-blur:4",
+   "title": "effect bg-blur:4",
+   "name": "",
+   "evidence": [
+    "Used 1 times in product files"
+   ],
+   "examples": [
+    "3:748"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "rename",
+   "payload": {
+    "type": "token",
+    "kind": "effect",
+    "value": "bg-blur:4",
+    "values": {
+     "default": "bg-blur:4"
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-effect-32-0-176d74",
+   "group": "Tokens",
+   "kind": "effect",
+   "value": 32.0,
+   "title": "effect 32",
+   "name": "Size/Depth/800",
+   "evidence": [
+    "Used 0 times in product files, 1 times inside library components",
+    "Bound to Size/Depth/800 \u00d71"
+   ],
+   "examples": [],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "effect",
+    "value": 32.0,
+    "values": {
+     "default": 32.0
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-effect-16-0-3eca42",
+   "group": "Tokens",
+   "kind": "effect",
+   "value": 16.0,
+   "title": "effect 16",
+   "name": "Size/Depth/400",
+   "evidence": [
+    "Used 0 times in product files, 1 times inside library components",
+    "Bound to Size/Depth/400 \u00d71"
+   ],
+   "examples": [],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "effect",
+    "value": 16.0,
+    "values": {
+     "default": 16.0
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-type-inter-regular-16-140-0-e51851",
+   "group": "Tokens",
+   "kind": "type",
+   "value": "Inter|Regular|16|140%|0",
+   "title": "type Inter|Regular|16|140%|0",
+   "name": "Body Base",
+   "evidence": [
+    "Used 27 times in product files",
+    "Bound to Body Base \u00d72"
+   ],
+   "examples": [
+    "3:518",
+    "3:520",
+    "3:522",
+    "3:477"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "type",
+    "value": "Inter|Regular|16|140%|0",
+    "values": {
+     "default": "Inter|Regular|16|140%|0"
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-type-inter-semi-bold-24-120-2-d24020",
+   "group": "Tokens",
+   "kind": "type",
+   "value": "Inter|Semi Bold|24|120%|-2%",
+   "title": "type Inter|Semi Bold|24|120%|-2%",
+   "name": "Heading",
+   "evidence": [
+    "Used 8 times in product files",
+    "Bound to Heading \u00d71"
+   ],
+   "examples": [
+    "3:475",
+    "3:392",
+    "3:617",
+    "3:622"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "type",
+    "value": "Inter|Semi Bold|24|120%|-2%",
+    "values": {
+     "default": "Inter|Semi Bold|24|120%|-2%"
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-type-inter-regular-16-100-0-c64269",
+   "group": "Tokens",
+   "kind": "type",
+   "value": "Inter|Regular|16|100%|0",
+   "title": "type Inter|Regular|16|100%|0",
+   "name": "",
+   "evidence": [
+    "Used 6 times in product files"
+   ],
+   "examples": [
+    "3:484",
+    "3:491",
+    "3:498",
+    "3:398"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "rename",
+   "payload": {
+    "type": "token",
+    "kind": "type",
+    "value": "Inter|Regular|16|100%|0",
+    "values": {
+     "default": "Inter|Regular|16|100%|0"
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-type-inter-bold-48-120-2-509da5",
+   "group": "Tokens",
+   "kind": "type",
+   "value": "Inter|Bold|48|120%|-2%",
+   "title": "type Inter|Bold|48|120%|-2%",
+   "name": "Title Page",
+   "evidence": [
+    "Used 2 times in product files",
+    "Bound to Title Page \u00d71"
+   ],
+   "examples": [
+    "3:524",
+    "3:670"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "type",
+    "value": "Inter|Bold|48|120%|-2%",
+    "values": {
+     "default": "Inter|Bold|48|120%|-2%"
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-fontfamily-inter-8d67ab",
+   "group": "Tokens",
+   "kind": "fontFamily",
+   "value": "Inter",
+   "title": "fontFamily Inter",
+   "name": "",
+   "evidence": [
+    "Used 43 times in product files"
+   ],
+   "examples": [
+    "3:524",
+    "3:670",
+    "3:518",
+    "3:520"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "rename",
+   "payload": {
+    "type": "token",
+    "kind": "fontFamily",
+    "value": "Inter",
+    "values": {
+     "default": "Inter"
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-fontsize-16-0-7cf6dc",
+   "group": "Tokens",
+   "kind": "fontSize",
+   "value": 16.0,
+   "title": "fontSize 16",
+   "name": "Typography/Body/Size Medium",
+   "evidence": [
+    "Used 33 times in product files, 49 times inside library components",
+    "Bound to Typography/Body/Size Medium \u00d782"
+   ],
+   "examples": [
+    "3:518",
+    "3:520",
+    "3:522",
+    "3:477"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "fontSize",
+    "value": 16.0,
+    "values": {
+     "default": 16.0
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-fontsize-24-0-ea9b42",
+   "group": "Tokens",
+   "kind": "fontSize",
+   "value": 24.0,
+   "title": "fontSize 24",
+   "name": "Typography/Heading/Size Base",
+   "evidence": [
+    "Used 8 times in product files",
+    "Bound to Typography/Heading/Size Base \u00d78"
+   ],
+   "examples": [
+    "3:475",
+    "3:392",
+    "3:617",
+    "3:622"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "fontSize",
+    "value": 24.0,
+    "values": {
+     "default": 24.0
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-fontsize-48-0-1126dc",
+   "group": "Tokens",
+   "kind": "fontSize",
+   "value": 48.0,
+   "title": "fontSize 48",
+   "name": "Typography/Title Page/Size Base",
+   "evidence": [
+    "Used 2 times in product files, 1 times inside library components",
+    "Bound to Typography/Title Page/Size Base \u00d73"
+   ],
+   "examples": [
+    "3:524",
+    "3:670"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "fontSize",
+    "value": 48.0,
+    "values": {
+     "default": 48.0
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-fontweight-400-0-dc8a4b",
+   "group": "Tokens",
+   "kind": "fontWeight",
+   "value": 400.0,
+   "title": "fontWeight 400",
+   "name": "Typography/Body/Font Weight Regular",
+   "evidence": [
+    "Used 33 times in product files, 49 times inside library components",
+    "Bound to Typography/Body/Font Weight Regular \u00d749"
+   ],
+   "examples": [
+    "3:518",
+    "3:520",
+    "3:522",
+    "3:477"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "fontWeight",
+    "value": 400.0,
+    "values": {
+     "default": 400.0
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-fontweight-600-0-05ee04",
+   "group": "Tokens",
+   "kind": "fontWeight",
+   "value": 600.0,
+   "title": "fontWeight 600",
+   "name": "",
+   "evidence": [
+    "Used 8 times in product files"
+   ],
+   "examples": [
+    "3:475",
+    "3:392",
+    "3:617",
+    "3:622"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "rename",
+   "payload": {
+    "type": "token",
+    "kind": "fontWeight",
+    "value": 600.0,
+    "values": {
+     "default": 600.0
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "token-fontweight-700-0-6ab32a",
+   "group": "Tokens",
+   "kind": "fontWeight",
+   "value": 700.0,
+   "title": "fontWeight 700",
+   "name": "Typography/Title Page/Font Weight",
+   "evidence": [
+    "Used 2 times in product files, 1 times inside library components",
+    "Bound to Typography/Title Page/Font Weight \u00d71"
+   ],
+   "examples": [
+    "3:524",
+    "3:670"
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve"
+    },
+    {
+     "value": "rename",
+     "label": "Rename",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Reject"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "token",
+    "kind": "fontWeight",
+    "value": 700.0,
+    "values": {
+     "default": 700.0
+    },
+    "drift": []
+   }
+  },
+  {
+   "id": "component-text-heading-f5dd63",
+   "group": "Components",
+   "title": "Text Heading",
+   "name": "Text Heading",
+   "evidence": [
+    "de facto: only detached copies, no live instances",
+    "7 detached copies, 0 live instances, in Settings / Account, Settings / Notifications, Settings / Profile"
+   ],
+   "examples": [
+    "3:474",
+    "3:391",
+    "3:616",
+    "3:621"
+   ],
+   "options": [
+    {
+     "value": "component",
+     "label": "Make it a component",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Not a component"
+    }
+   ],
+   "suggestion": "component",
+   "payload": {
+    "type": "component",
+    "name": "Text Heading",
+    "source": "detached copies",
+    "status": "de facto: only detached copies, no live instances",
+    "nodes": [
+     "3:474",
+     "3:391",
+     "3:616",
+     "3:621",
+     "3:642",
+     "3:715",
+     "3:690"
+    ]
+   }
+  },
+  {
+   "id": "component-input-field-dbebd3",
+   "group": "Components",
+   "title": "Input Field",
+   "name": "Input Field",
+   "evidence": [
+    "published, but detached in places",
+    "6 detached copies, 3 live instances, in Settings / Profile"
+   ],
+   "examples": [
+    "3:480",
+    "3:487",
+    "3:494",
+    "3:394"
+   ],
+   "options": [
+    {
+     "value": "relink",
+     "label": "Relink the detached copies"
+    },
+    {
+     "value": "reject",
+     "label": "Leave them"
+    }
+   ],
+   "suggestion": "relink",
+   "payload": {
+    "type": "component",
+    "name": "Input Field",
+    "source": "detached copies",
+    "status": "published, but detached in places",
+    "nodes": [
+     "3:480",
+     "3:487",
+     "3:494",
+     "3:394",
+     "3:400",
+     "3:406"
+    ]
+   }
+  },
+  {
+   "id": "component-switch-field-6cfef2",
+   "group": "Components",
+   "title": "Switch Field",
+   "name": "Switch Field",
+   "evidence": [
+    "de facto: only detached copies, no live instances",
+    "6 detached copies, 0 live instances, in Settings / Notifications"
+   ],
+   "examples": [
+    "3:623",
+    "3:629",
+    "3:635",
+    "3:644"
+   ],
+   "options": [
+    {
+     "value": "component",
+     "label": "Make it a component",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Not a component"
+    }
+   ],
+   "suggestion": "component",
+   "payload": {
+    "type": "component",
+    "name": "Switch Field",
+    "source": "detached copies",
+    "status": "de facto: only detached copies, no live instances",
+    "nodes": [
+     "3:623",
+     "3:629",
+     "3:635",
+     "3:644",
+     "3:650",
+     "3:656"
+    ]
+   }
+  },
+  {
+   "id": "component-tab-4b8c4a",
+   "group": "Components",
+   "title": "Tab",
+   "name": "Tab",
+   "evidence": [
+    "published, but detached in places",
+    "5 detached copies, 4 live instances, in Settings / Account, Settings / Profile"
+   ],
+   "examples": [
+    "3:517",
+    "3:519",
+    "3:521",
+    "3:732"
+   ],
+   "options": [
+    {
+     "value": "relink",
+     "label": "Relink the detached copies"
+    },
+    {
+     "value": "reject",
+     "label": "Leave them"
+    }
+   ],
+   "suggestion": "relink",
+   "payload": {
+    "type": "component",
+    "name": "Tab",
+    "source": "detached copies",
+    "status": "published, but detached in places",
+    "nodes": [
+     "3:517",
+     "3:519",
+     "3:521",
+     "3:732",
+     "3:734"
+    ]
+   }
+  },
+  {
+   "id": "component-card-slot-4cb51f",
+   "group": "Components",
+   "title": "Card (Slot)",
+   "name": "Card (Slot)",
+   "evidence": [
+    "de facto: only detached copies, no live instances",
+    "5 detached copies, 0 live instances, in Settings / Account, Settings / Notifications, Settings / Profile"
+   ],
+   "examples": [
+    "3:471",
+    "3:388",
+    "3:613",
+    "3:712"
+   ],
+   "options": [
+    {
+     "value": "component",
+     "label": "Make it a component",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Not a component"
+    }
+   ],
+   "suggestion": "component",
+   "payload": {
+    "type": "component",
+    "name": "Card (Slot)",
+    "source": "detached copies",
+    "status": "de facto: only detached copies, no live instances",
+    "nodes": [
+     "3:471",
+     "3:388",
+     "3:613",
+     "3:712",
+     "3:687"
+    ]
+   }
+  },
+  {
+   "id": "component-button-group-48c2b2",
+   "group": "Components",
+   "title": "Button Group",
+   "name": "Button Group",
+   "evidence": [
+    "de facto: only detached copies, no live instances",
+    "4 detached copies, 0 live instances, in Settings / Account, Settings / Profile"
+   ],
+   "examples": [
+    "3:500",
+    "3:412",
+    "3:718",
+    "3:693"
+   ],
+   "options": [
+    {
+     "value": "component",
+     "label": "Make it a component",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Not a component"
+    }
+   ],
+   "suggestion": "component",
+   "payload": {
+    "type": "component",
+    "name": "Button Group",
+    "source": "detached copies",
+    "status": "de facto: only detached copies, no live instances",
+    "nodes": [
+     "3:500",
+     "3:412",
+     "3:718",
+     "3:693"
+    ]
+   }
+  },
+  {
+   "id": "component-tabs-e06031",
+   "group": "Components",
+   "title": "Tabs",
+   "name": "Tabs",
+   "evidence": [
+    "de facto: only detached copies, no live instances",
+    "3 detached copies, 0 live instances, in Settings / Account, Settings / Notifications, Settings / Profile"
+   ],
+   "examples": [
+    "3:515",
+    "3:662",
+    "3:729"
+   ],
+   "options": [
+    {
+     "value": "component",
+     "label": "Make it a component",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Not a component"
+    }
+   ],
+   "suggestion": "component",
+   "payload": {
+    "type": "component",
+    "name": "Tabs",
+    "source": "detached copies",
+    "status": "de facto: only detached copies, no live instances",
+    "nodes": [
+     "3:515",
+     "3:662",
+     "3:729"
+    ]
+   }
+  },
+  {
+   "id": "component-text-53622a",
+   "group": "Components",
+   "title": "Text",
+   "name": "Text",
+   "evidence": [
+    "published, but detached in places",
+    "3 detached copies, 5 live instances, in Settings / Notifications, Settings / Profile"
+   ],
+   "examples": [
+    "3:476",
+    "3:667",
+    "3:618"
+   ],
+   "options": [
+    {
+     "value": "relink",
+     "label": "Relink the detached copies"
+    },
+    {
+     "value": "reject",
+     "label": "Leave them"
+    }
+   ],
+   "suggestion": "relink",
+   "payload": {
+    "type": "component",
+    "name": "Text",
+    "source": "detached copies",
+    "status": "published, but detached in places",
+    "nodes": [
+     "3:476",
+     "3:667",
+     "3:618"
+    ]
+   }
+  },
+  {
+   "id": "component-text-title-page-b8dcd7",
+   "group": "Components",
+   "title": "Text Title Page",
+   "name": "Text Title Page",
+   "evidence": [
+    "published, but detached in places",
+    "2 detached copies, 1 live instances, in Settings / Notifications, Settings / Profile"
+   ],
+   "examples": [
+    "3:523",
+    "3:669"
+   ],
+   "options": [
+    {
+     "value": "relink",
+     "label": "Relink the detached copies"
+    },
+    {
+     "value": "reject",
+     "label": "Leave them"
+    }
+   ],
+   "suggestion": "relink",
+   "payload": {
+    "type": "component",
+    "name": "Text Title Page",
+    "source": "detached copies",
+    "status": "published, but detached in places",
+    "nodes": [
+     "3:523",
+     "3:669"
+    ]
+   }
+  },
+  {
+   "id": "component-dialog-8b7cc3",
+   "group": "Components",
+   "title": "Dialog",
+   "name": "Dialog",
+   "evidence": [
+    "de facto: only detached copies, no live instances",
+    "1 detached copies, 0 live instances, in Settings / Dialog"
+   ],
+   "examples": [
+    "3:748"
+   ],
+   "options": [
+    {
+     "value": "component",
+     "label": "Make it a component",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Not a component"
+    }
+   ],
+   "suggestion": "component",
+   "payload": {
+    "type": "component",
+    "name": "Dialog",
+    "source": "detached copies",
+    "status": "de facto: only detached copies, no live instances",
+    "nodes": [
+     "3:748"
+    ]
+   }
+  },
+  {
+   "id": "component-card-title-171966",
+   "group": "Components",
+   "title": "Card title",
+   "name": "Card title",
+   "evidence": [
+    "de facto: a repeated pattern that isn't a component",
+    "Repeats 4 times: Page title \u00d71, Card title \u00d73"
+   ],
+   "examples": [
+    "1:674",
+    "1:876",
+    "3:390",
+    "3:473"
+   ],
+   "options": [
+    {
+     "value": "component",
+     "label": "Make it a component",
+     "name": true
+    },
+    {
+     "value": "reject",
+     "label": "Not a component"
+    }
+   ],
+   "suggestion": "component",
+   "payload": {
+    "type": "component",
+    "name": "Card title",
+    "source": "repeated structure",
+    "status": "de facto: a repeated pattern that isn't a component",
+    "nodes": [
+     "1:674",
+     "1:876",
+     "3:390",
+     "3:473",
+     "3:615",
+     "3:689",
+     "3:714"
+    ]
+   }
+  },
+  {
+   "id": "wip-bg-white-43e7d4",
+   "group": "WIP variables",
+   "title": "bg/white",
+   "name": "bg/white",
+   "value": "#ffffff",
+   "kind": "color",
+   "evidence": [
+    "maps to a library token",
+    "Bound 6 times"
+   ],
+   "options": [
+    {
+     "value": "map",
+     "label": "Map to Color/Background/Default/Default"
+    },
+    {
+     "value": "keep",
+     "label": "Keep as its own token",
+     "name": true
+    },
+    {
+     "value": "delete",
+     "label": "Delete"
+    }
+   ],
+   "suggestion": "map",
+   "payload": {
+    "type": "COLOR",
+    "collection": "Tokens (WIP)",
+    "name": "bg/white",
+    "value": "#ffffff",
+    "boundUses": 6,
+    "mapsTo": "Color/Background/Default/Default",
+    "token": "#ffffff",
+    "status": "maps to a library token"
+   }
+  },
+  {
+   "id": "wip-spacing-xl-cfd2d8",
+   "group": "WIP variables",
+   "title": "spacing-xl",
+   "name": "spacing-xl",
+   "value": 32,
+   "kind": "number",
+   "evidence": [
+    "maps to a library token",
+    "Bound 3 times"
+   ],
+   "options": [
+    {
+     "value": "map",
+     "label": "Map to Size/Space/800"
+    },
+    {
+     "value": "keep",
+     "label": "Keep as its own token",
+     "name": true
+    },
+    {
+     "value": "delete",
+     "label": "Delete"
+    }
+   ],
+   "suggestion": "map",
+   "payload": {
+    "type": "FLOAT",
+    "collection": "Tokens (WIP)",
+    "name": "spacing-xl",
+    "value": 32,
+    "boundUses": 3,
+    "mapsTo": "Size/Space/800",
+    "token": 32.0,
+    "status": "maps to a library token"
+   }
+  },
+  {
+   "id": "wip-spacing-l-1ee6cb",
+   "group": "WIP variables",
+   "title": "spacing-l",
+   "name": "spacing-l",
+   "value": 24,
+   "kind": "number",
+   "evidence": [
+    "maps to a library token",
+    "Bound 8 times"
+   ],
+   "options": [
+    {
+     "value": "map",
+     "label": "Map to Size/Space/600"
+    },
+    {
+     "value": "keep",
+     "label": "Keep as its own token",
+     "name": true
+    },
+    {
+     "value": "delete",
+     "label": "Delete"
+    }
+   ],
+   "suggestion": "map",
+   "payload": {
+    "type": "FLOAT",
+    "collection": "Tokens (WIP)",
+    "name": "spacing-l",
+    "value": 24,
+    "boundUses": 8,
+    "mapsTo": "Size/Space/600",
+    "token": 24.0,
+    "status": "maps to a library token"
+   }
+  },
+  {
+   "id": "wip-border-w-174f70",
+   "group": "WIP variables",
+   "title": "border-w",
+   "name": "border-w",
+   "value": 1,
+   "kind": "number",
+   "evidence": [
+    "maps to a library token",
+    "Bound 5 times"
+   ],
+   "options": [
+    {
+     "value": "map",
+     "label": "Map to Size/Stroke/Border"
+    },
+    {
+     "value": "keep",
+     "label": "Keep as its own token",
+     "name": true
+    },
+    {
+     "value": "delete",
+     "label": "Delete"
+    }
+   ],
+   "suggestion": "map",
+   "payload": {
+    "type": "FLOAT",
+    "collection": "Tokens (WIP)",
+    "name": "border-w",
+    "value": 1,
+    "boundUses": 5,
+    "mapsTo": "Size/Stroke/Border",
+    "token": 1.0,
+    "status": "maps to a library token"
+   }
+  },
+  {
+   "id": "wip-spacing-m-c9484c",
+   "group": "WIP variables",
+   "title": "spacing-m",
+   "name": "spacing-m",
+   "value": 16,
+   "kind": "number",
+   "evidence": [
+    "maps to a library token",
+    "Bound 5 times"
+   ],
+   "options": [
+    {
+     "value": "map",
+     "label": "Map to Size/Space/400"
+    },
+    {
+     "value": "keep",
+     "label": "Keep as its own token",
+     "name": true
+    },
+    {
+     "value": "delete",
+     "label": "Delete"
+    }
+   ],
+   "suggestion": "map",
+   "payload": {
+    "type": "FLOAT",
+    "collection": "Tokens (WIP)",
+    "name": "spacing-m",
+    "value": 16,
+    "boundUses": 5,
+    "mapsTo": "Size/Space/400",
+    "token": 16.0,
+    "status": "maps to a library token"
+   }
+  },
+  {
+   "id": "wip-spacing-xs-2f1cc8",
+   "group": "WIP variables",
+   "title": "spacing-xs",
+   "name": "spacing-xs",
+   "value": 8,
+   "kind": "number",
+   "evidence": [
+    "maps to a library token",
+    "Bound 2 times"
+   ],
+   "options": [
+    {
+     "value": "map",
+     "label": "Map to Size/Space/200"
+    },
+    {
+     "value": "keep",
+     "label": "Keep as its own token",
+     "name": true
+    },
+    {
+     "value": "delete",
+     "label": "Delete"
+    }
+   ],
+   "suggestion": "map",
+   "payload": {
+    "type": "FLOAT",
+    "collection": "Tokens (WIP)",
+    "name": "spacing-xs",
+    "value": 8,
+    "boundUses": 2,
+    "mapsTo": "Size/Space/200",
+    "token": 8.0,
+    "status": "maps to a library token"
+   }
+  },
+  {
+   "id": "wip-text-primary-0a11af",
+   "group": "WIP variables",
+   "title": "text/primary",
+   "name": "text/primary",
+   "value": "#1e1e1e",
+   "kind": "color",
+   "evidence": [
+    "maps to a library token",
+    "Bound 6 times"
+   ],
+   "options": [
+    {
+     "value": "map",
+     "label": "Map to Color/Text/Default/Default"
+    },
+    {
+     "value": "keep",
+     "label": "Keep as its own token",
+     "name": true
+    },
+    {
+     "value": "delete",
+     "label": "Delete"
+    }
+   ],
+   "suggestion": "map",
+   "payload": {
+    "type": "COLOR",
+    "collection": "Tokens (WIP)",
+    "name": "text/primary",
+    "value": "#1e1e1e",
+    "boundUses": 6,
+    "mapsTo": "Color/Text/Default/Default",
+    "token": "#1e1e1e",
+    "status": "maps to a library token"
+   }
+  },
+  {
+   "id": "wip-radius-md-1b2868",
+   "group": "WIP variables",
+   "title": "radius-md",
+   "name": "radius-md",
+   "value": 8,
+   "kind": "number",
+   "evidence": [
+    "maps to a library token",
+    "Bound 6 times"
+   ],
+   "options": [
+    {
+     "value": "map",
+     "label": "Map to Size/Radius/200"
+    },
+    {
+     "value": "keep",
+     "label": "Keep as its own token",
+     "name": true
+    },
+    {
+     "value": "delete",
+     "label": "Delete"
+    }
+   ],
+   "suggestion": "map",
+   "payload": {
+    "type": "FLOAT",
+    "collection": "Tokens (WIP)",
+    "name": "radius-md",
+    "value": 8,
+    "boundUses": 6,
+    "mapsTo": "Size/Radius/200",
+    "token": 8.0,
+    "status": "maps to a library token"
+   }
+  },
+  {
+   "id": "wip-border-light-df8b8f",
+   "group": "WIP variables",
+   "title": "border/light",
+   "name": "border/light",
+   "value": "#d9d9d9",
+   "kind": "color",
+   "evidence": [
+    "maps to a library token",
+    "Bound 2 times"
+   ],
+   "options": [
+    {
+     "value": "map",
+     "label": "Map to Color/Border/Default/Default"
+    },
+    {
+     "value": "keep",
+     "label": "Keep as its own token",
+     "name": true
+    },
+    {
+     "value": "delete",
+     "label": "Delete"
+    }
+   ],
+   "suggestion": "map",
+   "payload": {
+    "type": "COLOR",
+    "collection": "Tokens (WIP)",
+    "name": "border/light",
+    "value": "#d9d9d9",
+    "boundUses": 2,
+    "mapsTo": "Color/Border/Default/Default",
+    "token": "#d9d9d9",
+    "status": "maps to a library token"
+   }
+  },
+  {
+   "id": "wip-blue-accent-9e5f45",
+   "group": "WIP variables",
+   "title": "blue-accent",
+   "name": "blue-accent",
+   "value": "#3b82f6",
+   "kind": "color",
+   "evidence": [
+    "unused: bound nowhere in the audited files",
+    "Bound 0 times"
+   ],
+   "options": [
+    {
+     "value": "delete",
+     "label": "Delete"
+    },
+    {
+     "value": "keep",
+     "label": "Keep",
+     "name": true
+    }
+   ],
+   "suggestion": "delete",
+   "payload": {
+    "type": "COLOR",
+    "collection": "Tokens (WIP)",
+    "name": "blue-accent",
+    "value": "#3b82f6",
+    "boundUses": 0,
+    "mapsTo": null,
+    "status": "unused: bound nowhere in the audited files"
+   }
+  },
+  {
+   "id": "wip-spacing-s-b717f6",
+   "group": "WIP variables",
+   "title": "spacing-s",
+   "name": "spacing-s",
+   "value": 6,
+   "kind": "number",
+   "evidence": [
+    "unused: bound nowhere in the audited files",
+    "Bound 0 times"
+   ],
+   "options": [
+    {
+     "value": "delete",
+     "label": "Delete"
+    },
+    {
+     "value": "keep",
+     "label": "Keep",
+     "name": true
+    }
+   ],
+   "suggestion": "delete",
+   "payload": {
+    "type": "FLOAT",
+    "collection": "Tokens (WIP)",
+    "name": "spacing-s",
+    "value": 6,
+    "boundUses": 0,
+    "mapsTo": null,
+    "status": "unused: bound nowhere in the audited files"
+   }
+  },
+  {
+   "id": "local-card-base-c1c056",
+   "group": "Local components",
+   "title": "Card / Base",
+   "name": "Card / Base",
+   "evidence": [
+    "unused; looks like Card (Slot)",
+    "unpublished, 0 instances in its file"
+   ],
+   "examples": [
+    "3:821"
+   ],
+   "options": [
+    {
+     "value": "merge",
+     "label": "Merge into Card (Slot)"
+    },
+    {
+     "value": "keep",
+     "label": "Keep"
+    },
+    {
+     "value": "delete",
+     "label": "Delete"
+    }
+   ],
+   "suggestion": "merge",
+   "payload": {
+    "type": "local",
+    "name": "Card / Base",
+    "id": "3:821",
+    "page": "Library (WIP)",
+    "status": "UNPUBLISHED",
+    "instancesInFile": 0,
+    "duplicates": [
+     "Card (Slot)"
+    ],
+    "note": "unused; looks like Card (Slot)"
+   }
+  },
+  {
+   "id": "local-section-heading-0d5df7",
+   "group": "Local components",
+   "title": "Section Heading",
+   "name": "Section Heading",
+   "evidence": [
+    "unused; looks like Text Heading",
+    "unpublished, 0 instances in its file"
+   ],
+   "examples": [
+    "3:826"
+   ],
+   "options": [
+    {
+     "value": "merge",
+     "label": "Merge into Text Heading"
+    },
+    {
+     "value": "keep",
+     "label": "Keep"
+    },
+    {
+     "value": "delete",
+     "label": "Delete"
+    }
+   ],
+   "suggestion": "merge",
+   "payload": {
+    "type": "local",
+    "name": "Section Heading",
+    "id": "3:826",
+    "page": "Library (WIP)",
+    "status": "UNPUBLISHED",
+    "instancesInFile": 0,
+    "duplicates": [
+     "Text Heading"
+    ],
+    "note": "unused; looks like Text Heading"
+   }
+  },
+  {
+   "id": "local-toggle-row-93e02f",
+   "group": "Local components",
+   "title": "Toggle row",
+   "name": "Toggle row",
+   "evidence": [
+    "unused; looks like Switch Field",
+    "unpublished, 0 instances in its file"
+   ],
+   "examples": [
+    "3:839"
+   ],
+   "options": [
+    {
+     "value": "merge",
+     "label": "Merge into Switch Field"
+    },
+    {
+     "value": "keep",
+     "label": "Keep"
+    },
+    {
+     "value": "delete",
+     "label": "Delete"
+    }
+   ],
+   "suggestion": "merge",
+   "payload": {
+    "type": "local",
+    "name": "Toggle row",
+    "id": "3:839",
+    "page": "Library (WIP)",
+    "status": "UNPUBLISHED",
+    "instancesInFile": 0,
+    "duplicates": [
+     "Switch Field"
+    ],
+    "note": "unused; looks like Switch Field"
+   }
+  }
+ ]
+}

@@ -1,0 +1,2993 @@
+{
+ "title": "Slalom design system review",
+ "source": "coverage",
+ "built": "2026-10-22",
+ "items": [
+  {
+   "id": "conflict-component-fonts-a23d8a",
+   "group": "Conflicts",
+   "title": "Component fonts",
+   "figma": "Slalom Sans in every text style",
+   "code": "DM Sans hard-coded in SAutocomplete, SButton, SCombobox, SDatePicker, SEmptyState, SSelect, SStepper, STextArea, STextField; Roboto hard-coded in SProgressRing",
+   "evidence": [
+    "Should these components use the system font token instead?"
+   ],
+   "options": [
+    {
+     "value": "figma",
+     "label": "Figma is right"
+    },
+    {
+     "value": "code",
+     "label": "Code is right"
+    },
+    {
+     "value": "other",
+     "label": "Something else",
+     "note": true
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "conflict",
+    "topic": "Component fonts",
+    "design": "Slalom Sans in every text style",
+    "code": "DM Sans hard-coded in SAutocomplete, SButton, SCombobox, SDatePicker, SEmptyState, SSelect, SStepper, STextArea, STextField; Roboto hard-coded in SProgressRing",
+    "question": "Should these components use the system font token instead?"
+   }
+  },
+  {
+   "id": "conflict-sbutton-label-case-50c3fb",
+   "group": "Conflicts",
+   "title": "SButton label case",
+   "figma": "Title Case by default (button)",
+   "code": "text-transform: uppercase in src/components/SButton.vue",
+   "evidence": [
+    "Which casing is right for labels?"
+   ],
+   "options": [
+    {
+     "value": "figma",
+     "label": "Figma is right"
+    },
+    {
+     "value": "code",
+     "label": "Code is right"
+    },
+    {
+     "value": "other",
+     "label": "Something else",
+     "note": true
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "conflict",
+    "topic": "SButton label case",
+    "design": "Title Case by default (button)",
+    "code": "text-transform: uppercase in src/components/SButton.vue",
+    "question": "Which casing is right for labels?"
+   }
+  },
+  {
+   "id": "conflict-button-variant-06380a",
+   "group": "Conflicts",
+   "title": "button variant",
+   "figma": "icon, icon contained, neutral_outlined",
+   "code": "nothing extra",
+   "evidence": [
+    "Should Figma's variant and code's variant offer the same options?"
+   ],
+   "options": [
+    {
+     "value": "figma",
+     "label": "Figma is right"
+    },
+    {
+     "value": "code",
+     "label": "Code is right"
+    },
+    {
+     "value": "other",
+     "label": "Something else",
+     "note": true
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "conflict",
+    "topic": "button variant",
+    "design": "icon, icon contained, neutral_outlined",
+    "code": "nothing extra",
+    "question": "Should Figma's variant and code's variant offer the same options?"
+   }
+  },
+  {
+   "id": "conflict-semantic-buttons-variant-ee88e2",
+   "group": "Conflicts",
+   "title": "semantic Buttons variant",
+   "figma": "nothing extra",
+   "code": "plain, text",
+   "evidence": [
+    "Should Figma's variant and code's variant offer the same options?"
+   ],
+   "options": [
+    {
+     "value": "figma",
+     "label": "Figma is right"
+    },
+    {
+     "value": "code",
+     "label": "Code is right"
+    },
+    {
+     "value": "other",
+     "label": "Something else",
+     "note": true
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "conflict",
+    "topic": "semantic Buttons variant",
+    "design": "nothing extra",
+    "code": "plain, text",
+    "question": "Should Figma's variant and code's variant offer the same options?"
+   }
+  },
+  {
+   "id": "conflict-text-disabled-slm-disabled-text-b1dffa",
+   "group": "Conflicts",
+   "title": "text-disabled / --slm-disabled-text",
+   "figma": "Color Semantic Variables (updated)/Font Colors/text-disabled, Light: #00000066; Dark: #ffffff80",
+   "code": "--slm-disabled-text, slalomLight: #00000061; slalomDark: #ffffff61",
+   "evidence": [
+    "Which value is right?"
+   ],
+   "options": [
+    {
+     "value": "figma",
+     "label": "Figma is right"
+    },
+    {
+     "value": "code",
+     "label": "Code is right"
+    },
+    {
+     "value": "other",
+     "label": "Something else",
+     "note": true
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "conflict",
+    "topic": "text-disabled / --slm-disabled-text",
+    "design": "Color Semantic Variables (updated)/Font Colors/text-disabled, Light: #00000066; Dark: #ffffff80",
+    "code": "--slm-disabled-text, slalomLight: #00000061; slalomDark: #ffffff61",
+    "question": "Which value is right?"
+   }
+  },
+  {
+   "id": "conflict-text-error-theme-error-2bb341",
+   "group": "Conflicts",
+   "title": "text-error / theme.error",
+   "figma": "Color Semantic Variables (updated)/Font Colors/text-error, Dark: #ffdbdf",
+   "code": "theme.error, slalomDark: #ff6b6b",
+   "evidence": [
+    "Which value is right?"
+   ],
+   "options": [
+    {
+     "value": "figma",
+     "label": "Figma is right"
+    },
+    {
+     "value": "code",
+     "label": "Code is right"
+    },
+    {
+     "value": "other",
+     "label": "Something else",
+     "note": true
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "conflict",
+    "topic": "text-error / theme.error",
+    "design": "Color Semantic Variables (updated)/Font Colors/text-error, Dark: #ffdbdf",
+    "code": "theme.error, slalomDark: #ff6b6b",
+    "question": "Which value is right?"
+   }
+  },
+  {
+   "id": "conflict-success-theme-success-505284",
+   "group": "Conflicts",
+   "title": "success / theme.success",
+   "figma": "Color Semantic Variables (updated)/Primary Colors/success, Light: #5cb85c; Dark: #5cb85c",
+   "code": "theme.success, slalomLight: #2e7d32; slalomDark: #4caf50",
+   "evidence": [
+    "Which value is right?"
+   ],
+   "options": [
+    {
+     "value": "figma",
+     "label": "Figma is right"
+    },
+    {
+     "value": "code",
+     "label": "Code is right"
+    },
+    {
+     "value": "other",
+     "label": "Something else",
+     "note": true
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "conflict",
+    "topic": "success / theme.success",
+    "design": "Color Semantic Variables (updated)/Primary Colors/success, Light: #5cb85c; Dark: #5cb85c",
+    "code": "theme.success, slalomLight: #2e7d32; slalomDark: #4caf50",
+    "question": "Which value is right?"
+   }
+  },
+  {
+   "id": "conflict-error-element-theme-error-a23bc3",
+   "group": "Conflicts",
+   "title": "error-element / theme.error",
+   "figma": "Color Semantic Variables (updated)/Primary Colors/error-element, Dark: #ffdbdf",
+   "code": "theme.error, slalomDark: #ff6b6b",
+   "evidence": [
+    "Which value is right?"
+   ],
+   "options": [
+    {
+     "value": "figma",
+     "label": "Figma is right"
+    },
+    {
+     "value": "code",
+     "label": "Code is right"
+    },
+    {
+     "value": "other",
+     "label": "Something else",
+     "note": true
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "conflict",
+    "topic": "error-element / theme.error",
+    "design": "Color Semantic Variables (updated)/Primary Colors/error-element, Dark: #ffdbdf",
+    "code": "theme.error, slalomDark: #ff6b6b",
+    "question": "Which value is right?"
+   }
+  },
+  {
+   "id": "conflict-neutral-border-color-slm-border-98df06",
+   "group": "Conflicts",
+   "title": "neutral-border-color / --slm-border",
+   "figma": "Color Semantic Variables (updated)/Border Colors/neutral-border-color, Dark: #757575",
+   "code": "--slm-border, slalomDark: #eaeaea",
+   "evidence": [
+    "Which value is right?"
+   ],
+   "options": [
+    {
+     "value": "figma",
+     "label": "Figma is right"
+    },
+    {
+     "value": "code",
+     "label": "Code is right"
+    },
+    {
+     "value": "other",
+     "label": "Something else",
+     "note": true
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "conflict",
+    "topic": "neutral-border-color / --slm-border",
+    "design": "Color Semantic Variables (updated)/Border Colors/neutral-border-color, Dark: #757575",
+    "code": "--slm-border, slalomDark: #eaeaea",
+    "question": "Which value is right?"
+   }
+  },
+  {
+   "id": "conflict-card-bg-secondary-slm-app-card--c73669",
+   "group": "Conflicts",
+   "title": "card-bg-secondary / --slm-app-card-bg",
+   "figma": "Color Semantic Variables (updated)/card color/card-bg-secondary, Dark: #424242",
+   "code": "--slm-app-card-bg, slalomDark: #444444",
+   "evidence": [
+    "Which value is right?"
+   ],
+   "options": [
+    {
+     "value": "figma",
+     "label": "Figma is right"
+    },
+    {
+     "value": "code",
+     "label": "Code is right"
+    },
+    {
+     "value": "other",
+     "label": "Something else",
+     "note": true
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "conflict",
+    "topic": "card-bg-secondary / --slm-app-card-bg",
+    "design": "Color Semantic Variables (updated)/card color/card-bg-secondary, Dark: #424242",
+    "code": "--slm-app-card-bg, slalomDark: #444444",
+    "question": "Which value is right?"
+   }
+  },
+  {
+   "id": "conflict-text-disabled-slm-disabled-text-b1dffa",
+   "group": "Conflicts",
+   "title": "text-disabled / --slm-disabled-text",
+   "figma": "Colors/Font Colors/text-disabled, Dark: #ffffff80; BuildDark: #ffffff80",
+   "code": "--slm-disabled-text, slalomDark: #ffffff61; slalomBuild: #ffffff61",
+   "evidence": [
+    "Which value is right?"
+   ],
+   "options": [
+    {
+     "value": "figma",
+     "label": "Figma is right"
+    },
+    {
+     "value": "code",
+     "label": "Code is right"
+    },
+    {
+     "value": "other",
+     "label": "Something else",
+     "note": true
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "conflict",
+    "topic": "text-disabled / --slm-disabled-text",
+    "design": "Colors/Font Colors/text-disabled, Dark: #ffffff80; BuildDark: #ffffff80",
+    "code": "--slm-disabled-text, slalomDark: #ffffff61; slalomBuild: #ffffff61",
+    "question": "Which value is right?"
+   }
+  },
+  {
+   "id": "conflict-button-shadow-1-slm-shadow-butt-2431d3",
+   "group": "Conflicts",
+   "title": "button_shadow-1 / $slm-shadow-button-1",
+   "figma": "button_shadow-1, default: 0 0 2 0 #73a6ff1a",
+   "code": "$slm-shadow-button-1, default: 0 0 2 0 #0000001f",
+   "evidence": [
+    "Which value is right?"
+   ],
+   "options": [
+    {
+     "value": "figma",
+     "label": "Figma is right"
+    },
+    {
+     "value": "code",
+     "label": "Code is right"
+    },
+    {
+     "value": "other",
+     "label": "Something else",
+     "note": true
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "conflict",
+    "topic": "button_shadow-1 / $slm-shadow-button-1",
+    "design": "button_shadow-1, default: 0 0 2 0 #73a6ff1a",
+    "code": "$slm-shadow-button-1, default: 0 0 2 0 #0000001f",
+    "question": "Which value is right?"
+   }
+  },
+  {
+   "id": "conflict-button-shadow-4-slm-shadow-butt-a8bc2b",
+   "group": "Conflicts",
+   "title": "button_shadow-4 / $slm-shadow-button-4",
+   "figma": "button_shadow-4, default: 0 3 4 0 #0000001a",
+   "code": "$slm-shadow-button-4, default: 0 3 4 0 #0000001f",
+   "evidence": [
+    "Which value is right?"
+   ],
+   "options": [
+    {
+     "value": "figma",
+     "label": "Figma is right"
+    },
+    {
+     "value": "code",
+     "label": "Code is right"
+    },
+    {
+     "value": "other",
+     "label": "Something else",
+     "note": true
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "conflict",
+    "topic": "button_shadow-4 / $slm-shadow-button-4",
+    "design": "button_shadow-4, default: 0 3 4 0 #0000001a",
+    "code": "$slm-shadow-button-4, default: 0 3 4 0 #0000001f",
+    "question": "Which value is right?"
+   }
+  },
+  {
+   "id": "conflict-button-shadow-7-slm-shadow-butt-3a856e",
+   "group": "Conflicts",
+   "title": "button_shadow-7 / $slm-shadow-button-7",
+   "figma": "button_shadow-7, default: 0 4 5 0 #0000001a",
+   "code": "$slm-shadow-button-7, default: 0 4 5 0 #0000001f",
+   "evidence": [
+    "Which value is right?"
+   ],
+   "options": [
+    {
+     "value": "figma",
+     "label": "Figma is right"
+    },
+    {
+     "value": "code",
+     "label": "Code is right"
+    },
+    {
+     "value": "other",
+     "label": "Something else",
+     "note": true
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "conflict",
+    "topic": "button_shadow-7 / $slm-shadow-button-7",
+    "design": "button_shadow-7, default: 0 4 5 0 #0000001a",
+    "code": "$slm-shadow-button-7, default: 0 4 5 0 #0000001f",
+    "question": "Which value is right?"
+   }
+  },
+  {
+   "id": "conflict-heading-5-slm-heading-5-8d1c8a",
+   "group": "Conflicts",
+   "title": "Heading 5 / slm-heading-5",
+   "figma": "Heading 5, letterSpacing: 0.0",
+   "code": "slm-heading-5, letterSpacing: 1.92",
+   "evidence": [
+    "Which value is right?"
+   ],
+   "options": [
+    {
+     "value": "figma",
+     "label": "Figma is right"
+    },
+    {
+     "value": "code",
+     "label": "Code is right"
+    },
+    {
+     "value": "other",
+     "label": "Something else",
+     "note": true
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "conflict",
+    "topic": "Heading 5 / slm-heading-5",
+    "design": "Heading 5, letterSpacing: 0.0",
+    "code": "slm-heading-5, letterSpacing: 1.92",
+    "question": "Which value is right?"
+   }
+  },
+  {
+   "id": "design-only-header-938e23",
+   "group": "Missing in code",
+   "title": "Header",
+   "evidence": [
+    "In Figma, no code component found",
+    "Version: Default, Taxonomy"
+   ],
+   "options": [
+    {
+     "value": "build",
+     "label": "Build it in code"
+    },
+    {
+     "value": "figma-only",
+     "label": "Figma only is fine"
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "design-only-component",
+    "status": "design-only",
+    "design": "Header",
+    "designAxes": {
+     "Version": [
+      "Default",
+      "Taxonomy"
+     ]
+    }
+   }
+  },
+  {
+   "id": "design-only-container-1e838e",
+   "group": "Missing in code",
+   "title": "container",
+   "evidence": [
+    "In Figma, no code component found",
+    "type: general container, table container"
+   ],
+   "options": [
+    {
+     "value": "build",
+     "label": "Build it in code"
+    },
+    {
+     "value": "figma-only",
+     "label": "Figma only is fine"
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "design-only-component",
+    "status": "design-only",
+    "design": "container",
+    "designAxes": {
+     "type": [
+      "general container",
+      "table container"
+     ]
+    }
+   }
+  },
+  {
+   "id": "design-only-card-d862aa",
+   "group": "Missing in code",
+   "title": "card",
+   "evidence": [
+    "In Figma, no code component found",
+    "primary color: true, false",
+    "status: Default, hover, banner",
+    "type: tonal, elevated, small"
+   ],
+   "options": [
+    {
+     "value": "build",
+     "label": "Build it in code"
+    },
+    {
+     "value": "figma-only",
+     "label": "Figma only is fine"
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "design-only-component",
+    "status": "design-only",
+    "design": "card",
+    "designAxes": {
+     "primary color": [
+      "true",
+      "false"
+     ],
+     "status": [
+      "Default",
+      "hover",
+      "banner"
+     ],
+     "type": [
+      "tonal",
+      "elevated",
+      "small"
+     ]
+    }
+   }
+  },
+  {
+   "id": "design-only-card-header-196749",
+   "group": "Missing in code",
+   "title": "card header",
+   "evidence": [
+    "In Figma, no code component found",
+    "Property 1: center-header, left-header"
+   ],
+   "options": [
+    {
+     "value": "build",
+     "label": "Build it in code"
+    },
+    {
+     "value": "figma-only",
+     "label": "Figma only is fine"
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "design-only-component",
+    "status": "design-only",
+    "design": "card header",
+    "designAxes": {
+     "Property 1": [
+      "center-header",
+      "left-header"
+     ]
+    }
+   }
+  },
+  {
+   "id": "design-only-radio-button-21d5a5",
+   "group": "Missing in code",
+   "title": "radio button",
+   "evidence": [
+    "In Figma, no code component found",
+    "status: default, selected",
+    "Size: lg, md, sm"
+   ],
+   "options": [
+    {
+     "value": "build",
+     "label": "Build it in code"
+    },
+    {
+     "value": "figma-only",
+     "label": "Figma only is fine"
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "design-only-component",
+    "status": "design-only",
+    "design": "radio button",
+    "designAxes": {
+     "status": [
+      "default",
+      "selected"
+     ],
+     "Size": [
+      "lg",
+      "md",
+      "sm"
+     ]
+    }
+   }
+  },
+  {
+   "id": "design-only-list-item-3b28c2",
+   "group": "Missing in code",
+   "title": "list item",
+   "evidence": [
+    "In Figma, no code component found",
+    "status: Default, secondary, errored, queued"
+   ],
+   "options": [
+    {
+     "value": "build",
+     "label": "Build it in code"
+    },
+    {
+     "value": "figma-only",
+     "label": "Figma only is fine"
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "design-only-component",
+    "status": "design-only",
+    "design": "list item",
+    "designAxes": {
+     "status": [
+      "Default",
+      "secondary",
+      "errored",
+      "queued"
+     ]
+    }
+   }
+  },
+  {
+   "id": "design-only-list-section-6bde3a",
+   "group": "Missing in code",
+   "title": "list-section",
+   "evidence": [
+    "In Figma, no code component found",
+    "type: menu lists, modal lists"
+   ],
+   "options": [
+    {
+     "value": "build",
+     "label": "Build it in code"
+    },
+    {
+     "value": "figma-only",
+     "label": "Figma only is fine"
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "design-only-component",
+    "status": "design-only",
+    "design": "list-section",
+    "designAxes": {
+     "type": [
+      "menu lists",
+      "modal lists"
+     ]
+    }
+   }
+  },
+  {
+   "id": "design-only-v-avatar-7c2add",
+   "group": "Missing in code",
+   "title": "v-avatar",
+   "evidence": [
+    "In Figma, no code component found",
+    "size: lg, m, s, xl, xs",
+    "image version: false, true"
+   ],
+   "options": [
+    {
+     "value": "build",
+     "label": "Build it in code"
+    },
+    {
+     "value": "figma-only",
+     "label": "Figma only is fine"
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "design-only-component",
+    "status": "design-only",
+    "design": "v-avatar",
+    "designAxes": {
+     "size": [
+      "lg",
+      "m",
+      "s",
+      "xl",
+      "xs"
+     ],
+     "image version": [
+      "false",
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "id": "design-only-modal-11644e",
+   "group": "Missing in code",
+   "title": "modal",
+   "evidence": [
+    "In Figma, no code component found",
+    "type: alert, data, announcement",
+    "rounded corner: false, true"
+   ],
+   "options": [
+    {
+     "value": "build",
+     "label": "Build it in code"
+    },
+    {
+     "value": "figma-only",
+     "label": "Figma only is fine"
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "design-only-component",
+    "status": "design-only",
+    "design": "modal",
+    "designAxes": {
+     "type": [
+      "alert",
+      "data",
+      "announcement"
+     ],
+     "rounded corner": [
+      "false",
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "id": "design-only-divider-ec8b27",
+   "group": "Missing in code",
+   "title": "divider",
+   "evidence": [
+    "In Figma, no code component found",
+    "Property 1: Alpha, Gamma, beta, new"
+   ],
+   "options": [
+    {
+     "value": "build",
+     "label": "Build it in code"
+    },
+    {
+     "value": "figma-only",
+     "label": "Figma only is fine"
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "design-only-component",
+    "status": "design-only",
+    "design": "divider",
+    "designAxes": {
+     "Property 1": [
+      "Alpha",
+      "Gamma",
+      "beta",
+      "new"
+     ]
+    }
+   }
+  },
+  {
+   "id": "design-only-content-slot-a1e989",
+   "group": "Missing in code",
+   "title": "content-slot",
+   "evidence": [
+    "In Figma, no code component found",
+    "type: content-centered, content-left"
+   ],
+   "options": [
+    {
+     "value": "build",
+     "label": "Build it in code"
+    },
+    {
+     "value": "figma-only",
+     "label": "Figma only is fine"
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "design-only-component",
+    "status": "design-only",
+    "design": "content-slot",
+    "designAxes": {
+     "type": [
+      "content-centered",
+      "content-left"
+     ]
+    }
+   }
+  },
+  {
+   "id": "design-only-step-counter-9357b6",
+   "group": "Missing in code",
+   "title": "step counter",
+   "evidence": [
+    "In Figma, no code component found",
+    "status: completed, current, next"
+   ],
+   "options": [
+    {
+     "value": "build",
+     "label": "Build it in code"
+    },
+    {
+     "value": "figma-only",
+     "label": "Figma only is fine"
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "design-only-component",
+    "status": "design-only",
+    "design": "step counter",
+    "designAxes": {
+     "status": [
+      "completed",
+      "current",
+      "next"
+     ]
+    }
+   }
+  },
+  {
+   "id": "design-only-loading-1-26692c",
+   "group": "Missing in code",
+   "title": "loading_1",
+   "evidence": [
+    "In Figma, no code component found",
+    "Property 1: start, step1, step2, step3"
+   ],
+   "options": [
+    {
+     "value": "build",
+     "label": "Build it in code"
+    },
+    {
+     "value": "figma-only",
+     "label": "Figma only is fine"
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "design-only-component",
+    "status": "design-only",
+    "design": "loading_1",
+    "designAxes": {
+     "Property 1": [
+      "start",
+      "step1",
+      "step2",
+      "step3"
+     ]
+    }
+   }
+  },
+  {
+   "id": "code-only-sexpansionpanels-e193f9",
+   "group": "Missing in Figma",
+   "title": "SExpansionPanels",
+   "evidence": [
+    "In code (src/components/SExpansionPanels.vue), no Figma component found",
+    "props: multiple"
+   ],
+   "options": [
+    {
+     "value": "build",
+     "label": "Add it to Figma"
+    },
+    {
+     "value": "code-only",
+     "label": "Code only is fine"
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "code-only-component",
+    "status": "code-only",
+    "code": "SExpansionPanels",
+    "codeFile": "src/components/SExpansionPanels.vue",
+    "props": [
+     "multiple"
+    ]
+   }
+  },
+  {
+   "id": "code-only-sicon-568562",
+   "group": "Missing in Figma",
+   "title": "SIcon",
+   "evidence": [
+    "In code (src/components/SIcon.vue), no Figma component found",
+    "props: name, size, ariaLabel"
+   ],
+   "options": [
+    {
+     "value": "build",
+     "label": "Add it to Figma"
+    },
+    {
+     "value": "code-only",
+     "label": "Code only is fine"
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "code-only-component",
+    "status": "code-only",
+    "code": "SIcon",
+    "codeFile": "src/components/SIcon.vue",
+    "props": [
+     "name",
+     "size",
+     "ariaLabel"
+    ]
+   }
+  },
+  {
+   "id": "code-only-sskeletonloader-eb3cb8",
+   "group": "Missing in Figma",
+   "title": "SSkeletonLoader",
+   "evidence": [
+    "In code (src/components/SSkeletonLoader.vue), no Figma component found",
+    "props: type, ariaLabel"
+   ],
+   "options": [
+    {
+     "value": "build",
+     "label": "Add it to Figma"
+    },
+    {
+     "value": "code-only",
+     "label": "Code only is fine"
+    }
+   ],
+   "suggestion": null,
+   "payload": {
+    "type": "code-only-component",
+    "status": "code-only",
+    "code": "SSkeletonLoader",
+    "codeFile": "src/components/SSkeletonLoader.vue",
+    "props": [
+     "type",
+     "ariaLabel"
+    ]
+   }
+  },
+  {
+   "id": "agreed-87-14-15-4ff2f0",
+   "group": "Agreed",
+   "title": "87 tokens, 14 type styles and 15 components in both Figma and code",
+   "evidence": [
+    "68 tokens with matching names",
+    "19 tokens matched by value alone: check these in COVERAGE.md",
+    "Type styles: Subtitle-2, Body-2, Body-1, Caption, button-lg-upcase, button-lg-ttlcase, button-md-upcase, button-md-ttlcase, button-sm-upcase, button-sm-ttlcase, Heading 6, Heading 3, Heading 4, Subtitle-1",
+    "Components: button = SButton, semantic Buttons = SButton, input/textField = STextField, text area = STextArea, single-select = SSelect, autocomplete = SAutocomplete, date picker = SDatePicker, Switch Toggle = SSwitch, Status Alert Bar = SAlert, Toast Notifications = SToast, step = SStepper, Accordion Row = SExpansionPanel, empty State = SEmptyState, loading = SProgressRing, combobox = SCombobox. Their differences are listed as conflicts."
+   ],
+   "options": [
+    {
+     "value": "approve",
+     "label": "Approve all"
+    },
+    {
+     "value": "reject",
+     "label": "Hold for line-by-line review"
+    }
+   ],
+   "suggestion": "approve",
+   "payload": {
+    "type": "agreed",
+    "rows": [
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Brand colors/color display text light",
+      "code": "--slm-on-error",
+      "values": {
+       "Light mode": "#ffffff",
+       "Dark mode": "#ffffff",
+       "Build Mode": "#ffffff",
+       "Mobile": "#ffffff"
+      },
+      "nameMatch": false,
+      "alsoMatches": [
+       "--slm-on-success",
+       "--slm-on-warning"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/Font Colors/text-regular",
+      "code": "theme.on-surface",
+      "values": {
+       "Light": "#000000",
+       "Dark": "#ffffff"
+      },
+      "nameMatch": false,
+      "alsoMatches": [
+       "theme.on-background",
+       "--slm-on-surface-variant",
+       "--slm-dp-icon-stroke",
+       "--slm-dp-arrow"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/Font Colors/text-regular inverse",
+      "code": "--slm-dp-selected-text",
+      "values": {
+       "Light": "#ffffff",
+       "Dark": "#000000"
+      },
+      "nameMatch": true,
+      "alsoMatches": [
+       "theme.on-primary",
+       "--slm-on-primary"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/Font Colors/text-high-contrast-bg-2",
+      "code": "--slm-on-error",
+      "values": {
+       "Light": "#ffffff",
+       "Dark": "#ffffff"
+      },
+      "nameMatch": false,
+      "alsoMatches": [
+       "--slm-on-success",
+       "--slm-on-warning"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/Primary Colors/background-field",
+      "code": "theme.surface",
+      "values": {
+       "Light": "#ffffff",
+       "Dark": "#444444"
+      },
+      "nameMatch": false,
+      "alsoMatches": [
+       "--slm-surface",
+       "--slm-app-card-bg"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/Primary Colors/background-page",
+      "code": "--slm-hover-bg-plain",
+      "values": {
+       "Light": "#fafafa",
+       "Dark": "#212121"
+      },
+      "nameMatch": false,
+      "alsoMatches": [
+       "--slm-dp-month-bg"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/Primary Colors/background-surface",
+      "code": "theme.surface",
+      "values": {
+       "Light": "#ffffff",
+       "Dark": "#444444"
+      },
+      "nameMatch": true,
+      "alsoMatches": [
+       "--slm-surface",
+       "--slm-app-card-bg"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/Primary Colors/primary",
+      "code": "theme.primary",
+      "values": {
+       "Light": "#0c62fb",
+       "Dark": "#86b1fd"
+      },
+      "nameMatch": true,
+      "alsoMatches": [
+       "theme.info",
+       "--slm-primary",
+       "--slm-accordion-expanded-header"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/Primary Colors/hover",
+      "code": "--slm-dp-hover",
+      "values": {
+       "Light": "#f0f3f8",
+       "Dark": "#757575"
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/Border Colors/field-border-hover",
+      "code": "theme.on-surface",
+      "values": {
+       "Light": "#000000",
+       "Dark": "#ffffff"
+      },
+      "nameMatch": false,
+      "alsoMatches": [
+       "theme.on-background",
+       "--slm-on-surface-variant",
+       "--slm-dp-icon-stroke",
+       "--slm-dp-arrow"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/Border Colors/field-border-pressed",
+      "code": "theme.primary",
+      "values": {
+       "Light": "#0c62fb",
+       "Dark": "#86b1fd"
+      },
+      "nameMatch": false,
+      "alsoMatches": [
+       "theme.info",
+       "--slm-primary",
+       "--slm-accordion-expanded-header"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/semantic button color/outline/positive-outlined-bg-default",
+      "code": "--slm-app-card-bg",
+      "values": {
+       "Light": "#ffffff",
+       "Dark": "#444444"
+      },
+      "nameMatch": true,
+      "alsoMatches": [
+       "theme.surface",
+       "--slm-surface"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/semantic button color/outline/positive-outlined-bg-hover",
+      "code": "--slm-dp-hover",
+      "values": {
+       "Light": "#f0f3f8",
+       "Dark": "#757575"
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/semantic button color/outline/positive-outlined-bg-pressed",
+      "code": "--slm-app-card-bg",
+      "values": {
+       "Light": "#ffffff",
+       "Dark": "#444444"
+      },
+      "nameMatch": true,
+      "alsoMatches": [
+       "theme.surface",
+       "--slm-surface"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/semantic button color/outline/positive-outlined-bg-disable",
+      "code": "--slm-app-card-bg",
+      "values": {
+       "Light": "#ffffff",
+       "Dark": "#444444"
+      },
+      "nameMatch": true,
+      "alsoMatches": [
+       "theme.surface",
+       "--slm-surface"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/semantic button color/outline/negative-outlined-bg-default",
+      "code": "--slm-app-card-bg",
+      "values": {
+       "Light": "#ffffff",
+       "Dark": "#444444"
+      },
+      "nameMatch": true,
+      "alsoMatches": [
+       "theme.surface",
+       "--slm-surface"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/semantic button color/outline/negative-outlined-bg-hover",
+      "code": "--slm-dp-hover",
+      "values": {
+       "Light": "#f0f3f8",
+       "Dark": "#757575"
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/semantic button color/outline/negative-outlined-bg-pressed",
+      "code": "--slm-app-card-bg",
+      "values": {
+       "Light": "#ffffff",
+       "Dark": "#444444"
+      },
+      "nameMatch": true,
+      "alsoMatches": [
+       "theme.surface",
+       "--slm-surface"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/semantic button color/outline/negative-outlined-bg-disable",
+      "code": "--slm-app-card-bg",
+      "values": {
+       "Light": "#ffffff",
+       "Dark": "#444444"
+      },
+      "nameMatch": true,
+      "alsoMatches": [
+       "theme.surface",
+       "--slm-surface"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/semantic button color/contained/negative-contained-txt",
+      "code": "theme.surface",
+      "values": {
+       "Light": "#ffffff",
+       "Dark": "#444444"
+      },
+      "nameMatch": false,
+      "alsoMatches": [
+       "--slm-surface",
+       "--slm-app-card-bg"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/button Colors/contained/contained-btn-default-bg",
+      "code": "theme.primary",
+      "values": {
+       "Light": "#0c62fb",
+       "Dark": "#86b1fd"
+      },
+      "nameMatch": false,
+      "alsoMatches": [
+       "theme.info",
+       "--slm-primary",
+       "--slm-accordion-expanded-header"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/button Colors/contained/contained-btn-hover-bg",
+      "code": "theme.primary",
+      "values": {
+       "Light": "#0c62fb",
+       "Dark": "#86b1fd"
+      },
+      "nameMatch": false,
+      "alsoMatches": [
+       "theme.info",
+       "--slm-primary",
+       "--slm-accordion-expanded-header"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/button Colors/contained/contained-btn-hover-overlay",
+      "code": "--slm-success-hover-overlay",
+      "values": {
+       "Light": "#ffffff33",
+       "Dark": "#ffffff33"
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/button Colors/contained/contained-btn-pressed-bg",
+      "code": "theme.primary",
+      "values": {
+       "Light": "#0c62fb",
+       "Dark": "#86b1fd"
+      },
+      "nameMatch": false,
+      "alsoMatches": [
+       "theme.info",
+       "--slm-primary",
+       "--slm-accordion-expanded-header"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/button Colors/contained/contained-btn-txt",
+      "code": "theme.on-primary",
+      "values": {
+       "Light": "#ffffff",
+       "Dark": "#000000"
+      },
+      "nameMatch": false,
+      "alsoMatches": [
+       "--slm-on-primary",
+       "--slm-dp-selected-text"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/button Colors/contained/contained-btn-txt disable",
+      "code": "theme.on-primary",
+      "values": {
+       "Light": "#ffffff",
+       "Dark": "#000000"
+      },
+      "nameMatch": false,
+      "alsoMatches": [
+       "--slm-on-primary",
+       "--slm-dp-selected-text"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/button Colors/outlined/outlined-btn-default-bg",
+      "code": "--slm-app-card-bg",
+      "values": {
+       "Light": "#ffffff",
+       "Dark": "#444444"
+      },
+      "nameMatch": true,
+      "alsoMatches": [
+       "theme.surface",
+       "--slm-surface"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/button Colors/neutral-outlined/outlined-neutral-btn-default-bg",
+      "code": "--slm-app-card-bg",
+      "values": {
+       "Light": "#ffffff",
+       "Dark": "#444444"
+      },
+      "nameMatch": true,
+      "alsoMatches": [
+       "theme.surface",
+       "--slm-surface"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/button Colors/outlined/outlined-btn-hover-bg",
+      "code": "--slm-dp-hover",
+      "values": {
+       "Light": "#f0f3f8",
+       "Dark": "#757575"
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/button Colors/outlined/outlined-btn-pressed-bg",
+      "code": "--slm-app-card-bg",
+      "values": {
+       "Light": "#ffffff",
+       "Dark": "#444444"
+      },
+      "nameMatch": true,
+      "alsoMatches": [
+       "theme.surface",
+       "--slm-surface"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/button Colors/outlined/outlined-btn-disable-bg",
+      "code": "--slm-app-card-bg",
+      "values": {
+       "Light": "#ffffff",
+       "Dark": "#444444"
+      },
+      "nameMatch": true,
+      "alsoMatches": [
+       "theme.surface",
+       "--slm-surface"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/button Colors/outlined/outlined-btn-disable-stroke",
+      "code": "--slm-border",
+      "values": {
+       "Light": "#dbdbdb",
+       "Dark": "#eaeaea"
+      },
+      "nameMatch": false,
+      "alsoMatches": [
+       "--slm-border-disabled"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/button Colors/outlined/outlined-btn-txt",
+      "code": "theme.primary",
+      "values": {
+       "Light": "#0c62fb",
+       "Dark": "#86b1fd"
+      },
+      "nameMatch": false,
+      "alsoMatches": [
+       "theme.info",
+       "--slm-primary",
+       "--slm-accordion-expanded-header"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/button Colors/text/text-btn-bg-default",
+      "code": "--slm-app-card-bg",
+      "values": {
+       "Light": "#ffffff",
+       "Dark": "#444444"
+      },
+      "nameMatch": true,
+      "alsoMatches": [
+       "theme.surface",
+       "--slm-surface"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/button Colors/text/text-btn-bg-hover",
+      "code": "--slm-dp-hover",
+      "values": {
+       "Light": "#f0f3f8",
+       "Dark": "#757575"
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/button Colors/text/text-btn-bg-pressed",
+      "code": "--slm-dp-hover",
+      "values": {
+       "Light": "#f0f3f8",
+       "Dark": "#757575"
+      },
+      "nameMatch": false,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/button Colors/text/text-btn-txt",
+      "code": "theme.primary",
+      "values": {
+       "Light": "#0c62fb",
+       "Dark": "#86b1fd"
+      },
+      "nameMatch": false,
+      "alsoMatches": [
+       "theme.info",
+       "--slm-primary",
+       "--slm-accordion-expanded-header"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/button Colors/text/text-btn-txt-disable",
+      "code": "--slm-text-hint",
+      "values": {
+       "Light": "#00000080",
+       "Dark": "#ffffff80"
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/button Colors/text/text-btn-bg-disable",
+      "code": "--slm-app-card-bg",
+      "values": {
+       "Light": "#ffffff",
+       "Dark": "#444444"
+      },
+      "nameMatch": true,
+      "alsoMatches": [
+       "theme.surface",
+       "--slm-surface"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/button Colors/plain/plain-txt-bg-default",
+      "code": "--slm-app-card-bg",
+      "values": {
+       "Light": "#ffffff",
+       "Dark": "#444444"
+      },
+      "nameMatch": true,
+      "alsoMatches": [
+       "theme.surface",
+       "--slm-surface"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/button Colors/plain/plain-txt-bg-hover",
+      "code": "--slm-hover-bg-plain",
+      "values": {
+       "Light": "#fafafa",
+       "Dark": "#212121"
+      },
+      "nameMatch": true,
+      "alsoMatches": [
+       "--slm-dp-month-bg"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/button Colors/plain/plain-txt-bg-pressed",
+      "code": "--slm-hover-bg-plain",
+      "values": {
+       "Light": "#fafafa",
+       "Dark": "#212121"
+      },
+      "nameMatch": true,
+      "alsoMatches": [
+       "--slm-dp-month-bg"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/button Colors/plain/plain-txt-bg-disable",
+      "code": "--slm-app-card-bg",
+      "values": {
+       "Light": "#ffffff",
+       "Dark": "#444444"
+      },
+      "nameMatch": true,
+      "alsoMatches": [
+       "theme.surface",
+       "--slm-surface"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/shadow colors/shadow-4",
+      "code": "--slm-switch-thumb-shadow",
+      "values": {
+       "Light": "#00000033",
+       "Dark": "#00000033"
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Color Semantic Variables (updated)/card color/card-bg-primary",
+      "code": "--slm-hover-bg-plain",
+      "values": {
+       "Light": "#fafafa",
+       "Dark": "#212121"
+      },
+      "nameMatch": true,
+      "alsoMatches": [
+       "--slm-dp-month-bg"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "color",
+      "design": "Colors/Border Colors/neutral-border-color",
+      "code": "--slm-border",
+      "values": {
+       "Light": "#dbdbdb",
+       "Dark": "#eaeaea",
+       "BuildDark": "#eaeaea"
+      },
+      "nameMatch": true,
+      "alsoMatches": [
+       "--slm-border-disabled"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "radius",
+      "design": "Corner radius/Medium",
+      "code": "$slm-radius",
+      "values": {
+       "default": 4
+      },
+      "nameMatch": false,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "fontWeight",
+      "design": "Font Variables/font weight/weight-400",
+      "code": "$slm-caption-weight",
+      "values": {
+       "default": 400
+      },
+      "nameMatch": true,
+      "alsoMatches": [
+       "$slm-heading-3-weight",
+       "$slm-heading-4-weight",
+       "$slm-body-1-weight",
+       "$slm-body-2-weight"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "fontWeight",
+      "design": "Font Variables/font weight/weight-700",
+      "code": "$slm-heading-5-weight",
+      "values": {
+       "default": 700
+      },
+      "nameMatch": true,
+      "alsoMatches": [
+       "$slm-heading-6-weight",
+       "$slm-btn-lg-weight",
+       "$slm-btn-md-weight",
+       "$slm-btn-sm-weight"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "radius",
+      "design": "Radius/radius-m",
+      "code": "$slm-radius",
+      "values": {
+       "default": 4
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "radius",
+      "design": "Radius/radius-m",
+      "code": "$slm-radius",
+      "values": {
+       "Business @ Slalom": 4,
+       "Me @ Slalom": 4
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "spacing",
+      "design": "Radius/radius-l",
+      "code": "$slm-space-2",
+      "values": {
+       "Business @ Slalom": 8,
+       "Me @ Slalom": 8
+      },
+      "nameMatch": false,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "fontWeight",
+      "design": "Text/weight-400",
+      "code": "$slm-caption-weight",
+      "values": {
+       "default": 400
+      },
+      "nameMatch": true,
+      "alsoMatches": [
+       "$slm-heading-3-weight",
+       "$slm-heading-4-weight",
+       "$slm-body-1-weight",
+       "$slm-body-2-weight"
+      ]
+     },
+     {
+      "status": "complete",
+      "kind": "stroke",
+      "design": "border variables/border-sm",
+      "code": "$slm-border-sm",
+      "values": {
+       "default": 1
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "stroke",
+      "design": "border variables/border-md",
+      "code": "$slm-border-md",
+      "values": {
+       "default": 2
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "spacing",
+      "design": "space variables/padding/uniform/pa-0",
+      "code": "$slm-space-0",
+      "values": {
+       "default": 0
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "spacing",
+      "design": "space variables/padding/uniform/pa-1",
+      "code": "$slm-space-1",
+      "values": {
+       "default": 4
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "spacing",
+      "design": "space variables/padding/uniform/pa-2",
+      "code": "$slm-space-2",
+      "values": {
+       "default": 8
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "spacing",
+      "design": "space variables/padding/uniform/pa-3",
+      "code": "$slm-space-3",
+      "values": {
+       "default": 12
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "spacing",
+      "design": "space variables/padding/uniform/pa-4",
+      "code": "$slm-space-4",
+      "values": {
+       "default": 16
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "spacing",
+      "design": "space variables/padding/uniform/pa-6",
+      "code": "$slm-space-6",
+      "values": {
+       "default": 24
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "spacing",
+      "design": "space variables/padding/uniform/pa-8",
+      "code": "$slm-space-8",
+      "values": {
+       "default": 32
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "spacing",
+      "design": "space variables/padding/horizontal/px-0",
+      "code": "$slm-space-0",
+      "values": {
+       "default": 0
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "spacing",
+      "design": "space variables/padding/horizontal/px-1",
+      "code": "$slm-space-1",
+      "values": {
+       "default": 4
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "spacing",
+      "design": "space variables/padding/horizontal/px-2",
+      "code": "$slm-space-2",
+      "values": {
+       "default": 8
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "spacing",
+      "design": "space variables/padding/horizontal/px-3",
+      "code": "$slm-space-3",
+      "values": {
+       "default": 12
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "spacing",
+      "design": "space variables/padding/top/pt-0",
+      "code": "$slm-space-0",
+      "values": {
+       "default": 0
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "spacing",
+      "design": "space variables/padding/horizontal/px-4",
+      "code": "$slm-space-4",
+      "values": {
+       "default": 16
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "spacing",
+      "design": "space variables/padding/top/pt-1",
+      "code": "$slm-space-1",
+      "values": {
+       "default": 4
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "spacing",
+      "design": "space variables/padding/top/pt-4",
+      "code": "$slm-space-4",
+      "values": {
+       "default": 16
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "spacing",
+      "design": "space variables/padding/top/pt-6",
+      "code": "$slm-space-6",
+      "values": {
+       "default": 24
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "spacing",
+      "design": "space variables/padding/horizontal/px-6",
+      "code": "$slm-space-6",
+      "values": {
+       "default": 24
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "spacing",
+      "design": "space variables/padding/horizontal/px-8",
+      "code": "$slm-space-8",
+      "values": {
+       "default": 32
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "spacing",
+      "design": "space variables/gap/ga-0",
+      "code": "$slm-space-0",
+      "values": {
+       "default": 0
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "spacing",
+      "design": "space variables/gap/ga-1",
+      "code": "$slm-space-1",
+      "values": {
+       "default": 4
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "spacing",
+      "design": "space variables/gap/ga-2",
+      "code": "$slm-space-2",
+      "values": {
+       "default": 8
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "spacing",
+      "design": "space variables/gap/ga-3",
+      "code": "$slm-space-3",
+      "values": {
+       "default": 12
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "spacing",
+      "design": "space variables/gap/ga-4",
+      "code": "$slm-space-4",
+      "values": {
+       "default": 16
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "spacing",
+      "design": "space variables/gap/ga-6",
+      "code": "$slm-space-6",
+      "values": {
+       "default": 24
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "spacing",
+      "design": "space variables/padding/bottom/pb-0",
+      "code": "$slm-space-0",
+      "values": {
+       "default": 0
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "spacing",
+      "design": "space variables/padding/bottom/pb-1",
+      "code": "$slm-space-1",
+      "values": {
+       "default": 4
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "spacing",
+      "design": "space variables/padding/bottom/pb-6",
+      "code": "$slm-space-6",
+      "values": {
+       "default": 24
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "spacing",
+      "design": "space variables/padding/bottom/pb-8",
+      "code": "$slm-space-8",
+      "values": {
+       "default": 32
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "effect",
+      "design": "surface-shadow",
+      "code": "$slm-shadow-surface",
+      "values": {
+       "default": "0 1 4 0 #00000040"
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "effect",
+      "design": "button_shadow-3",
+      "code": "$slm-shadow-button-3",
+      "values": {
+       "default": "0 1 5 0 #00000033"
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "effect",
+      "design": "button_shadow-5",
+      "code": "$slm-shadow-button-5",
+      "values": {
+       "default": "0 2 4 0 #00000024"
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     },
+     {
+      "status": "complete",
+      "kind": "effect",
+      "design": "button_shadow-6",
+      "code": "$slm-shadow-button-6",
+      "values": {
+       "default": "0 1 10 0 #00000033"
+      },
+      "nameMatch": true,
+      "alsoMatches": []
+     }
+    ],
+    "types": [
+     {
+      "status": "complete",
+      "kind": "type",
+      "design": "Subtitle-2",
+      "code": "slm-subtitle-2",
+      "differences": [],
+      "codeCase": null,
+      "values": {
+       "name": "Subtitle-2",
+       "fontFamily": "Slalom Sans",
+       "fontWeight": 400,
+       "fontSize": 14.0,
+       "lineHeight": 22.4,
+       "letterSpacing": 0.1
+      }
+     },
+     {
+      "status": "complete",
+      "kind": "type",
+      "design": "Body-2",
+      "code": "slm-body-2",
+      "differences": [],
+      "codeCase": null,
+      "values": {
+       "name": "Body-2",
+       "fontFamily": "Slalom Sans",
+       "fontWeight": 400,
+       "fontSize": 14.0,
+       "lineHeight": 20.0,
+       "letterSpacing": 0.5
+      }
+     },
+     {
+      "status": "complete",
+      "kind": "type",
+      "design": "Body-1",
+      "code": "slm-body-1",
+      "differences": [],
+      "codeCase": null,
+      "values": {
+       "name": "Body-1",
+       "fontFamily": "Slalom Sans",
+       "fontWeight": 400,
+       "fontSize": 16.0,
+       "lineHeight": 24.0,
+       "letterSpacing": 0.5
+      }
+     },
+     {
+      "status": "complete",
+      "kind": "type",
+      "design": "Caption",
+      "code": "slm-caption",
+      "differences": [],
+      "codeCase": null,
+      "values": {
+       "name": "Caption",
+       "fontFamily": "Slalom Sans",
+       "fontWeight": 400,
+       "fontSize": 12.0,
+       "lineHeight": 20.0,
+       "letterSpacing": 0.4
+      }
+     },
+     {
+      "status": "complete",
+      "kind": "type",
+      "design": "button-lg-upcase",
+      "code": "slm-btn-lg",
+      "differences": [],
+      "codeCase": null,
+      "values": {
+       "name": "button-lg-upcase",
+       "fontFamily": "Slalom Sans",
+       "fontWeight": 700,
+       "fontSize": 16.0,
+       "lineHeight": 28.0,
+       "letterSpacing": 1.25
+      }
+     },
+     {
+      "status": "complete",
+      "kind": "type",
+      "design": "button-lg-ttlcase",
+      "code": "slm-btn-lg",
+      "differences": [],
+      "codeCase": null,
+      "values": {
+       "name": "button-lg-ttlcase",
+       "fontFamily": "Slalom Sans",
+       "fontWeight": 700,
+       "fontSize": 16.0,
+       "lineHeight": 28.0,
+       "letterSpacing": 1.25
+      }
+     },
+     {
+      "status": "complete",
+      "kind": "type",
+      "design": "button-md-upcase",
+      "code": "slm-btn-md",
+      "differences": [],
+      "codeCase": null,
+      "values": {
+       "name": "button-md-upcase",
+       "fontFamily": "Slalom Sans",
+       "fontWeight": 700,
+       "fontSize": 14.0,
+       "lineHeight": 22.4,
+       "letterSpacing": 1.25
+      }
+     },
+     {
+      "status": "complete",
+      "kind": "type",
+      "design": "button-md-ttlcase",
+      "code": "slm-btn-md",
+      "differences": [],
+      "codeCase": null,
+      "values": {
+       "name": "button-md-ttlcase",
+       "fontFamily": "Slalom Sans",
+       "fontWeight": 700,
+       "fontSize": 14.0,
+       "lineHeight": 22.4,
+       "letterSpacing": 1.25
+      }
+     },
+     {
+      "status": "complete",
+      "kind": "type",
+      "design": "button-sm-upcase",
+      "code": "slm-btn-sm",
+      "differences": [],
+      "codeCase": null,
+      "values": {
+       "name": "button-sm-upcase",
+       "fontFamily": "Slalom Sans",
+       "fontWeight": 700,
+       "fontSize": 12.0,
+       "lineHeight": 20.0,
+       "letterSpacing": 1.25
+      }
+     },
+     {
+      "status": "complete",
+      "kind": "type",
+      "design": "button-sm-ttlcase",
+      "code": "slm-btn-sm",
+      "differences": [],
+      "codeCase": null,
+      "values": {
+       "name": "button-sm-ttlcase",
+       "fontFamily": "Slalom Sans",
+       "fontWeight": 700,
+       "fontSize": 12.0,
+       "lineHeight": 20.0,
+       "letterSpacing": 1.25
+      }
+     },
+     {
+      "status": "complete",
+      "kind": "type",
+      "design": "Heading 6",
+      "code": "slm-heading-6",
+      "differences": [],
+      "codeCase": null,
+      "values": {
+       "name": "Heading 6",
+       "fontFamily": "Slalom Sans",
+       "fontWeight": 700,
+       "fontSize": 20.0,
+       "lineHeight": 32.0,
+       "letterSpacing": 0.03
+      }
+     },
+     {
+      "status": "complete",
+      "kind": "type",
+      "design": "Heading 3",
+      "code": "slm-heading-3",
+      "differences": [],
+      "codeCase": null,
+      "values": {
+       "name": "Heading 3",
+       "fontFamily": "Slalom Sans",
+       "fontWeight": 400,
+       "fontSize": 48.0,
+       "lineHeight": 50.4,
+       "letterSpacing": 0.0
+      }
+     },
+     {
+      "status": "complete",
+      "kind": "type",
+      "design": "Heading 4",
+      "code": "slm-heading-4",
+      "differences": [],
+      "codeCase": null,
+      "values": {
+       "name": "Heading 4",
+       "fontFamily": "Slalom Sans",
+       "fontWeight": 400,
+       "fontSize": 34.0,
+       "lineHeight": 40.0,
+       "letterSpacing": 0.041
+      }
+     },
+     {
+      "status": "complete",
+      "kind": "type",
+      "design": "Subtitle-1",
+      "code": "slm-subtitle-1",
+      "differences": [],
+      "codeCase": "uppercase",
+      "values": {
+       "name": "Subtitle-1",
+       "fontFamily": "Slalom Sans",
+       "fontWeight": 400,
+       "fontSize": 16.0,
+       "lineHeight": 28.0,
+       "letterSpacing": 0.5
+      }
+     }
+    ],
+    "components": [
+     {
+      "status": "drift",
+      "design": "button",
+      "code": "SButton",
+      "codeFile": "src/components/SButton.vue",
+      "axes": [
+       {
+        "axis": "size",
+        "codeProp": "size",
+        "both": [
+         "lg",
+         "md",
+         "sm"
+        ],
+        "designOnly": [],
+        "codeOnly": []
+       },
+       {
+        "axis": "variant",
+        "codeProp": "variant",
+        "both": [
+         "Plain",
+         "contained_button",
+         "outlined",
+         "text"
+        ],
+        "designOnly": [
+         "icon",
+         "icon contained",
+         "neutral_outlined"
+        ],
+        "codeOnly": []
+       },
+       {
+        "axis": "status",
+        "codeProp": "forceState",
+        "designOnly": [
+         "enabled",
+         "disabled",
+         "hover",
+         "pressed",
+         "sync"
+        ],
+        "note": "interaction states: code styles these in CSS"
+       }
+      ],
+      "designCase": "title case",
+      "codeTextTransform": [
+       "uppercase"
+      ],
+      "codeFontFamilies": [
+       "DM Sans"
+      ]
+     },
+     {
+      "status": "drift",
+      "design": "semantic Buttons",
+      "code": "SButton",
+      "codeFile": "src/components/SButton.vue",
+      "axes": [
+       {
+        "axis": "semantic",
+        "codeProp": "semantic",
+        "both": [
+         "negative",
+         "positive"
+        ],
+        "designOnly": [],
+        "codeOnly": []
+       },
+       {
+        "axis": "status",
+        "codeProp": "forceState",
+        "designOnly": [
+         "default",
+         "disable",
+         "hover",
+         "pressed"
+        ],
+        "note": "interaction states: code styles these in CSS"
+       },
+       {
+        "axis": "variant",
+        "codeProp": "variant",
+        "both": [
+         "contained_button",
+         "outlined"
+        ],
+        "designOnly": [],
+        "codeOnly": [
+         "plain",
+         "text"
+        ]
+       },
+       {
+        "axis": "Size",
+        "codeProp": "size",
+        "both": [
+         "lg",
+         "md",
+         "sm"
+        ],
+        "designOnly": [],
+        "codeOnly": []
+       }
+      ],
+      "designCase": "title case",
+      "codeTextTransform": [
+       "uppercase"
+      ],
+      "codeFontFamilies": [
+       "DM Sans"
+      ]
+     },
+     {
+      "status": "complete",
+      "design": "input/textField",
+      "code": "STextField",
+      "codeFile": "src/components/STextField.vue",
+      "axes": [
+       {
+        "axis": "state",
+        "codeProp": "forceState",
+        "designOnly": [
+         "enabled",
+         "focused",
+         "error",
+         "disabled",
+         "hover",
+         "input"
+        ],
+        "note": "interaction states: code styles these in CSS"
+       },
+       {
+        "axis": "has value",
+        "codeProp": null,
+        "designOnly": [
+         "false",
+         "true",
+         "textField"
+        ],
+        "note": "no matching code prop"
+       },
+       {
+        "axis": "Label style",
+        "codeProp": "labelType",
+        "both": [
+         "label in",
+         "label on"
+        ],
+        "designOnly": [],
+        "codeOnly": []
+       }
+      ],
+      "designCase": null,
+      "codeTextTransform": null,
+      "codeFontFamilies": [
+       "DM Sans"
+      ]
+     },
+     {
+      "status": "complete",
+      "design": "text area",
+      "code": "STextArea",
+      "codeFile": "src/components/STextArea.vue",
+      "axes": [
+       {
+        "axis": "type",
+        "codeProp": "labelType",
+        "both": [
+         "label in",
+         "label on"
+        ],
+        "designOnly": [],
+        "codeOnly": []
+       },
+       {
+        "axis": "status",
+        "codeProp": "forceState",
+        "designOnly": [
+         "disable",
+         "enable",
+         "error",
+         "focused",
+         "hover"
+        ],
+        "note": "interaction states: code styles these in CSS"
+       },
+       {
+        "axis": "has value",
+        "codeProp": null,
+        "designOnly": [
+         "false",
+         "true"
+        ],
+        "note": "on/off in Figma; code has no matching prop"
+       }
+      ],
+      "designCase": null,
+      "codeTextTransform": null,
+      "codeFontFamilies": [
+       "DM Sans"
+      ]
+     },
+     {
+      "status": "complete",
+      "design": "single-select",
+      "code": "SSelect",
+      "codeFile": "src/components/SSelect.vue",
+      "axes": [
+       {
+        "axis": "status",
+        "codeProp": "forceState",
+        "designOnly": [
+         "disable",
+         "enable",
+         "error",
+         "focused",
+         "hover"
+        ],
+        "note": "interaction states: code styles these in CSS"
+       },
+       {
+        "axis": "has value",
+        "codeProp": null,
+        "designOnly": [
+         "false",
+         "true"
+        ],
+        "note": "on/off in Figma; code has no matching prop"
+       },
+       {
+        "axis": "type",
+        "codeProp": "labelType",
+        "both": [
+         "label on",
+         "label-in"
+        ],
+        "designOnly": [],
+        "codeOnly": []
+       }
+      ],
+      "designCase": null,
+      "codeTextTransform": null,
+      "codeFontFamilies": [
+       "DM Sans"
+      ]
+     },
+     {
+      "status": "complete",
+      "design": "autocomplete",
+      "code": "SAutocomplete",
+      "codeFile": "src/components/SAutocomplete.vue",
+      "axes": [
+       {
+        "axis": "status",
+        "codeProp": "forceState",
+        "designOnly": [
+         "disable",
+         "enable",
+         "error",
+         "filled",
+         "focus",
+         "hover"
+        ],
+        "note": "interaction states: code styles these in CSS"
+       },
+       {
+        "axis": "type",
+        "codeProp": "labelType",
+        "both": [
+         "label in",
+         "label on"
+        ],
+        "designOnly": [],
+        "codeOnly": []
+       },
+       {
+        "axis": "has value",
+        "codeProp": null,
+        "designOnly": [
+         "false",
+         "true"
+        ],
+        "note": "on/off in Figma; code has no matching prop"
+       }
+      ],
+      "designCase": null,
+      "codeTextTransform": null,
+      "codeFontFamilies": [
+       "DM Sans"
+      ]
+     },
+     {
+      "status": "complete",
+      "design": "date picker",
+      "code": "SDatePicker",
+      "codeFile": "src/components/SDatePicker.vue",
+      "axes": [
+       {
+        "axis": "sections",
+        "codeProp": null,
+        "designOnly": [
+         "day selector",
+         "month selector",
+         "year selector"
+        ],
+        "note": "no matching code prop"
+       },
+       {
+        "axis": "status",
+        "codeProp": null,
+        "designOnly": [
+         "default",
+         "hover",
+         "selected",
+         "current selected"
+        ],
+        "note": "interaction states: code styles these in CSS"
+       },
+       {
+        "axis": "rounded border",
+        "codeProp": null,
+        "designOnly": [
+         "false",
+         "true"
+        ],
+        "note": "on/off in Figma; code has no matching prop"
+       }
+      ],
+      "designCase": null,
+      "codeTextTransform": null,
+      "codeFontFamilies": [
+       "DM Sans"
+      ]
+     },
+     {
+      "status": "complete",
+      "design": "Switch Toggle",
+      "code": "SSwitch",
+      "codeFile": "src/components/SSwitch.vue",
+      "axes": [
+       {
+        "axis": "Toggle Status",
+        "codeProp": null,
+        "designOnly": [
+         "Off",
+         "On"
+        ],
+        "note": "on/off in Figma; code has no matching prop"
+       },
+       {
+        "axis": "State",
+        "codeProp": null,
+        "designOnly": [
+         "Enabled",
+         "Disabled"
+        ],
+        "note": "no matching code prop"
+       }
+      ],
+      "designCase": null,
+      "codeTextTransform": null,
+      "codeFontFamilies": null
+     },
+     {
+      "status": "complete",
+      "design": "Status Alert Bar",
+      "code": "SAlert",
+      "codeFile": "src/components/SAlert.vue",
+      "axes": [
+       {
+        "axis": "Type",
+        "codeProp": "type",
+        "both": [
+         "Error Alert",
+         "Warning Alert",
+         "informative"
+        ],
+        "designOnly": [],
+        "codeOnly": []
+       },
+       {
+        "axis": "Function",
+        "codeProp": null,
+        "designOnly": [
+         "Closeable",
+         "Info",
+         "Button Action",
+         "Hyperlink Action"
+        ],
+        "note": "no matching code prop"
+       }
+      ],
+      "designCase": null,
+      "codeTextTransform": null,
+      "codeFontFamilies": null
+     },
+     {
+      "status": "complete",
+      "design": "Toast Notifications",
+      "code": "SToast",
+      "codeFile": "src/components/SToast.vue",
+      "axes": [
+       {
+        "axis": "State",
+        "codeProp": "type",
+        "both": [
+         "Error Toast",
+         "Information",
+         "Success"
+        ],
+        "designOnly": [],
+        "codeOnly": []
+       }
+      ],
+      "designCase": null,
+      "codeTextTransform": null,
+      "codeFontFamilies": null
+     },
+     {
+      "status": "complete",
+      "design": "step",
+      "code": "SStepper",
+      "codeFile": "src/components/SStepper.vue",
+      "axes": [
+       {
+        "axis": "horizontal label",
+        "codeProp": null,
+        "designOnly": [
+         "true",
+         "false"
+        ],
+        "note": "on/off in Figma; code has no matching prop"
+       },
+       {
+        "axis": "horizontal line",
+        "codeProp": null,
+        "designOnly": [
+         "true",
+         "false"
+        ],
+        "note": "on/off in Figma; code has no matching prop"
+       },
+       {
+        "axis": "status",
+        "codeProp": null,
+        "designOnly": [
+         "current step",
+         "completed",
+         "Next Step"
+        ],
+        "note": "no matching code prop"
+       }
+      ],
+      "designCase": null,
+      "codeTextTransform": null,
+      "codeFontFamilies": [
+       "DM Sans"
+      ]
+     },
+     {
+      "status": "complete",
+      "design": "Accordion Row",
+      "code": "SExpansionPanel",
+      "codeFile": "src/components/SExpansionPanel.vue",
+      "axes": [
+       {
+        "axis": "status",
+        "codeProp": null,
+        "designOnly": [
+         "Collapsed",
+         "Collapsed Hover",
+         "Expanded",
+         "Expanded Hover"
+        ],
+        "note": "no matching code prop"
+       },
+       {
+        "axis": "Type",
+        "codeProp": null,
+        "designOnly": [
+         "custom",
+         "general"
+        ],
+        "note": "no matching code prop"
+       }
+      ],
+      "designCase": null,
+      "codeTextTransform": null,
+      "codeFontFamilies": null
+     },
+     {
+      "status": "complete",
+      "design": "empty State",
+      "code": "SEmptyState",
+      "codeFile": "src/components/SEmptyState.vue",
+      "axes": [
+       {
+        "axis": "Type",
+        "codeProp": "layout",
+        "both": [
+         "horizontal",
+         "vertical"
+        ],
+        "designOnly": [],
+        "codeOnly": []
+       }
+      ],
+      "designCase": null,
+      "codeTextTransform": [
+       "uppercase"
+      ],
+      "codeFontFamilies": [
+       "DM Sans"
+      ]
+     },
+     {
+      "status": "complete",
+      "design": "loading",
+      "code": "SProgressRing",
+      "codeFile": "src/components/SProgressRing.vue",
+      "axes": [
+       {
+        "axis": "type",
+        "codeProp": null,
+        "designOnly": [
+         "neutral_loading_1",
+         "primary_loading_1"
+        ],
+        "note": "no matching code prop"
+       }
+      ],
+      "designCase": null,
+      "codeTextTransform": null,
+      "codeFontFamilies": [
+       "Roboto"
+      ]
+     },
+     {
+      "status": "complete",
+      "design": "combobox",
+      "code": "SCombobox",
+      "codeFile": "src/components/SCombobox.vue",
+      "axes": [
+       {
+        "axis": "Status",
+        "codeProp": "forceState",
+        "designOnly": [
+         "disable",
+         "enable",
+         "error",
+         "filled",
+         "focused",
+         "hover"
+        ],
+        "note": "interaction states: code styles these in CSS"
+       }
+      ],
+      "designCase": null,
+      "codeTextTransform": null,
+      "codeFontFamilies": [
+       "DM Sans"
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}

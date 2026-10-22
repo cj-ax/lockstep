@@ -140,14 +140,31 @@ Each cluster becomes a proposal with:
 
 **Conflicts list.** Rules the sources disagree on, such as Slalom's button casing: Title Case in Figma, uppercase in code. Each conflict names both sources and needs a ruling.
 
-### 6. Review (milestone 3)
+### 6. Review (milestone 4; built as `review.py` and a review page)
 
-A review page, published as an artifact, using the database capability so rulings persist and can be shared. A person can approve, rename, merge or reject each token proposal, de facto component and conflict. `proposals.json` records each ruling with who made it and when. Steps 7–8 read only approved items.
+`review.py build` turns proposals or coverage into decisions, each with its evidence, options and Lockstep's suggestion:
+- **From proposals:** tokens (approve, rename, reject), component candidates, WIP variables and local components.
+- **From coverage:** each conflict (Figma is right, code is right, something else), each component on only one side, and one item for everything both sides already agree on.
 
-### 7. Generate (milestone 4–5)
+It writes `REVIEW.md`, a checklist that works anywhere, and `review.html`, a page published as an artifact. The page stores each ruling in its database (`rulings/<item id>`: decision, name, note, who, when). It resolves people's names when it renders and never stores them. It degrades to read-only for viewers who can't write, and shows a notice where there's no database.
 
-- **(a) Tokens:** DTCG JSON (`tokens.json`) is the code-side source of truth, exported to CSS custom properties. The same tokens become Figma variables in a **new draft file**, with modes where the sources had them, such as light and dark.
-- **(b) Component docs:** one Markdown page per component, covering purpose, variants and when to use each, props mapped to Figma properties, do and don't with real examples from the audit, and accessibility notes. This is the documentation deliverable for Josh's programme.
+`review.py apply` reads rulings from the page's database or a ticked checklist and writes `approved.json`. Only approved items go in; everything else is listed as rejected or still open.
+
+### 7. Generate (milestone 4 builds (a) and (b); the rest is milestone 5)
+
+- **(a) Tokens (built: `generate.py`):** `tokens.json` in DTCG 2025.10 format, and `tokens.css` with `:root` and one `[data-theme]` block per mode.
+  - Modes from different collections ("Dark mode", "Dark", "BuildDark") are normalised to one theme each (dark, build).
+  - Type styles become DTCG typography tokens and `.type-<name>` classes.
+  - Each token's `$extensions` record where it came from, who approved it, its code name and the drift it absorbed.
+- **(a) Draft Figma variables (milestone 5):** the same tokens as Figma variables in a **new draft file**, with modes.
+- **(b) Component docs (built):** one Markdown page per approved component. Each covers:
+  - its purpose and when to use it, from the Figma description;
+  - its Figma variants;
+  - its code props;
+  - how the two map;
+  - the decisions and open questions that touch it.
+
+  Pages say what the sources say and nothing more. With no description, a page says one is needed. A description cut at the inventory's 1,500 characters is marked. Do/don't examples and accessibility notes need sources Lockstep doesn't read yet.
 - **(c) AI context:** `DESIGN_SYSTEM_CONTEXT.md` and `design-system-registry.json`, in DS-AI-Bridge's existing format, for code generation.
 - **(d) Lockstep files:** `LIBRARY.md`, `keys.json` and the three inventory files, in the format `build` already reads.
 - **(e) Code to Figma:** for code-only and de facto components, draft Figma components in the draft library file, using Figma's `figma-generate-library` skill. They're bound to the generated variables, with variant properties taken from the code props.
@@ -204,13 +221,14 @@ Recall is measured before review, against all proposals, to test the harvest. Pr
 | **1** | This design; the degraded SDS fixture and its ground truth; intake and stack discovery | `learn` runs steps 1–2 on a real repo (Slalom DS), a non-DS app and no repo; the fixture exists in a draft with its ground truth committed |
 | **2** | `inventory_local.js`; `audit.js`; read-only guard allowance; token and component proposals (`propose.py`); `score_recovery.py` | Token and component recall on the fixture, reported: see `learn/fixture/RECOVERY.md` and REPORT.md |
 | **3** | Code harvest (tier 3), reconcile, coverage matrix, conflicts | Coverage and conflicts for Slalom (Figma plus `design-system-beta`): `learn/slalom/COVERAGE.md`; the fixture's design-only coverage, since SDS's code isn't in hand. Tier 2 (Storybook) and the review page move to milestone 4 |
-| 4 | Review page; generate tokens, docs, context and draft variables; `build` reads learned files | `build` on the fixture's learned system, scored |
-| 5 | Code to Figma: draft components for code-only and de facto parts | Draft library components scored by `score` and a screenshot check |
-| 6 | Pilot on Josh's programme | Whatever that programme needs first, most likely documentation |
+| **4** | Review page and checklist; apply rulings; generate DTCG tokens, CSS and component docs | Both runs generated from approved items only: the fixture from a scripted take-every-suggestion review, Slalom with only the agreed item approved and all 31 contested items left open. The Slalom review page is published for the team |
+| 5 | Draft Figma variables, AI context, LIBRARY.md for `build`; `build` on the learned system, scored | `build` on the fixture's learned system, scored |
+| 6 | Code to Figma: draft components for code-only and de facto parts | Draft library components scored by `score` and a screenshot check |
+| 7 | Pilot on Josh's programme | Whatever that programme needs first, most likely documentation |
 
 ## Open questions for review
 
 1. ~~The read-only allowance in the guard, or duplicate-to-drafts only?~~ Built in milestone 2, with the fallback documented.
 2. **One `lockstep:learn` command, or one per step?** Recommendation: one command that resumes from `SOURCES.md`, plus the existing `init` for a finished library.
 3. **Token naming:** propose names from roles (`color/text/default`) or keep whatever names exist, however messy? Recommendation: keep existing names when there's a match, and use role names only for unnamed values.
-4. **Where the review page lives:** an artifact with the database capability (shareable, persistent), or a Markdown checklist in the repo (simplest)? Recommendation: start with Markdown in milestone 3, and make it a page if reviewers aren't technical.
+4. ~~Where the review page lives~~ Both, built in milestone 4: an artifact page with a database for reviewers, and REVIEW.md as the fallback.

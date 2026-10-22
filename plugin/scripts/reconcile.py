@@ -270,7 +270,7 @@ def reconcile_type(dstyles, cstyles):
         diffs = [{"field": f, "design": d.get(f), "code": c.get(f)} for f in ("fontSize", "fontWeight", "lineHeight", "letterSpacing")
                  if d.get(f) is not None and c.get(f) is not None and not same(d[f], c[f])]
         rows.append({"status": "drift" if diffs else "complete", "kind": "type", "design": d["name"], "code": c["name"], "differences": diffs,
-                     "codeCase": c.get("textCase")})
+                     "codeCase": c.get("textCase"), "values": d})
     for c in cstyles:
         if c["name"] not in matched:
             rows.append({"status": "code-only", "kind": "type", "code": c["name"], "values": c})
@@ -398,7 +398,7 @@ def conflicts_of(tokens, type_rows, comp_rows, dthemes, cthemes, dfamilies):
         diffs = r.get("differences") or []
         d = "; ".join(f"{x.get('designMode') or x.get('field')}: {x['design']}" for x in diffs)
         c = "; ".join(f"{x.get('codeTheme') or x.get('field')}: {x['code']}" for x in diffs)
-        out.append({"topic": f"{r['design']} vs {r['code']}", "design": d, "code": c, "question": "Which value is right?"})
+        out.append({"topic": f"{leaf(r['design'])} / {r['code']}", "design": f"{r['design']}, {d}", "code": f"{r['code']}, {c}", "question": "Which value is right?"})
     extra = [t for t in cthemes if not any(w in t.lower() for m in dthemes for w in words(m) if w not in ("mode",))]
     if extra:
         out.append({"topic": "Themes", "design": f"modes: {', '.join(dthemes) or 'one'}", "code": f"themes: {', '.join(cthemes)}",

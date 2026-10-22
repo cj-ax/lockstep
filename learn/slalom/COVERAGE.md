@@ -25,17 +25,17 @@ Tokens by kind:
 2. **SButton label case.** Figma: Title Case by default (button). Code: text-transform: uppercase in src/components/SButton.vue. Which casing is right for labels?
 3. **button variant.** Figma: icon, icon contained, neutral_outlined. Code: nothing extra. Should Figma's variant and code's variant offer the same options?
 4. **semantic Buttons variant.** Figma: nothing extra. Code: plain, text. Should Figma's variant and code's variant offer the same options?
-5. **Color Semantic Variables (updated)/Font Colors/text-disabled vs --slm-disabled-text.** Figma: Light: #00000066; Dark: #ffffff80. Code: slalomLight: #00000061; slalomDark: #ffffff61. Which value is right?
-6. **Color Semantic Variables (updated)/Font Colors/text-error vs theme.error.** Figma: Dark: #ffdbdf. Code: slalomDark: #ff6b6b. Which value is right?
-7. **Color Semantic Variables (updated)/Primary Colors/success vs theme.success.** Figma: Light: #5cb85c; Dark: #5cb85c. Code: slalomLight: #2e7d32; slalomDark: #4caf50. Which value is right?
-8. **Color Semantic Variables (updated)/Primary Colors/error-element vs theme.error.** Figma: Dark: #ffdbdf. Code: slalomDark: #ff6b6b. Which value is right?
-9. **Color Semantic Variables (updated)/Border Colors/neutral-border-color vs --slm-border.** Figma: Dark: #757575. Code: slalomDark: #eaeaea. Which value is right?
-10. **Color Semantic Variables (updated)/card color/card-bg-secondary vs --slm-app-card-bg.** Figma: Dark: #424242. Code: slalomDark: #444444. Which value is right?
-11. **Colors/Font Colors/text-disabled vs --slm-disabled-text.** Figma: Dark: #ffffff80; BuildDark: #ffffff80. Code: slalomDark: #ffffff61; slalomBuild: #ffffff61. Which value is right?
-12. **button_shadow-1 vs $slm-shadow-button-1.** Figma: default: 0 0 2 0 #73a6ff1a. Code: default: 0 0 2 0 #0000001f. Which value is right?
-13. **button_shadow-4 vs $slm-shadow-button-4.** Figma: default: 0 3 4 0 #0000001a. Code: default: 0 3 4 0 #0000001f. Which value is right?
-14. **button_shadow-7 vs $slm-shadow-button-7.** Figma: default: 0 4 5 0 #0000001a. Code: default: 0 4 5 0 #0000001f. Which value is right?
-15. **Heading 5 vs slm-heading-5.** Figma: letterSpacing: 0.0. Code: letterSpacing: 1.92. Which value is right?
+5. **text-disabled / --slm-disabled-text.** Figma: Color Semantic Variables (updated)/Font Colors/text-disabled, Light: #00000066; Dark: #ffffff80. Code: --slm-disabled-text, slalomLight: #00000061; slalomDark: #ffffff61. Which value is right?
+6. **text-error / theme.error.** Figma: Color Semantic Variables (updated)/Font Colors/text-error, Dark: #ffdbdf. Code: theme.error, slalomDark: #ff6b6b. Which value is right?
+7. **success / theme.success.** Figma: Color Semantic Variables (updated)/Primary Colors/success, Light: #5cb85c; Dark: #5cb85c. Code: theme.success, slalomLight: #2e7d32; slalomDark: #4caf50. Which value is right?
+8. **error-element / theme.error.** Figma: Color Semantic Variables (updated)/Primary Colors/error-element, Dark: #ffdbdf. Code: theme.error, slalomDark: #ff6b6b. Which value is right?
+9. **neutral-border-color / --slm-border.** Figma: Color Semantic Variables (updated)/Border Colors/neutral-border-color, Dark: #757575. Code: --slm-border, slalomDark: #eaeaea. Which value is right?
+10. **card-bg-secondary / --slm-app-card-bg.** Figma: Color Semantic Variables (updated)/card color/card-bg-secondary, Dark: #424242. Code: --slm-app-card-bg, slalomDark: #444444. Which value is right?
+11. **text-disabled / --slm-disabled-text.** Figma: Colors/Font Colors/text-disabled, Dark: #ffffff80; BuildDark: #ffffff80. Code: --slm-disabled-text, slalomDark: #ffffff61; slalomBuild: #ffffff61. Which value is right?
+12. **button_shadow-1 / $slm-shadow-button-1.** Figma: button_shadow-1, default: 0 0 2 0 #73a6ff1a. Code: $slm-shadow-button-1, default: 0 0 2 0 #0000001f. Which value is right?
+13. **button_shadow-4 / $slm-shadow-button-4.** Figma: button_shadow-4, default: 0 3 4 0 #0000001a. Code: $slm-shadow-button-4, default: 0 3 4 0 #0000001f. Which value is right?
+14. **button_shadow-7 / $slm-shadow-button-7.** Figma: button_shadow-7, default: 0 4 5 0 #0000001a. Code: $slm-shadow-button-7, default: 0 4 5 0 #0000001f. Which value is right?
+15. **Heading 5 / slm-heading-5.** Figma: Heading 5, letterSpacing: 0.0. Code: slm-heading-5, letterSpacing: 1.92. Which value is right?
 
 ## Components
 
