@@ -219,12 +219,14 @@ async function walk(node, isRoot) {
 }
 
 const pct = (a, b) => (b === 0 ? 100 : Math.round((1000 * a) / b) / 10);
+// "Lower is better" shares: nothing to count means nothing wrong (0%), not 100%.
+const pctLow = (a, b) => (b === 0 ? 0 : Math.round((1000 * a) / b) / 10);
 function score(c) {
   const sc = {
     libraryInstancePct: pct(c.libraryInstances, c.contentNodes),
     boundPropertyPct: pct(c.bound, c.bindable),
-    detachedPct: pct(c.detached, c.instancesTotal),
-    hardcodedColourPct: pct(c.hardcodedPaints, c.paints),
+    detachedPct: pctLow(c.detached, c.instancesTotal),
+    hardcodedColourPct: pctLow(c.hardcodedPaints, c.paints),
     autoLayoutPct: pct(c.autoLayoutFrames, c.layoutFrames),
   };
   // One headline number: the mean of the five, with the two "lower is better" ones inverted.

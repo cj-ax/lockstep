@@ -13,9 +13,9 @@ the system.
 Shared scripts live in the plugin's `scripts/` folder, two levels up from this skill's base
 directory (shown when the skill loads). Below, `$LOCKSTEP` is that plugin folder.
 
-All eight steps are built: intake, stack discovery, design harvest with proposals, code
-harvest, reconcile, review, generating tokens and docs, and a learned Figma library with AI
-context that `lockstep:build` can use.
+All nine steps are built: intake, stack discovery, design harvest with proposals, code
+harvest, reconcile, review, generating tokens and docs, a learned Figma library with AI context
+that `lockstep:build` can use, and building code-only components in Figma.
 
 Everything goes in `lockstep/<org-slug>/` in the user's project:
 
@@ -305,5 +305,43 @@ becomes the learned library until the org publishes it. Never write to the org's
 Tell the user: the draft's link, what's in it, what couldn't be bound or rebuilt, and that a
 build on it happens **in that draft** (`lockstep:build` knows). Rebuilt components have one
 variant: the one their examples showed.
+
+## 9. Code to Figma
+
+For components that are in code but not in Figma, once a person has ruled "Add it to Figma"
+in the review. Never build one that wasn't ruled on.
+
+1. **Specs.** Read the source (never run it) into a spec per approved component:
+   ```bash
+   python3 "$LOCKSTEP/scripts/code_spec.py" --code lockstep/<org-slug>/code.json --coverage lockstep/<org-slug>/coverage.json --variables <inventory.variables.json> --repo <repo path> --approved lockstep/<org-slug>/review/approved.json --out lockstep/<org-slug>/code-to-figma
+   ```
+   `SPECS.md` lists each component's variant, boolean and text properties, slots, the UI-library
+   parts it wraps, and every style value with the Figma variable to bind it to (and its key in
+   `specs.json`).
+2. **Where.** In the learned library draft if there is one (step 8), else a new draft named
+   "<Org> code components (draft)". Never the org's library. Load `/figma-use` (and
+   `/figma-generate-library` if it's installed), and call `create_session`.
+3. **Build each one** with a script you write (Write tool), on a page named "Code components":
+   - a component set whose **variant properties are the code's props, with the code's names
+     and values** (`type=text|card|list|table`), and its default variant the code's default;
+   - **boolean props** as boolean properties, **string props** that render as text as text
+     properties, and **slots** as Figma slots (`component.createSlot()`);
+   - **every** fill, stroke, padding, gap, radius and stroke width bound to the variable the
+     spec names (`figma.variables.importVariableByKeyAsync(key)`), text with the library's text
+     styles. A value with no variable stays raw, and you list it in your report;
+   - for parts whose look comes from the wrapped UI library (the spec says which), follow that
+     library's documented default layout, and say so in the component's description:
+     "Inner layout follows Vuetify's v-skeleton-loader defaults, not this repo's code";
+   - a description naming the source file and how each Figma property maps to the code prop.
+4. **Check.** Score each component set:
+   `python3 "$LOCKSTEP/scripts/render.py" score --roots <component set ids>`. Drawn parts
+   (skeleton bones, panel frames) aren't library instances, so judge it by bound properties
+   (100%), hard-coded colours (0%), auto layout (100%) and integrity issues (0), not the headline
+   number. Screenshot every variant and compare it with what the code says. If the user can open
+   the code's live showcase or Storybook, compare against that too.
+
+Tell the user what was built, where, what came from the code and what from the UI library's
+defaults, any value left raw, and that the components stay in the draft until they're reviewed
+and published.
 
 The design is in `LEARN-DESIGN.md` in the Lockstep repository.

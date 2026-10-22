@@ -1,0 +1,228 @@
+[
+ {
+  "name": "SExpansionPanels",
+  "file": "src/components/SExpansionPanels.vue",
+  "summary": "Slalom Design System accordion container component.",
+  "variants": [],
+  "booleans": [
+   {
+    "name": "multiple",
+    "default": "false"
+   }
+  ],
+  "texts": [],
+  "slots": [
+   "default"
+  ],
+  "wraps": [
+   "v-expansion-panels"
+  ],
+  "styles": [
+   {
+    "selector": ".s-expansion-panels",
+    "property": "display",
+    "value": "flex",
+    "resolved": "flex",
+    "bind": null
+   },
+   {
+    "selector": ".s-expansion-panels",
+    "property": "flex-direction",
+    "value": "column",
+    "resolved": "column",
+    "bind": null
+   },
+   {
+    "selector": ".s-expansion-panels",
+    "property": "gap",
+    "value": "8px",
+    "resolved": 8,
+    "bind": {
+     "variable": "space variables/gap/ga-2",
+     "key": "0562032ad8aec53e74320b6f7f51aff4273efa94",
+     "via": "same value; also Radius/radius-l, space variables/padding/uniform/pa-2"
+    }
+   },
+   {
+    "selector": ".s-expansion-panels",
+    "property": "width",
+    "value": "100%",
+    "resolved": "100%",
+    "bind": null
+   },
+   {
+    "selector": ".s-expansion-panels",
+    "property": "max-width",
+    "value": "370px",
+    "resolved": 370,
+    "bind": null
+   },
+   {
+    "selector": ".s-expansion-panels .v-expansion-panel",
+    "property": "border-radius",
+    "value": "4px !important",
+    "resolved": 4,
+    "bind": {
+     "variable": "Radius/radius-m",
+     "key": "cc8c1aa474202f648958851ad7002a9e3dabb369",
+     "via": "same value; also Radius/radius-m, Corner radius/Medium"
+    }
+   },
+   {
+    "selector": ".s-expansion-panels .v-expansion-panel",
+    "property": "margin",
+    "value": "0 !important",
+    "resolved": 0,
+    "bind": {
+     "variable": "space variables/gap/ga-0",
+     "key": "4a127b119409919f7b3d3eb0041b34e885561a22",
+     "via": "same value; also space variables/padding/top/pt-0, space variables/padding/bottom/pb-0"
+    }
+   },
+   {
+    "selector": ".s-expansion-panels .v-expansion-panel",
+    "property": "background",
+    "value": "transparent",
+    "resolved": "#00000000",
+    "bind": {
+     "variable": null,
+     "via": "no Figma variable has #00000000 for background"
+    }
+   },
+   {
+    "selector": ".s-expansion-panels .v-expansion-panel::after",
+    "property": "display",
+    "value": "none",
+    "resolved": "none",
+    "bind": null
+   },
+   {
+    "selector": ".s-expansion-panels .v-expansion-panel-title",
+    "property": "padding",
+    "value": "0",
+    "resolved": 0,
+    "bind": {
+     "variable": "space variables/padding/top/pt-0",
+     "key": "bdd9a377cfd05ff1f030c54a9172cc55d2ab8961",
+     "via": "same value; also space variables/padding/bottom/pb-0, space variables/padding/uniform/pa-0"
+    }
+   },
+   {
+    "selector": ".s-expansion-panels .v-expansion-panel-title",
+    "property": "min-height",
+    "value": "unset",
+    "resolved": "unset",
+    "bind": null
+   },
+   {
+    "selector": ".s-expansion-panels .v-expansion-panel-title",
+    "property": "font-size",
+    "value": "inherit",
+    "resolved": "inherit",
+    "bind": null
+   },
+   {
+    "selector": ".s-expansion-panels .v-expansion-panel-title__overlay",
+    "property": "display",
+    "value": "none",
+    "resolved": "none",
+    "bind": null
+   },
+   {
+    "selector": ".s-expansion-panels .v-expansion-panel-text__wrapper",
+    "property": "padding",
+    "value": "0",
+    "resolved": 0,
+    "bind": {
+     "variable": "space variables/padding/top/pt-0",
+     "key": "bdd9a377cfd05ff1f030c54a9172cc55d2ab8961",
+     "via": "same value; also space variables/padding/bottom/pb-0, space variables/padding/uniform/pa-0"
+    }
+   }
+  ],
+  "lookFrom": "v-expansion-panels (the UI library's defaults): read its documentation for the inner layout"
+ },
+ {
+  "name": "SSkeletonLoader",
+  "file": "src/components/SSkeletonLoader.vue",
+  "summary": "Slalom Design System skeleton placeholder component.",
+  "variants": [
+   {
+    "name": "type",
+    "values": [
+     "text",
+     "card",
+     "list",
+     "table"
+    ],
+    "default": "'text'"
+   }
+  ],
+  "booleans": [],
+  "texts": [
+   {
+    "name": "ariaLabel",
+    "default": "'Loading content'"
+   }
+  ],
+  "slots": [],
+  "wraps": [
+   "v-skeleton-loader"
+  ],
+  "styles": [
+   {
+    "selector": ".s-skeleton",
+    "property": "width",
+    "value": "100%",
+    "resolved": "100%",
+    "bind": null
+   },
+   {
+    "selector": ".s-skeleton.v-skeleton-loader--type-image",
+    "property": "max-width",
+    "value": "340px",
+    "resolved": 340,
+    "bind": null
+   },
+   {
+    "selector": ".s-skeleton.v-skeleton-loader--type-image",
+    "property": "border-radius",
+    "value": "8px",
+    "resolved": 8,
+    "bind": {
+     "variable": "Radius/radius-l",
+     "key": "1564ab3e4c5e49f92472f47707f92d3eb51a245b",
+     "via": "same value"
+    }
+   },
+   {
+    "selector": ".s-skeleton.v-skeleton-loader--type-image",
+    "property": "overflow",
+    "value": "hidden",
+    "resolved": "hidden",
+    "bind": null
+   },
+   {
+    "selector": ".s-skeleton :deep(.v-skeleton-loader__bone)",
+    "property": "background",
+    "value": "var(--slm-skeleton-bone)",
+    "resolved": "inherit",
+    "bind": {
+     "variable": null,
+     "via": "code token --slm-skeleton-bone is 'inherit' here, so the UI library's default applies"
+    }
+   },
+   {
+    "selector": ".s-skeleton :deep(.v-skeleton-loader__bone)::after",
+    "property": "background",
+    "value": "linear-gradient(90deg, transparent, var(--slm-skeleton-shimmer), transparent)",
+    "resolved": "linear-gradient(90deg, transparent, inherit, transparent)",
+    "bind": {
+     "variable": null,
+     "via": "code token --slm-skeleton-shimmer is 'linear-gradient(90deg, transparent, inherit, transparent)' here, so the UI library's default applies"
+    }
+   }
+  ],
+  "lookFrom": "v-skeleton-loader (the UI library's defaults): read its documentation for the inner layout"
+ }
+]

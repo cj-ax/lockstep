@@ -178,7 +178,10 @@ It writes `REVIEW.md`, a checklist that works anywhere, and `review.html`, a pag
   - slots become real, empty slots.
 
   Rebuilt components have one variant: detached copies don't say which variant they came from.
-- **(e) Code to Figma:** for code-only and de facto components, draft Figma components in the draft library file, using Figma's `figma-generate-library` skill. They're bound to the generated variables, with variant properties taken from the code props.
+- **(e) Code to Figma (milestone 6):** for code-only components a person ruled "Add it to Figma".
+  - `code_spec.py` reads each one's source without running it. It records props (finite values become variants), booleans, text props, slots, the UI-library parts it wraps, and every style value with the Figma variable to bind it to. Variables are found through the coverage, or by value and the property's purpose, so a gap prefers a gap token.
+  - An agent then builds the component set in a draft (learn step 9), binding every value. Where the look comes from the wrapped library's defaults rather than the repo, the description says so.
+  - De facto components are rebuilt from Figma examples instead (step 8).
 
 **A wrinkle for `build` (handled in milestone 5).** `build` imports components by key from a *published* library, and draft components are local to their file. Until the org publishes the draft library, `build` works inside that draft file. It reaches learned components and variables by local ID, and `score --local-library-page` counts them as library instances.
 
@@ -234,7 +237,7 @@ Recall is measured before review, against all proposals, to test the harvest. Pr
 | **3** | Code harvest (tier 3), reconcile, coverage matrix, conflicts | Coverage and conflicts for Slalom (Figma plus `design-system-beta`): `learn/slalom/COVERAGE.md`; the fixture's design-only coverage, since SDS's code isn't in hand. Tier 2 (Storybook) and the review page move to milestone 4 |
 | **4** | Review page and checklist; apply rulings; generate DTCG tokens, CSS and component docs | Both runs generated from approved items only: the fixture from a scripted take-every-suggestion review, Slalom with only the agreed item approved and all 31 contested items left open. The Slalom review page is published for the team |
 | **5** | Draft Figma variables, rebuilt components, AI context, LIBRARY.md for `build`; `build` on the learned system, scored | A fresh agent with only the plugin built an unseen Billing page on the fixture's learned library. Rescored independently: Overview 100, Dialog 90. See REPORT.md |
-| 6 | Code to Figma: draft components for code-only and de facto parts | Draft library components scored by `score` and a screenshot check |
+| **6** | Code to Figma: specs from code (`code_spec.py`), then an agent builds draft components for code-only parts | A fresh agent built Slalom's SSkeletonLoader (4 types) and SExpansionPanels from the code in a draft: every value bound (324/324), no hard-coded colours, auto layout throughout. See REPORT.md |
 | 7 | Pilot on Josh's programme | Whatever that programme needs first, most likely documentation |
 
 ## Open questions for review

@@ -1,0 +1,5 @@
+Our code library, design-system-beta, has a few components our Figma library ("Official [Business@Slalom] Design System") doesn't. The team reviewed them and agreed to add two to Figma: the skeleton loader and the expansion panels group. Everything Lockstep learned about our system is in lockstep/slalom, and the code is checked out at ~/Downloads/design-system-beta-main (read it, don't run it).
+
+Build those two as draft components in Figma, matching the code and using our library's tokens. Don't touch the library file itself.
+
+You're running unattended, so you can't ask me anything: make reasonable decisions and list them at the end. When you're done, give me the link, what came from our code and what from Vuetify's defaults, how faithfully it uses our tokens, and anything that isn't finished.

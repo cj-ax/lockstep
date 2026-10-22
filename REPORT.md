@@ -335,6 +335,41 @@ The overview is entirely learned and library components, and the screenshot look
 - **The review was scripted,** with one change made by me as the test operator, not by a team.
 - **One build, one page.** That's a gate, not a benchmark.
 
+## lockstep:learn: code to Figma (2026-10-22)
+
+**Setup.** Slalom's code has three components Figma doesn't: SSkeletonLoader, SExpansionPanels and SIcon.
+- **Test rulings** (labelled "pipeline test", not the team's) said to add the first two and leave SIcon as code only, since Slalom's Figma keeps icons as separate components.
+- **The agent:** a headless `claude -p` session with only the plugin got Slalom's learn files, the repo path and a plain request (`research/trial-code-to-figma/`).
+  - It ran `code_spec.py` itself, read the source, and built both as component sets in a new draft: [Slalom code components (draft)](https://www.figma.com/design/C43HHid9PjGoM2PYXITDtT).
+  - The library file was never written to.
+  - It took 59 tool calls, 11 minutes and $4.67.
+
+**What it built:**
+- **SSkeletonLoader:** a `type` variant with the code's values (text, card, list, table; default text). The inner layout follows Vuetify's skeleton defaults, and the description says so, because the component only wraps `v-skeleton-loader`.
+- **SExpansionPanels:** a `multiple` variant and a `default` slot holding the library's own Accordion Row instances. The slot shows one panel open, or two when `multiple` is on.
+- **A Light/Dark review frame.** It noticed the rulings were tagged as a test and said they should be recorded properly.
+
+**My independent check:**
+- **Binding:** every fill, stroke, padding, gap and radius in the skeleton variants is bound to a Slalom variable: 324 of 324. Nothing is hard-coded, auto layout is used throughout, and there are no integrity issues.
+- **Library instances:** the panel variants are entirely library Accordion Rows. The skeleton's bones are drawn shapes, because nothing in the library builds them.
+- **Screenshots:** both read as the code describes.
+
+**Weaknesses:**
+- **The panels show the Accordion Row's sample content** ("Status / Work In Progress" twice, sample notes). The agent chose the row's "custom" type, which the library reserves for one screen, and reported the sample value it couldn't change without detaching. Lockstep's score can't see sample content that isn't a component text property.
+- **The component descriptions show `&quot;` literally**, an escaping slip in the agent's script.
+- **No visual reference.** The code's deployed showcase is behind a GitHub sign-in, so the Vuetify layout comes from the agent's knowledge of Vuetify 3. Its web lookups of Vuetify's source were blocked in the trial. Where it was unsure (the table skeleton), it said so.
+- **No token for skeleton bones.** It used the library's disabled-field grey and proposed a dedicated token.
+
+**What the trial found in the code:**
+- **Confirmed:** `SSkeletonLoader.vue` uses `:deep()` in a style block that isn't scoped, so the dark and build bone colours never apply.
+- **Not checked:** its card rule targets a class name the agent says is from Vuetify 2.
+
+**What it found in Lockstep, now fixed:**
+- **Spec parser:** declarations written before a nested CSS rule were dropped.
+- **Variable keys:** two collections with the same name ("Radius") overwrote each other.
+- **Purpose matching:** variables are now matched by purpose (a gap prefers a gap token).
+- **Scorer:** with nothing to count, the "lower is better" shares (detached, hard-coded colours) came out as 100% instead of 0%. That had penalised frames with no paints or no instances.
+
 ## Caveats
 - **Small sample.** There was one run per arm, with the same model. Read differences of a few points as directional.
 - **Who built what.** I built L myself and also wrote the scorer, so L may be tuned to what the scorer measures. A and B were built by independent subagents that never saw the scorer. The fresh-agent trial is the independent check: an agent with only the plugin scored 99 on a page it hadn't seen, though it shipped a defect the score couldn't see.
@@ -347,6 +382,7 @@ Everything now lives in the Claude Code plugin at `plugin/` (see `plugin/README.
 - `plugin/scripts/inventory.js`: reads a library's components and token values, in two parts.
 - `plugin/scripts/audit.js`, `inventory_local.js`, `propose.py`: learn's read-only harvest and its proposals. `learn/fixture/` holds the fixture, its ground truth, the harvest and `RECOVERY.md`.
 - `tests/test_readonly.py`: the guard's read-only allowance.
+- `plugin/scripts/code_spec.py`: learn's code-to-Figma specs; `research/trial-code-to-figma/` the trial.
 - `plugin/scripts/variables.js`, `snapshot.js`, `rebuild.js`, `library.py`, `context.py`: learn's draft Figma library and AI context. `learn/fixture/learned/` holds the fixture's; `research/trial-learned-billing/` the gate trial.
 - `plugin/scripts/review.py`, `generate.py`: learn's review and generation. `learn/*/review/` and `learn/fixture/generated/` hold their output.
 - `plugin/scripts/harvest_code.py`, `reconcile.py`: learn's code harvest and coverage matrix. `learn/slalom/` holds the Slalom run: design inventory, code harvest and `COVERAGE.md`.

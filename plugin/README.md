@@ -156,6 +156,8 @@ Claude also looks at a screenshot of every frame, because the score can't judge 
     library: variables, text styles, and the components people approved, rebuilt from their
     examples. `library.py` writes the LIBRARY.md that `build` reads; `context.py` writes the AI
     context for coding agents.
+  - `code_spec.py` reads a code component's source (props, slots, styles, and the Figma variable
+    for each value) so an agent can build it in Figma, for components people agreed to add.
 - `hooks/`: the write guard.
 
 ## Known limits

@@ -1,0 +1,25 @@
+{
+ "agreed-87-14-15-4ff2f0": {
+  "decision": "approve",
+  "by": "pipeline test (not the Slalom team's ruling)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "code-only-sexpansionpanels-e193f9": {
+  "decision": "build",
+  "by": "pipeline test (not the Slalom team's ruling)",
+  "at": "2026-10-22T00:00:00Z",
+  "note": null
+ },
+ "code-only-sicon-568562": {
+  "decision": "code-only",
+  "by": "pipeline test (not the Slalom team's ruling)",
+  "at": "2026-10-22T00:00:00Z",
+  "note": "Icons are separate components in Slalom's Figma."
+ },
+ "code-only-sskeletonloader-eb3cb8": {
+  "decision": "build",
+  "by": "pipeline test (not the Slalom team's ruling)",
+  "at": "2026-10-22T00:00:00Z",
+  "note": null
+ }
+}
