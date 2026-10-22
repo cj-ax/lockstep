@@ -1,0 +1,218 @@
+{
+ "components": [
+  {
+   "label": "header",
+   "name": "Header",
+   "type": "COMPONENT_SET",
+   "variants": 3,
+   "props": {
+    "Platform": [
+     "Desktop",
+     "Mobile"
+    ],
+    "State": [
+     "Open",
+     "Default"
+    ]
+   },
+   "default": "Platform=Desktop, State=Default",
+   "size": [
+    1200,
+    99
+   ],
+   "description": ""
+  },
+  {
+   "label": "navigationPill",
+   "name": "Navigation Pill",
+   "type": "COMPONENT_SET",
+   "variants": 3,
+   "props": {
+    "Label#156:33": "TEXT=\"Link\"",
+    "State": [
+     "Default",
+     "Active",
+     "Hover"
+    ]
+   },
+   "default": "State=Default",
+   "size": [
+    47,
+    32
+   ],
+   "description": ""
+  },
+  {
+   "label": "text",
+   "name": "Text",
+   "type": "COMPONENT",
+   "variants": 1,
+   "props": {
+    "Text#2104:7": "TEXT=\"Text\""
+   },
+   "default": "Text",
+   "size": [
+    33,
+    22
+   ],
+   "description": ""
+  },
+  {
+   "label": "inputField",
+   "name": "Input Field",
+   "type": "COMPONENT_SET",
+   "variants": 6,
+   "props": {
+    "Has Label#57:0": "BOOLEAN=true",
+    "Has Error#72:6": "BOOLEAN=false",
+    "Label#280:41": "TEXT=\"Label\"",
+    "Error#280:44": "TEXT=\"Error\"",
+    "Has Description#611:20": "BOOLEAN=false",
+    "Description#611:27": "TEXT=\"Description\"",
+    "Value#630:14": "TEXT=\"Value\"",
+    "State": [
+     "Disabled",
+     "Default",
+     "Error"
+    ],
+    "Value Type": [
+     "Default",
+     "Placeholder"
+    ]
+   },
+   "default": "State=Default, Value Type=Default",
+   "size": [
+    120,
+    70
+   ],
+   "description": ""
+  },
+  {
+   "label": "button",
+   "name": "Button",
+   "type": "COMPONENT_SET",
+   "variants": 18,
+   "props": {
+    "Label#2:0": "TEXT=\"Button\"",
+    "Icon End#4:0": "INSTANCE_SWAP=\"5:18\"",
+    "Has Icon End#4:64": "BOOLEAN=false",
+    "Has Icon Start#4:128": "BOOLEAN=false",
+    "Icon Start#4:192": "INSTANCE_SWAP=\"5:20\"",
+    "Variant": [
+     "Primary",
+     "Neutral",
+     "Subtle"
+    ],
+    "State": [
+     "Default",
+     "Hover",
+     "Disabled"
+    ],
+    "Size": [
+     "Medium",
+     "Small"
+    ]
+   },
+   "default": "Variant=Primary, State=Default, Size=Medium",
+   "size": [
+    75,
+    40
+   ],
+   "description": ""
+  },
+  {
+   "label": "tab",
+   "name": "Tab",
+   "type": "COMPONENT_SET",
+   "variants": 4,
+   "props": {
+    "Label#157:36": "TEXT=\"Label\"",
+    "State": [
+     "Default",
+     "Hover"
+    ],
+    "Active": [
+     "Off",
+     "On"
+    ]
+   },
+   "default": "State=Default, Active=Off",
+   "size": [
+    66,
+    30
+   ],
+   "description": ""
+  },
+  {
+   "label": "textTitlePage",
+   "name": "Text Title Page",
+   "type": "COMPONENT",
+   "variants": 1,
+   "props": {
+    "Text#2104:2": "TEXT=\"Text Title Page\""
+   },
+   "default": "Text Title Page",
+   "size": [
+    335,
+    58
+   ],
+   "description": ""
+  },
+  {
+   "label": "buttonDanger",
+   "name": "Button Danger",
+   "type": "COMPONENT_SET",
+   "variants": 12,
+   "props": {
+    "Label#2:0": "TEXT=\"Button\"",
+    "Icon End#4:0": "INSTANCE_SWAP=\"5:18\"",
+    "Has Icon End#4:64": "BOOLEAN=false",
+    "Has Icon Start#4:128": "BOOLEAN=false",
+    "Icon Start#4:192": "INSTANCE_SWAP=\"5:20\"",
+    "Variant": [
+     "Primary",
+     "Subtle"
+    ],
+    "State": [
+     "Default",
+     "Hover",
+     "Disabled"
+    ],
+    "Size": [
+     "Medium",
+     "Small"
+    ]
+   },
+   "default": "Variant=Primary, State=Default, Size=Medium",
+   "size": [
+    75,
+    40
+   ],
+   "description": "Keywords: action, negative, destructive"
+  },
+  {
+   "label": "dialogBody",
+   "name": "Dialog Body",
+   "type": "COMPONENT_SET",
+   "variants": 2,
+   "props": {
+    "Dismissible#228:0": "BOOLEAN=true",
+    "Body#280:26": "TEXT=\"Body text\"",
+    "Heading#280:29": "TEXT=\"Text Heading\"",
+    "Slot#6031:16": "SLOT",
+    "Slot 2#6031:19": "SLOT",
+    "Type": [
+     "Card",
+     "Sheet"
+    ]
+   },
+   "default": "Type=Card",
+   "size": [
+    466,
+    191
+   ],
+   "description": "Overlays have a maximum width of 600, to prevent long lines of text.\n\nWhen using Bottom Sheets, override the auto layout settings in the \u2756 Dialog, so that it is anchored to the bottom.\n\nWhen using the \u2756 Dialog on smaller screens, you may want to add horizontal padding so that it isn\u2019t full bleed.\n\nThe body of Bottom Sheet has a min-height of 160, so that by default it covers a large portion of the small device\u2019s height.\n\nKeywords: popup, modal"
+  }
+ ],
+ "errors": {}
+}

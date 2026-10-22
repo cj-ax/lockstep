@@ -1,0 +1,421 @@
+{
+ "components": {
+  "Text Heading": {
+   "type": "FRAME",
+   "name": "Text Heading",
+   "w": 627.5,
+   "h": 29,
+   "clips": false,
+   "layout": {
+    "mode": "HORIZONTAL",
+    "pt": 0,
+    "pr": 0,
+    "pb": 0,
+    "pl": 0,
+    "gap": 0,
+    "primary": "MIN",
+    "counter": "MIN",
+    "primarySizing": "FIXED",
+    "counterSizing": "AUTO",
+    "wrap": "NO_WRAP"
+   },
+   "children": [
+    {
+     "type": "TEXT",
+     "name": "Personal information",
+     "w": 627.5,
+     "h": 29,
+     "sizeH": "FILL",
+     "sizeV": "HUG",
+     "fills": [
+      "#1e1e1e"
+     ],
+     "text": {
+      "characters": "Personal information",
+      "family": "Inter",
+      "style": "Semi Bold",
+      "size": 24,
+      "lineHeight": {
+       "unit": "PERCENT",
+       "value": 120.00000476837158
+      },
+      "letterSpacing": {
+       "unit": "PERCENT",
+       "value": -2
+      },
+      "textCase": "ORIGINAL",
+      "align": "LEFT",
+      "autoResize": "HEIGHT"
+     }
+    }
+   ]
+  },
+  "Switch Field": {
+   "type": "FRAME",
+   "name": "Switch Field",
+   "w": 1328,
+   "h": 46,
+   "limits": {
+    "minWidth": 120
+   },
+   "clips": false,
+   "layout": {
+    "mode": "VERTICAL",
+    "pt": 0,
+    "pr": 0,
+    "pb": 0,
+    "pl": 0,
+    "gap": 0,
+    "primary": "MIN",
+    "counter": "MIN",
+    "primarySizing": "AUTO",
+    "counterSizing": "FIXED",
+    "wrap": "NO_WRAP"
+   },
+   "children": [
+    {
+     "type": "FRAME",
+     "name": "Checkbox and Label",
+     "w": 1328,
+     "h": 24,
+     "sizeH": "FILL",
+     "sizeV": "HUG",
+     "clips": false,
+     "layout": {
+      "mode": "HORIZONTAL",
+      "pt": 0,
+      "pr": 0,
+      "pb": 0,
+      "pl": 0,
+      "gap": 12,
+      "primary": "MIN",
+      "counter": "CENTER",
+      "primarySizing": "FIXED",
+      "counterSizing": "AUTO",
+      "wrap": "NO_WRAP"
+     },
+     "children": [
+      {
+       "type": "TEXT",
+       "name": "Product updates",
+       "w": 1276,
+       "h": 22,
+       "sizeH": "FILL",
+       "sizeV": "HUG",
+       "fills": [
+        "#1e1e1e"
+       ],
+       "text": {
+        "characters": "Product updates",
+        "family": "Inter",
+        "style": "Regular",
+        "size": 16,
+        "lineHeight": {
+         "unit": "PERCENT",
+         "value": 139.9999976158142
+        },
+        "letterSpacing": {
+         "unit": "PERCENT",
+         "value": 0
+        },
+        "textCase": "ORIGINAL",
+        "align": "LEFT",
+        "autoResize": "HEIGHT"
+       }
+      },
+      {
+       "type": "FRAME",
+       "name": "Switch",
+       "w": 40,
+       "h": 24,
+       "sizeH": "FIXED",
+       "sizeV": "FIXED",
+       "fills": [
+        "#2c2c2c"
+       ],
+       "strokes": [
+        "#2c2c2c"
+       ],
+       "strokeWeight": 1,
+       "strokeAlign": "INSIDE",
+       "radius": [
+        9999,
+        9999,
+        9999,
+        9999
+       ],
+       "clips": true,
+       "children": [
+        {
+         "type": "VECTOR",
+         "name": "Knob",
+         "w": 18,
+         "h": 18,
+         "x": 19,
+         "y": 3,
+         "sizeH": "FIXED",
+         "sizeV": "FIXED",
+         "fills": [
+          "#f5f5f5"
+         ],
+         "paths": [
+          {
+           "windingRule": "NONZERO",
+           "data": "M 18 9 C 18 13.970562934875488 13.970562934875488 18 9 18 C 4.029437065124512 18 0 13.970562934875488 0 9 C 0 4.029437065124512 4.029437065124512 0 9 0 C 13.970562934875488 0 18 4.029437065124512 18 9 Z"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "TEXT",
+     "name": "News about features and improvements.",
+     "w": 1328,
+     "h": 22,
+     "sizeH": "FILL",
+     "sizeV": "HUG",
+     "fills": [
+      "#757575"
+     ],
+     "text": {
+      "characters": "News about features and improvements.",
+      "family": "Inter",
+      "style": "Regular",
+      "size": 16,
+      "lineHeight": {
+       "unit": "PERCENT",
+       "value": 139.9999976158142
+      },
+      "letterSpacing": {
+       "unit": "PERCENT",
+       "value": 0
+      },
+      "textCase": "ORIGINAL",
+      "align": "LEFT",
+      "autoResize": "HEIGHT"
+     }
+    }
+   ]
+  },
+  "Card (Slot)": {
+   "type": "FRAME",
+   "name": "Card (Slot)",
+   "w": 675.5,
+   "h": 453,
+   "limits": {
+    "minWidth": 240
+   },
+   "fills": [
+    "#ffffff"
+   ],
+   "strokes": [
+    "#d9d9d9"
+   ],
+   "strokeWeight": 1,
+   "strokeAlign": "INSIDE",
+   "radius": [
+    8,
+    8,
+    8,
+    8
+   ],
+   "clips": false,
+   "layout": {
+    "mode": "VERTICAL",
+    "pt": 24,
+    "pr": 24,
+    "pb": 24,
+    "pl": 24,
+    "gap": 24,
+    "primary": "MIN",
+    "counter": "MIN",
+    "primarySizing": "AUTO",
+    "counterSizing": "FIXED",
+    "wrap": "NO_WRAP"
+   },
+   "children": [
+    {
+     "type": "FRAME",
+     "name": "Slot",
+     "w": 627.5,
+     "h": 405,
+     "sizeH": "FILL",
+     "sizeV": "HUG",
+     "clips": false,
+     "layout": {
+      "mode": "VERTICAL",
+      "pt": 0,
+      "pr": 0,
+      "pb": 0,
+      "pl": 0,
+      "gap": 24,
+      "primary": "MIN",
+      "counter": "MIN",
+      "primarySizing": "AUTO",
+      "counterSizing": "FIXED",
+      "wrap": "NO_WRAP"
+     },
+     "slot": true,
+     "slotContent": 5
+    }
+   ]
+  },
+  "Button Group": {
+   "type": "FRAME",
+   "name": "Button Group",
+   "w": 627.5,
+   "h": 40,
+   "clips": false,
+   "layout": {
+    "mode": "HORIZONTAL",
+    "pt": 0,
+    "pr": 0,
+    "pb": 0,
+    "pl": 0,
+    "gap": 16,
+    "primary": "MAX",
+    "counter": "CENTER",
+    "primarySizing": "FIXED",
+    "counterSizing": "AUTO",
+    "wrap": "NO_WRAP"
+   },
+   "children": [
+    {
+     "type": "INSTANCE",
+     "name": "Button",
+     "w": 77,
+     "h": 40,
+     "sizeH": "HUG",
+     "sizeV": "HUG",
+     "key": "af4db6779364afa444f7cf2df078c98861cc1c82",
+     "component": "Button / Variant=Neutral, State=Default, Size=Medium",
+     "props": {
+      "Has Icon Start": false,
+      "Has Icon End": false,
+      "Label": "Cancel",
+      "Variant": "Neutral",
+      "State": "Default",
+      "Size": "Medium"
+     }
+    },
+    {
+     "type": "INSTANCE",
+     "name": "Button",
+     "w": 130,
+     "h": 40,
+     "sizeH": "HUG",
+     "sizeV": "HUG",
+     "key": "c8d51d520980822780402227046ea3e450bbc6cd",
+     "component": "Button / Variant=Primary, State=Default, Size=Medium",
+     "props": {
+      "Has Icon Start": false,
+      "Has Icon End": false,
+      "Label": "Save changes",
+      "Variant": "Primary",
+      "State": "Default",
+      "Size": "Medium"
+     }
+    }
+   ]
+  },
+  "Tabs": {
+   "type": "FRAME",
+   "name": "Tabs",
+   "w": 280,
+   "h": 30,
+   "clips": true,
+   "layout": {
+    "mode": "HORIZONTAL",
+    "pt": 0,
+    "pr": 0,
+    "pb": 0,
+    "pl": 0,
+    "gap": 0,
+    "primary": "MIN",
+    "counter": "MIN",
+    "primarySizing": "AUTO",
+    "counterSizing": "AUTO",
+    "wrap": "NO_WRAP"
+   },
+   "children": [
+    {
+     "type": "FRAME",
+     "name": "Slot",
+     "w": 280,
+     "h": 30,
+     "sizeH": "HUG",
+     "sizeV": "HUG",
+     "clips": false,
+     "layout": {
+      "mode": "HORIZONTAL",
+      "pt": 0,
+      "pr": 0,
+      "pb": 0,
+      "pl": 0,
+      "gap": 0,
+      "primary": "MIN",
+      "counter": "CENTER",
+      "primarySizing": "AUTO",
+      "counterSizing": "AUTO",
+      "wrap": "NO_WRAP"
+     },
+     "slot": true,
+     "slotContent": 3
+    }
+   ]
+  },
+  "Dialog": {
+   "type": "FRAME",
+   "name": "Dialog",
+   "w": 1440,
+   "h": 768,
+   "fills": [
+    "#ffffffcc"
+   ],
+   "effects": [
+    {
+     "type": "BACKGROUND_BLUR",
+     "blur": 4
+    }
+   ],
+   "clips": false,
+   "layout": {
+    "mode": "VERTICAL",
+    "pt": 0,
+    "pr": 0,
+    "pb": 0,
+    "pl": 0,
+    "gap": 0,
+    "primary": "CENTER",
+    "counter": "CENTER",
+    "primarySizing": "FIXED",
+    "counterSizing": "FIXED",
+    "wrap": "NO_WRAP"
+   },
+   "children": [
+    {
+     "type": "INSTANCE",
+     "name": "Dialog Body",
+     "w": 600,
+     "h": 307,
+     "sizeH": "FILL",
+     "sizeV": "HUG",
+     "limits": {
+      "maxWidth": 600
+     },
+     "key": "19a7cdfe4a317a017e624d2426f68914544b0a92",
+     "component": "Dialog Body / Type=Card",
+     "props": {
+      "Body": "This permanently deletes your profile, settings and data. You can\u2019t undo this.",
+      "Heading": "Delete your account?",
+      "Dismissible": true,
+      "Type": "Card"
+     }
+    }
+   ]
+  }
+ },
+ "missing": []
+}

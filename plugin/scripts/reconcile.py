@@ -213,7 +213,7 @@ def reconcile_tokens(dtokens, ctokens):
             for _, x in exact:
                 used_code[x["name"]] += 1  # every code token with this value is covered, not just the best-named
             rows.append({"status": "complete", "kind": d["kind"], "design": d["name"], "code": c["name"], "values": d["values"],
-                         "nameMatch": sim > 0, "alsoMatches": [x["name"] for s, x in exact if x is not c][:4]})
+                         "nameMatch": sim >= 0.5, "alsoMatches": [x["name"] for s, x in exact if x is not c][:4]})
             continue
         # Drift: the same thing by name, with values of the same type that differ. The name must
         # match word for word, or closely with at least one mode agreeing (light the same, dark not).

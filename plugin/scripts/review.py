@@ -234,7 +234,8 @@ def apply(a):
             approved["tokens"].append({**rec, "name": name, "kind": it.get("kind", "number"), "values": {"default": p["value"]}, "drift": []})
         elif p["type"] == "agreed" and d == "approve":
             for row in p["rows"]:
-                approved["tokens"].append({**rec, "name": row["design"], "kind": row["kind"], "values": row["values"], "code": row["code"], "drift": []})
+                approved["tokens"].append({**rec, "name": row["design"], "kind": row["kind"], "values": row["values"], "code": row["code"],
+                                           "nameMatch": row.get("nameMatch"), "drift": []})
             for row in p["types"]:
                 approved["typeStyles"].append({**rec, "name": row["design"], "code": row["code"], "values": row.get("values")})
             for row in p.get("components", []):

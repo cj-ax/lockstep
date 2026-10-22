@@ -156,7 +156,7 @@ It writes `REVIEW.md`, a checklist that works anywhere, and `review.html`, a pag
   - Modes from different collections ("Dark mode", "Dark", "BuildDark") are normalised to one theme each (dark, build).
   - Type styles become DTCG typography tokens and `.type-<name>` classes.
   - Each token's `$extensions` record where it came from, who approved it, its code name and the drift it absorbed.
-- **(a) Draft Figma variables (milestone 5):** the same tokens as Figma variables in a **new draft file**, with modes.
+- **(a) Draft Figma variables (built in milestone 5: `variables.js`):** the same tokens as a "Learned tokens" collection in a **new draft file**, one mode per theme. Each variable is scoped by kind, so spacing is offered only for gaps and padding. Its description records the drift values it absorbed. Approved type styles become local text styles.
 - **(b) Component docs (built):** one Markdown page per approved component. Each covers:
   - its purpose and when to use it, from the Figma description;
   - its Figma variants;
@@ -165,11 +165,22 @@ It writes `REVIEW.md`, a checklist that works anywhere, and `review.html`, a pag
   - the decisions and open questions that touch it.
 
   Pages say what the sources say and nothing more. With no description, a page says one is needed. A description cut at the inventory's 1,500 characters is marked. Do/don't examples and accessibility notes need sources Lockstep doesn't read yet.
-- **(c) AI context:** `DESIGN_SYSTEM_CONTEXT.md` and `design-system-registry.json`, in DS-AI-Bridge's existing format, for code generation.
-- **(d) Lockstep files:** `LIBRARY.md`, `keys.json` and the three inventory files, in the format `build` already reads.
+- **(c) AI context (built: `context.py`):** `DESIGN_SYSTEM_CONTEXT.md` and `design-system-registry.json`, in DS-AI-Bridge's shape, for code generation. The content:
+  - rules from what was decided;
+  - tokens with their CSS names (code's own name only when the names match, otherwise the generated name with a "same value as" note);
+  - each component's code API and Figma mapping;
+  - open conflicts, listed with both sides so a generator asks instead of picking one.
+- **(d) Lockstep files (built: `library.py`):** `LIBRARY.md`, `keys.json` and `variables.json` for a learned library. Learned components and variables are referenced as `local:<id>`, and published ones by key. `LIBRARY.md` lists every component's properties, so `build` needs no inventory files.
+- **(d') Components approved as new ones (built: `snapshot.js` and `rebuild.js`):** the org's files are protected, and the plugin API can't copy layers between files. So a read-only snapshot records an approved example's layers as data in the source file, and a rebuild recreates it in the draft:
+  - every colour, spacing, radius and stroke is bound to a learned variable, and drift values snap to the token that absorbed them;
+  - text gets its text style and becomes a role-named text property;
+  - library parts inside are exposed instances;
+  - slots become real, empty slots.
+
+  Rebuilt components have one variant: detached copies don't say which variant they came from.
 - **(e) Code to Figma:** for code-only and de facto components, draft Figma components in the draft library file, using Figma's `figma-generate-library` skill. They're bound to the generated variables, with variant properties taken from the code props.
 
-**A wrinkle for `build`.** `build` imports components by key from a *published* library, and draft components are local to their file. Until the org publishes the draft library, `build` works inside that draft file. Its helpers need to accept local components by node ID as well as by key, which is a small change.
+**A wrinkle for `build` (handled in milestone 5).** `build` imports components by key from a *published* library, and draft components are local to their file. Until the org publishes the draft library, `build` works inside that draft file. It reaches learned components and variables by local ID, and `score --local-library-page` counts them as library instances.
 
 ### 8. Gate (milestone 2 onwards, on the fixture)
 
@@ -222,7 +233,7 @@ Recall is measured before review, against all proposals, to test the harvest. Pr
 | **2** | `inventory_local.js`; `audit.js`; read-only guard allowance; token and component proposals (`propose.py`); `score_recovery.py` | Token and component recall on the fixture, reported: see `learn/fixture/RECOVERY.md` and REPORT.md |
 | **3** | Code harvest (tier 3), reconcile, coverage matrix, conflicts | Coverage and conflicts for Slalom (Figma plus `design-system-beta`): `learn/slalom/COVERAGE.md`; the fixture's design-only coverage, since SDS's code isn't in hand. Tier 2 (Storybook) and the review page move to milestone 4 |
 | **4** | Review page and checklist; apply rulings; generate DTCG tokens, CSS and component docs | Both runs generated from approved items only: the fixture from a scripted take-every-suggestion review, Slalom with only the agreed item approved and all 31 contested items left open. The Slalom review page is published for the team |
-| 5 | Draft Figma variables, AI context, LIBRARY.md for `build`; `build` on the learned system, scored | `build` on the fixture's learned system, scored |
+| **5** | Draft Figma variables, rebuilt components, AI context, LIBRARY.md for `build`; `build` on the learned system, scored | A fresh agent with only the plugin built an unseen Billing page on the fixture's learned library. Rescored independently: Overview 100, Dialog 90. See REPORT.md |
 | 6 | Code to Figma: draft components for code-only and de facto parts | Draft library components scored by `score` and a screenshot check |
 | 7 | Pilot on Josh's programme | Whatever that programme needs first, most likely documentation |
 

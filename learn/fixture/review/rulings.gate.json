@@ -1,0 +1,348 @@
+{
+ "token-color-1e1e1e-29869d": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-color-ffffff-19e7ae": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-color-d9d9d9-f77770": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-color-2c2c2c-2a5244": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-color-767676-f0edbd": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-color-f5f5f5-2ef28e": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-color-757575-5b71e3": {
+  "decision": "rename",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-color-303030-6ad57b": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-color-b2b2b2-3a7822": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-color-e3e3e3-5e4a36": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-color-ec221f-9b9aca": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-color-c00f0c-2c3f12": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-color-fee9e7-9c5734": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-color-ffffffcc-5e5700": {
+  "decision": "rename",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-color-0c0c0d0d-771aa3": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-color-0c0c0d1a-9220b0": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-spacing-8-0-9b87cf": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-spacing-12-0-aa471e": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-spacing-32-0-0f05f2": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-spacing-24-0-59ecfe": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-spacing-16-0-1144e0": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-spacing-4-0-06ad0d": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-radius-8-0-7ecbfa": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-radius-9999-0-ce25c5": {
+  "decision": "rename",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-radius-4-0-fcc31b": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-radius-32-0-8436b7": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-stroke-1-0-ccb8ff": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-effect-4-0-36d401": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-effect-4-0-cdb746": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-effect-0-0-e19218": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-effect-bg-blur-4-9f1fd6": {
+  "decision": "rename",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-effect-32-0-176d74": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-effect-16-0-3eca42": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-type-inter-regular-16-140-0-e51851": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-type-inter-semi-bold-24-120-2-d24020": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-type-inter-regular-16-100-0-c64269": {
+  "decision": "rename",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-type-inter-bold-48-120-2-509da5": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-fontfamily-inter-8d67ab": {
+  "decision": "rename",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-fontsize-16-0-7cf6dc": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-fontsize-24-0-ea9b42": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-fontsize-48-0-1126dc": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-fontweight-400-0-dc8a4b": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-fontweight-600-0-05ee04": {
+  "decision": "rename",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "token-fontweight-700-0-6ab32a": {
+  "decision": "approve",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "component-text-heading-f5dd63": {
+  "decision": "component",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "component-input-field-dbebd3": {
+  "decision": "relink",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "component-switch-field-6cfef2": {
+  "decision": "component",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "component-tab-4b8c4a": {
+  "decision": "relink",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "component-card-slot-4cb51f": {
+  "decision": "component",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "component-button-group-48c2b2": {
+  "decision": "component",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "component-tabs-e06031": {
+  "decision": "component",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "component-text-53622a": {
+  "decision": "relink",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "component-text-title-page-b8dcd7": {
+  "decision": "relink",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "component-dialog-8b7cc3": {
+  "decision": "component",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "component-card-title-171966": {
+  "decision": "reject",
+  "by": "gate review: the scripted review with this one item rejected",
+  "at": "2026-10-22T00:00:00Z",
+  "note": "A title and description block, not a component."
+ },
+ "wip-bg-white-43e7d4": {
+  "decision": "map",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "wip-spacing-xl-cfd2d8": {
+  "decision": "map",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "wip-spacing-l-1ee6cb": {
+  "decision": "map",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "wip-border-w-174f70": {
+  "decision": "map",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "wip-spacing-m-c9484c": {
+  "decision": "map",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "wip-spacing-xs-2f1cc8": {
+  "decision": "map",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "wip-text-primary-0a11af": {
+  "decision": "map",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "wip-radius-md-1b2868": {
+  "decision": "map",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "wip-border-light-df8b8f": {
+  "decision": "map",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "wip-blue-accent-9e5f45": {
+  "decision": "delete",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "wip-spacing-s-b717f6": {
+  "decision": "delete",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "local-card-base-c1c056": {
+  "decision": "merge",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "local-section-heading-0d5df7": {
+  "decision": "merge",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ },
+ "local-toggle-row-93e02f": {
+  "decision": "merge",
+  "by": "scripted review (takes every suggestion)",
+  "at": "2026-10-22T00:00:00Z"
+ }
+}

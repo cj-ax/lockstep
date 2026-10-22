@@ -11,6 +11,12 @@ const sets = Object.fromEntries(await Promise.all(Object.entries(SET_KEYS).map(a
 const comps = Object.fromEntries(await Promise.all(Object.entries(COMPONENT_KEYS).map(async ([k, key]) => [k, await figma.importComponentByKeyAsync(key)])));
 const vars = Object.fromEntries(await Promise.all(Object.entries(VARIABLE_KEYS).map(async ([k, key]) => [k, await figma.variables.importVariableByKeyAsync(key)])));
 
+// A learned library (lockstep:learn) keeps its components and variables local to its draft:
+// refs are "local:<id>" there, keys for anything published.
+const ref = async (r) => r.startsWith('local:') ? figma.getNodeByIdAsync(r.slice(6))
+  : figma.importComponentSetByKeyAsync(r).catch(() => figma.importComponentByKeyAsync(r));
+const localVar = async (r) => figma.variables.getVariableByIdAsync(r.slice(6));
+
 // Pick a variant by its properties, from the variant's name ("Size=md, State=enabled").
 const variantComponent = (set, props) => {
   const want = Object.entries(props);

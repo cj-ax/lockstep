@@ -325,8 +325,8 @@ Note:
 ## Agreed
 
 ### 87 tokens, 14 type styles and 15 components in both Figma and code  `agreed-87-14-15-4ff2f0`
-- 68 tokens with matching names
-- 19 tokens matched by value alone: check these in COVERAGE.md
+- 13 tokens with matching names
+- 74 tokens matched by value alone: check these in COVERAGE.md
 - Type styles: Subtitle-2, Body-2, Body-1, Caption, button-lg-upcase, button-lg-ttlcase, button-md-upcase, button-md-ttlcase, button-sm-upcase, button-sm-ttlcase, Heading 6, Heading 3, Heading 4, Subtitle-1
 - Components: button = SButton, semantic Buttons = SButton, input/textField = STextField, text area = STextArea, single-select = SSelect, autocomplete = SAutocomplete, date picker = SDatePicker, Switch Toggle = SSwitch, Status Alert Bar = SAlert, Toast Notifications = SToast, step = SStepper, Accordion Row = SExpansionPanel, empty State = SEmptyState, loading = SProgressRing, combobox = SCombobox. Their differences are listed as conflicts.
 - Lockstep suggests: Approve all

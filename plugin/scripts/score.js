@@ -1,6 +1,6 @@
 // Lockstep faithfulness score. Run through use_figma (read-only) with ROOT_IDS set to the
 // frames to score. Org-agnostic: "library" means any component whose main component is
-// remote (published from another file); nothing here knows about Slalom.
+// remote (published from another file), or on LOCAL_LIBRARY_PAGE; nothing here knows about Slalom.
 //
 // What counts:
 // - Authored nodes: everything under ROOT that the builder placed. Library instance
@@ -12,6 +12,9 @@
 //   stroke weight, corner radius, padding and gap on auto layout frames, and text
 //   typography (text style or bound font size).
 const ROOT_IDS = __ROOT_IDS__;
+// A learned draft library keeps its components on a page of the same file until the org
+// publishes it. Instances of components on this page count as library instances ("" = none).
+const LOCAL_LIBRARY_PAGE = __LOCAL_LIBRARY_PAGE__;
 const MAX_OFFENDERS = 60;
 
 let offenders = [];
@@ -138,6 +141,13 @@ async function checkInstanceOverrides(inst) {
   }
 }
 
+function onLibraryPage(main) {
+  if (!LOCAL_LIBRARY_PAGE) return false;
+  let p = main.parent;
+  while (p && p.type !== 'PAGE') p = p.parent;
+  return !!p && p.name === LOCAL_LIBRARY_PAGE;
+}
+
 async function walk(node, isRoot) {
   if (node.visible === false) return;
   const t = node.type;
@@ -146,16 +156,19 @@ async function walk(node, isRoot) {
     counts.instancesTotal++;
     counts.contentNodes++;
     const main = await node.getMainComponentAsync();
-    if (main && main.remote) counts.libraryInstances++;
+    if (main && (main.remote || onLibraryPage(main))) counts.libraryInstances++;
     else { counts.localInstances++; flag(node, 'not-library-instance', main ? `local component "${main.name}"` : 'missing main component'); }
     await checkInstanceOverrides(node);
     await checkDefaultText(node, main);
     checkClipped(node);
-    // Descend only into this instance's own slots: their contents are authored.
-    const ownerOf = n => { let p = n.parent; while (p && p.type !== 'INSTANCE') p = p.parent; return p; };
+    // Descend into every slot in this instance that isn't inside another of its slots: their
+    // contents are authored, including the slots of nested instances (a Dialog Body inside a
+    // Dialog), where a build also puts content.
     // findAllWithCriteria misses slots of nested instances; compare by id, not by wrapper object.
-    for (const slot of node.findAll(n => n.type === 'SLOT')) {
-      if (!ownerOf(slot) || ownerOf(slot).id !== node.id) continue;
+    const isInside = (x, anc) => { for (let p = x.parent; p; p = p.parent) if (p.id === anc.id) return true; return false; };
+    const allSlots = node.findAll(n => n.type === 'SLOT');
+    for (const slot of allSlots) {
+      if (allSlots.some(o => o.id !== slot.id && isInside(slot, o))) continue;
       checkClipped(slot);
       for (const c of slot.children) await walk(c, false);
     }

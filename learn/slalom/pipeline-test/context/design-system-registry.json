@@ -1,0 +1,1929 @@
+{
+ "meta": {
+  "system_name": "Slalom design system review",
+  "generated": "2026-10-22",
+  "generator": "Lockstep learn (context.py)",
+  "framework": "Vue + Vuetify",
+  "package": "@slalom/design-system",
+  "source": "approved review items only",
+  "open_items": 31
+ },
+ "tokens": [
+  {
+   "name": "Brand colors/color display text light",
+   "kind": "color",
+   "values": {
+    "Light mode": "#ffffff",
+    "Dark mode": "#ffffff",
+    "Build Mode": "#ffffff",
+    "Mobile": "#ffffff"
+   },
+   "use": "var(--brand-colors-color-display-text-light)",
+   "same_value_in_code": "--slm-on-error"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/Font Colors/text-regular",
+   "kind": "color",
+   "values": {
+    "Light": "#000000",
+    "Dark": "#ffffff"
+   },
+   "use": "var(--font-colors-text-regular)",
+   "same_value_in_code": "theme.on-surface"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/Font Colors/text-regular inverse",
+   "kind": "color",
+   "values": {
+    "Light": "#ffffff",
+    "Dark": "#000000"
+   },
+   "use": "var(--font-colors-text-regular-inverse)",
+   "same_value_in_code": "--slm-dp-selected-text"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/Font Colors/text-high-contrast-bg-2",
+   "kind": "color",
+   "values": {
+    "Light": "#ffffff",
+    "Dark": "#ffffff"
+   },
+   "use": "var(--font-colors-text-high-contrast-bg-2)",
+   "same_value_in_code": "--slm-on-error"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/Primary Colors/background-field",
+   "kind": "color",
+   "values": {
+    "Light": "#ffffff",
+    "Dark": "#444444"
+   },
+   "use": "var(--primary-colors-background-field)",
+   "same_value_in_code": "theme.surface"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/Primary Colors/background-page",
+   "kind": "color",
+   "values": {
+    "Light": "#fafafa",
+    "Dark": "#212121"
+   },
+   "use": "var(--primary-colors-background-page)",
+   "same_value_in_code": "--slm-hover-bg-plain"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/Primary Colors/background-surface",
+   "kind": "color",
+   "values": {
+    "Light": "#ffffff",
+    "Dark": "#444444"
+   },
+   "use": "theme colour `surface`"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/Primary Colors/primary",
+   "kind": "color",
+   "values": {
+    "Light": "#0c62fb",
+    "Dark": "#86b1fd"
+   },
+   "use": "theme colour `primary`"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/Primary Colors/hover",
+   "kind": "color",
+   "values": {
+    "Light": "#f0f3f8",
+    "Dark": "#757575"
+   },
+   "use": "var(--slm-dp-hover)"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/Border Colors/field-border-hover",
+   "kind": "color",
+   "values": {
+    "Light": "#000000",
+    "Dark": "#ffffff"
+   },
+   "use": "var(--border-colors-field-border-hover)",
+   "same_value_in_code": "theme.on-surface"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/Border Colors/field-border-pressed",
+   "kind": "color",
+   "values": {
+    "Light": "#0c62fb",
+    "Dark": "#86b1fd"
+   },
+   "use": "var(--border-colors-field-border-pressed)",
+   "same_value_in_code": "theme.primary"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/semantic button color/outline/positive-outlined-bg-default",
+   "kind": "color",
+   "values": {
+    "Light": "#ffffff",
+    "Dark": "#444444"
+   },
+   "use": "var(--semantic-button-color-outline-positive-outlined-bg-default)",
+   "same_value_in_code": "--slm-app-card-bg"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/semantic button color/outline/positive-outlined-bg-hover",
+   "kind": "color",
+   "values": {
+    "Light": "#f0f3f8",
+    "Dark": "#757575"
+   },
+   "use": "var(--semantic-button-color-outline-positive-outlined-bg-hover)",
+   "same_value_in_code": "--slm-dp-hover"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/semantic button color/outline/positive-outlined-bg-pressed",
+   "kind": "color",
+   "values": {
+    "Light": "#ffffff",
+    "Dark": "#444444"
+   },
+   "use": "var(--semantic-button-color-outline-positive-outlined-bg-pressed)",
+   "same_value_in_code": "--slm-app-card-bg"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/semantic button color/outline/positive-outlined-bg-disable",
+   "kind": "color",
+   "values": {
+    "Light": "#ffffff",
+    "Dark": "#444444"
+   },
+   "use": "var(--semantic-button-color-outline-positive-outlined-bg-disable)",
+   "same_value_in_code": "--slm-app-card-bg"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/semantic button color/outline/negative-outlined-bg-default",
+   "kind": "color",
+   "values": {
+    "Light": "#ffffff",
+    "Dark": "#444444"
+   },
+   "use": "var(--semantic-button-color-outline-negative-outlined-bg-default)",
+   "same_value_in_code": "--slm-app-card-bg"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/semantic button color/outline/negative-outlined-bg-hover",
+   "kind": "color",
+   "values": {
+    "Light": "#f0f3f8",
+    "Dark": "#757575"
+   },
+   "use": "var(--semantic-button-color-outline-negative-outlined-bg-hover)",
+   "same_value_in_code": "--slm-dp-hover"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/semantic button color/outline/negative-outlined-bg-pressed",
+   "kind": "color",
+   "values": {
+    "Light": "#ffffff",
+    "Dark": "#444444"
+   },
+   "use": "var(--semantic-button-color-outline-negative-outlined-bg-pressed)",
+   "same_value_in_code": "--slm-app-card-bg"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/semantic button color/outline/negative-outlined-bg-disable",
+   "kind": "color",
+   "values": {
+    "Light": "#ffffff",
+    "Dark": "#444444"
+   },
+   "use": "var(--semantic-button-color-outline-negative-outlined-bg-disable)",
+   "same_value_in_code": "--slm-app-card-bg"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/semantic button color/contained/negative-contained-txt",
+   "kind": "color",
+   "values": {
+    "Light": "#ffffff",
+    "Dark": "#444444"
+   },
+   "use": "var(--semantic-button-color-contained-negative-contained-txt)",
+   "same_value_in_code": "theme.surface"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/button Colors/contained/contained-btn-default-bg",
+   "kind": "color",
+   "values": {
+    "Light": "#0c62fb",
+    "Dark": "#86b1fd"
+   },
+   "use": "var(--button-colors-contained-contained-btn-default-bg)",
+   "same_value_in_code": "theme.primary"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/button Colors/contained/contained-btn-hover-bg",
+   "kind": "color",
+   "values": {
+    "Light": "#0c62fb",
+    "Dark": "#86b1fd"
+   },
+   "use": "var(--button-colors-contained-contained-btn-hover-bg)",
+   "same_value_in_code": "theme.primary"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/button Colors/contained/contained-btn-hover-overlay",
+   "kind": "color",
+   "values": {
+    "Light": "#ffffff33",
+    "Dark": "#ffffff33"
+   },
+   "use": "var(--button-colors-contained-contained-btn-hover-overlay)",
+   "same_value_in_code": "--slm-success-hover-overlay"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/button Colors/contained/contained-btn-pressed-bg",
+   "kind": "color",
+   "values": {
+    "Light": "#0c62fb",
+    "Dark": "#86b1fd"
+   },
+   "use": "var(--button-colors-contained-contained-btn-pressed-bg)",
+   "same_value_in_code": "theme.primary"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/button Colors/contained/contained-btn-txt",
+   "kind": "color",
+   "values": {
+    "Light": "#ffffff",
+    "Dark": "#000000"
+   },
+   "use": "var(--button-colors-contained-contained-btn-txt)",
+   "same_value_in_code": "theme.on-primary"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/button Colors/contained/contained-btn-txt disable",
+   "kind": "color",
+   "values": {
+    "Light": "#ffffff",
+    "Dark": "#000000"
+   },
+   "use": "var(--button-colors-contained-contained-btn-txt-disable)",
+   "same_value_in_code": "theme.on-primary"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/button Colors/outlined/outlined-btn-default-bg",
+   "kind": "color",
+   "values": {
+    "Light": "#ffffff",
+    "Dark": "#444444"
+   },
+   "use": "var(--button-colors-outlined-outlined-btn-default-bg)",
+   "same_value_in_code": "--slm-app-card-bg"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/button Colors/neutral-outlined/outlined-neutral-btn-default-bg",
+   "kind": "color",
+   "values": {
+    "Light": "#ffffff",
+    "Dark": "#444444"
+   },
+   "use": "var(--button-colors-neutral-outlined-outlined-neutral-btn-default-bg)",
+   "same_value_in_code": "--slm-app-card-bg"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/button Colors/outlined/outlined-btn-hover-bg",
+   "kind": "color",
+   "values": {
+    "Light": "#f0f3f8",
+    "Dark": "#757575"
+   },
+   "use": "var(--button-colors-outlined-outlined-btn-hover-bg)",
+   "same_value_in_code": "--slm-dp-hover"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/button Colors/outlined/outlined-btn-pressed-bg",
+   "kind": "color",
+   "values": {
+    "Light": "#ffffff",
+    "Dark": "#444444"
+   },
+   "use": "var(--button-colors-outlined-outlined-btn-pressed-bg)",
+   "same_value_in_code": "--slm-app-card-bg"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/button Colors/outlined/outlined-btn-disable-bg",
+   "kind": "color",
+   "values": {
+    "Light": "#ffffff",
+    "Dark": "#444444"
+   },
+   "use": "var(--button-colors-outlined-outlined-btn-disable-bg)",
+   "same_value_in_code": "--slm-app-card-bg"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/button Colors/outlined/outlined-btn-disable-stroke",
+   "kind": "color",
+   "values": {
+    "Light": "#dbdbdb",
+    "Dark": "#eaeaea"
+   },
+   "use": "var(--button-colors-outlined-outlined-btn-disable-stroke)",
+   "same_value_in_code": "--slm-border"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/button Colors/outlined/outlined-btn-txt",
+   "kind": "color",
+   "values": {
+    "Light": "#0c62fb",
+    "Dark": "#86b1fd"
+   },
+   "use": "var(--button-colors-outlined-outlined-btn-txt)",
+   "same_value_in_code": "theme.primary"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/button Colors/text/text-btn-bg-default",
+   "kind": "color",
+   "values": {
+    "Light": "#ffffff",
+    "Dark": "#444444"
+   },
+   "use": "var(--button-colors-text-text-btn-bg-default)",
+   "same_value_in_code": "--slm-app-card-bg"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/button Colors/text/text-btn-bg-hover",
+   "kind": "color",
+   "values": {
+    "Light": "#f0f3f8",
+    "Dark": "#757575"
+   },
+   "use": "var(--button-colors-text-text-btn-bg-hover)",
+   "same_value_in_code": "--slm-dp-hover"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/button Colors/text/text-btn-bg-pressed",
+   "kind": "color",
+   "values": {
+    "Light": "#f0f3f8",
+    "Dark": "#757575"
+   },
+   "use": "var(--button-colors-text-text-btn-bg-pressed)",
+   "same_value_in_code": "--slm-dp-hover"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/button Colors/text/text-btn-txt",
+   "kind": "color",
+   "values": {
+    "Light": "#0c62fb",
+    "Dark": "#86b1fd"
+   },
+   "use": "var(--button-colors-text-text-btn-txt)",
+   "same_value_in_code": "theme.primary"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/button Colors/text/text-btn-txt-disable",
+   "kind": "color",
+   "values": {
+    "Light": "#00000080",
+    "Dark": "#ffffff80"
+   },
+   "use": "var(--button-colors-text-text-btn-txt-disable)",
+   "same_value_in_code": "--slm-text-hint"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/button Colors/text/text-btn-bg-disable",
+   "kind": "color",
+   "values": {
+    "Light": "#ffffff",
+    "Dark": "#444444"
+   },
+   "use": "var(--button-colors-text-text-btn-bg-disable)",
+   "same_value_in_code": "--slm-app-card-bg"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/button Colors/plain/plain-txt-bg-default",
+   "kind": "color",
+   "values": {
+    "Light": "#ffffff",
+    "Dark": "#444444"
+   },
+   "use": "var(--button-colors-plain-plain-txt-bg-default)",
+   "same_value_in_code": "--slm-app-card-bg"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/button Colors/plain/plain-txt-bg-hover",
+   "kind": "color",
+   "values": {
+    "Light": "#fafafa",
+    "Dark": "#212121"
+   },
+   "use": "var(--slm-hover-bg-plain)"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/button Colors/plain/plain-txt-bg-pressed",
+   "kind": "color",
+   "values": {
+    "Light": "#fafafa",
+    "Dark": "#212121"
+   },
+   "use": "var(--button-colors-plain-plain-txt-bg-pressed)",
+   "same_value_in_code": "--slm-hover-bg-plain"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/button Colors/plain/plain-txt-bg-disable",
+   "kind": "color",
+   "values": {
+    "Light": "#ffffff",
+    "Dark": "#444444"
+   },
+   "use": "var(--button-colors-plain-plain-txt-bg-disable)",
+   "same_value_in_code": "--slm-app-card-bg"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/shadow colors/shadow-4",
+   "kind": "color",
+   "values": {
+    "Light": "#00000033",
+    "Dark": "#00000033"
+   },
+   "use": "var(--shadow-colors-shadow-4)",
+   "same_value_in_code": "--slm-switch-thumb-shadow"
+  },
+  {
+   "name": "Color Semantic Variables (updated)/card color/card-bg-primary",
+   "kind": "color",
+   "values": {
+    "Light": "#fafafa",
+    "Dark": "#212121"
+   },
+   "use": "var(--card-color-card-bg-primary)",
+   "same_value_in_code": "--slm-hover-bg-plain"
+  },
+  {
+   "name": "Colors/Border Colors/neutral-border-color",
+   "kind": "color",
+   "values": {
+    "Light": "#dbdbdb",
+    "Dark": "#eaeaea",
+    "BuildDark": "#eaeaea"
+   },
+   "use": "var(--slm-border)"
+  },
+  {
+   "name": "Corner radius/Medium",
+   "kind": "radius",
+   "values": {
+    "default": 4
+   },
+   "use": "var(--corner-radius-medium)",
+   "same_value_in_code": "$slm-radius"
+  },
+  {
+   "name": "Font Variables/font weight/weight-400",
+   "kind": "fontWeight",
+   "values": {
+    "default": 400
+   },
+   "use": "var(--font-weight-weight-400)",
+   "same_value_in_code": "$slm-caption-weight"
+  },
+  {
+   "name": "Font Variables/font weight/weight-700",
+   "kind": "fontWeight",
+   "values": {
+    "default": 700
+   },
+   "use": "var(--font-weight-weight-700)",
+   "same_value_in_code": "$slm-heading-5-weight"
+  },
+  {
+   "name": "Radius/radius-m",
+   "kind": "radius",
+   "values": {
+    "default": 4
+   },
+   "use": "$slm-radius"
+  },
+  {
+   "name": "Radius/radius-m",
+   "kind": "radius",
+   "values": {
+    "Business @ Slalom": 4,
+    "Me @ Slalom": 4
+   },
+   "use": "$slm-radius"
+  },
+  {
+   "name": "Radius/radius-l",
+   "kind": "spacing",
+   "values": {
+    "Business @ Slalom": 8,
+    "Me @ Slalom": 8
+   },
+   "use": "var(--radius-radius-l)",
+   "same_value_in_code": "$slm-space-2"
+  },
+  {
+   "name": "Text/weight-400",
+   "kind": "fontWeight",
+   "values": {
+    "default": 400
+   },
+   "use": "var(--text-weight-400)",
+   "same_value_in_code": "$slm-caption-weight"
+  },
+  {
+   "name": "border variables/border-sm",
+   "kind": "stroke",
+   "values": {
+    "default": 1
+   },
+   "use": "$slm-border-sm"
+  },
+  {
+   "name": "border variables/border-md",
+   "kind": "stroke",
+   "values": {
+    "default": 2
+   },
+   "use": "$slm-border-md"
+  },
+  {
+   "name": "space variables/padding/uniform/pa-0",
+   "kind": "spacing",
+   "values": {
+    "default": 0
+   },
+   "use": "var(--padding-uniform-pa-0)",
+   "same_value_in_code": "$slm-space-0"
+  },
+  {
+   "name": "space variables/padding/uniform/pa-1",
+   "kind": "spacing",
+   "values": {
+    "default": 4
+   },
+   "use": "var(--padding-uniform-pa-1)",
+   "same_value_in_code": "$slm-space-1"
+  },
+  {
+   "name": "space variables/padding/uniform/pa-2",
+   "kind": "spacing",
+   "values": {
+    "default": 8
+   },
+   "use": "var(--padding-uniform-pa-2)",
+   "same_value_in_code": "$slm-space-2"
+  },
+  {
+   "name": "space variables/padding/uniform/pa-3",
+   "kind": "spacing",
+   "values": {
+    "default": 12
+   },
+   "use": "var(--padding-uniform-pa-3)",
+   "same_value_in_code": "$slm-space-3"
+  },
+  {
+   "name": "space variables/padding/uniform/pa-4",
+   "kind": "spacing",
+   "values": {
+    "default": 16
+   },
+   "use": "var(--padding-uniform-pa-4)",
+   "same_value_in_code": "$slm-space-4"
+  },
+  {
+   "name": "space variables/padding/uniform/pa-6",
+   "kind": "spacing",
+   "values": {
+    "default": 24
+   },
+   "use": "var(--padding-uniform-pa-6)",
+   "same_value_in_code": "$slm-space-6"
+  },
+  {
+   "name": "space variables/padding/uniform/pa-8",
+   "kind": "spacing",
+   "values": {
+    "default": 32
+   },
+   "use": "var(--padding-uniform-pa-8)",
+   "same_value_in_code": "$slm-space-8"
+  },
+  {
+   "name": "space variables/padding/horizontal/px-0",
+   "kind": "spacing",
+   "values": {
+    "default": 0
+   },
+   "use": "var(--padding-horizontal-px-0)",
+   "same_value_in_code": "$slm-space-0"
+  },
+  {
+   "name": "space variables/padding/horizontal/px-1",
+   "kind": "spacing",
+   "values": {
+    "default": 4
+   },
+   "use": "var(--padding-horizontal-px-1)",
+   "same_value_in_code": "$slm-space-1"
+  },
+  {
+   "name": "space variables/padding/horizontal/px-2",
+   "kind": "spacing",
+   "values": {
+    "default": 8
+   },
+   "use": "var(--padding-horizontal-px-2)",
+   "same_value_in_code": "$slm-space-2"
+  },
+  {
+   "name": "space variables/padding/horizontal/px-3",
+   "kind": "spacing",
+   "values": {
+    "default": 12
+   },
+   "use": "var(--padding-horizontal-px-3)",
+   "same_value_in_code": "$slm-space-3"
+  },
+  {
+   "name": "space variables/padding/top/pt-0",
+   "kind": "spacing",
+   "values": {
+    "default": 0
+   },
+   "use": "var(--padding-top-pt-0)",
+   "same_value_in_code": "$slm-space-0"
+  },
+  {
+   "name": "space variables/padding/horizontal/px-4",
+   "kind": "spacing",
+   "values": {
+    "default": 16
+   },
+   "use": "var(--padding-horizontal-px-4)",
+   "same_value_in_code": "$slm-space-4"
+  },
+  {
+   "name": "space variables/padding/top/pt-1",
+   "kind": "spacing",
+   "values": {
+    "default": 4
+   },
+   "use": "var(--padding-top-pt-1)",
+   "same_value_in_code": "$slm-space-1"
+  },
+  {
+   "name": "space variables/padding/top/pt-4",
+   "kind": "spacing",
+   "values": {
+    "default": 16
+   },
+   "use": "var(--padding-top-pt-4)",
+   "same_value_in_code": "$slm-space-4"
+  },
+  {
+   "name": "space variables/padding/top/pt-6",
+   "kind": "spacing",
+   "values": {
+    "default": 24
+   },
+   "use": "var(--padding-top-pt-6)",
+   "same_value_in_code": "$slm-space-6"
+  },
+  {
+   "name": "space variables/padding/horizontal/px-6",
+   "kind": "spacing",
+   "values": {
+    "default": 24
+   },
+   "use": "var(--padding-horizontal-px-6)",
+   "same_value_in_code": "$slm-space-6"
+  },
+  {
+   "name": "space variables/padding/horizontal/px-8",
+   "kind": "spacing",
+   "values": {
+    "default": 32
+   },
+   "use": "var(--padding-horizontal-px-8)",
+   "same_value_in_code": "$slm-space-8"
+  },
+  {
+   "name": "space variables/gap/ga-0",
+   "kind": "spacing",
+   "values": {
+    "default": 0
+   },
+   "use": "var(--gap-ga-0)",
+   "same_value_in_code": "$slm-space-0"
+  },
+  {
+   "name": "space variables/gap/ga-1",
+   "kind": "spacing",
+   "values": {
+    "default": 4
+   },
+   "use": "var(--gap-ga-1)",
+   "same_value_in_code": "$slm-space-1"
+  },
+  {
+   "name": "space variables/gap/ga-2",
+   "kind": "spacing",
+   "values": {
+    "default": 8
+   },
+   "use": "var(--gap-ga-2)",
+   "same_value_in_code": "$slm-space-2"
+  },
+  {
+   "name": "space variables/gap/ga-3",
+   "kind": "spacing",
+   "values": {
+    "default": 12
+   },
+   "use": "var(--gap-ga-3)",
+   "same_value_in_code": "$slm-space-3"
+  },
+  {
+   "name": "space variables/gap/ga-4",
+   "kind": "spacing",
+   "values": {
+    "default": 16
+   },
+   "use": "var(--gap-ga-4)",
+   "same_value_in_code": "$slm-space-4"
+  },
+  {
+   "name": "space variables/gap/ga-6",
+   "kind": "spacing",
+   "values": {
+    "default": 24
+   },
+   "use": "var(--gap-ga-6)",
+   "same_value_in_code": "$slm-space-6"
+  },
+  {
+   "name": "space variables/padding/bottom/pb-0",
+   "kind": "spacing",
+   "values": {
+    "default": 0
+   },
+   "use": "var(--padding-bottom-pb-0)",
+   "same_value_in_code": "$slm-space-0"
+  },
+  {
+   "name": "space variables/padding/bottom/pb-1",
+   "kind": "spacing",
+   "values": {
+    "default": 4
+   },
+   "use": "var(--padding-bottom-pb-1)",
+   "same_value_in_code": "$slm-space-1"
+  },
+  {
+   "name": "space variables/padding/bottom/pb-6",
+   "kind": "spacing",
+   "values": {
+    "default": 24
+   },
+   "use": "var(--padding-bottom-pb-6)",
+   "same_value_in_code": "$slm-space-6"
+  },
+  {
+   "name": "space variables/padding/bottom/pb-8",
+   "kind": "spacing",
+   "values": {
+    "default": 32
+   },
+   "use": "var(--padding-bottom-pb-8)",
+   "same_value_in_code": "$slm-space-8"
+  },
+  {
+   "name": "surface-shadow",
+   "kind": "effect",
+   "values": {
+    "default": "0 1 4 0 #00000040"
+   },
+   "use": "$slm-shadow-surface"
+  },
+  {
+   "name": "button_shadow-3",
+   "kind": "effect",
+   "values": {
+    "default": "0 1 5 0 #00000033"
+   },
+   "use": "$slm-shadow-button-3"
+  },
+  {
+   "name": "button_shadow-5",
+   "kind": "effect",
+   "values": {
+    "default": "0 2 4 0 #00000024"
+   },
+   "use": "$slm-shadow-button-5"
+  },
+  {
+   "name": "button_shadow-6",
+   "kind": "effect",
+   "values": {
+    "default": "0 1 10 0 #00000033"
+   },
+   "use": "$slm-shadow-button-6"
+  }
+ ],
+ "components": [
+  {
+   "id": "button",
+   "figma_name": "button",
+   "code_component": "SButton",
+   "file": "src/components/SButton.vue",
+   "import": "import { SButton } from '@slalom/design-system'",
+   "description": "Provides a reusable button for initiating a user action, with labeled and icon-only presentations. Variants control visual emphasis, size, and interaction-state appearance.",
+   "props": [
+    {
+     "name": "variant",
+     "type": "ButtonVariant",
+     "values": [
+      "contained",
+      "outlined",
+      "text",
+      "plain"
+     ],
+     "default": "'contained'"
+    },
+    {
+     "name": "size",
+     "type": "ButtonSize",
+     "values": [
+      "lg",
+      "md",
+      "sm"
+     ],
+     "default": "'md'"
+    },
+    {
+     "name": "semantic",
+     "type": "ButtonSemantic",
+     "values": [
+      "negative",
+      "positive"
+     ]
+    },
+    {
+     "name": "disabled",
+     "type": "boolean",
+     "default": "false"
+    },
+    {
+     "name": "prependIcon",
+     "type": "boolean",
+     "default": "false"
+    },
+    {
+     "name": "appendIcon",
+     "type": "boolean",
+     "default": "false"
+    },
+    {
+     "name": "label",
+     "type": "string",
+     "default": "'Button'"
+    },
+    {
+     "name": "href",
+     "type": "string"
+    },
+    {
+     "name": "type",
+     "type": "'button' | 'submit' | 'reset'",
+     "values": [
+      "button",
+      "submit",
+      "reset"
+     ],
+     "default": "'button'"
+    },
+    {
+     "name": "forceState",
+     "type": "'' | 'hover' | 'pressed' | 'disabled'",
+     "default": "''"
+    }
+   ],
+   "slots": [
+    "default",
+    "append",
+    "prepend"
+   ],
+   "figma_to_code": [
+    {
+     "figma_property": "size",
+     "code_prop": "size",
+     "shared_values": [
+      "lg",
+      "md",
+      "sm"
+     ],
+     "figma_only": [],
+     "code_only": []
+    },
+    {
+     "figma_property": "variant",
+     "code_prop": "variant",
+     "shared_values": [
+      "Plain",
+      "contained_button",
+      "outlined",
+      "text"
+     ],
+     "figma_only": [
+      "icon",
+      "icon contained",
+      "neutral_outlined"
+     ],
+     "code_only": []
+    }
+   ],
+   "open_questions": [
+    "Component fonts",
+    "SButton label case",
+    "button variant",
+    "button_shadow-1 / $slm-shadow-button-1",
+    "button_shadow-4 / $slm-shadow-button-4",
+    "button_shadow-7 / $slm-shadow-button-7"
+   ],
+   "decisions": []
+  },
+  {
+   "id": "semantic-buttons",
+   "figma_name": "semantic Buttons",
+   "code_component": "SButton",
+   "file": "src/components/SButton.vue",
+   "import": "import { SButton } from '@slalom/design-system'",
+   "description": "Provides action buttons with negative or positive semantic emphasis. Use negative for destructive actions such as Remove or Delete; use positive when an action needs positive semantic emphasis.",
+   "props": [
+    {
+     "name": "variant",
+     "type": "ButtonVariant",
+     "values": [
+      "contained",
+      "outlined",
+      "text",
+      "plain"
+     ],
+     "default": "'contained'"
+    },
+    {
+     "name": "size",
+     "type": "ButtonSize",
+     "values": [
+      "lg",
+      "md",
+      "sm"
+     ],
+     "default": "'md'"
+    },
+    {
+     "name": "semantic",
+     "type": "ButtonSemantic",
+     "values": [
+      "negative",
+      "positive"
+     ]
+    },
+    {
+     "name": "disabled",
+     "type": "boolean",
+     "default": "false"
+    },
+    {
+     "name": "prependIcon",
+     "type": "boolean",
+     "default": "false"
+    },
+    {
+     "name": "appendIcon",
+     "type": "boolean",
+     "default": "false"
+    },
+    {
+     "name": "label",
+     "type": "string",
+     "default": "'Button'"
+    },
+    {
+     "name": "href",
+     "type": "string"
+    },
+    {
+     "name": "type",
+     "type": "'button' | 'submit' | 'reset'",
+     "values": [
+      "button",
+      "submit",
+      "reset"
+     ],
+     "default": "'button'"
+    },
+    {
+     "name": "forceState",
+     "type": "'' | 'hover' | 'pressed' | 'disabled'",
+     "default": "''"
+    }
+   ],
+   "slots": [
+    "default",
+    "append",
+    "prepend"
+   ],
+   "figma_to_code": [
+    {
+     "figma_property": "semantic",
+     "code_prop": "semantic",
+     "shared_values": [
+      "negative",
+      "positive"
+     ],
+     "figma_only": [],
+     "code_only": []
+    },
+    {
+     "figma_property": "variant",
+     "code_prop": "variant",
+     "shared_values": [
+      "contained_button",
+      "outlined"
+     ],
+     "figma_only": [],
+     "code_only": [
+      "plain",
+      "text"
+     ]
+    },
+    {
+     "figma_property": "Size",
+     "code_prop": "size",
+     "shared_values": [
+      "lg",
+      "md",
+      "sm"
+     ],
+     "figma_only": [],
+     "code_only": []
+    }
+   ],
+   "open_questions": [
+    "Component fonts",
+    "SButton label case",
+    "semantic Buttons variant"
+   ],
+   "decisions": []
+  },
+  {
+   "id": "input-textfield",
+   "figma_name": "input/textField",
+   "code_component": "STextField",
+   "file": "src/components/STextField.vue",
+   "import": "import { STextField } from '@slalom/design-system'",
+   "description": "Collects a single line of user-entered text with a visible label and optional supporting feedback. Use type=label on when the label sits above the field and type=label in when the label is integrated into the field. Choose has value=true for populated fields and false for empty fields where \u2026",
+   "props": [
+    {
+     "name": "modelValue",
+     "type": "string",
+     "default": "''"
+    },
+    {
+     "name": "label",
+     "type": "string",
+     "default": "'Label'"
+    },
+    {
+     "name": "placeholder",
+     "type": "string",
+     "default": "'Input text'"
+    },
+    {
+     "name": "assistiveText",
+     "type": "string",
+     "default": "'Assistive text'"
+    },
+    {
+     "name": "errorText",
+     "type": "string",
+     "default": "''"
+    },
+    {
+     "name": "error",
+     "type": "boolean",
+     "default": "false"
+    },
+    {
+     "name": "disabled",
+     "type": "boolean",
+     "default": "false"
+    },
+    {
+     "name": "mandatory",
+     "type": "boolean",
+     "default": "true"
+    },
+    {
+     "name": "labelType",
+     "type": "'on' | 'in'",
+     "values": [
+      "on",
+      "in"
+     ],
+     "default": "'on'"
+    },
+    {
+     "name": "forceState",
+     "type": "'' | 'enabled' | 'hover' | 'focused' | 'error' | 'disabled'",
+     "default": "''"
+    }
+   ],
+   "slots": [],
+   "figma_to_code": [
+    {
+     "figma_property": "Label style",
+     "code_prop": "labelType",
+     "shared_values": [
+      "label in",
+      "label on"
+     ],
+     "figma_only": [],
+     "code_only": []
+    }
+   ],
+   "open_questions": [
+    "Component fonts"
+   ],
+   "decisions": []
+  },
+  {
+   "id": "text-area",
+   "figma_name": "text area",
+   "code_component": "STextArea",
+   "file": "src/components/STextArea.vue",
+   "import": "import { STextArea } from '@slalom/design-system'",
+   "description": "Collects multi-line text with configurable labeling, guidance, validation, and resize affordances. Use type=label on when the label sits above the field and label in when it is integrated into the field. Set has value to true or false where available, and choose status=enable, hover, focused, \u2026",
+   "props": [
+    {
+     "name": "modelValue",
+     "type": "string",
+     "default": "''"
+    },
+    {
+     "name": "label",
+     "type": "string",
+     "default": "'Label'"
+    },
+    {
+     "name": "placeholder",
+     "type": "string",
+     "default": "'Input text'"
+    },
+    {
+     "name": "assistiveText",
+     "type": "string",
+     "default": "'Assistive text'"
+    },
+    {
+     "name": "errorText",
+     "type": "string",
+     "default": "''"
+    },
+    {
+     "name": "error",
+     "type": "boolean",
+     "default": "false"
+    },
+    {
+     "name": "disabled",
+     "type": "boolean",
+     "default": "false"
+    },
+    {
+     "name": "mandatory",
+     "type": "boolean",
+     "default": "true"
+    },
+    {
+     "name": "labelType",
+     "type": "'on' | 'in'",
+     "values": [
+      "on",
+      "in"
+     ],
+     "default": "'on'"
+    },
+    {
+     "name": "rows",
+     "type": "number",
+     "default": "5"
+    },
+    {
+     "name": "forceState",
+     "type": "'' | 'enabled' | 'hover' | 'focused' | 'error' | 'disabled'",
+     "default": "''"
+    }
+   ],
+   "slots": [],
+   "figma_to_code": [
+    {
+     "figma_property": "type",
+     "code_prop": "labelType",
+     "shared_values": [
+      "label in",
+      "label on"
+     ],
+     "figma_only": [],
+     "code_only": []
+    }
+   ],
+   "open_questions": [
+    "Component fonts"
+   ],
+   "decisions": []
+  },
+  {
+   "id": "single-select",
+   "figma_name": "single-select",
+   "code_component": "SSelect",
+   "file": "src/components/SSelect.vue",
+   "import": "import { SSelect } from '@slalom/design-system'",
+   "description": "Lets users choose one option from a predefined list. Use type=label on when the label sits above the field and label-in when it is integrated into the field. Set has value to true or false where available, and choose status=enable, hover, focused, error, or disable to match the current state. \u2026",
+   "props": [
+    {
+     "name": "modelValue",
+     "type": "string",
+     "default": "''"
+    },
+    {
+     "name": "label",
+     "type": "string",
+     "default": "'Label'"
+    },
+    {
+     "name": "placeholder",
+     "type": "string",
+     "default": "'Dropdown Text'"
+    },
+    {
+     "name": "assistiveText",
+     "type": "string",
+     "default": "'Assistive text'"
+    },
+    {
+     "name": "errorText",
+     "type": "string",
+     "default": "''"
+    },
+    {
+     "name": "error",
+     "type": "boolean",
+     "default": "false"
+    },
+    {
+     "name": "disabled",
+     "type": "boolean",
+     "default": "false"
+    },
+    {
+     "name": "mandatory",
+     "type": "boolean",
+     "default": "false"
+    },
+    {
+     "name": "labelType",
+     "type": "'on' | 'in'",
+     "values": [
+      "on",
+      "in"
+     ],
+     "default": "'on'"
+    },
+    {
+     "name": "options",
+     "type": "SelectOption[]",
+     "default": "() => ["
+    },
+    {
+     "name": "forceState",
+     "type": "'' | 'enabled' | 'hover' | 'focused' | 'error' | 'disabled'"
+    }
+   ],
+   "slots": [],
+   "figma_to_code": [
+    {
+     "figma_property": "type",
+     "code_prop": "labelType",
+     "shared_values": [
+      "label on",
+      "label-in"
+     ],
+     "figma_only": [],
+     "code_only": []
+    }
+   ],
+   "open_questions": [
+    "Component fonts"
+   ],
+   "decisions": []
+  },
+  {
+   "id": "autocomplete",
+   "figma_name": "autocomplete",
+   "code_component": "SAutocomplete",
+   "file": "src/components/SAutocomplete.vue",
+   "import": "import { SAutocomplete } from '@slalom/design-system'",
+   "description": "Lets users type to find and select a value from a suggested set of options. Use type=label on when the label sits above the field and label in when it is integrated into the field. Set has value to true or false where available, and choose status=enable, hover, focus, filled, error, or disable to \u2026",
+   "props": [
+    {
+     "name": "modelValue",
+     "type": "string | string[]",
+     "default": "''"
+    },
+    {
+     "name": "label",
+     "type": "string",
+     "default": "'Label'"
+    },
+    {
+     "name": "placeholder",
+     "type": "string",
+     "default": "'Input text'"
+    },
+    {
+     "name": "assistiveText",
+     "type": "string",
+     "default": "'Assistive text'"
+    },
+    {
+     "name": "errorText",
+     "type": "string",
+     "default": "''"
+    },
+    {
+     "name": "error",
+     "type": "boolean",
+     "default": "false"
+    },
+    {
+     "name": "disabled",
+     "type": "boolean",
+     "default": "false"
+    },
+    {
+     "name": "mandatory",
+     "type": "boolean",
+     "default": "false"
+    },
+    {
+     "name": "labelType",
+     "type": "'on' | 'in'",
+     "values": [
+      "on",
+      "in"
+     ],
+     "default": "'on'"
+    },
+    {
+     "name": "options",
+     "type": "string[]",
+     "default": "() => ['Option A'"
+    },
+    {
+     "name": "chips",
+     "type": "boolean"
+    },
+    {
+     "name": "forceState",
+     "type": "'' | 'enabled' | 'hover' | 'focused' | 'error' | 'disabled'"
+    },
+    {
+     "name": "forceOpen",
+     "type": "boolean"
+    }
+   ],
+   "slots": [],
+   "figma_to_code": [
+    {
+     "figma_property": "type",
+     "code_prop": "labelType",
+     "shared_values": [
+      "label in",
+      "label on"
+     ],
+     "figma_only": [],
+     "code_only": []
+    }
+   ],
+   "open_questions": [
+    "Component fonts"
+   ],
+   "decisions": []
+  },
+  {
+   "id": "date-picker",
+   "figma_name": "date picker",
+   "code_component": "SDatePicker",
+   "file": "src/components/SDatePicker.vue",
+   "import": "import { SDatePicker } from '@slalom/design-system'",
+   "description": "Provides a calendar control for choosing a day, month, or year. Use the sections property to display the day selector, month selector, or year selector. Use status to show default, hover, selected, or current selected states where available. Use rounded border to switch between square and rounded \u2026",
+   "props": [
+    {
+     "name": "modelValue",
+     "type": "string",
+     "default": "''"
+    },
+    {
+     "name": "rounded",
+     "type": "boolean",
+     "default": "false"
+    }
+   ],
+   "slots": [],
+   "figma_to_code": [],
+   "open_questions": [
+    "Component fonts"
+   ],
+   "decisions": []
+  },
+  {
+   "id": "switch-toggle",
+   "figma_name": "Switch Toggle",
+   "code_component": "SSwitch",
+   "file": "src/components/SSwitch.vue",
+   "import": "import { SSwitch } from '@slalom/design-system'",
+   "description": "Controls a binary setting that can be turned on or off. Set Toggle Status to Off or On to reflect the current value, and set State to Enabled when the control is available or Disabled when it cannot be changed. Keep the visual status synchronized with the underlying setting.",
+   "props": [
+    {
+     "name": "modelValue",
+     "type": "boolean",
+     "default": "false"
+    },
+    {
+     "name": "label",
+     "type": "string",
+     "default": "''"
+    },
+    {
+     "name": "disabled",
+     "type": "boolean",
+     "default": "false"
+    },
+    {
+     "name": "forceState",
+     "type": "'' | 'on' | 'off' | 'disabled'",
+     "default": "''"
+    }
+   ],
+   "slots": [],
+   "figma_to_code": [],
+   "open_questions": [],
+   "decisions": []
+  },
+  {
+   "id": "status-alert-bar",
+   "figma_name": "Status Alert Bar",
+   "code_component": "SAlert",
+   "file": "src/components/SAlert.vue",
+   "import": "import { SAlert } from '@slalom/design-system'",
+   "description": "Displays a full-width status message using warning, error, or informative styling. Choose Type based on message severity. Choose Function=Closeable for dismissible alerts, Info for an informational affordance, Button Action for a labeled button, or Hyperlink Action for an inline link where that \u2026",
+   "props": [
+    {
+     "name": "type",
+     "type": "AlertType",
+     "values": [
+      "warning",
+      "error",
+      "info"
+     ],
+     "default": "'warning'"
+    },
+    {
+     "name": "variant",
+     "type": "AlertVariant",
+     "values": [
+      "close",
+      "button",
+      "more-info"
+     ],
+     "default": "'close'"
+    },
+    {
+     "name": "message",
+     "type": "string",
+     "default": "'Alert Message'"
+    },
+    {
+     "name": "actionText",
+     "type": "string",
+     "default": "'BUTTON'"
+    }
+   ],
+   "slots": [],
+   "figma_to_code": [
+    {
+     "figma_property": "Type",
+     "code_prop": "type",
+     "shared_values": [
+      "Error Alert",
+      "Warning Alert",
+      "informative"
+     ],
+     "figma_only": [],
+     "code_only": []
+    }
+   ],
+   "open_questions": [],
+   "decisions": []
+  },
+  {
+   "id": "toast-notifications",
+   "figma_name": "Toast Notifications",
+   "code_component": "SToast",
+   "file": "src/components/SToast.vue",
+   "import": "import { SToast } from '@slalom/design-system'",
+   "description": "Displays a brief status notification without interrupting the current workflow. Choose State=Information for neutral updates, Error Toast for failed actions or problems, and Success for completed actions. Update the corresponding message text property, use Has CTA to show or hide the action, and \u2026",
+   "props": [
+    {
+     "name": "type",
+     "type": "ToastType",
+     "values": [
+      "info",
+      "error",
+      "success"
+     ],
+     "default": "'info'"
+    },
+    {
+     "name": "message",
+     "type": "string",
+     "default": "'This is informative!'"
+    },
+    {
+     "name": "dismissible",
+     "type": "boolean",
+     "default": "true"
+    }
+   ],
+   "slots": [],
+   "figma_to_code": [
+    {
+     "figma_property": "State",
+     "code_prop": "type",
+     "shared_values": [
+      "Error Toast",
+      "Information",
+      "Success"
+     ],
+     "figma_only": [],
+     "code_only": []
+    }
+   ],
+   "open_questions": [],
+   "decisions": []
+  },
+  {
+   "id": "step",
+   "figma_name": "step",
+   "code_component": "SStepper",
+   "file": "src/components/SStepper.vue",
+   "import": "import { SStepper } from '@slalom/design-system'",
+   "description": "Combines a step indicator, label, and optional connector into one stepper item. Update the step description text property for the label. Use status=current step for the active step, completed for a finished step, and Next Step for an upcoming step. Set horizontal label to control the label \u2026",
+   "props": [
+    {
+     "name": "steps",
+     "type": "string[]",
+     "default": "() => ['Step 1'"
+    },
+    {
+     "name": "currentStep",
+     "type": "number"
+    },
+    {
+     "name": "orientation",
+     "type": "'horizontal' | 'vertical'",
+     "values": [
+      "horizontal",
+      "vertical"
+     ]
+    },
+    {
+     "name": "ariaLabel",
+     "type": "string"
+    }
+   ],
+   "slots": [],
+   "figma_to_code": [],
+   "open_questions": [
+    "Component fonts"
+   ],
+   "decisions": []
+  },
+  {
+   "id": "accordion-row",
+   "figma_name": "Accordion Row",
+   "code_component": "SExpansionPanel",
+   "file": "src/components/SExpansionPanel.vue",
+   "import": "import { SExpansionPanel } from '@slalom/design-system'",
+   "description": "Organizes related information into a row with a visible header and an expandable content area.",
+   "props": [
+    {
+     "name": "title",
+     "type": "string"
+    },
+    {
+     "name": "progress",
+     "type": "number"
+    },
+    {
+     "name": "statusRows",
+     "type": "DataField[]"
+    },
+    {
+     "name": "dataRows",
+     "type": "DataRow[]"
+    },
+    {
+     "name": "notes",
+     "type": "PanelNotes"
+    }
+   ],
+   "slots": [
+    "default",
+    "icon",
+    "secondary-icon"
+   ],
+   "figma_to_code": [],
+   "open_questions": [],
+   "decisions": []
+  },
+  {
+   "id": "empty-state",
+   "figma_name": "empty State",
+   "code_component": "SEmptyState",
+   "file": "src/components/SEmptyState.vue",
+   "import": "import { SEmptyState } from '@slalom/design-system'",
+   "description": "Communicates that a page, section, or collection has no content yet by pairing an illustration with a title, supporting message, and optional call to action. Use Type=horizontal for a compact side-by-side arrangement and Type=vertical for a centered stacked arrangement. Use has CTA to show or hide \u2026",
+   "props": [
+    {
+     "name": "title",
+     "type": "string",
+     "default": "'PLACE A TITLE FOR THE EMPTY SPACE'"
+    },
+    {
+     "name": "description",
+     "type": "string",
+     "default": "'Write a text for your empty space'"
+    },
+    {
+     "name": "layout",
+     "type": "'horizontal' | 'vertical'",
+     "values": [
+      "horizontal",
+      "vertical"
+     ],
+     "default": "'vertical'"
+    },
+    {
+     "name": "primaryText",
+     "type": "string",
+     "default": "'Click to Change the Button text'"
+    },
+    {
+     "name": "secondaryText",
+     "type": "string",
+     "default": "'Click to Change the Button text'"
+    },
+    {
+     "name": "showActions",
+     "type": "boolean",
+     "default": "true"
+    },
+    {
+     "name": "illustration",
+     "type": "'workstream' | 'chat' | 'invite-only'",
+     "values": [
+      "workstream",
+      "chat",
+      "invite-only"
+     ],
+     "default": "'workstream'"
+    }
+   ],
+   "slots": [],
+   "figma_to_code": [
+    {
+     "figma_property": "Type",
+     "code_prop": "layout",
+     "shared_values": [
+      "horizontal",
+      "vertical"
+     ],
+     "figma_only": [],
+     "code_only": []
+    }
+   ],
+   "open_questions": [
+    "Component fonts"
+   ],
+   "decisions": []
+  },
+  {
+   "id": "loading",
+   "figma_name": "loading",
+   "code_component": "SProgressRing",
+   "file": "src/components/SProgressRing.vue",
+   "import": "import { SProgressRing } from '@slalom/design-system'",
+   "description": null,
+   "props": [
+    {
+     "name": "value",
+     "type": "number"
+    },
+    {
+     "name": "size",
+     "type": "number",
+     "default": "70"
+    },
+    {
+     "name": "strokeWidth",
+     "type": "number",
+     "default": "8"
+    },
+    {
+     "name": "fillColor",
+     "type": "string",
+     "default": "'#0ed3eb'"
+    },
+    {
+     "name": "trackColor",
+     "type": "string",
+     "default": "'#e6e6e6'"
+    },
+    {
+     "name": "ariaLabel",
+     "type": "string",
+     "default": "undefined"
+    }
+   ],
+   "slots": [
+    "default"
+   ],
+   "figma_to_code": [],
+   "open_questions": [
+    "Component fonts"
+   ],
+   "decisions": []
+  },
+  {
+   "id": "combobox",
+   "figma_name": "combobox",
+   "code_component": "SCombobox",
+   "file": "src/components/SCombobox.vue",
+   "import": "import { SCombobox } from '@slalom/design-system'",
+   "description": "Combines text entry with option selection and optional adjacent actions. Set Status to enable, hover, focused, filled, error, or disable to match the current interaction and validation state. Configure the label, description, and assistive content; use mandatory, user guidance, has label, assistive \u2026",
+   "props": [
+    {
+     "name": "modelValue",
+     "type": "string[]",
+     "default": "() => [], label: 'Label', placeholder: 'Combobox Label', ass"
+    },
+    {
+     "name": "label",
+     "type": "string"
+    },
+    {
+     "name": "placeholder",
+     "type": "string"
+    },
+    {
+     "name": "assistiveText",
+     "type": "string"
+    },
+    {
+     "name": "errorText",
+     "type": "string"
+    },
+    {
+     "name": "error",
+     "type": "boolean"
+    },
+    {
+     "name": "disabled",
+     "type": "boolean"
+    },
+    {
+     "name": "mandatory",
+     "type": "boolean"
+    },
+    {
+     "name": "labelType",
+     "type": "'on' | 'in'",
+     "values": [
+      "on",
+      "in"
+     ]
+    },
+    {
+     "name": "options",
+     "type": "string[]"
+    },
+    {
+     "name": "forceState",
+     "type": "'' | 'enabled' | 'hover' | 'focused' | 'error' | 'disabled'"
+    },
+    {
+     "name": "forceOpen",
+     "type": "boolean"
+    }
+   ],
+   "slots": [],
+   "figma_to_code": [],
+   "open_questions": [
+    "Component fonts"
+   ],
+   "decisions": []
+  }
+ ],
+ "open_conflicts": [
+  {
+   "topic": "Component fonts",
+   "figma": "Slalom Sans in every text style",
+   "code": "DM Sans hard-coded in SAutocomplete, SButton, SCombobox, SDatePicker, SEmptyState, SSelect, SStepper, STextArea, STextField; Roboto hard-coded in SProgressRing"
+  },
+  {
+   "topic": "SButton label case",
+   "figma": "Title Case by default (button)",
+   "code": "text-transform: uppercase in src/components/SButton.vue"
+  },
+  {
+   "topic": "button variant",
+   "figma": "icon, icon contained, neutral_outlined",
+   "code": "nothing extra"
+  },
+  {
+   "topic": "semantic Buttons variant",
+   "figma": "nothing extra",
+   "code": "plain, text"
+  },
+  {
+   "topic": "text-disabled / --slm-disabled-text",
+   "figma": "Color Semantic Variables (updated)/Font Colors/text-disabled, Light: #00000066; Dark: #ffffff80",
+   "code": "--slm-disabled-text, slalomLight: #00000061; slalomDark: #ffffff61"
+  },
+  {
+   "topic": "text-error / theme.error",
+   "figma": "Color Semantic Variables (updated)/Font Colors/text-error, Dark: #ffdbdf",
+   "code": "theme.error, slalomDark: #ff6b6b"
+  },
+  {
+   "topic": "success / theme.success",
+   "figma": "Color Semantic Variables (updated)/Primary Colors/success, Light: #5cb85c; Dark: #5cb85c",
+   "code": "theme.success, slalomLight: #2e7d32; slalomDark: #4caf50"
+  },
+  {
+   "topic": "error-element / theme.error",
+   "figma": "Color Semantic Variables (updated)/Primary Colors/error-element, Dark: #ffdbdf",
+   "code": "theme.error, slalomDark: #ff6b6b"
+  },
+  {
+   "topic": "neutral-border-color / --slm-border",
+   "figma": "Color Semantic Variables (updated)/Border Colors/neutral-border-color, Dark: #757575",
+   "code": "--slm-border, slalomDark: #eaeaea"
+  },
+  {
+   "topic": "card-bg-secondary / --slm-app-card-bg",
+   "figma": "Color Semantic Variables (updated)/card color/card-bg-secondary, Dark: #424242",
+   "code": "--slm-app-card-bg, slalomDark: #444444"
+  },
+  {
+   "topic": "text-disabled / --slm-disabled-text",
+   "figma": "Colors/Font Colors/text-disabled, Dark: #ffffff80; BuildDark: #ffffff80",
+   "code": "--slm-disabled-text, slalomDark: #ffffff61; slalomBuild: #ffffff61"
+  },
+  {
+   "topic": "button_shadow-1 / $slm-shadow-button-1",
+   "figma": "button_shadow-1, default: 0 0 2 0 #73a6ff1a",
+   "code": "$slm-shadow-button-1, default: 0 0 2 0 #0000001f"
+  },
+  {
+   "topic": "button_shadow-4 / $slm-shadow-button-4",
+   "figma": "button_shadow-4, default: 0 3 4 0 #0000001a",
+   "code": "$slm-shadow-button-4, default: 0 3 4 0 #0000001f"
+  },
+  {
+   "topic": "button_shadow-7 / $slm-shadow-button-7",
+   "figma": "button_shadow-7, default: 0 4 5 0 #0000001a",
+   "code": "$slm-shadow-button-7, default: 0 4 5 0 #0000001f"
+  },
+  {
+   "topic": "Heading 5 / slm-heading-5",
+   "figma": "Heading 5, letterSpacing: 0.0",
+   "code": "slm-heading-5, letterSpacing: 1.92"
+  }
+ ],
+ "decisions": []
+}

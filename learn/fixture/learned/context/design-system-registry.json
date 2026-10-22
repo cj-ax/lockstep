@@ -1,0 +1,467 @@
+{
+ "meta": {
+  "system_name": "SDS fixture review",
+  "generated": "2026-10-22",
+  "generator": "Lockstep learn (context.py)",
+  "framework": null,
+  "package": null,
+  "source": "approved review items only",
+  "open_items": 0
+ },
+ "tokens": [
+  {
+   "name": "Color/Text/Default/Default",
+   "kind": "color",
+   "values": {
+    "default": "#1e1e1e"
+   },
+   "use": "var(--text-default-default)"
+  },
+  {
+   "name": "Color/Background/Default/Default",
+   "kind": "color",
+   "values": {
+    "default": "#ffffff"
+   },
+   "use": "var(--background-default-default)"
+  },
+  {
+   "name": "Color/Border/Default/Default",
+   "kind": "color",
+   "values": {
+    "default": "#d9d9d9"
+   },
+   "use": "var(--border-default-default)"
+  },
+  {
+   "name": "Color/Background/Brand/Default",
+   "kind": "color",
+   "values": {
+    "default": "#2c2c2c"
+   },
+   "use": "var(--background-brand-default)"
+  },
+  {
+   "name": "Color/Text/Neutral/Tertiary",
+   "kind": "color",
+   "values": {
+    "default": "#767676"
+   },
+   "use": "var(--text-neutral-tertiary)"
+  },
+  {
+   "name": "Color/Background/Brand/Tertiary",
+   "kind": "color",
+   "values": {
+    "default": "#f5f5f5"
+   },
+   "use": "var(--background-brand-tertiary)"
+  },
+  {
+   "name": "color/757575",
+   "kind": "color",
+   "values": {
+    "default": "#757575"
+   },
+   "use": "var(--color-757575)"
+  },
+  {
+   "name": "Color/Border/Neutral/Default",
+   "kind": "color",
+   "values": {
+    "default": "#303030"
+   },
+   "use": "var(--border-neutral-default)"
+  },
+  {
+   "name": "Color/Border/Neutral/tertiary",
+   "kind": "color",
+   "values": {
+    "default": "#b2b2b2"
+   },
+   "use": "var(--border-neutral-tertiary)"
+  },
+  {
+   "name": "Color/Background/Neutral/Tertiary",
+   "kind": "color",
+   "values": {
+    "default": "#e3e3e3"
+   },
+   "use": "var(--background-neutral-tertiary)"
+  },
+  {
+   "name": "Color/Background/Danger/Default",
+   "kind": "color",
+   "values": {
+    "default": "#ec221f"
+   },
+   "use": "var(--background-danger-default)"
+  },
+  {
+   "name": "Color/Border/Danger/Secondary",
+   "kind": "color",
+   "values": {
+    "default": "#c00f0c"
+   },
+   "use": "var(--border-danger-secondary)"
+  },
+  {
+   "name": "Color/Text/Danger/On Danger",
+   "kind": "color",
+   "values": {
+    "default": "#fee9e7"
+   },
+   "use": "var(--text-danger-on-danger)"
+  },
+  {
+   "name": "color/ffffffcc",
+   "kind": "color",
+   "values": {
+    "default": "#ffffffcc"
+   },
+   "use": "var(--color-ffffffcc)"
+  },
+  {
+   "name": "Color Primitives/Black/100",
+   "kind": "color",
+   "values": {
+    "default": "#0c0c0d0d"
+   },
+   "use": "var(--black-100)"
+  },
+  {
+   "name": "Color Primitives/Black/200",
+   "kind": "color",
+   "values": {
+    "default": "#0c0c0d1a"
+   },
+   "use": "var(--black-200)"
+  },
+  {
+   "name": "Size/Space/200",
+   "kind": "spacing",
+   "values": {
+    "default": 8.0
+   },
+   "use": "var(--space-200)"
+  },
+  {
+   "name": "Size/Space/300",
+   "kind": "spacing",
+   "values": {
+    "default": 12.0
+   },
+   "use": "var(--space-300)"
+  },
+  {
+   "name": "Size/Space/800",
+   "kind": "spacing",
+   "values": {
+    "default": 32.0
+   },
+   "use": "var(--space-800)"
+  },
+  {
+   "name": "Size/Space/600",
+   "kind": "spacing",
+   "values": {
+    "default": 24.0
+   },
+   "use": "var(--space-600)"
+  },
+  {
+   "name": "Size/Space/400",
+   "kind": "spacing",
+   "values": {
+    "default": 16.0
+   },
+   "use": "var(--space-400)"
+  },
+  {
+   "name": "Size/Space/100",
+   "kind": "spacing",
+   "values": {
+    "default": 4.0
+   },
+   "use": "var(--space-100)"
+  },
+  {
+   "name": "Size/Radius/200",
+   "kind": "radius",
+   "values": {
+    "default": 8.0
+   },
+   "use": "var(--radius-200)"
+  },
+  {
+   "name": "radius/9999",
+   "kind": "radius",
+   "values": {
+    "default": 9999.0
+   },
+   "use": "var(--radius-9999)"
+  },
+  {
+   "name": "Size/Radius/100",
+   "kind": "radius",
+   "values": {
+    "default": 4.0
+   },
+   "use": "var(--radius-100)"
+  },
+  {
+   "name": "Typography Primitives/Scale 06",
+   "kind": "radius",
+   "values": {
+    "default": 32.0
+   },
+   "use": "var(--typography-primitives-scale-06)"
+  },
+  {
+   "name": "Size/Stroke/Border",
+   "kind": "stroke",
+   "values": {
+    "default": 1.0
+   },
+   "use": "var(--stroke-border)"
+  },
+  {
+   "name": "Size/Depth/100",
+   "kind": "effect",
+   "values": {
+    "default": 4.0
+   },
+   "use": "var(--depth-100)"
+  },
+  {
+   "name": "Size/Depth/Negative 100",
+   "kind": "effect",
+   "values": {
+    "default": -4.0
+   },
+   "use": "var(--depth-negative-100)"
+  },
+  {
+   "name": "Size/Depth/0",
+   "kind": "effect",
+   "values": {
+    "default": 0.0
+   },
+   "use": "var(--depth-0)"
+  },
+  {
+   "name": "effect/bg-blur-4",
+   "kind": "effect",
+   "values": {
+    "default": "bg-blur:4"
+   },
+   "use": "var(--effect-bg-blur-4)"
+  },
+  {
+   "name": "Size/Depth/800",
+   "kind": "effect",
+   "values": {
+    "default": 32.0
+   },
+   "use": "var(--depth-800)"
+  },
+  {
+   "name": "Size/Depth/400",
+   "kind": "effect",
+   "values": {
+    "default": 16.0
+   },
+   "use": "var(--depth-400)"
+  },
+  {
+   "name": "fontFamily/inter",
+   "kind": "fontFamily",
+   "values": {
+    "default": "Inter"
+   },
+   "use": "var(--fontfamily-inter)"
+  },
+  {
+   "name": "Typography/Body/Size Medium",
+   "kind": "fontSize",
+   "values": {
+    "default": 16.0
+   },
+   "use": "var(--body-size-medium)"
+  },
+  {
+   "name": "Typography/Heading/Size Base",
+   "kind": "fontSize",
+   "values": {
+    "default": 24.0
+   },
+   "use": "var(--heading-size-base)"
+  },
+  {
+   "name": "Typography/Title Page/Size Base",
+   "kind": "fontSize",
+   "values": {
+    "default": 48.0
+   },
+   "use": "var(--title-page-size-base)"
+  },
+  {
+   "name": "Typography/Body/Font Weight Regular",
+   "kind": "fontWeight",
+   "values": {
+    "default": 400.0
+   },
+   "use": "var(--body-font-weight-regular)"
+  },
+  {
+   "name": "fontWeight/600",
+   "kind": "fontWeight",
+   "values": {
+    "default": 600.0
+   },
+   "use": "var(--fontweight-600)"
+  },
+  {
+   "name": "Typography/Title Page/Font Weight",
+   "kind": "fontWeight",
+   "values": {
+    "default": 700.0
+   },
+   "use": "var(--title-page-font-weight)"
+  }
+ ],
+ "components": [
+  {
+   "id": "text-heading",
+   "figma_name": "Text Heading",
+   "code_component": null,
+   "file": null,
+   "import": null,
+   "description": null,
+   "props": [],
+   "slots": null,
+   "figma_to_code": [],
+   "open_questions": [],
+   "decisions": []
+  },
+  {
+   "id": "input-field",
+   "figma_name": "Input Field",
+   "code_component": null,
+   "file": null,
+   "import": null,
+   "description": null,
+   "props": [],
+   "slots": null,
+   "figma_to_code": [],
+   "open_questions": [],
+   "decisions": []
+  },
+  {
+   "id": "switch-field",
+   "figma_name": "Switch Field",
+   "code_component": null,
+   "file": null,
+   "import": null,
+   "description": null,
+   "props": [],
+   "slots": null,
+   "figma_to_code": [],
+   "open_questions": [],
+   "decisions": []
+  },
+  {
+   "id": "tab",
+   "figma_name": "Tab",
+   "code_component": null,
+   "file": null,
+   "import": null,
+   "description": null,
+   "props": [],
+   "slots": null,
+   "figma_to_code": [],
+   "open_questions": [],
+   "decisions": []
+  },
+  {
+   "id": "card",
+   "figma_name": "Card (Slot)",
+   "code_component": null,
+   "file": null,
+   "import": null,
+   "description": null,
+   "props": [],
+   "slots": null,
+   "figma_to_code": [],
+   "open_questions": [],
+   "decisions": []
+  },
+  {
+   "id": "button-group",
+   "figma_name": "Button Group",
+   "code_component": null,
+   "file": null,
+   "import": null,
+   "description": null,
+   "props": [],
+   "slots": null,
+   "figma_to_code": [],
+   "open_questions": [],
+   "decisions": []
+  },
+  {
+   "id": "tabs",
+   "figma_name": "Tabs",
+   "code_component": null,
+   "file": null,
+   "import": null,
+   "description": null,
+   "props": [],
+   "slots": null,
+   "figma_to_code": [],
+   "open_questions": [],
+   "decisions": []
+  },
+  {
+   "id": "text",
+   "figma_name": "Text",
+   "code_component": null,
+   "file": null,
+   "import": null,
+   "description": null,
+   "props": [],
+   "slots": null,
+   "figma_to_code": [],
+   "open_questions": [],
+   "decisions": []
+  },
+  {
+   "id": "text-title-page",
+   "figma_name": "Text Title Page",
+   "code_component": null,
+   "file": null,
+   "import": null,
+   "description": null,
+   "props": [],
+   "slots": null,
+   "figma_to_code": [],
+   "open_questions": [],
+   "decisions": []
+  },
+  {
+   "id": "dialog",
+   "figma_name": "Dialog",
+   "code_component": null,
+   "file": null,
+   "import": null,
+   "description": null,
+   "props": [],
+   "slots": null,
+   "figma_to_code": [],
+   "open_questions": [],
+   "decisions": []
+  }
+ ],
+ "open_conflicts": [],
+ "decisions": []
+}

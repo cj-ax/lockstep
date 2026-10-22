@@ -58,12 +58,14 @@ for name in render.READONLY:
 USE = "mcp__figma__use_figma"
 audit = render.render("audit", {"ROOT_IDS": json.dumps(["0:1"]), "OFFSET": "0"})
 inv = render.render("inventory_local", {"PART": json.dumps("variables"), "PAGE_IDS": "[]"})
-score = render.render("score", {"ROOT_IDS": json.dumps(["1:2"])})
+score = render.render("score", {"ROOT_IDS": json.dumps(["1:2"]), "LOCAL_LIBRARY_PAGE": json.dumps("")})
+snap = render.render("snapshot", {"SPEC": json.dumps({"Card": "3:471"})})
 fix = render.render("fix", {"ROOT_IDS": json.dumps(["1:2"])})
 
 check(guard(USE, {"fileKey": KEY, "code": audit}) == 0, "exact audit render reaches a protected file")
 check(guard(USE, {"fileKey": KEY, "code": inv}) == 0, "exact inventory_local render reaches a protected file")
 check(guard(USE, {"fileKey": KEY, "code": score}) == 0, "exact score render reaches a protected file")
+check(guard(USE, {"fileKey": KEY, "code": snap}) == 0, "exact snapshot render reaches a protected file")
 check(guard(USE, {"fileKey": KEY, "code": fix}) == 2, "fix (writes) is blocked on a protected file")
 check(guard(USE, {"fileKey": KEY, "code": "return 1"}) == 2, "hand-written code is blocked on a protected file")
 check(guard(USE, {"fileKey": KEY, "code": audit.replace("const EXAMPLES = 4;", "const EXAMPLES = 4; figma.root.children[0].remove();")}) == 2, "an edited render is blocked")

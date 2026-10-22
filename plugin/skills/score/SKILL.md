@@ -21,7 +21,9 @@ unedited. If the guard still blocks it, duplicate the frames into a draft and sc
    ```bash
    python3 "$LOCKSTEP/scripts/render.py" score --roots 12:345,12:400
    ```
-   Pass the output as `use_figma`'s `code`.
+   Pass the output as `use_figma`'s `code`. For frames built on a learned library (its
+   `LIBRARY.md` names a page), add `--local-library-page "<that page>"` so its components count
+   as library instances.
 3. Take a screenshot of every frame (`get_screenshot`, `maxDimension` around 1000) and look for
    what the score can't judge:
    - wrong components or variants for the context;

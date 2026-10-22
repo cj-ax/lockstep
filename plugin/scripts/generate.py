@@ -7,6 +7,7 @@ Reads only approved.json's approved items: nothing still open or rejected is gen
 
   tokens/tokens.json   DTCG tokens (2025.10 format). The first mode (light) is the $value; other
                        modes are in $extensions["com.lockstep"].modes, with where each token came from
+  tokens/tokens.figma.json  the same, flat, for variables.js to turn into Figma variables
   tokens/tokens.css    the same as CSS custom properties: :root for the first mode, then one
                        [data-theme="..."] block per other mode, plus a .type-<name> class per type style
   docs/README.md       an index: what's in the system, and every decision still open
@@ -100,7 +101,7 @@ def css_value(kind, v):
 
 
 def build_tokens(approved):
-    tree, css_modes, rows = {}, defaultdict(list), []
+    tree, css_modes, rows, flat = {}, defaultdict(list), [], []
     seen = {}
     for t in approved["tokens"]:
         path = token_path(t["name"])
@@ -140,7 +141,10 @@ def build_tokens(approved):
                 continue  # a second light mode adds nothing to :root
             css_modes[th].append((f"--{key}", css_value(t["kind"], v)))
         rows.append((t["name"], t["kind"], values, t.get("code")))
-    return tree, css_modes, rows
+        num = lambda v: float(BLUR.match(v).group(2)) if isinstance(v, str) and BLUR.match(v) else v  # Figma variables hold the blur radius
+        flat.append({"name": "/".join(path), "kind": t["kind"], "values": {("light" if m == primary else theme(m)): num(v) for m, v in values.items()},
+                     "absorbs": [d["value"] for d in t.get("drift") or []]})
+    return tree, css_modes, rows, flat
 
 
 def build_type(approved):
@@ -261,7 +265,7 @@ def main():
     (od / "tokens").mkdir(parents=True, exist_ok=True)
     (od / "docs" / "components").mkdir(parents=True, exist_ok=True)
 
-    tree, css_modes, rows = build_tokens(approved)
+    tree, css_modes, rows, flat = build_tokens(approved)
     styles = build_type(approved)
     for s in styles:
         node = tree.setdefault("typography", {})
@@ -271,6 +275,8 @@ def main():
             **({"letterSpacing": {"value": s["letterSpacing"], "unit": "px"}} if s.get("letterSpacing") is not None else {})},
             "$extensions": {"com.lockstep": {"code": s.get("code")}}}
     (od / "tokens" / "tokens.json").write_text(json.dumps(tree, indent=2) + "\n")
+    # Flat list for variables.js: Figma variables need a name, a kind (for scopes) and a value per mode.
+    (od / "tokens" / "tokens.figma.json").write_text(json.dumps({"tokens": flat, "typeStyles": styles}, indent=1) + "\n")
     write_css(od / "tokens" / "tokens.css", css_modes, styles)
 
     # Decisions and open conflicts, for the component pages and the index
@@ -287,6 +293,13 @@ def main():
         fname = slug(c["name"]) + ".md"
         (od / "docs" / "components" / fname).write_text(component_doc(c, d, k, conflicts, approved))
         pages.append((c["name"], fname, c.get("code")))
+
+    # Components approved as new components (not library ones to relink) are rebuilt in a draft
+    # library from an example: snapshot.js records it, rebuild.js recreates it.
+    spec = {c["name"]: c["nodes"][0] for c in approved["components"] if c.get("decision") == "component" and c.get("nodes")}
+    if spec:
+        (od / "figma").mkdir(exist_ok=True)
+        (od / "figma" / "snapshot-spec.json").write_text(json.dumps(spec, indent=1) + "\n")
 
     modes = sorted({m for _, _, v, _ in rows for m in v})
     T = ["# Tokens", "", f"{len(rows)} tokens. Values per mode; the first column is the default.", "",

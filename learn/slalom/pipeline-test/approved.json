@@ -17,6 +17,7 @@
     "Mobile": "#ffffff"
    },
    "code": "--slm-on-error",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -32,6 +33,7 @@
     "Dark": "#ffffff"
    },
    "code": "theme.on-surface",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -47,6 +49,7 @@
     "Dark": "#000000"
    },
    "code": "--slm-dp-selected-text",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -62,6 +65,7 @@
     "Dark": "#ffffff"
    },
    "code": "--slm-on-error",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -77,6 +81,7 @@
     "Dark": "#444444"
    },
    "code": "theme.surface",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -92,6 +97,7 @@
     "Dark": "#212121"
    },
    "code": "--slm-hover-bg-plain",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -107,6 +113,7 @@
     "Dark": "#444444"
    },
    "code": "theme.surface",
+   "nameMatch": true,
    "drift": []
   },
   {
@@ -122,6 +129,7 @@
     "Dark": "#86b1fd"
    },
    "code": "theme.primary",
+   "nameMatch": true,
    "drift": []
   },
   {
@@ -137,6 +145,7 @@
     "Dark": "#757575"
    },
    "code": "--slm-dp-hover",
+   "nameMatch": true,
    "drift": []
   },
   {
@@ -152,6 +161,7 @@
     "Dark": "#ffffff"
    },
    "code": "theme.on-surface",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -167,6 +177,7 @@
     "Dark": "#86b1fd"
    },
    "code": "theme.primary",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -182,6 +193,7 @@
     "Dark": "#444444"
    },
    "code": "--slm-app-card-bg",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -197,6 +209,7 @@
     "Dark": "#757575"
    },
    "code": "--slm-dp-hover",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -212,6 +225,7 @@
     "Dark": "#444444"
    },
    "code": "--slm-app-card-bg",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -227,6 +241,7 @@
     "Dark": "#444444"
    },
    "code": "--slm-app-card-bg",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -242,6 +257,7 @@
     "Dark": "#444444"
    },
    "code": "--slm-app-card-bg",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -257,6 +273,7 @@
     "Dark": "#757575"
    },
    "code": "--slm-dp-hover",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -272,6 +289,7 @@
     "Dark": "#444444"
    },
    "code": "--slm-app-card-bg",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -287,6 +305,7 @@
     "Dark": "#444444"
    },
    "code": "--slm-app-card-bg",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -302,6 +321,7 @@
     "Dark": "#444444"
    },
    "code": "theme.surface",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -317,6 +337,7 @@
     "Dark": "#86b1fd"
    },
    "code": "theme.primary",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -332,6 +353,7 @@
     "Dark": "#86b1fd"
    },
    "code": "theme.primary",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -347,6 +369,7 @@
     "Dark": "#ffffff33"
    },
    "code": "--slm-success-hover-overlay",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -362,6 +385,7 @@
     "Dark": "#86b1fd"
    },
    "code": "theme.primary",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -377,6 +401,7 @@
     "Dark": "#000000"
    },
    "code": "theme.on-primary",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -392,6 +417,7 @@
     "Dark": "#000000"
    },
    "code": "theme.on-primary",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -407,6 +433,7 @@
     "Dark": "#444444"
    },
    "code": "--slm-app-card-bg",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -422,6 +449,7 @@
     "Dark": "#444444"
    },
    "code": "--slm-app-card-bg",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -437,6 +465,7 @@
     "Dark": "#757575"
    },
    "code": "--slm-dp-hover",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -452,6 +481,7 @@
     "Dark": "#444444"
    },
    "code": "--slm-app-card-bg",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -467,6 +497,7 @@
     "Dark": "#444444"
    },
    "code": "--slm-app-card-bg",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -482,6 +513,7 @@
     "Dark": "#eaeaea"
    },
    "code": "--slm-border",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -497,6 +529,7 @@
     "Dark": "#86b1fd"
    },
    "code": "theme.primary",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -512,6 +545,7 @@
     "Dark": "#444444"
    },
    "code": "--slm-app-card-bg",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -527,6 +561,7 @@
     "Dark": "#757575"
    },
    "code": "--slm-dp-hover",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -542,6 +577,7 @@
     "Dark": "#757575"
    },
    "code": "--slm-dp-hover",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -557,6 +593,7 @@
     "Dark": "#86b1fd"
    },
    "code": "theme.primary",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -572,6 +609,7 @@
     "Dark": "#ffffff80"
    },
    "code": "--slm-text-hint",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -587,6 +625,7 @@
     "Dark": "#444444"
    },
    "code": "--slm-app-card-bg",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -602,6 +641,7 @@
     "Dark": "#444444"
    },
    "code": "--slm-app-card-bg",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -617,6 +657,7 @@
     "Dark": "#212121"
    },
    "code": "--slm-hover-bg-plain",
+   "nameMatch": true,
    "drift": []
   },
   {
@@ -632,6 +673,7 @@
     "Dark": "#212121"
    },
    "code": "--slm-hover-bg-plain",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -647,6 +689,7 @@
     "Dark": "#444444"
    },
    "code": "--slm-app-card-bg",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -662,6 +705,7 @@
     "Dark": "#00000033"
    },
    "code": "--slm-switch-thumb-shadow",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -677,6 +721,7 @@
     "Dark": "#212121"
    },
    "code": "--slm-hover-bg-plain",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -693,6 +738,7 @@
     "BuildDark": "#eaeaea"
    },
    "code": "--slm-border",
+   "nameMatch": true,
    "drift": []
   },
   {
@@ -707,6 +753,7 @@
     "default": 4
    },
    "code": "$slm-radius",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -721,6 +768,7 @@
     "default": 400
    },
    "code": "$slm-caption-weight",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -735,6 +783,7 @@
     "default": 700
    },
    "code": "$slm-heading-5-weight",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -749,6 +798,7 @@
     "default": 4
    },
    "code": "$slm-radius",
+   "nameMatch": true,
    "drift": []
   },
   {
@@ -764,6 +814,7 @@
     "Me @ Slalom": 4
    },
    "code": "$slm-radius",
+   "nameMatch": true,
    "drift": []
   },
   {
@@ -779,6 +830,7 @@
     "Me @ Slalom": 8
    },
    "code": "$slm-space-2",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -793,6 +845,7 @@
     "default": 400
    },
    "code": "$slm-caption-weight",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -807,6 +860,7 @@
     "default": 1
    },
    "code": "$slm-border-sm",
+   "nameMatch": true,
    "drift": []
   },
   {
@@ -821,6 +875,7 @@
     "default": 2
    },
    "code": "$slm-border-md",
+   "nameMatch": true,
    "drift": []
   },
   {
@@ -835,6 +890,7 @@
     "default": 0
    },
    "code": "$slm-space-0",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -849,6 +905,7 @@
     "default": 4
    },
    "code": "$slm-space-1",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -863,6 +920,7 @@
     "default": 8
    },
    "code": "$slm-space-2",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -877,6 +935,7 @@
     "default": 12
    },
    "code": "$slm-space-3",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -891,6 +950,7 @@
     "default": 16
    },
    "code": "$slm-space-4",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -905,6 +965,7 @@
     "default": 24
    },
    "code": "$slm-space-6",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -919,6 +980,7 @@
     "default": 32
    },
    "code": "$slm-space-8",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -933,6 +995,7 @@
     "default": 0
    },
    "code": "$slm-space-0",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -947,6 +1010,7 @@
     "default": 4
    },
    "code": "$slm-space-1",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -961,6 +1025,7 @@
     "default": 8
    },
    "code": "$slm-space-2",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -975,6 +1040,7 @@
     "default": 12
    },
    "code": "$slm-space-3",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -989,6 +1055,7 @@
     "default": 0
    },
    "code": "$slm-space-0",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -1003,6 +1070,7 @@
     "default": 16
    },
    "code": "$slm-space-4",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -1017,6 +1085,7 @@
     "default": 4
    },
    "code": "$slm-space-1",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -1031,6 +1100,7 @@
     "default": 16
    },
    "code": "$slm-space-4",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -1045,6 +1115,7 @@
     "default": 24
    },
    "code": "$slm-space-6",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -1059,6 +1130,7 @@
     "default": 24
    },
    "code": "$slm-space-6",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -1073,6 +1145,7 @@
     "default": 32
    },
    "code": "$slm-space-8",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -1087,6 +1160,7 @@
     "default": 0
    },
    "code": "$slm-space-0",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -1101,6 +1175,7 @@
     "default": 4
    },
    "code": "$slm-space-1",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -1115,6 +1190,7 @@
     "default": 8
    },
    "code": "$slm-space-2",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -1129,6 +1205,7 @@
     "default": 12
    },
    "code": "$slm-space-3",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -1143,6 +1220,7 @@
     "default": 16
    },
    "code": "$slm-space-4",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -1157,6 +1235,7 @@
     "default": 24
    },
    "code": "$slm-space-6",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -1171,6 +1250,7 @@
     "default": 0
    },
    "code": "$slm-space-0",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -1185,6 +1265,7 @@
     "default": 4
    },
    "code": "$slm-space-1",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -1199,6 +1280,7 @@
     "default": 24
    },
    "code": "$slm-space-6",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -1213,6 +1295,7 @@
     "default": 32
    },
    "code": "$slm-space-8",
+   "nameMatch": false,
    "drift": []
   },
   {
@@ -1227,6 +1310,7 @@
     "default": "0 1 4 0 #00000040"
    },
    "code": "$slm-shadow-surface",
+   "nameMatch": true,
    "drift": []
   },
   {
@@ -1241,6 +1325,7 @@
     "default": "0 1 5 0 #00000033"
    },
    "code": "$slm-shadow-button-3",
+   "nameMatch": true,
    "drift": []
   },
   {
@@ -1255,6 +1340,7 @@
     "default": "0 2 4 0 #00000024"
    },
    "code": "$slm-shadow-button-5",
+   "nameMatch": true,
    "drift": []
   },
   {
@@ -1269,6 +1355,7 @@
     "default": "0 1 10 0 #00000033"
    },
    "code": "$slm-shadow-button-6",
+   "nameMatch": true,
    "drift": []
   }
  ],

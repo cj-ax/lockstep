@@ -252,7 +252,7 @@ Learn read it with two new read-only scripts, `audit.js` and `inventory_local.js
 - **Shadows:** three button shadows differ. Figma's `button_shadow-1` is a 10% blue glow; code's is 12% black.
 
 **Read these numbers carefully.**
-- **"Complete" includes 19 tokens matched by value alone.** For example, `outlined-btn-disable-bg` matches `--slm-app-card-bg`, because both are white in light and `#444444` in dark. Same value isn't always same meaning; the skill tells the reviewer to check these.
+- **"Complete" includes 74 tokens matched by value alone** (corrected in milestone 5: a name match now needs half the words to agree, not one; the first count, 19, treated one shared word such as "text" as a match). For example, `outlined-btn-disable-bg` matches `--slm-app-card-bg`, because both are white in light and `#444444` in dark. Same value isn't always same meaning; the skill tells the reviewer to check these.
 - **Many "Figma only" tokens are component-specific by design.** Figma has `button Colors/…`, `semantic button color/…` and the like, while code reuses a few shared tokens. They're listed, not judged.
 - **Interaction-state axes aren't compared.** Code styles hover and pressed in CSS. Most "complete" components still differ in Figma-only axes such as `has value` and `rounded border`, which code expresses another way. They're noted in `coverage.json`, not raised as conflicts.
 - **Three passes of fixes, all general.** The first pass raised 46 conflicts, most of them noise:
@@ -294,6 +294,47 @@ Learn read it with two new read-only scripts, `audit.js` and `inventory_local.js
 - The generated CSS in a real app.
 - DTCG validity against a validator. The JSON parses and follows the 2025.10 shapes for colour, dimension, shadow and typography, but no tool has checked it.
 
+## lockstep:learn: a learned library, and a build on it (2026-10-22)
+
+**Setup.** From the fixture's approved items (the scripted take-every-suggestion review, with one change: "Card title", a title-and-description block, rejected), learn made a draft Figma library: [SDS learned library (draft)](https://www.figma.com/design/iuJn7Ziu80PUNh9gVTM3LK).
+- **Variables and styles:** 40 approved tokens as "Learned tokens" variables, scoped by kind, plus 4 text styles.
+- **Rebuilt components:** six components people approved as new ones (Text Heading, Switch Field, Card (Slot), Button Group, Tabs, Dialog). They were rebuilt from read-only snapshots of their detached copies, because the source file stays untouched and layers can't be copied between files.
+  - Every value is bound to a learned variable.
+  - The four drift values snapped back to their tokens.
+  - Card and Tabs have real, empty slots.
+  - Text is a role-named property, and library parts inside are exposed.
+- **Files for build and code:** `library.py` wrote the LIBRARY.md, `keys.json` and `variables.json` that `build` reads. `context.py` wrote the AI context, in DS-AI-Bridge's shape, for the fixture and for the Slalom pipeline test.
+
+**The gate.** A headless `claude -p` session, with only the plugin and those three files, got a plain request for a page it hadn't seen: a Billing page and a "Cancel your subscription?" confirmation (`research/trial-learned-billing/`).
+- It picked `lockstep:build`, read LIBRARY.md, built in the learned draft as told, settled, scored and screenshotted.
+- It made three passes and wrote a separate fix script.
+- It took 54 tool calls, 8.5 minutes and $3.04.
+
+**My independent rescore** used the scorer after the fix below:
+
+| Frame | Library instances | Bound | Detached | Hard-coded colours | Auto layout | Faithfulness | Integrity issues |
+|---|---|---|---|---|---|---|---|
+| Billing / Overview / v3 | 100% | 100% | 0% | 0% | 100% | 100 | 0 |
+| Billing / Dialog / v3 | 50% | 100% | 0% | 0% | 100% | 90 | 0 |
+
+The overview is entirely learned and library components, and the screenshot looks right. The dialog's heading and message are styled, token-bound text layers in the Dialog Body's slot, not text components, which is what costs it 10 points.
+
+**What the trial caught:**
+- **The scorer missed sample text inside a nested instance's slot.** The Dialog Body sits inside the learned Dialog, and its slot's buttons still read "Button" in v1. The agent saw it in the screenshot ("what you see wins" held) and said the score couldn't be trusted there. The scorer now walks every top-level slot in an instance, nested ones included. Rescored, v1 shows those two sample-text issues; v2 and v3 are clean.
+- **Edits inside the learned Dialog silently didn't take effect within the build script.** The button labels and the swap to Button Danger only worked when run separately afterwards. The agent reported it plainly and left a second script. The cause isn't known yet.
+- **Gaps in the learned library, reported by the agent:**
+  - Switch Field has only its "on" state, the one its examples showed;
+  - Card has no subtitle;
+  - the Dialog has no dimmed-page version;
+  - replacing the first button of the learned Button Group breaks its layout.
+
+  These are real limits of rebuilding from examples, and they're listed in LIBRARY.md.
+
+**Read these numbers carefully.**
+- **The fixture is still kind.** The published SDS components (Header, Button, Input Field and so on) were live and usable by key, so only six components needed rebuilding.
+- **The review was scripted,** with one change made by me as the test operator, not by a team.
+- **One build, one page.** That's a gate, not a benchmark.
+
 ## Caveats
 - **Small sample.** There was one run per arm, with the same model. Read differences of a few points as directional.
 - **Who built what.** I built L myself and also wrote the scorer, so L may be tuned to what the scorer measures. A and B were built by independent subagents that never saw the scorer. The fresh-agent trial is the independent check: an agent with only the plugin scored 99 on a page it hadn't seen, though it shipped a defect the score couldn't see.
@@ -306,6 +347,7 @@ Everything now lives in the Claude Code plugin at `plugin/` (see `plugin/README.
 - `plugin/scripts/inventory.js`: reads a library's components and token values, in two parts.
 - `plugin/scripts/audit.js`, `inventory_local.js`, `propose.py`: learn's read-only harvest and its proposals. `learn/fixture/` holds the fixture, its ground truth, the harvest and `RECOVERY.md`.
 - `tests/test_readonly.py`: the guard's read-only allowance.
+- `plugin/scripts/variables.js`, `snapshot.js`, `rebuild.js`, `library.py`, `context.py`: learn's draft Figma library and AI context. `learn/fixture/learned/` holds the fixture's; `research/trial-learned-billing/` the gate trial.
 - `plugin/scripts/review.py`, `generate.py`: learn's review and generation. `learn/*/review/` and `learn/fixture/generated/` hold their output.
 - `plugin/scripts/harvest_code.py`, `reconcile.py`: learn's code harvest and coverage matrix. `learn/slalom/` holds the Slalom run: design inventory, code harvest and `COVERAGE.md`.
 - `plugin/skills/build/references/examples/`: the Slalom and Simple Design System builds, their keys, and `PAGE_BRIEF.md`, the shared prompt given to every arm.

@@ -1,0 +1,5 @@
+Design a Billing page in Figma using our design system. It's the library our team learned from our product files with Lockstep; its files are in lockstep/sds-learned.
+
+The page: the app header; the page title "Billing" with one line of guidance; tabs for Overview, Invoices and Payment, with Overview selected. Then a "Current plan" card showing the plan name and price, with two actions: Change plan and Cancel subscription. Then a "Payment details" card with cardholder name, card number, expiry date and billing email fields, and an "Email me receipts" setting that's on. Then a second frame showing a "Cancel your subscription?" confirmation that appears when someone chooses Cancel subscription, with Keep subscription and a destructive Cancel subscription. Desktop width.
+
+You're running unattended, so you can't ask me anything: make reasonable decisions and list them at the end. When you're done, give me the link, how faithfully it uses our library, and anything that isn't finished.

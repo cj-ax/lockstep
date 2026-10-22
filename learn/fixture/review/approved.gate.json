@@ -1,0 +1,1089 @@
+{
+ "title": "SDS fixture review",
+ "source": "proposals",
+ "tokens": [
+  {
+   "id": "token-color-1e1e1e-29869d",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Color/Text/Default/Default",
+   "kind": "color",
+   "values": {
+    "default": "#1e1e1e"
+   },
+   "drift": [
+    {
+     "value": "#201e1e",
+     "uses": 3,
+     "examples": [
+      "3:404",
+      "3:646",
+      "3:652"
+     ],
+     "distance": 0.38,
+     "alternatives": []
+    }
+   ]
+  },
+  {
+   "id": "token-color-ffffff-19e7ae",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Color/Background/Default/Default",
+   "kind": "color",
+   "values": {
+    "default": "#ffffff"
+   },
+   "drift": []
+  },
+  {
+   "id": "token-color-d9d9d9-f77770",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Color/Border/Default/Default",
+   "kind": "color",
+   "values": {
+    "default": "#d9d9d9"
+   },
+   "drift": []
+  },
+  {
+   "id": "token-color-2c2c2c-2a5244",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Color/Background/Brand/Default",
+   "kind": "color",
+   "values": {
+    "default": "#2c2c2c"
+   },
+   "drift": [
+    {
+     "value": "#2e2c2c",
+     "uses": 1,
+     "examples": [
+      "3:653"
+     ],
+     "distance": 0.36,
+     "alternatives": []
+    }
+   ]
+  },
+  {
+   "id": "token-color-767676-f0edbd",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Color/Text/Neutral/Tertiary",
+   "kind": "color",
+   "values": {
+    "default": "#767676"
+   },
+   "drift": []
+  },
+  {
+   "id": "token-color-f5f5f5-2ef28e",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Color/Background/Brand/Tertiary",
+   "kind": "color",
+   "values": {
+    "default": "#f5f5f5"
+   },
+   "drift": []
+  },
+  {
+   "id": "token-color-757575-5b71e3",
+   "decision": "rename",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "color/757575",
+   "kind": "color",
+   "values": {
+    "default": "#757575"
+   },
+   "drift": [
+    {
+     "value": "#777575",
+     "uses": 2,
+     "examples": [
+      "3:649",
+      "3:659"
+     ],
+     "distance": 0.3,
+     "alternatives": [
+      "#767676"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "token-color-303030-6ad57b",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Color/Border/Neutral/Default",
+   "kind": "color",
+   "values": {
+    "default": "#303030"
+   },
+   "drift": []
+  },
+  {
+   "id": "token-color-b2b2b2-3a7822",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Color/Border/Neutral/tertiary",
+   "kind": "color",
+   "values": {
+    "default": "#b2b2b2"
+   },
+   "drift": []
+  },
+  {
+   "id": "token-color-e3e3e3-5e4a36",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Color/Background/Neutral/Tertiary",
+   "kind": "color",
+   "values": {
+    "default": "#e3e3e3"
+   },
+   "drift": []
+  },
+  {
+   "id": "token-color-ec221f-9b9aca",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Color/Background/Danger/Default",
+   "kind": "color",
+   "values": {
+    "default": "#ec221f"
+   },
+   "drift": []
+  },
+  {
+   "id": "token-color-c00f0c-2c3f12",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Color/Border/Danger/Secondary",
+   "kind": "color",
+   "values": {
+    "default": "#c00f0c"
+   },
+   "drift": []
+  },
+  {
+   "id": "token-color-fee9e7-9c5734",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Color/Text/Danger/On Danger",
+   "kind": "color",
+   "values": {
+    "default": "#fee9e7"
+   },
+   "drift": []
+  },
+  {
+   "id": "token-color-ffffffcc-5e5700",
+   "decision": "rename",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "color/ffffffcc",
+   "kind": "color",
+   "values": {
+    "default": "#ffffffcc"
+   },
+   "drift": []
+  },
+  {
+   "id": "token-color-0c0c0d0d-771aa3",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Color Primitives/Black/100",
+   "kind": "color",
+   "values": {
+    "default": "#0c0c0d0d"
+   },
+   "drift": []
+  },
+  {
+   "id": "token-color-0c0c0d1a-9220b0",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Color Primitives/Black/200",
+   "kind": "color",
+   "values": {
+    "default": "#0c0c0d1a"
+   },
+   "drift": []
+  },
+  {
+   "id": "token-spacing-8-0-9b87cf",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Size/Space/200",
+   "kind": "spacing",
+   "values": {
+    "default": 8.0
+   },
+   "drift": []
+  },
+  {
+   "id": "token-spacing-12-0-aa471e",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Size/Space/300",
+   "kind": "spacing",
+   "values": {
+    "default": 12.0
+   },
+   "drift": []
+  },
+  {
+   "id": "token-spacing-32-0-0f05f2",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Size/Space/800",
+   "kind": "spacing",
+   "values": {
+    "default": 32.0
+   },
+   "drift": []
+  },
+  {
+   "id": "token-spacing-24-0-59ecfe",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Size/Space/600",
+   "kind": "spacing",
+   "values": {
+    "default": 24.0
+   },
+   "drift": [
+    {
+     "value": 25.0,
+     "uses": 3,
+     "examples": [
+      "3:388",
+      "3:712",
+      "3:688"
+     ],
+     "distance": 1.0,
+     "alternatives": []
+    },
+    {
+     "value": 23.0,
+     "uses": 1,
+     "examples": [
+      "3:687"
+     ],
+     "distance": 1.0,
+     "alternatives": []
+    }
+   ]
+  },
+  {
+   "id": "token-spacing-16-0-1144e0",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Size/Space/400",
+   "kind": "spacing",
+   "values": {
+    "default": 16.0
+   },
+   "drift": []
+  },
+  {
+   "id": "token-spacing-4-0-06ad0d",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Size/Space/100",
+   "kind": "spacing",
+   "values": {
+    "default": 4.0
+   },
+   "drift": []
+  },
+  {
+   "id": "token-radius-8-0-7ecbfa",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Size/Radius/200",
+   "kind": "radius",
+   "values": {
+    "default": 8.0
+   },
+   "drift": []
+  },
+  {
+   "id": "token-radius-9999-0-ce25c5",
+   "decision": "rename",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "radius/9999",
+   "kind": "radius",
+   "values": {
+    "default": 9999.0
+   },
+   "drift": []
+  },
+  {
+   "id": "token-radius-4-0-fcc31b",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Size/Radius/100",
+   "kind": "radius",
+   "values": {
+    "default": 4.0
+   },
+   "drift": []
+  },
+  {
+   "id": "token-radius-32-0-8436b7",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Typography Primitives/Scale 06",
+   "kind": "radius",
+   "values": {
+    "default": 32.0
+   },
+   "drift": []
+  },
+  {
+   "id": "token-stroke-1-0-ccb8ff",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Size/Stroke/Border",
+   "kind": "stroke",
+   "values": {
+    "default": 1.0
+   },
+   "drift": []
+  },
+  {
+   "id": "token-effect-4-0-36d401",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Size/Depth/100",
+   "kind": "effect",
+   "values": {
+    "default": 4.0
+   },
+   "drift": []
+  },
+  {
+   "id": "token-effect-4-0-cdb746",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Size/Depth/Negative 100",
+   "kind": "effect",
+   "values": {
+    "default": -4.0
+   },
+   "drift": []
+  },
+  {
+   "id": "token-effect-0-0-e19218",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Size/Depth/0",
+   "kind": "effect",
+   "values": {
+    "default": 0.0
+   },
+   "drift": []
+  },
+  {
+   "id": "token-effect-bg-blur-4-9f1fd6",
+   "decision": "rename",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "effect/bg-blur-4",
+   "kind": "effect",
+   "values": {
+    "default": "bg-blur:4"
+   },
+   "drift": []
+  },
+  {
+   "id": "token-effect-32-0-176d74",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Size/Depth/800",
+   "kind": "effect",
+   "values": {
+    "default": 32.0
+   },
+   "drift": []
+  },
+  {
+   "id": "token-effect-16-0-3eca42",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Size/Depth/400",
+   "kind": "effect",
+   "values": {
+    "default": 16.0
+   },
+   "drift": []
+  },
+  {
+   "id": "token-fontfamily-inter-8d67ab",
+   "decision": "rename",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "fontFamily/inter",
+   "kind": "fontFamily",
+   "values": {
+    "default": "Inter"
+   },
+   "drift": []
+  },
+  {
+   "id": "token-fontsize-16-0-7cf6dc",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Typography/Body/Size Medium",
+   "kind": "fontSize",
+   "values": {
+    "default": 16.0
+   },
+   "drift": []
+  },
+  {
+   "id": "token-fontsize-24-0-ea9b42",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Typography/Heading/Size Base",
+   "kind": "fontSize",
+   "values": {
+    "default": 24.0
+   },
+   "drift": []
+  },
+  {
+   "id": "token-fontsize-48-0-1126dc",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Typography/Title Page/Size Base",
+   "kind": "fontSize",
+   "values": {
+    "default": 48.0
+   },
+   "drift": []
+  },
+  {
+   "id": "token-fontweight-400-0-dc8a4b",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Typography/Body/Font Weight Regular",
+   "kind": "fontWeight",
+   "values": {
+    "default": 400.0
+   },
+   "drift": []
+  },
+  {
+   "id": "token-fontweight-600-0-05ee04",
+   "decision": "rename",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "fontWeight/600",
+   "kind": "fontWeight",
+   "values": {
+    "default": 600.0
+   },
+   "drift": []
+  },
+  {
+   "id": "token-fontweight-700-0-6ab32a",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Typography/Title Page/Font Weight",
+   "kind": "fontWeight",
+   "values": {
+    "default": 700.0
+   },
+   "drift": []
+  }
+ ],
+ "typeStyles": [
+  {
+   "id": "token-type-inter-regular-16-140-0-e51851",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Body Base",
+   "values": {
+    "fontFamily": "Inter",
+    "fontWeight": 400,
+    "fontSize": 16.0,
+    "lineHeight": 22.4,
+    "letterSpacing": 0.0
+   }
+  },
+  {
+   "id": "token-type-inter-semi-bold-24-120-2-d24020",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Heading",
+   "values": {
+    "fontFamily": "Inter",
+    "fontWeight": 600,
+    "fontSize": 24.0,
+    "lineHeight": 28.8,
+    "letterSpacing": -0.48
+   }
+  },
+  {
+   "id": "token-type-inter-regular-16-100-0-c64269",
+   "decision": "rename",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "type/inter-regular-16-100-0",
+   "values": {
+    "fontFamily": "Inter",
+    "fontWeight": 400,
+    "fontSize": 16.0,
+    "lineHeight": 16.0,
+    "letterSpacing": 0.0
+   }
+  },
+  {
+   "id": "token-type-inter-bold-48-120-2-509da5",
+   "decision": "approve",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Title Page",
+   "values": {
+    "fontFamily": "Inter",
+    "fontWeight": 700,
+    "fontSize": 48.0,
+    "lineHeight": 57.6,
+    "letterSpacing": -0.96
+   }
+  }
+ ],
+ "components": [
+  {
+   "id": "component-text-heading-f5dd63",
+   "decision": "component",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Text Heading",
+   "evidence": [
+    "de facto: only detached copies, no live instances",
+    "7 detached copies, 0 live instances, in Settings / Account, Settings / Notifications, Settings / Profile"
+   ],
+   "nodes": [
+    "3:474",
+    "3:391",
+    "3:616",
+    "3:621",
+    "3:642",
+    "3:715",
+    "3:690"
+   ],
+   "status": "de facto: only detached copies, no live instances"
+  },
+  {
+   "id": "component-input-field-dbebd3",
+   "decision": "relink",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Input Field",
+   "evidence": [
+    "published, but detached in places",
+    "6 detached copies, 3 live instances, in Settings / Profile"
+   ],
+   "nodes": [
+    "3:480",
+    "3:487",
+    "3:494",
+    "3:394",
+    "3:400",
+    "3:406"
+   ],
+   "status": "published, but detached in places"
+  },
+  {
+   "id": "component-switch-field-6cfef2",
+   "decision": "component",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Switch Field",
+   "evidence": [
+    "de facto: only detached copies, no live instances",
+    "6 detached copies, 0 live instances, in Settings / Notifications"
+   ],
+   "nodes": [
+    "3:623",
+    "3:629",
+    "3:635",
+    "3:644",
+    "3:650",
+    "3:656"
+   ],
+   "status": "de facto: only detached copies, no live instances"
+  },
+  {
+   "id": "component-tab-4b8c4a",
+   "decision": "relink",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Tab",
+   "evidence": [
+    "published, but detached in places",
+    "5 detached copies, 4 live instances, in Settings / Account, Settings / Profile"
+   ],
+   "nodes": [
+    "3:517",
+    "3:519",
+    "3:521",
+    "3:732",
+    "3:734"
+   ],
+   "status": "published, but detached in places"
+  },
+  {
+   "id": "component-card-slot-4cb51f",
+   "decision": "component",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Card (Slot)",
+   "evidence": [
+    "de facto: only detached copies, no live instances",
+    "5 detached copies, 0 live instances, in Settings / Account, Settings / Notifications, Settings / Profile"
+   ],
+   "nodes": [
+    "3:471",
+    "3:388",
+    "3:613",
+    "3:712",
+    "3:687"
+   ],
+   "status": "de facto: only detached copies, no live instances"
+  },
+  {
+   "id": "component-button-group-48c2b2",
+   "decision": "component",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Button Group",
+   "evidence": [
+    "de facto: only detached copies, no live instances",
+    "4 detached copies, 0 live instances, in Settings / Account, Settings / Profile"
+   ],
+   "nodes": [
+    "3:500",
+    "3:412",
+    "3:718",
+    "3:693"
+   ],
+   "status": "de facto: only detached copies, no live instances"
+  },
+  {
+   "id": "component-tabs-e06031",
+   "decision": "component",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Tabs",
+   "evidence": [
+    "de facto: only detached copies, no live instances",
+    "3 detached copies, 0 live instances, in Settings / Account, Settings / Notifications, Settings / Profile"
+   ],
+   "nodes": [
+    "3:515",
+    "3:662",
+    "3:729"
+   ],
+   "status": "de facto: only detached copies, no live instances"
+  },
+  {
+   "id": "component-text-53622a",
+   "decision": "relink",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Text",
+   "evidence": [
+    "published, but detached in places",
+    "3 detached copies, 5 live instances, in Settings / Notifications, Settings / Profile"
+   ],
+   "nodes": [
+    "3:476",
+    "3:667",
+    "3:618"
+   ],
+   "status": "published, but detached in places"
+  },
+  {
+   "id": "component-text-title-page-b8dcd7",
+   "decision": "relink",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Text Title Page",
+   "evidence": [
+    "published, but detached in places",
+    "2 detached copies, 1 live instances, in Settings / Notifications, Settings / Profile"
+   ],
+   "nodes": [
+    "3:523",
+    "3:669"
+   ],
+   "status": "published, but detached in places"
+  },
+  {
+   "id": "component-dialog-8b7cc3",
+   "decision": "component",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "name": "Dialog",
+   "evidence": [
+    "de facto: only detached copies, no live instances",
+    "1 detached copies, 0 live instances, in Settings / Dialog"
+   ],
+   "nodes": [
+    "3:748"
+   ],
+   "status": "de facto: only detached copies, no live instances"
+  }
+ ],
+ "decisions": [
+  {
+   "id": "wip-bg-white-43e7d4",
+   "decision": "map",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "title": "bg/white",
+   "payload": {
+    "type": "COLOR",
+    "collection": "Tokens (WIP)",
+    "name": "bg/white",
+    "value": "#ffffff",
+    "boundUses": 6,
+    "mapsTo": "Color/Background/Default/Default",
+    "token": "#ffffff",
+    "status": "maps to a library token"
+   }
+  },
+  {
+   "id": "wip-spacing-xl-cfd2d8",
+   "decision": "map",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "title": "spacing-xl",
+   "payload": {
+    "type": "FLOAT",
+    "collection": "Tokens (WIP)",
+    "name": "spacing-xl",
+    "value": 32,
+    "boundUses": 3,
+    "mapsTo": "Size/Space/800",
+    "token": 32.0,
+    "status": "maps to a library token"
+   }
+  },
+  {
+   "id": "wip-spacing-l-1ee6cb",
+   "decision": "map",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "title": "spacing-l",
+   "payload": {
+    "type": "FLOAT",
+    "collection": "Tokens (WIP)",
+    "name": "spacing-l",
+    "value": 24,
+    "boundUses": 8,
+    "mapsTo": "Size/Space/600",
+    "token": 24.0,
+    "status": "maps to a library token"
+   }
+  },
+  {
+   "id": "wip-border-w-174f70",
+   "decision": "map",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "title": "border-w",
+   "payload": {
+    "type": "FLOAT",
+    "collection": "Tokens (WIP)",
+    "name": "border-w",
+    "value": 1,
+    "boundUses": 5,
+    "mapsTo": "Size/Stroke/Border",
+    "token": 1.0,
+    "status": "maps to a library token"
+   }
+  },
+  {
+   "id": "wip-spacing-m-c9484c",
+   "decision": "map",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "title": "spacing-m",
+   "payload": {
+    "type": "FLOAT",
+    "collection": "Tokens (WIP)",
+    "name": "spacing-m",
+    "value": 16,
+    "boundUses": 5,
+    "mapsTo": "Size/Space/400",
+    "token": 16.0,
+    "status": "maps to a library token"
+   }
+  },
+  {
+   "id": "wip-spacing-xs-2f1cc8",
+   "decision": "map",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "title": "spacing-xs",
+   "payload": {
+    "type": "FLOAT",
+    "collection": "Tokens (WIP)",
+    "name": "spacing-xs",
+    "value": 8,
+    "boundUses": 2,
+    "mapsTo": "Size/Space/200",
+    "token": 8.0,
+    "status": "maps to a library token"
+   }
+  },
+  {
+   "id": "wip-text-primary-0a11af",
+   "decision": "map",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "title": "text/primary",
+   "payload": {
+    "type": "COLOR",
+    "collection": "Tokens (WIP)",
+    "name": "text/primary",
+    "value": "#1e1e1e",
+    "boundUses": 6,
+    "mapsTo": "Color/Text/Default/Default",
+    "token": "#1e1e1e",
+    "status": "maps to a library token"
+   }
+  },
+  {
+   "id": "wip-radius-md-1b2868",
+   "decision": "map",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "title": "radius-md",
+   "payload": {
+    "type": "FLOAT",
+    "collection": "Tokens (WIP)",
+    "name": "radius-md",
+    "value": 8,
+    "boundUses": 6,
+    "mapsTo": "Size/Radius/200",
+    "token": 8.0,
+    "status": "maps to a library token"
+   }
+  },
+  {
+   "id": "wip-border-light-df8b8f",
+   "decision": "map",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "title": "border/light",
+   "payload": {
+    "type": "COLOR",
+    "collection": "Tokens (WIP)",
+    "name": "border/light",
+    "value": "#d9d9d9",
+    "boundUses": 2,
+    "mapsTo": "Color/Border/Default/Default",
+    "token": "#d9d9d9",
+    "status": "maps to a library token"
+   }
+  },
+  {
+   "id": "local-card-base-c1c056",
+   "decision": "merge",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "title": "Card / Base",
+   "payload": {
+    "type": "local",
+    "name": "Card / Base",
+    "id": "3:821",
+    "page": "Library (WIP)",
+    "status": "UNPUBLISHED",
+    "instancesInFile": 0,
+    "duplicates": [
+     "Card (Slot)"
+    ],
+    "note": "unused; looks like Card (Slot)"
+   }
+  },
+  {
+   "id": "local-section-heading-0d5df7",
+   "decision": "merge",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "title": "Section Heading",
+   "payload": {
+    "type": "local",
+    "name": "Section Heading",
+    "id": "3:826",
+    "page": "Library (WIP)",
+    "status": "UNPUBLISHED",
+    "instancesInFile": 0,
+    "duplicates": [
+     "Text Heading"
+    ],
+    "note": "unused; looks like Text Heading"
+   }
+  },
+  {
+   "id": "local-toggle-row-93e02f",
+   "decision": "merge",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "title": "Toggle row",
+   "payload": {
+    "type": "local",
+    "name": "Toggle row",
+    "id": "3:839",
+    "page": "Library (WIP)",
+    "status": "UNPUBLISHED",
+    "instancesInFile": 0,
+    "duplicates": [
+     "Switch Field"
+    ],
+    "note": "unused; looks like Switch Field"
+   }
+  }
+ ],
+ "rejected": [
+  {
+   "id": "component-card-title-171966",
+   "decision": "reject",
+   "by": "gate review: the scripted review with this one item rejected",
+   "at": "2026-10-22T00:00:00Z",
+   "note": "A title and description block, not a component.",
+   "title": "Card title"
+  },
+  {
+   "id": "wip-blue-accent-9e5f45",
+   "decision": "delete",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "title": "blue-accent"
+  },
+  {
+   "id": "wip-spacing-s-b717f6",
+   "decision": "delete",
+   "by": "scripted review (takes every suggestion)",
+   "at": "2026-10-22T00:00:00Z",
+   "note": null,
+   "title": "spacing-s"
+  }
+ ],
+ "open": []
+}

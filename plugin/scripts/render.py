@@ -7,6 +7,10 @@
   render.py inventory --style-keys style-keys.json --part styles
   render.py inventory_local --part components [--pages 0:1,5:2]   (or variables)
   render.py audit --roots 0:1 [--offset 0]
+  render.py variables --tokens generated/tokens/tokens.figma.json        (a draft only)
+  render.py snapshot --spec components.json      (read-only: {name: example node id})
+  render.py rebuild --spec snapshot.json         (a draft only)
+  render.py score --roots 1:2 --local-library-page "Learned library"
   render.py path/to/build.js --which Profile,Account --version 2
 
 Named scripts are the ones next to this file; anything else is a path to a build script.
@@ -31,8 +35,8 @@ sys.path.insert(0, str(HERE))
 from lockstep_config import ConfigError, protected_file_keys  # noqa: E402
 
 CODE_LIMIT = 50_000
-NAMED = ("score", "fix", "settle", "inventory", "inventory_local", "audit")
-READONLY = ("score", "inventory_local", "audit")
+NAMED = ("score", "fix", "settle", "inventory", "inventory_local", "audit", "variables", "snapshot", "rebuild")
+READONLY = ("score", "inventory_local", "audit", "snapshot")
 MARKER = "// lockstep-readonly "
 
 
@@ -88,6 +92,9 @@ def main():
     ap.add_argument("--style-keys", help="JSON file of {label: style key} (inventory --part styles)")
     ap.add_argument("--pages", help="comma-separated page IDs (inventory_local; default all pages)")
     ap.add_argument("--offset", type=int, help="where to resume when a result says `next` (audit, inventory variables)")
+    ap.add_argument("--tokens", help="generate.py's tokens.figma.json (variables)")
+    ap.add_argument("--spec", help="JSON spec (snapshot: {name: node id}; rebuild: snapshot.js's result)")
+    ap.add_argument("--local-library-page", help="score: count instances of components on this page of the same file as library instances (a learned draft library)")
     ap.add_argument("--which", help="comma-separated frame names (build scripts)")
     ap.add_argument("--version", type=int, help="canvas row for this pass (build scripts)")
     args = ap.parse_args()
@@ -107,6 +114,12 @@ def main():
         values["PAGE_IDS"] = json.dumps(split(args.pages) if args.pages else [])
     if args.script in ("audit", "inventory"):
         values["OFFSET"] = json.dumps(args.offset or 0)
+    if args.tokens:
+        values["TOKENS"] = json.dumps(json.loads(Path(args.tokens).read_text()))
+    if args.spec:
+        values["SPEC"] = json.dumps(json.loads(Path(args.spec).read_text()))
+    if args.script == "score":
+        values["LOCAL_LIBRARY_PAGE"] = json.dumps(args.local_library_page or "")
     if args.which:
         values["WHICH"] = json.dumps(split(args.which))
     if args.version is not None:

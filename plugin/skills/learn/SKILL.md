@@ -13,10 +13,9 @@ the system.
 Shared scripts live in the plugin's `scripts/` folder, two levels up from this skill's base
 directory (shown when the skill loads). Below, `$LOCKSTEP` is that plugin folder.
 
-**Built so far: steps 1–7**: intake, stack discovery, design harvest with proposals, code
-harvest, reconcile, review, and generating tokens and component docs from what was approved.
-Step 8 (generating Figma variables and AI context, then building a page from the learned
-system) isn't built yet. Don't improvise it.
+All eight steps are built: intake, stack discovery, design harvest with proposals, code
+harvest, reconcile, review, generating tokens and docs, and a learned Figma library with AI
+context that `lockstep:build` can use.
 
 Everything goes in `lockstep/<org-slug>/` in the user's project:
 
@@ -270,10 +269,41 @@ list what is still open: open items generate nothing until someone rules on them
 anything, they change the ruling and you run `apply` and `generate` again; never hand-edit the
 generated files.
 
-## What comes next (not built yet)
+## 8. A learned library in Figma, and AI context
 
-8. **Figma variables, AI context and the gate:** draft Figma variables from the approved
-   tokens, `DESIGN_SYSTEM_CONTEXT.md` for code generation, a LIBRARY.md that `lockstep:build`
-   can use, then build a page from the learned system and score it.
+Only after step 7, from approved items. Everything here goes into **one new draft file**, which
+becomes the learned library until the org publishes it. Never write to the org's files.
+
+1. **Draft and variables.** Create a draft (`create_new_file`) named "<Org> learned library
+   (draft)", call `create_session`, then:
+   ```bash
+   python3 "$LOCKSTEP/scripts/render.py" variables --tokens lockstep/<org-slug>/generated/tokens/tokens.figma.json
+   ```
+   Save the result as `generated/figma/variables.result.json`. It makes a "Learned tokens"
+   collection (one mode per theme, scopes by kind) and the approved text styles.
+2. **Components people approved as new components.** `generate.py` wrote
+   `generated/figma/snapshot-spec.json` (an example layer for each). Snapshot them, read-only,
+   in the **source** file, then rebuild them in the **draft**:
+   ```bash
+   python3 "$LOCKSTEP/scripts/render.py" snapshot --spec lockstep/<org-slug>/generated/figma/snapshot-spec.json
+   python3 "$LOCKSTEP/scripts/render.py" rebuild --spec lockstep/<org-slug>/generated/figma/snapshot.json
+   ```
+   Save the results as `snapshot.json` and `rebuild.result.json`. The rebuild binds every value
+   to a learned variable and lists anything it couldn't bind; screenshot the "Learned library"
+   page and look at each component before going on.
+3. **Published components in use.** Write their keys (the audit's `instances`) to
+   `generated/figma/library-keys.json`, run `render.py inventory --keys <that file> --part
+   components` in the draft, and save it as `library.components.json`.
+4. **Files for build and for code:**
+   ```bash
+   python3 "$LOCKSTEP/scripts/library.py" --figma-dir lockstep/<org-slug>/generated/figma --file-key <draft key> --approved lockstep/<org-slug>/review/approved.json --title "<Org> learned library (draft)" --out lockstep/<org-slug>/learned
+   python3 "$LOCKSTEP/scripts/context.py" --approved lockstep/<org-slug>/review/approved.json --coverage lockstep/<org-slug>/coverage.json --code lockstep/<org-slug>/code.json --design-components <inventory.components.json> --review lockstep/<org-slug>/review/review.json --tokens-css lockstep/<org-slug>/generated/tokens/tokens.css --out lockstep/<org-slug>/learned/context
+   ```
+   Leave out flags for files you don't have. `learned/LIBRARY.md` is what `lockstep:build` reads;
+   `learned/context/DESIGN_SYSTEM_CONTEXT.md` is for coding agents.
+
+Tell the user: the draft's link, what's in it, what couldn't be bound or rebuilt, and that a
+build on it happens **in that draft** (`lockstep:build` knows). Rebuilt components have one
+variant: the one their examples showed.
 
 The design is in `LEARN-DESIGN.md` in the Lockstep repository.

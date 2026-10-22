@@ -1035,8 +1035,8 @@
    "group": "Agreed",
    "title": "87 tokens, 14 type styles and 15 components in both Figma and code",
    "evidence": [
-    "68 tokens with matching names",
-    "19 tokens matched by value alone: check these in COVERAGE.md",
+    "13 tokens with matching names",
+    "74 tokens matched by value alone: check these in COVERAGE.md",
     "Type styles: Subtitle-2, Body-2, Body-1, Caption, button-lg-upcase, button-lg-ttlcase, button-md-upcase, button-md-ttlcase, button-sm-upcase, button-sm-ttlcase, Heading 6, Heading 3, Heading 4, Subtitle-1",
     "Components: button = SButton, semantic Buttons = SButton, input/textField = STextField, text area = STextArea, single-select = SSelect, autocomplete = SAutocomplete, date picker = SDatePicker, Switch Toggle = SSwitch, Status Alert Bar = SAlert, Toast Notifications = SToast, step = SStepper, Accordion Row = SExpansionPanel, empty State = SEmptyState, loading = SProgressRing, combobox = SCombobox. Their differences are listed as conflicts."
    ],
@@ -1097,7 +1097,7 @@
        "Light": "#ffffff",
        "Dark": "#000000"
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": [
        "theme.on-primary",
        "--slm-on-primary"
@@ -1232,7 +1232,7 @@
        "Light": "#ffffff",
        "Dark": "#444444"
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": [
        "theme.surface",
        "--slm-surface"
@@ -1247,7 +1247,7 @@
        "Light": "#f0f3f8",
        "Dark": "#757575"
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -1259,7 +1259,7 @@
        "Light": "#ffffff",
        "Dark": "#444444"
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": [
        "theme.surface",
        "--slm-surface"
@@ -1274,7 +1274,7 @@
        "Light": "#ffffff",
        "Dark": "#444444"
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": [
        "theme.surface",
        "--slm-surface"
@@ -1289,7 +1289,7 @@
        "Light": "#ffffff",
        "Dark": "#444444"
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": [
        "theme.surface",
        "--slm-surface"
@@ -1304,7 +1304,7 @@
        "Light": "#f0f3f8",
        "Dark": "#757575"
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -1316,7 +1316,7 @@
        "Light": "#ffffff",
        "Dark": "#444444"
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": [
        "theme.surface",
        "--slm-surface"
@@ -1331,7 +1331,7 @@
        "Light": "#ffffff",
        "Dark": "#444444"
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": [
        "theme.surface",
        "--slm-surface"
@@ -1393,7 +1393,7 @@
        "Light": "#ffffff33",
        "Dark": "#ffffff33"
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -1451,7 +1451,7 @@
        "Light": "#ffffff",
        "Dark": "#444444"
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": [
        "theme.surface",
        "--slm-surface"
@@ -1466,7 +1466,7 @@
        "Light": "#ffffff",
        "Dark": "#444444"
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": [
        "theme.surface",
        "--slm-surface"
@@ -1481,7 +1481,7 @@
        "Light": "#f0f3f8",
        "Dark": "#757575"
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -1493,7 +1493,7 @@
        "Light": "#ffffff",
        "Dark": "#444444"
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": [
        "theme.surface",
        "--slm-surface"
@@ -1508,7 +1508,7 @@
        "Light": "#ffffff",
        "Dark": "#444444"
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": [
        "theme.surface",
        "--slm-surface"
@@ -1553,7 +1553,7 @@
        "Light": "#ffffff",
        "Dark": "#444444"
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": [
        "theme.surface",
        "--slm-surface"
@@ -1568,7 +1568,7 @@
        "Light": "#f0f3f8",
        "Dark": "#757575"
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -1608,7 +1608,7 @@
        "Light": "#00000080",
        "Dark": "#ffffff80"
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -1620,7 +1620,7 @@
        "Light": "#ffffff",
        "Dark": "#444444"
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": [
        "theme.surface",
        "--slm-surface"
@@ -1635,7 +1635,7 @@
        "Light": "#ffffff",
        "Dark": "#444444"
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": [
        "theme.surface",
        "--slm-surface"
@@ -1664,7 +1664,7 @@
        "Light": "#fafafa",
        "Dark": "#212121"
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": [
        "--slm-dp-month-bg"
       ]
@@ -1678,7 +1678,7 @@
        "Light": "#ffffff",
        "Dark": "#444444"
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": [
        "theme.surface",
        "--slm-surface"
@@ -1693,7 +1693,7 @@
        "Light": "#00000033",
        "Dark": "#00000033"
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -1705,7 +1705,7 @@
        "Light": "#fafafa",
        "Dark": "#212121"
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": [
        "--slm-dp-month-bg"
       ]
@@ -1744,7 +1744,7 @@
       "values": {
        "default": 400
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": [
        "$slm-heading-3-weight",
        "$slm-heading-4-weight",
@@ -1760,7 +1760,7 @@
       "values": {
        "default": 700
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": [
        "$slm-heading-6-weight",
        "$slm-btn-lg-weight",
@@ -1811,7 +1811,7 @@
       "values": {
        "default": 400
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": [
        "$slm-heading-3-weight",
        "$slm-heading-4-weight",
@@ -1849,7 +1849,7 @@
       "values": {
        "default": 0
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -1860,7 +1860,7 @@
       "values": {
        "default": 4
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -1871,7 +1871,7 @@
       "values": {
        "default": 8
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -1882,7 +1882,7 @@
       "values": {
        "default": 12
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -1893,7 +1893,7 @@
       "values": {
        "default": 16
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -1904,7 +1904,7 @@
       "values": {
        "default": 24
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -1915,7 +1915,7 @@
       "values": {
        "default": 32
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -1926,7 +1926,7 @@
       "values": {
        "default": 0
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -1937,7 +1937,7 @@
       "values": {
        "default": 4
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -1948,7 +1948,7 @@
       "values": {
        "default": 8
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -1959,7 +1959,7 @@
       "values": {
        "default": 12
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -1970,7 +1970,7 @@
       "values": {
        "default": 0
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -1981,7 +1981,7 @@
       "values": {
        "default": 16
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -1992,7 +1992,7 @@
       "values": {
        "default": 4
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -2003,7 +2003,7 @@
       "values": {
        "default": 16
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -2014,7 +2014,7 @@
       "values": {
        "default": 24
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -2025,7 +2025,7 @@
       "values": {
        "default": 24
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -2036,7 +2036,7 @@
       "values": {
        "default": 32
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -2047,7 +2047,7 @@
       "values": {
        "default": 0
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -2058,7 +2058,7 @@
       "values": {
        "default": 4
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -2069,7 +2069,7 @@
       "values": {
        "default": 8
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -2080,7 +2080,7 @@
       "values": {
        "default": 12
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -2091,7 +2091,7 @@
       "values": {
        "default": 16
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -2102,7 +2102,7 @@
       "values": {
        "default": 24
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -2113,7 +2113,7 @@
       "values": {
        "default": 0
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -2124,7 +2124,7 @@
       "values": {
        "default": 4
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -2135,7 +2135,7 @@
       "values": {
        "default": 24
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {
@@ -2146,7 +2146,7 @@
       "values": {
        "default": 32
       },
-      "nameMatch": true,
+      "nameMatch": false,
       "alsoMatches": []
      },
      {

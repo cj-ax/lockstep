@@ -1,0 +1,46 @@
+{
+ "page": "3:2",
+ "components": {
+  "Text Heading": {
+   "id": "5:2",
+   "key": "b96c84d18d2b89f274b1183abf11aa877566d881",
+   "props": [
+    "Heading"
+   ]
+  },
+  "Switch Field": {
+   "id": "5:4",
+   "key": "96287c15f5a4f8ccdcd240fcae182b81e113e15c",
+   "props": [
+    "Label",
+    "Description"
+   ]
+  },
+  "Card (Slot)": {
+   "id": "5:10",
+   "key": "e271aea946e9ccd36196446aa0eab1a6219cd11e",
+   "props": [
+    "Slot"
+   ]
+  },
+  "Button Group": {
+   "id": "5:12",
+   "key": "fd948198a0f12f6a23afe2bbff757424abd88f57",
+   "props": []
+  },
+  "Tabs": {
+   "id": "5:156",
+   "key": "9832bdaa6a02174a10d12f13642d1a3aeb617c47",
+   "props": [
+    "Slot"
+   ]
+  },
+  "Dialog": {
+   "id": "5:158",
+   "key": "e54aa7164331abd3a16b87af47fe6179efd838e0",
+   "props": []
+  }
+ },
+ "skipped": [],
+ "unbound": []
+}

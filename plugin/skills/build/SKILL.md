@@ -28,6 +28,14 @@ rendered scripts check too; don't rely on them. Build in the user's draft or a n
   it's missing, run **lockstep:init** first. If `inventory.structure.json` is missing, run
   that inventory part before writing the build: it shows where each component's text, icons
   and slots live.
+- **A learned library** (from `lockstep:learn`) is different: its `LIBRARY.md` says so and names
+  a draft file. Its learned components and variables are local to that file, so:
+  - build in **that file**, on a new page, not in a new draft;
+  - `keys.json` holds `local:<node id>` for learned components and keys for published ones,
+    and `variables.json` holds `local:<variable id>`; use the `component()` and `variable()`
+    helpers in `LIBRARY.md`. Text styles are local too;
+  - `LIBRARY.md` lists every component's properties, so no inventory files are needed;
+  - score with `--local-library-page "<page name from LIBRARY.md>"`.
 - Load Figma's skills: `/figma-use` and `/figma-generate-design`, or the MCP resources
   `skill://figma/figma-use/SKILL.md` and `skill://figma/figma-generate-design/SKILL.md`.
 - Call `create_session` on the target file and pass the `sessionId` on every call.
