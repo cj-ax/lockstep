@@ -1,4 +1,4 @@
-# Lockstep (working name)
+# Lockstep
 
 An org-agnostic tool for writing to Figma faithfully with an organization's own design library,
 then scoring and fixing the result. It started as a spike on the Business@Slalom library and was
